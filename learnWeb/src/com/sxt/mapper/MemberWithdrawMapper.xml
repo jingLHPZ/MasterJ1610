@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IMemberWithdraw">
+	   <resultMap type="MemberWithdraw" id="txresult">
+		<id property="id" column="id"/>
+		<result property="uid" column="uid"/>
+		<result property="withdrawMoney" column="withdraw_money"/>
+		<result property="withdrawStatus" column="withdraw_status"/>
+		<result property="withdrawFee" column="withdraw_fee"/>
+		<result property="createTime" column="create_time"/>
+		<result property="addIp" column="add_ip"/>
+		<result property="checkTime" column="check_time"/>
+		<result property="checkUser" column="check_user"/>
+		<result property="dealInfo" column="deal_info"/>
+		<result property="secondFee" column="second_fee"/>
+		<result property="successMoney" column="success_money"/>
+		<result property="systemTraceNo" column="system_trace_no"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="bankCardNo" column="bank_card_no"/>
+		<result property="cardBank" column="card_bank"/>
+		<result property="cardBranchBank" column="card_branch_bank"/>
+	</resultMap> 
+	<select id="fSumWithdrawMoney" parameterType="int" resultType="BigDecimal">
+      	SELECT sum(withdraw_money) FROM  ld_member_withdraw WHERE uid=#{uid} AND withdraw_status=3
+	</select>
+	<select id="fSelectWithdraw" parameterType="int" resultMap="txresult">
+		SELECT * FROM  ld_member_withdraw WHERE uid=#{uid} ORDER BY create_time DESC
+	</select>
+	<select id="fquerysequence" resultType="String">
+		SELECT NEXTVAL('Withdraw')
+	</select>
+	<insert id="fInsertWithdraw" parameterType="MemberWithdraw">
+		INSERT INTO ld_member_withdraw(uid,withdraw_money,withdraw_status,withdraw_fee,create_time,add_ip,success_money,system_trace_no,free_withdraw_money,bank_card_no,card_bank,card_branch_bank)
+		VALUES(#{uid},#{withdrawMoney},#{withdrawStatus},#{withdrawFee},now(),#{addIp},#{successMoney},#{systemTraceNo},#{freeWithdrawMoney},#{bankCardNo},#{cardBank},#{cardBranchBank})
+	</insert>
+	<select id="fwithdrawtraceno" parameterType="int" resultType="String">
+		SELECT system_trace_no FROM ld_member_withdraw WHERE uid=#{uid}
+	</select>
+	
+	<select id="fQueryPageWithdraw" parameterType="java.util.Map" resultMap="txresult">
+		SELECT * FROM ld_member_withdraw WHERE uid=#{uid} and withdraw_status != 10
+		 <if test="startTime2 != null and startTime2!=''">
+        	and create_time>=#{startTime2}
+	    </if>
+	     <if test="endTime2 != null and endTime2!=''">
+        	and create_time&lt;=#{endTime2}"23:59"
+	    </if>
+	        ORDER BY create_time DESC
+	    <if test="startRow != null and pageSize != null">
+			 limit #{startRow},#{pageSize}
+		</if>	
+	</select>
+	<select id="fQueryPageCountWithdraw" parameterType="java.util.Map" resultType="java.lang.Integer">
+		select count(1) from ld_member_withdraw where uid=#{uid}
+		<if test="startTime2 != null and startTime2!=''">
+        	and create_time>=#{startTime2}
+	    </if>
+	     <if test="endTime2 != null and endTime2!=''">
+        	and create_time&lt;=#{endTime2}"23:59"
+	    </if>
+	    ORDER BY create_time DESC
+	</select>
+	<select id="getWithdrawByStatus" parameterType="java.util.Map" resultMap="txresult">
+		SELECT * FROM  ld_member_withdraw WHERE uid = #{uid} AND bank_card_no = #{bandCardNo} AND withdraw_status IN (1,2)
+	</select>
+	<select id="getWithdrawMoneyByUid" parameterType="integer" resultType="BigDecimal">
+		SELECT
+			SUM(withdraw_money)
+		FROM
+			ld_member_withdraw
+		WHERE
+			uid = #{uid}
+		AND withdraw_status != 4
+		AND date(create_time) = date(now())
+	</select>
+	
+	<select id="queryCountWithdrawFreezeMoney" parameterType="java.lang.Integer" resultType="BigDecimal">
+        SELECT SUM(withdraw_money) FROM ld_member_withdraw WHERE uid=#{uid} AND withdraw_status IN(1,2)
+	</select>
+	<!-- 删除提现记录 -->
+	<!-- <delete id="deleteWithdrawById" parameterType="int">
+     DELETE FROM ld_member_withdraw WHERE  id=#{id}
+	</delete> -->
+	<update id="updateStatusBySystemTraceNo" parameterType="java.util.Map">
+	UPDATE ld_member_withdraw SET withdraw_status=5 WHERE uid=#{uid}  AND id=#{wid}
+	</update>
+	<select id="queryStatusById" parameterType="Integer" resultType="Integer">
+		SELECT withdraw_status FROM ld_member_withdraw WHERE id=#{id}
+	</select>
+</mapper>

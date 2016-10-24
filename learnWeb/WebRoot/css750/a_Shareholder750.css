@@ -1,0 +1,25 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+
+.about_right_m .item_gdbj{
+	padding-left: 0px;
+	position: initial;
+	width: 94%;
+	margin: 0px 3%;
+}
+.about_right_m .item_gdbj img {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 25px 0 0 2%;
+}
+.about_right_m .item_gdbj div {
+    width: 96%;
+    padding: 0 2% 30px;
+    background: none;
+}
+.about_right_m .item_gdbj div h1{
+	margin-bottom: 20px;
+}
+
+
+}

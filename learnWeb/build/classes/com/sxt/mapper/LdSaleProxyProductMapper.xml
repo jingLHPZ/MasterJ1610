@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.ILdSaleProxyProduct">
+
+	<resultMap type="LdSaleProxyProduct" id="ldSaleProxyProductMap">
+		<id property="id" column="id" />
+		<result property="productName" column="product_name"/>
+		<result property="merchantProductId" column="merchant_product_id"/>
+		<result property="borrowMoney" column="borrow_money"/>
+		<result property="borrowRate" column="borrow_rate"/>
+		<result property="borrowStatus" column="borrow_status"/>
+		<result property="productEndTime" column="product_end_time"/>
+		<result property="createTime" column="create_time"/>
+	</resultMap>
+	<insert id="insert" parameterType="LdSaleProxyProduct" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO ld_sale_proxy_product (
+			<trim suffixOverrides=",">
+			<if test="id != null">id, </if>
+			<if test="productName != null">product_name, </if>
+			<if test="merchantProductId != null">merchant_product_id, </if>
+			<if test="borrowMoney != null">borrow_money, </if>
+			<if test="borrowRate != null">borrow_rate, </if>
+			<if test="borrowStatus != null">borrow_status, </if>
+			<if test="productEndTime != null">product_end_time, </if>
+			<if test="createTime != null">create_time, </if>
+			</trim>
+		) VALUES (
+			<trim suffixOverrides=",">
+			<if test="id != null">#{id}, </if>
+			<if test="productName != null">#{productName}, </if>
+			<if test="merchantProductId != null">#{merchantProductId}, </if>
+			<if test="borrowMoney != null">#{borrowMoney}, </if>
+			<if test="borrowRate != null">#{borrowRate}, </if>
+			<if test="borrowStatus != null">#{borrowStatus}, </if>
+			<if test="productEndTime != null">#{productEndTime}, </if>
+			<if test="createTime != null">#{createTime}, </if>
+			</trim>
+		)
+	</insert>
+
+	<update id="update" parameterType="LdSaleProxyProduct">
+		UPDATE ld_sale_proxy_product 
+		<set>
+		<if test="id != null">id = #{id}, </if>
+		<if test="productName != null">product_name = #{productName}, </if>
+		<if test="borrowMoney != null">borrow_money = #{borrowMoney}, </if>
+		<if test="borrowRate != null">borrow_rate = #{borrowRate}, </if>
+		<if test="borrowStatus != null">borrow_status = #{borrowStatus}, </if>
+		<if test="productEndTime != null">product_end_time = #{productEndTime}, </if>
+		<if test="createTime != null">create_time = #{createTime}, </if>
+		</set>
+		WHERE id = #{id} 
+	</update>
+
+	<delete id="delete" parameterType="Long">
+		DELETE FROM ld_sale_proxy_product 
+		WHERE id = #{id} 
+	</delete>
+
+	<select id="queryLdSaleProxyProductList"  parameterType="java.util.Map" resultMap="ldSaleProxyProductMap">
+		SELECT * FROM ld_sale_proxy_product 
+		WHERE 1=1 
+		<if test="startRow != null and pageSize != null">limit #{startRow},#{pageSize}</if> 
+	</select>
+
+	<select id="queryLdSaleProxyProductCount"  parameterType="java.util.Map" resultType="Integer">
+		SELECT count(id) FROM ld_sale_proxy_product 
+		WHERE 1=1 
+	</select>
+
+	<select id="queryLdSaleProxyProductByCondition"  parameterType="LdSaleProxyProduct" resultMap="ldSaleProxyProductMap">
+		SELECT * FROM ld_sale_proxy_product 
+		WHERE 1 = 1
+		<if test="merchantProductId != null">
+			and merchant_product_id = #{merchantProductId}
+		</if>
+	</select>
+
+</mapper>

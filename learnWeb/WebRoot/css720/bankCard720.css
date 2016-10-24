@@ -1,0 +1,245 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+
+.right_main .bankC_bod .ban_e {
+    height: 80px;
+    line-height: 80px;
+    width: 100%;
+    text-align: center;
+}
+.right_main .bankC_bod li {
+    margin: 0 auto;
+    float: none;
+    text-align: center;
+}
+.right_main .bankC_yz li h2{
+	text-indent: 0px;
+}
+.right_main .bankC_yz li h3{
+	text-indent: 0px;
+}
+.right_main .bankC_yz li label{
+	text-align: left;
+	width: 100%;
+}
+.right_main .bankC_yz li .yz_text{
+	margin-bottom: 10px;
+}
+.right_main .bankC_yz li .yz_btn1{
+	margin-left: 0;
+}
+
+/*添加银行卡弹出窗*/
+.content_body .add_bc .addb_bod{
+	margin: 0;
+	padding: 0;
+	top: initial;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: auto;
+	max-height: 70%;
+	overflow-y: auto;
+	
+}
+.content_body .add_bc ul{
+	width: 100%;
+	margin-left: 0;
+}
+.content_body .add_bc ul li{
+	height: auto;
+	margin: 0 0 15px 0!important;
+}
+.content_body .add_bc ul li ul li{
+	margin: 0!important;
+}
+.content_body .add_bc ul li label{
+	width: 28%;
+	margin-right: 2%;
+}
+.content_body .add_bc ul li input{
+	width: 40%;
+	box-sizing: border-box;
+}
+.content_body .add_bc ul li select{
+	width: 40%;
+	box-sizing: border-box;
+}
+.content_body .add_bc ul li span {
+    width: 100%;
+    display: block;
+    float: left;
+    text-indent: 30%;
+}
+.content_body .add_bc ul li #seachdistrict_div{
+	width: 100px;
+}
+.content_body .add_bc ul .checkInfoCont span{
+	margin: 0;
+	width: auto;
+	display: initial;
+	text-indent: 0;
+	margin-left: 30%;
+}
+.content_body .add_bc ul li .adb_se_wid{
+	margin-right: 4%;
+	width: 18%;
+}
+.content_body .add_bc .bank_s_bt a{
+	width: 40%;
+	margin-left: 28%;
+}
+.content_body .add_bc .bank_s_bt input{
+	width: 40%;
+	margin-left: 28%;
+}
+/*通知弹出窗*/
+.content_body .bankC_del .del_bod{
+	margin: 0;
+	padding: 0;
+	top: initial;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+.content_body .bankC_del .del_bod input{
+	float: none;
+	display: block;
+	margin: 200px auto 0;
+}
+
+/*实名认证*/
+#openReal .smrz_posi .smr_bloak {
+    width: 100%;
+    height: 235px;
+    margin: 0;
+    left: 0;
+    top: initial;
+    bottom: 0;
+}
+#openReal .smrz_posi .smr_bloak .smr_clor {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    margin: 0;
+}
+#openReal .smrz_posi .smr_bloak h3 {
+    box-sizing: border-box;
+    padding: 0 40px;
+    margin: 15px 0;
+}
+#openReal .smrz_posi .smr_bloak p {
+    float: none;
+    margin: 30px auto 0px;
+    width: 70%;
+    box-sizing: border-box;
+    padding-left: 70px;
+    position: relative;
+}
+#openReal .smrz_posi .smr_bloak p + p{
+	margin-top: 20px;
+}
+#openReal .smrz_posi .smr_bloak p label {
+    width: 70px;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: left;
+}
+#openReal .smrz_posi .smr_bloak p input {
+    box-sizing: border-box;
+    width: 100%;
+}
+#openReal .smrz_posi .smr_bloak p font{
+	width: 100%;
+}
+#openReal .smrz_posi .smr_bloak .smr_btn {
+    width: 70%;
+    float: none;
+    margin: 30px auto 0px;
+    display: block;
+}
+
+/*重置密码弹窗*/
+body .Szzf_password .szp_bod,body .password_alert .ps_al_bod{
+	width: 100%;
+	height: 290px;
+	bottom: 0;
+	left: 0;
+	top: initial;
+	margin: 0;
+}
+body .Szzf_password .szp_bod h3 {
+    margin: 5px 0px 20px;
+}
+body .Szzf_password .szp_bod .szp_mmk{
+	margin: 0 auto;
+	float: none;
+}
+body .Szzf_password .szp_bod .szp_btn{
+	float: none;
+	margin: 150px auto 0;
+	width: 268px;
+}
+body .Szzf_password .szp_bod .szp_btn .szp_btn_qr{
+	margin-right: 0;
+}
+body .Szzf_password .szp_bod .szp_alert {
+    width: 270px;
+    margin: 150px auto 0px;
+    float: none;
+}
+
+/*找回交易密码弹窗*/
+body .zhjy_body{
+	height: 310px;
+	width: 100%;
+	margin: 0;
+	top: initial;
+	left: 0;
+	bottom: 0;
+}
+body .zhjy_body ul li{
+	width: 90%;
+	position: relative;
+	box-sizing: border-box;
+	padding: 0 35px 0 90px;
+	margin: 10px auto;
+	float: none;
+}
+body .zhjy_body ul li label{
+	width: 90px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+body .zhjy_body .zhjy_phone{
+	padding-left: 190px;
+}
+body .zhjy_body ul li h4{
+	width: 100px;
+	position: absolute;
+	left: 90px;
+	top: 0;
+}
+body .zhjy_body ul li div{
+	width: 100%;
+	box-sizing: border-box;
+}
+body .zhjy_body ul li input{
+	width: 100%;
+	box-sizing: border-box;
+}
+body .zhjy_body li .zhjy_btn_1{
+	width: 48%;
+	margin: 0 2% 0 0;
+}
+body .zhjy_body li .zhjy_btn_2{
+	width: 48%;
+	margin: 0 0 0 2%;
+}
+
+
+
+
+}

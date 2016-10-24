@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.ILdSaleProxyBorrowInvest">
+
+	<resultMap type="LdSaleProxyBorrowInvest" id="ldSaleProxyBorrowInvestMap">
+		<id property="id" column="id" />
+		<id property="id" column="invest_id" />
+		<result property="productName" column="product_name"/>
+		<result property="merchantProductId" column="merchant_product_id"/>
+		<result property="borrowRate" column="borrow_rate"/>
+		<result property="serialNumber" column="serial_number"/>
+		<result property="merchantUid" column="merchant_uid"/>
+		<result property="investMoney" column="invest_money"/>
+		<result property="expectMoney" column="expect_money"/>
+		<result property="borrowEndTime" column="borrow_end_time"/>
+		<result property="borrowStatus" column="borrow_status"/>
+		<result property="remark" column="remark"/>
+		<result property="createTime" column="create_time"/>
+	</resultMap>
+	<insert id="insert" parameterType="LdSaleProxyBorrowInvest" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO ld_sale_proxy_borrow_invest (
+			<trim suffixOverrides=",">
+			<if test="id != null">id, </if>
+			<if test="investId != null">invest_id, </if>
+			<if test="productName != null">product_name, </if>
+			<if test="merchantProductId != null">merchant_product_id, </if>
+			<if test="borrowRate != null">borrow_rate, </if>
+			<if test="serialNumber != null">serial_number, </if>
+			<if test="merchantUid != null">merchant_uid, </if>
+			<if test="investMoney != null">invest_money, </if>
+			<if test="expectMoney != null">expect_money, </if>
+			<if test="borrowEndTime != null">borrow_end_time, </if>
+			<if test="borrowStatus != null">borrow_status, </if>
+			<if test="remark != null">remark, </if>
+			<if test="createTime != null">create_time, </if>
+			</trim>
+		) VALUES (
+			<trim suffixOverrides=",">
+			<if test="id != null">#{id}, </if>
+			<if test="investId != null">#{investId}, </if>
+			<if test="productName != null">#{productName}, </if>
+			<if test="merchantProductId != null">#{merchantProductId}, </if>
+			<if test="borrowRate != null">#{borrowRate}, </if>
+			<if test="serialNumber != null">#{serialNumber}, </if>
+			<if test="merchantUid != null">#{merchantUid}, </if>
+			<if test="investMoney != null">#{investMoney}, </if>
+			<if test="expectMoney != null">#{expectMoney}, </if>
+			<if test="borrowEndTime != null">#{borrowEndTime}, </if>
+			<if test="borrowStatus != null">#{borrowStatus}, </if>
+			<if test="remark != null">#{remark}, </if>
+			<if test="createTime != null">#{createTime}, </if>
+			</trim>
+		)
+	</insert>
+
+	<update id="update" parameterType="LdSaleProxyBorrowInvest">
+		UPDATE ld_sale_proxy_borrow_invest 
+		<set>
+		<if test="id != null">id = #{id}, </if>
+		<if test="investId != null">invest_id = #{investId}, </if>
+		<if test="productName != null">product_name = #{productName}, </if>
+		<if test="merchantProductId != null">merchant_product_id = #{merchantProductId}, </if>
+		<if test="borrowRate != null">borrow_rate = #{borrowRate}, </if>
+		<if test="serialNumber != null">serial_number = #{serialNumber}, </if>
+		<if test="merchantUid != null">merchant_uid = #{merchantUid}, </if>
+		<if test="investMoney != null">invest_money = #{investMoney}, </if>
+		<if test="expectMoney != null">expect_money = #{expectMoney}, </if>
+		<if test="borrowEndTime != null">borrow_end_time = #{borrowEndTime}, </if>
+		<if test="borrowStatus != null">borrow_status = #{borrowStatus}, </if>
+		<if test="remark != null">remark = #{remark}, </if>
+		<if test="createTime != null">create_time = #{createTime}, </if>
+		</set>
+		WHERE id = #{id} 
+	</update>
+
+	<delete id="delete" parameterType="Long">
+		DELETE FROM ld_sale_proxy_borrow_invest 
+		WHERE id = #{id} 
+	</delete>
+
+	<select id="queryLdSaleProxyBorrowInvestList"  parameterType="java.util.Map" resultMap="ldSaleProxyBorrowInvestMap">
+		SELECT * FROM ld_sale_proxy_borrow_invest 
+		WHERE 1=1 
+		<if test="startRow != null and pageSize != null">limit #{startRow},#{pageSize}</if> 
+	</select>
+
+	<select id="queryLdSaleProxyBorrowInvestCount"  parameterType="java.util.Map" resultType="Integer">
+		SELECT count(id) FROM ld_sale_proxy_borrow_invest 
+		WHERE 1=1 
+	</select>
+
+	<select id="queryLdSaleProxyBorrowInvestByCondition"  parameterType="LdSaleProxyBorrowInvest" resultMap="ldSaleProxyBorrowInvestMap">
+		SELECT * FROM ld_sale_proxy_borrow_invest 
+		WHERE 1=1
+		<if test="investId != null">
+			and invest_id = #{investId}
+		</if>
+	</select>
+
+</mapper>

@@ -1,0 +1,14 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+
+.about_right_m .journa_xq_title {
+    width: 94%;
+    margin: 30px 3% 15px;
+    box-sizing: border-box;
+    padding: 0;
+}
+.about_right_m .not_xq_bod {
+    width: 94%;
+    margin: 0px 3%;
+}
+
+}

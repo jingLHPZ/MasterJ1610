@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IMemberPay">
+	 <resultMap type="MemberPay" id="czresult">
+		<id property="id" column="id"/>
+		<result property="rechargeMoney" column="recharge_money"/>
+		<result property="rechargeFee" column="recharge_fee"/>
+		<result property="way" column="way"/>
+		<result property="status" column="status"/>
+		<result property="createTime" column="create_time"/>
+		<result property="offBank" column="off_bank"/>
+		<result property="bankCard" column="bank_card"/>
+		<result property="dealUid" column="deal_uid"/>
+		<result property="payImgUrl" column="pay_img_url"/>
+		<result property="bankSign" column="bank_sign"/>
+		<result property="type" column="type"/>
+		<result property="checkMemo" column="check_memo"/>
+
+		<association property="members" javaType="Members" >
+			<id property="id" column="id"/>
+		<result property="userName" column="user_name"/>
+		<result property="userPass" column="user_pass"/>
+		<result property="userType" column="user_type"/>
+		<result property="payPass" column="pay_pass"/>
+		<result property="userEmail" column="user_email"/>
+		<result property="userPhone" column="user_phone"/>
+		<result property="regTime" column="reg_time"/>
+		<result property="isRealName" column="is_real_name"/>
+		<result property="isAddCard" column="is_addCard"/>
+		<result property="uid" column="uid"/>
+		</association>
+	</resultMap>
+	
+	<resultMap type="MemberPay" id="memberPayMap">
+		<id property="id" column="id"/>
+		<result property="rechargeMoney" column="recharge_money"/>
+		<result property="rechargeFee" column="recharge_fee"/>
+		<result property="way" column="way"/>
+		<result property="status" column="status"/>
+		<result property="createTime" column="create_time"/>
+		<result property="rechargeIp" column="recharge_ip"/>
+		<result property="offBank" column="off_bank"/>
+		<result property="dealUid" column="deal_uid"/>
+		<result property="payImgUrl" column="pay_img_url"/>
+		<result property="bankSign" column="bank_sign"/>
+		<result property="type" column="type"/>
+		<result property="systemTraceNo" column="system_trace_no"/>
+		<result property="uid" column="uid"/>
+	</resultMap>
+	<select id="fSumPayMoney" parameterType="int" resultType="BigDecimal">
+      SELECT SUM(recharge_money) FROM  ld_member_pay WHERE uid=#{uid}  AND `status`=2
+	</select>
+	<select id="fSelectPay" parameterType="int" resultType="MemberPay">
+		 SELECT * FROM  ld_member_pay WHERE uid=#{uid} ORDER BY create_time DESC
+	</select>
+	<select id="fQueryPagePay" parameterType="java.util.Map" resultMap="czresult">
+		SELECT * FROM ld_member_pay WHERE uid=#{uid} 
+		<if test="type != null"> and type = #{type} </if>
+		
+		 <if test="startTime1 != null and startTime1!=''">
+        	and create_time>=#{startTime1}
+	    </if>
+	     <if test="endTime1 != null and endTime1!=''">
+        	and create_time&lt;=#{endTime1}"23:59"
+	    </if>
+	        ORDER BY create_time DESC
+	    <if test="startRow != null and pageSize != null">
+			 limit #{startRow},#{pageSize}
+		</if>	
+	</select>
+	<select id="fQueryPageCountPay" parameterType="java.util.Map" resultType="java.lang.Integer">
+		select count(1) from ld_member_pay where uid=#{uid}
+		<if test="type != null"> and type = #{type}</if>
+		<if test="startTime1 != null and startTime1!=''">
+        	and create_time>=#{startTime1}
+	    </if>
+	     <if test="endTime1 != null and endTime1!=''">
+        	and create_time&lt;=#{endTime1}"23:59"
+	    </if>
+	    ORDER BY create_time DESC
+	</select>
+	<insert id="add" parameterType="MemberPay" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO ld_member_pay
+		(uid,system_trace_no,recharge_money,recharge_fee,way,status,create_time,recharge_ip,bank_card,off_bank,off_branch_bank,
+		off_user,deal_uid,pay_img_url,update_time,check_memo,third_system_trace_no,type)
+		VALUE (#{uid},#{systemTraceNo},#{rechargeMoney},#{rechargeFee},#{way},#{status},#{createTime},#{rechargeIp},#{bankCard},
+		#{offBank},#{offBranchBank},#{offUser},#{dealUid},#{payImgUrl},#{updateTime},#{checkMemo},#{thirdSystemTraceNo},#{type})
+	</insert>
+	
+	<update id="update" parameterType="MemberPay">
+		UPDATE ld_member_pay
+		<set>
+			<if test="status != null ">status = #{status},</if>
+			<if test="rechargeMoney != null ">recharge_money = #{rechargeMoney},</if>
+			<if test="rechargeFee != null ">recharge_fee = #{rechargeFee},</if>
+			<if test="updateTime != null ">update_time = #{updateTime},</if>
+			<if test="bankCard != null ">bank_card = #{bankCard},</if>
+			<if test="thirdSystemTraceNo != null ">third_system_trace_no = #{thirdSystemTraceNo},</if>
+			<if test="bankSign != null ">bank_sign = #{bankSign}</if>
+		</set>
+		WHERE system_trace_no = #{systemTraceNo}
+	</update> 
+	
+	<select id="selectPayBySystemTraceNo" parameterType="java.lang.String" resultMap="memberPayMap">
+		 SELECT id,recharge_money,recharge_fee,way,status,create_time,recharge_ip,off_bank,deal_uid,
+		 pay_img_url,bank_sign,type,system_trace_no,uid FROM  ld_member_pay WHERE system_trace_no = #{systemTraceNo}
+	</select>
+</mapper>

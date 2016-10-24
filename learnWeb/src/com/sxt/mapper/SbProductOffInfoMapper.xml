@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxt.inter.ISbProductOffInfo" >
+  <resultMap id="BaseResultMap" type="SbProductOffInfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="product_id" property="productId" jdbcType="VARCHAR" />
+    <result column="product_name" property="productName" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="financing_scale" property="financingScale" jdbcType="INTEGER" />
+    <result column="invest_limit" property="investLimit" jdbcType="INTEGER" />
+    <result column="duration_content" property="durationContent" jdbcType="VARCHAR" />
+    <result column="duration_way" property="durationWay" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="info" property="info" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="querySbProduct" resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select 
+    id, product_id, product_name, status, financing_scale, invest_limit, duration_content, 
+    duration_way, create_time, update_time, info
+    from ld_sb_product_off_info
+    where status != 1 and shelves_flag = 1
+    order by status asc,create_time desc
+    limit #{startRow},#{pageSize}
+  </select>
+  <select id="querySbProductCount" resultType="java.lang.Integer">
+  	select count(1) from ld_sb_product_off_info
+  	where status != 1 and shelves_flag = 1
+  </select>
+</mapper>

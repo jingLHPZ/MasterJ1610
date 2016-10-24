@@ -1,0 +1,23 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+	
+.about_right_m .not_xq_title {
+    width: 94%;
+    margin: 50px 3% 30px;
+    box-sizing: border-box;
+    padding-right: 110px;
+    padding-left: 1%;
+    position: relative;
+}
+.about_right_m .not_xq_title label{
+	position: absolute;
+	right: 10px;
+}
+.about_right_m .not_xq_title h3{
+	width: 100%;
+}
+.about_right_m .not_xq_bod {
+    width: 92%;
+    margin: 0px 4%;
+}
+	
+}

@@ -1,0 +1,46 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+*{transition-property: width,height;}
+body .guide_banner {
+    height: 259px;
+    background-size: auto 100%;
+}
+body .cont{
+	width: 650px;
+}
+body .title{
+	width: 270px;
+}
+body .guide_d0{
+	height: 220px;
+}
+body .guide_d0 .cont img{
+	width: 90%;
+	height: auto;
+}
+body .cont img{
+	height: 250px;
+	width: auto;
+	margin-top: 100px;
+}
+body .guide_d1 .title{
+	top: 40px;
+}
+body .guide_d5 .title p{
+	line-height: 28px;
+	font-size:18px;
+}
+body .guide_d5 .cont img{
+	height: 200px;
+}
+body .guide_d5 .secu_resgi {
+    width: 206px;
+    height: 50px;
+    margin: 30px 0 0 20px;
+    background-size: auto 100%;
+}
+body .guide_d5 .secu_resgi:hover{
+    background-size: auto 100%;
+}
+
+
+}

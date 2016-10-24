@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.ILdContractInfo">
+	<resultMap type="com.sxt.models.BorrowInvestor" id="borrowinvestorinfo">
+		<id property="id" column="id" />
+		<result property="fromSource" column="from_source" />
+		<result property="productId" column="product_id"/>
+		<result property="investorUid" column="investor_uid" />
+		<result property="borrowUid" column="borrow_uid" />
+		<result property="systemTraceNo" column="system_trace_no" />
+		<result property="investorCapital" column="investor_capital" />
+		<result property="investorInterest" column="investor_interest" />
+		<result property="productType" column="product_type" />
+		
+	</resultMap>
+
+	<!-- 查询投资信息 -->
+	<select id="findContactBorrowInfo" parameterType="java.util.Map" resultMap="borrowinvestorinfo">
+		select
+			id, 
+			product_id,
+			investor_uid,
+			borrow_uid,
+			system_trace_no,
+			investor_capital,
+			investor_interest,
+			product_type
+ 		from ld_borrow_investor t where 1=1
+ 		<if test="produId != null"> and product_id=#{produId}</if>
+ 		<if test="systemtraceno != null"> and system_trace_no=#{systemtraceno}</if>
+	</select>
+	
+	<!-- 查询用户信息 -->
+	<select id="findContactUserInfo" parameterType="String" resultType="map">
+		select 
+		user_name,
+		idcard,
+		real_name,
+		user_phone
+		 from ld_members a left join ld_member_info b on a.uid=b.uid
+		where a.uid=#{uid}
+	</select>
+
+	<!-- PDF生成记录 -->
+	<insert id="fInsertContractInfo" parameterType="map">
+		INSERT INTO
+		ld_user_signature_log(uid,file_name,type,pid,create_time,time_syn,system_trace_no)VALUES(#{uid},#{filename},#{type},#{pid},now(),#{time_syn},#{systemtraceno})
+	</insert>
+	
+	<select id="findContractInfo" parameterType="java.util.Map" resultType="map">
+		select * from ld_user_signature_log where 1=1
+		<if test="id != null"> and id=#{id}</if>
+		<if test="uid != null"> and uid=#{uid}</if>
+		<if test="pid != null"> and pid=#{pid}</if>
+		<if test="system_trace_no != null"> and system_trace_no=#{system_trace_no}</if>
+	</select>
+</mapper>

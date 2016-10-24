@@ -1,0 +1,82 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+	
+.right_main .integ_tit{
+	height: auto;
+}
+.right_main .integ_tit div {
+    width: 100%;
+    background-color: #FFF;
+}
+.right_main .integ_tit a {
+    width: 33%;
+}
+.right_main .integ_tit h2{
+	margin-left: 2%;
+}
+.right_main .card_dhd {
+    width: 96%;
+    margin: 30px 2% 0px;
+    height: auto;
+}
+.right_main .card_dhd ul{
+	padding: 10px 0;
+}
+.right_main .card_dhd ul li{
+	padding: 0 3%;
+	box-sizing: border-box;
+}
+.right_main .card_dhd ul li label{
+	width: 100%;
+	margin: 0px;
+	text-align: left;
+}
+.right_main .card_dhd .cap_winp_txt {
+    padding: 0px 10px;
+    width: 100%;
+	box-sizing: border-box;
+	margin: 0;
+}
+.right_main .card_dhd ul li .an{
+	margin: 0;
+}
+.right_main .card_dhd .cap_winp_btn{
+	width: 100%;
+	margin: 20px 0 0;
+}
+.right_main .cadCop_bod {
+    width: 96%;
+    margin: 2%;
+}
+.right_main .cadCop_bod table {
+    width: 96%;
+    margin: 2%;
+}
+.right_main .cadCop_ttab label{
+	display: none;
+}
+.right_main .cadCop_bod table tr th:nth-of-type(1){
+	display: none;
+}
+.right_main .cadCop_bod table tr td:nth-of-type(1){
+	display: none;
+}
+
+.right_main .cadCop_bod table{
+	min-width: 525px;
+}
+
+/*弹窗*/
+.right_main .hb_a_bod{
+	margin: 0;
+	width: 100%;
+	left: 0;
+	top: initial;
+	bottom: 0;
+}
+.right_main .hb_a_bod .hb_lqbtn{
+	margin: 0 auto;
+	display: block;
+}
+
+
+}

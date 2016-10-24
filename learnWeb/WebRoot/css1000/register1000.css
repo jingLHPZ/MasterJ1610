@@ -1,0 +1,24 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+	body{width: 100%;}
+	*{transition: width .2s ease-out;}
+	.login_top .login_bod {
+	    width: 970px;
+	}
+	
+	.reg_pw_altop .reg_inp_1::-webkit-input-placeholder { color:transparent; }
+	.reg_pw_altop .reg_inp_1::-moz-placeholder { color:transparent; } 
+	.reg_pw_altop .reg_inp_1:-ms-input-placeholder { color:transparent; } 
+	.reg_pw_altop .reg_inp_1:-moz-placeholder { color:transparent; }
+	.reg_pw_altop .reg_inp_1::-webkit-input-placeholder { color:transparent; }
+	
+	body .register{
+		width: 970px;
+	}
+	
+	body .log_ys ul{
+		width: 970px;
+	}
+	.log_ys ul li {
+	    margin-left: 2px;
+	}
+}

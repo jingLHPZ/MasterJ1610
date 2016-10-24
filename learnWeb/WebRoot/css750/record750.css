@@ -1,0 +1,32 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+
+.right_main .record_cz {
+	height: auto;
+    width: 96%;
+    margin: 20px 2%;
+}
+.right_main .record_cz p{
+	width: 100%;
+	box-sizing: border-box;
+}
+.right_main .record_cz p b{
+	margin: 0 10px;
+}
+.right_main .record_cz .cz_href{
+	margin-left: 20px;
+}
+.right_main .record_cz .tx_href{
+	margin-right: 20px;
+	float: right;
+}
+.right_main .cz_title,
+.right_main .czje_bod{
+    width: 96%;
+    margin: 0 2%;
+}
+.right_main .czje_pg {
+    width: 96%;
+    margin: 20px 2%;
+}
+
+}

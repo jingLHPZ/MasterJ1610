@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.ILdMemberCertificateCheck">
+ 	<resultMap type="LdMemberCertificateCheck" id="checkMap">
+ 		<id property="id" column="id"/>
+		<id property="uid" column="uid"/>
+		<id property="checkName" column="check_name"/>
+		<id property="checkCard" column="check_card"/>
+		<result property="createTime" column="create_time"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="status" column="status"/>
+		<result property="frontImage" column="front_image"/>
+		<result property="backImage" column="back_image"/>
+		<result property="cardType" column="card_type"/>
+		<result property="reason" column="reason"/>
+	</resultMap>
+	<insert id="add" parameterType="LdMemberCertificateCheck" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO ld_member_certificate_check
+		(uid,check_name,check_card,create_time,update_time,status,front_image,back_image,card_type,reason)
+		VALUE (#{uid},#{checkName},#{checkCard},#{createTime},#{updateTime},#{status},#{frontImage},#{backImage},#{cardType},#{reason})
+	</insert>
+	<update id="update" parameterType="LdMemberCertificateCheck">
+		UPDATE ld_member_certificate_check
+		<set>
+			<if test="updateTime != null ">update_time = #{updateTime},</if>
+			<if test="checkName != null ">check_name = #{checkName},</if>
+			<if test="checkCard != null ">check_card = #{checkCard},</if>
+			<if test="status != null ">status = #{status},</if>
+			<if test="frontImage != null ">front_image = #{frontImage},</if>
+			<if test="backImage != null">back_image = #{backImage},</if>
+			<if test="cardType != null">card_type = #{cardType},</if>
+			<if test="reason != null">reason = #{reason}</if>
+		</set>
+		WHERE uid = #{uid}
+	</update> 
+	<select id="queryCertificateCheck" parameterType="Map" resultMap="checkMap">
+		select * from ld_member_certificate_check where 1=1 
+		<if test="uid!=null">
+			and uid=#{uid}
+		</if>
+		order by create_time desc
+	</select>
+</mapper>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxt.inter.IQuestionnaire" >
+  <resultMap id="questionnaireResult" type="Questionnaire" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="total_core" property="totalCore" jdbcType="INTEGER" />
+    <result column="financial_situation" property="financialSituation" jdbcType="INTEGER" />
+    <result column="age_range" property="ageRange" jdbcType="INTEGER" />
+    <result column="education" property="education" jdbcType="INTEGER" />
+    <result column="job" property="job" jdbcType="INTEGER" />
+    <result column="disposable_income" property="disposableIncome" jdbcType="INTEGER" />
+    <result column="investment_proportion" property="investmentProportion" jdbcType="INTEGER" />
+    <result column="investment_knowledge" property="investmentKnowledge" jdbcType="INTEGER" />
+    <result column="investment_experience" property="investmentExperience" jdbcType="INTEGER" />
+    <result column="investment_life" property="investmentLife" jdbcType="INTEGER" />
+    <result column="investment_cycle" property="investmentCycle" jdbcType="INTEGER" />
+    <result column="investment_objective" property="investmentObjective" jdbcType="INTEGER" />
+    <result column="primary_objective" property="primaryObjective" jdbcType="INTEGER" />
+    <result column="investment_attitude" property="investmentAttitude" jdbcType="INTEGER" />
+    <result column="investment_distribution" property="investmentDistribution" jdbcType="INTEGER" />
+    <result column="future_investment_attitude" property="futureInvestmentAttitude" jdbcType="INTEGER" />
+    <result column="risk_bearing_type" property="riskBearingType" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <select id="getQuestionnaireByUid" resultMap="questionnaireResult" parameterType="java.lang.Integer" >
+    SELECT 
+    	total_core,
+    	risk_bearing_type,
+    	create_time
+    FROM ld_member_questionnaire
+    WHERE uid = #{uid}
+  </select>
+
+  <insert id="insert" parameterType="Questionnaire" >
+    insert into ld_member_questionnaire (uid, total_core, 
+      financial_situation, age_range, education, 
+      job, disposable_income, investment_proportion, 
+      investment_knowledge, investment_experience, 
+      investment_life, investment_cycle, investment_objective, 
+      primary_objective, investment_attitude, investment_distribution, 
+      future_investment_attitude, risk_bearing_type, 
+      create_time)
+    values (#{uid,jdbcType=INTEGER}, #{totalCore,jdbcType=INTEGER}, 
+      #{financialSituation,jdbcType=INTEGER}, #{ageRange,jdbcType=INTEGER}, #{education,jdbcType=INTEGER}, 
+      #{job,jdbcType=INTEGER}, #{disposableIncome,jdbcType=INTEGER}, #{investmentProportion,jdbcType=INTEGER}, 
+      #{investmentKnowledge,jdbcType=INTEGER}, #{investmentExperience,jdbcType=INTEGER}, 
+      #{investmentLife,jdbcType=INTEGER}, #{investmentCycle,jdbcType=INTEGER}, #{investmentObjective,jdbcType=INTEGER}, 
+      #{primaryObjective,jdbcType=INTEGER}, #{investmentAttitude,jdbcType=INTEGER}, #{investmentDistribution,jdbcType=INTEGER}, 
+      #{futureInvestmentAttitude,jdbcType=INTEGER}, #{riskBearingType,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByUid" parameterType="Questionnaire" >
+    update ld_member_questionnaire
+    <set >
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="totalCore != null" >
+        total_core = #{totalCore,jdbcType=INTEGER},
+      </if>
+      <if test="financialSituation != null" >
+        financial_situation = #{financialSituation,jdbcType=INTEGER},
+      </if>
+      <if test="ageRange != null" >
+        age_range = #{ageRange,jdbcType=INTEGER},
+      </if>
+      <if test="education != null" >
+        education = #{education,jdbcType=INTEGER},
+      </if>
+      <if test="job != null" >
+        job = #{job,jdbcType=INTEGER},
+      </if>
+      <if test="disposableIncome != null" >
+        disposable_income = #{disposableIncome,jdbcType=INTEGER},
+      </if>
+      <if test="investmentProportion != null" >
+        investment_proportion = #{investmentProportion,jdbcType=INTEGER},
+      </if>
+      <if test="investmentKnowledge != null" >
+        investment_knowledge = #{investmentKnowledge,jdbcType=INTEGER},
+      </if>
+      <if test="investmentExperience != null" >
+        investment_experience = #{investmentExperience,jdbcType=INTEGER},
+      </if>
+      <if test="investmentLife != null" >
+        investment_life = #{investmentLife,jdbcType=INTEGER},
+      </if>
+      <if test="investmentCycle != null" >
+        investment_cycle = #{investmentCycle,jdbcType=INTEGER},
+      </if>
+      <if test="investmentObjective != null" >
+        investment_objective = #{investmentObjective,jdbcType=INTEGER},
+      </if>
+      <if test="primaryObjective != null" >
+        primary_objective = #{primaryObjective,jdbcType=INTEGER},
+      </if>
+      <if test="investmentAttitude != null" >
+        investment_attitude = #{investmentAttitude,jdbcType=INTEGER},
+      </if>
+      <if test="investmentDistribution != null" >
+        investment_distribution = #{investmentDistribution,jdbcType=INTEGER},
+      </if>
+      <if test="futureInvestmentAttitude != null" >
+        future_investment_attitude = #{futureInvestmentAttitude,jdbcType=INTEGER},
+      </if>
+      <if test="riskBearingType != null" >
+        risk_bearing_type = #{riskBearingType,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where uid = #{uid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IMemberMoney">
+	<resultMap type="MemberMoney" id="memberMoneyResult">
+		<result property="uid" column="uid"/>
+		<result property="moneyFreeze" column="money_freeze"/>
+		<result property="moneyCollect" column="money_collect"/>
+		<result property="accountMoney" column="account_money"/>
+		<result property="backMoney" column="back_money"/>
+		<result property="creditLimit" column="credit_limit"/>
+		
+		<result property="creditCuse" column="credit_cuse"/>
+		<result property="borrowVouchLimit" column="borrow_vouch_limit"/>
+		<result property="borrowVouchCuse" column="borrow_vouch_cuse"/>
+		<result property="investVouchLimit" column="invest_vouch_limit"/>
+		<result property="investVouchCuse" column="invest_vouch_cuse"/>
+		
+		<result property="totalScore" column="total_score"/>
+		<result property="createTime" column="create_time"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="experienceGold" column="experience_gold"/>
+		<result property="incomeMoney" column="income_money"/>
+		
+		<result property="freeWithdraw" column="free_withdraw"/>
+		<result property="canusemoney" column="canusemoney"/>
+		<result property="version" column="version"/>
+	</resultMap>
+	<select id="queryMemberMoney" parameterType="java.lang.Integer" resultMap="memberMoneyResult">
+	     SELECT * FROM ld_member_money WHERE uid=#{uid}
+	</select>
+	<select id="queryMemberMoneyByMap" parameterType="map" resultMap="memberMoneyResult">
+	     SELECT * FROM ld_member_money 
+	     <where>
+	     	<if test="uid != null"> uid=#{uid} </if>
+	     	<if test="version != null"> and version=#{version} </if>
+	     </where>
+	</select>
+	
+	<update id="updateMoneyByMap" parameterType="map">
+		UPDATE ld_member_money 
+		<set>
+			<if test="money_freeze != null">  money_freeze=#{money_freeze}, </if> 
+			<if test="money_collect != null"> money_collect=#{money_collect},</if> 
+			<if test="account_money != null"> account_money=#{account_money}, </if> 
+			<if test="back_money != null"> back_money=#{back_money}, </if> 
+			<if test="free_withdraw != null"> free_withdraw=#{free_withdraw}, </if> 
+			<if test="experience_gold != null"> experience_gold=#{experience_gold}, </if> 
+			version = version + 1,
+			update_time = NOW()
+		</set> 
+		WHERE uid=#{uid} and version = #{version}
+	</update>
+	 <insert id="add" parameterType="MemberMoney" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO ld_member_money
+		(uid,money_freeze,money_collect,account_money,back_money,credit_limit,credit_cuse,borrow_vouch_limit,borrow_vouch_cuse,invest_vouch_limit,invest_vouch_cuse,total_score,create_time,update_time,experience_gold,income_money,free_withdraw)
+		VALUE (#{uid},#{moneyFreeze},#{moneyCollect},#{accountMoney},#{backMoney},#{creditLimit},#{creditCuse},#{borrowVouchLimit},#{borrowVouchCuse},#{investVouchLimit},#{investVouchCuse},#{totalScore},#{createTime},#{updateTime},#{experienceGold},#{incomeMoney},#{freeWithdraw})
+	</insert>
+	
+	<update id="update" parameterType="MemberMoney">
+		UPDATE ld_member_money
+		<set>
+			<if test="moneyFreeze != null ">money_freeze = #{moneyFreeze},</if>
+			<if test="moneyCollect != null ">money_collect = #{moneyCollect},</if>
+			<if test="accountMoney != null ">account_money = #{accountMoney},</if>
+			<if test="backMoney != null ">back_money = #{backMoney},</if>
+			<if test="creditLimit != null ">credit_limit = #{creditLimit},</if>
+			<if test="creditCuse != null ">credit_cuse = #{creditCuse},</if>
+			<if test="borrowVouchLimit != null ">borrow_vouch_limit = #{borrowVouchLimit},</if>
+			<if test="borrowVouchCuse != null ">borrow_vouch_cuse = #{borrowVouchCuse},</if>
+			<if test="investVouchLimit != null ">invest_vouch_limit = #{investVouchLimit},</if>
+			<if test="investVouchCuse != null ">invest_vouch_cuse = #{investVouchCuse},</if>
+			<if test="totalScore != null ">total_score = #{totalScore},</if>
+			<if test="createTime != null ">create_time = #{createTime},</if>
+			<if test="updateTime != null ">update_time = #{updateTime},</if>
+			<if test="experienceGold != null ">experience_gold = #{experienceGold},</if>
+			<if test="incomeMoney != null ">income_money = #{incomeMoney},</if>
+			<if test="freeWithdraw != null ">free_withdraw = #{freeWithdraw},</if>
+			<if test="version != null ">version = version + 1 </if>
+		</set>
+		WHERE uid = #{uid} and version = #{version}
+	</update> 
+	
+	<update id="updateTotalScore" >
+	 UPDATE  ld_member_money 
+	 <set>
+	 	 <if test="totalScore != null ">total_score=#{totalScore},</if>
+	 	 <if test="experienceGold != null ">experience_gold=#{experienceGold}</if>
+	 </set>
+	 WHERE uid=#{uid}
+	</update>
+</mapper>

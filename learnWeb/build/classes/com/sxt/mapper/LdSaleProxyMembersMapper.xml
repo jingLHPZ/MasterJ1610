@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.ILdSaleProxyMembers">
+
+	<resultMap type="LdSaleProxyMembers" id="ldSaleProxyMembersMap">
+		<id property="id" column="id" />
+		<result property="merchantUid" column="merchant_uid"/>
+		<result property="realName" column="real_name"/>
+		<result property="mobilePhone" column="mobile_phone"/>
+		<result property="certificateType" column="certificate_type"/>
+		<result property="certificateNo" column="certificate_no"/>
+		<result property="createTime" column="create_time"/>
+		<result property="proxyMerchantNo" column="proxy_merchant_no"/>
+	</resultMap>
+	<insert id="insert" parameterType="LdSaleProxyMembers" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO ld_sale_proxy_members (
+			<trim suffixOverrides=",">
+			<if test="id != null">id, </if>
+			<if test="merchantUid != null">merchant_uid, </if>
+			<if test="realName != null">real_name, </if>
+			<if test="mobilePhone != null">mobile_phone, </if>
+			<if test="certificateType != null">certificate_type, </if>
+			<if test="certificateNo != null">certificate_no, </if>
+			<if test="createTime != null">create_time, </if>
+			<if test="proxyMerchantNo != null">proxy_merchant_no, </if>
+			</trim>
+		) VALUES (
+			<trim suffixOverrides=",">
+			<if test="id != null">#{id}, </if>
+			<if test="merchantUid != null">#{merchantUid}, </if>
+			<if test="realName != null">#{realName}, </if>
+			<if test="mobilePhone != null">#{mobilePhone}, </if>
+			<if test="certificateType != null">#{certificateType}, </if>
+			<if test="certificateNo != null">#{certificateNo}, </if>
+			<if test="createTime != null">#{createTime}, </if>
+			<if test="proxyMerchantNo != null">#{proxyMerchantNo}, </if>
+			</trim>
+		)
+	</insert>
+
+	<update id="update" parameterType="LdSaleProxyMembers">
+		UPDATE ld_sale_proxy_members 
+		<set>
+		<if test="id != null">id = #{id}, </if>
+		<if test="realName != null">real_name = #{realName}, </if>
+		<if test="mobilePhone != null">mobile_phone = #{mobilePhone}, </if>
+		<if test="certificateType != null">certificate_type = #{certificateType}, </if>
+		<if test="certificateNo != null">certificate_no = #{certificateNo}, </if>
+		<if test="createTime != null">create_time = #{createTime}, </if>
+		<if test="proxyMerchantNo != null">proxy_merchant_no = #{proxyMerchantNo}, </if>
+		</set>
+		WHERE id = #{id} 
+	</update>
+
+	<delete id="delete" parameterType="Long">
+		DELETE FROM ld_sale_proxy_members 
+		WHERE id = #{id} 
+	</delete>
+
+	<select id="queryLdSaleProxyMembersList"  parameterType="java.util.Map" resultMap="ldSaleProxyMembersMap">
+		SELECT * FROM ld_sale_proxy_members 
+		WHERE 1=1 
+		<if test="startRow != null and pageSize != null">limit #{startRow},#{pageSize}</if> 
+	</select>
+
+	<select id="queryLdSaleProxyMembersCount"  parameterType="java.util.Map" resultType="Integer">
+		SELECT count(id) FROM ld_sale_proxy_members 
+		WHERE 1=1 
+	</select>
+
+	<select id="queryLdSaleProxyMembersByCondition"  parameterType="LdSaleProxyMembers" resultMap="ldSaleProxyMembersMap">
+		SELECT * FROM ld_sale_proxy_members 
+		WHERE 1=1
+		<if test="merchantUid != null">
+			and merchant_uid = #{merchantUid}
+		</if>
+	</select>
+		
+</mapper>

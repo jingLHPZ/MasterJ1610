@@ -1,0 +1,42 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+body{width: 100%;}
+*{transition: width .2s ease-out;}
+
+/*top&&footer*/
+.login_top .login_bod {width: 720px;}
+.login_bod>div{ background-image: url(../img/icon/logo.png);width: 315px;background-position: -138px;}
+.login_top .login_bod p {padding-left: 20px;margin-left: 20px;}
+body .lg_copy{height: auto;}
+
+/*主体*/
+body .rexy_bod {
+    width: 720px;
+}
+body .regis_tab {
+    width: 97%;
+    margin: 15px 1.5%;
+}
+body .reg_div {
+    width: 97%;
+    margin: 0px 0px 50px 1.5%;
+}
+body .regXy_tit {
+    width: 100%;
+    padding: 20px 2%;
+    box-sizing: border-box;
+}
+body .reg_div p {
+    width: 96%;
+    margin: 20px 2%;
+}
+body .reg_div .regXy_tit p {
+    width: 100%;
+    margin: 0px;
+}
+body .reg_div h2 {
+    width: 96%;
+    margin: 30px 2%;
+}
+
+
+}

@@ -1,0 +1,101 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+*{transition: margin,width .2s ease-out;}
+.right_main .person_tab {
+    margin: 15px 2% 0px;
+    width: 96%;
+}
+.right_main .per_bod ul li {
+    height: auto;
+}
+.right_main .per_bod ul li #seachdistrict{
+	margin-left: 130px;
+}
+.right_main .per_bod ul li label {
+    width: 130px;
+}
+.right_main .per_bod .per_password{
+	width: 94%;
+	margin: 0 3%;
+}
+.right_main .per_bod .per_password p{
+	margin-right: 25px;
+	margin-left: 10px;
+}
+.right_main .per_bod ul li p {
+    width: 100%;
+    padding-left: 130px;
+    box-sizing: border-box;
+}
+.right_main .per_bod .yz_email ul li p{
+	width: auto;
+	padding: 0;
+}
+.right_main .per_bod ul .per_bc_btn a{
+	margin-left: 130px;
+}
+.right_main .per_bod .pic_sc_btn{
+	margin-left: 166px;
+}
+.right_main .pesa_3 ul .per_pass_qd ul{
+	margin-left: 130px;
+}
+.right_main .per_bod .end_pass h3 {
+    width: 430px;
+    margin: 50px 0px 20px;
+}
+
+/*充值密码弹出窗*/
+.right_main .Szzf_password .szp_bod {
+    width: 400px;
+    margin: -190px 0px 0px -200px;
+}
+.right_main .Szzf_password .szp_bod .szp_mmk{
+	margin: 0 65px;
+}
+.right_main .Szzf_password .szp_bod .szp_btn{
+	margin-left: 65px;
+}
+.right_main .Szzf_password .szp_bod .szp_alert{
+	margin-left: 65px;
+}
+
+.right_main .yz_email h1{
+	background-size: 90% auto!important;
+	height: 60px;
+}
+.right_main .yz_email .yz_bod1 li .yz_subm{
+	margin-left: 131px;
+	transition-property: margin;
+}
+.yz_email .yz_bod1 li h4{
+	text-indent: 130px;
+}
+.right_main .per_bod .yz_email ul .email_cg p {
+    width: 245px;
+}
+.right_main .per_bod .yz_email ul .email_href p{
+	width: 96%;
+	margin: 0 2%;
+}
+.right_main .yz_email .yz_bod1:nth-of-type(3) li .yz_subm{
+	margin-left: 210px;
+}
+
+.right_main .per_bod ul .select_cont .select_gt p{
+	padding: 0 5px;
+}
+.right_main .certifie_gat .gt_right{
+	margin-left: 35px;
+}
+.right_main .gat_success ul li p{
+	width: 200px;
+	padding: 0 5px;
+}
+.right_main .gat_success ul li a{
+	width: 200px;
+	box-sizing: border-box;
+}
+
+
+
+}

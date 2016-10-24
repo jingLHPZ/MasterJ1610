@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IEiProductDetail">
+	<!-- <resultMap type="Ei_Product_Detail" id="productdetailresult">
+		<id property="id" column="id"/>
+		<result property="productId" column="productId"/>
+		<result property="borrow_type" column="borrow_type"/>
+		<result property="datetime" column="datetime"/>
+		<result property="add_ip" column="add_ip"/>
+		<result property="borrow_info" column="borrow_info"/>
+		
+		<result property="total" column="total"/>
+		<result property="has_pay" column="has_pay"/>
+		<result property="substitute_money" column="substitute_money"/>
+		<result property="reward_vouch_rate" column="reward_vouch_rate"/>
+		<result property="reward_vouch_money" column="reward_vouch_money"/>
+		
+		<result property="reward_type" column="reward_type"/>
+		<result property="reward_min" column="reward_min"/>
+		<result property="reward_value" column="reward_value"/>
+		<result property="invest_min" column="invest_min"/>
+		<result property="invest_max" column="invest_max"/>
+		
+		<result property="vouch_member" column="vouch_member"/>
+		<result property="password" column="password"/>
+		<result property="is_recommend" column="is_recommend"/>
+		<result property="can_auto" column="can_auto"/>
+		<result property="information_disclosure" column="information_disclosure"/>
+		
+		<result property="vouch_uid" column="vouch_uid"/>
+		<result property="vouch_money" column="vouch_money"/>
+		<result property="auto_max_limit" column="auto_max_limit"/>
+		<result property="risk_control" column="risk_control"/>
+		<result property="update_time" column="update_time"/>
+		
+		<result property="expired_rate" column="expired_rate"/>
+		<result property="reward_total_score" column="reward_total_score"/>
+		<result property="reward_experience_gold" column="reward_experience_gold"/>
+		<result property="reward_way" column="reward_way"/>
+	</resultMap> -->
+
+</mapper>

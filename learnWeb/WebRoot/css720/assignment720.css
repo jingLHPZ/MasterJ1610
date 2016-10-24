@@ -1,0 +1,144 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+
+.toin_body .left_title{
+	width: 100%;
+}
+.toin_body .prod_bod{
+	width: 100%;
+	margin-bottom: 0;
+}
+.toin_body .assig_bod .pay_bod{
+	margin: 15px 2%;
+	width: 96%;
+	height: 230px;
+}
+.toin_body .prod_title h3{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.toin_body .prod_title ul{
+	height: auto;
+	width: 100%;
+	overflow: auto;
+}
+.toin_body .pay_bod .pay_ul1 li{
+	width: 50%;
+	height: 70px;
+	padding-left: 5px;
+	box-sizing: border-box;
+}
+.toin_body .prod_title .pro_li_bor{
+	border: none;
+}
+.toin_body .pay_bod .assign .assi_1{
+	border-right: 1px solid #F0EFEF;;
+}
+.toin_body .prod_title ul li h4{
+	margin: 10px 0;
+}
+.toin_body .prod_title ul .assi_1 h4{
+	position: relative;
+}
+.toin_body .prod_title ul .assi_1 h4:after{
+	content: "(元)";
+	height: 20px;
+	line-height: 20px;
+	position: absolute;
+	left: 60px;
+	top: 0;
+}
+.toin_body .prod_title ul li label {
+    line-height: 20px;
+    font-size: 18px;
+    word-break: break-all;
+    height: auto;
+}
+.toin_body .prod_title ul li span {
+    height: auto;
+    line-height: 20px;
+}
+.toin_body .prod_title ul .assi_1 span {
+    display: none;
+}
+.toin_body .pay_bod .assign .pay_bord label {
+    font-size: 16px;
+}
+.toin_body .assig_bod .assig_lc {
+    margin: 30px 0px 50px;
+	width: 100%;
+}
+.toin_body .assig_bod .assig_jiag {
+	position: relative;
+	width: 100%;
+	height: auto;
+	line-height: 20px;
+	box-sizing: border-box;
+	padding-right: 15px;
+    margin:0;
+}
+.toin_body .assig_bod .assig_lc .assi_jg,
+.toin_body .assig_bod .assig_lc .assi_sxf{
+	display: none;
+}
+.toin_body .pay_lc ul li {
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 120px;
+}
+.toin_body .assig_bod .assig_lc label {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.toin_body .assig_bod .assig_lc .assig_jiag label{
+	position: absolute;
+	left: -15px;
+	top: 0;
+}
+.toin_body .pay_lc ul li h4 {
+    margin-left: 120px;
+}
+.toin_body .pay_lc ul li input{
+	width: 100px;
+}
+.toin_body .assig_bod .assign_jymm a{
+	margin-left: 0;
+}
+.toin_body .assig_bod .assig_lc ul li .pay_qr{
+	width: 50%;
+	margin: 0 5% 0 0;
+	box-sizing: border-box;
+}
+.toin_body .assig_bod .assig_lc ul li .pay_qx{
+	width: 35%;
+	margin-left: 0;
+	box-sizing: border-box;
+}
+/*发起成功*/
+.toin_body .subscg_bod{
+	max-width: 340px;
+	width: 92%;
+}
+.toin_body .subscg_bod .sub_tit {
+    width: 100%;
+}
+.toin_body .subscg_bod .sub_tit p{
+	width: 100%;
+	text-align: center;
+}
+.toin_body .subscg_bod .sub_tzjl_1{
+	width: 46%;
+}
+.toin_body .subscg_bod .sub_tzjl_2{
+	width: 46%;
+}
+.toin_body .subscg_bod .sub_tit p label{
+	margin-left: 0;
+	float: none;
+}
+.toin_body .subscg_bod .sub_tit p b{
+	float: none;
+}
+
+}

@@ -1,0 +1,56 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+	body{width: 100%;}
+	*{transition: width .2s ease-out;}
+	.login_top .login_bod {
+	    width: 970px;
+	}
+	body .log_ys ul{
+		width: 970px;
+	}
+	.log_ys ul li {
+	    margin-left: 2px;
+	}
+}
+
+.operation{
+	color: #7A7A7A;
+	margin: 0!important;
+}
+.operation .chec_login{
+    width: 14px;
+    height: 14px;
+    border: 1px solid #CCC;
+    cursor: pointer;
+    float: left;
+    margin: 2px 5px 0px 0px;
+}
+.operation .chec_login.active{
+	background: #ffffff url(../img/icon/check_d.png) top left no-repeat;
+}
+.operation .cont_r{
+	display: inline-block;
+	float: right;
+}
+.operation .cont_r i{
+	display: inline-block;
+	height: 15px;
+	width: 1px;
+	background-color: #333333;
+	margin: 0 5px;
+	position: relative;
+	top: 3px;
+}
+.operation .cont_r .go_regist{
+	color: #FFAD1E;
+	text-decoration: none;
+}
+.operation .cont_r .go_regist:hover{
+	text-decoration: underline;
+}
+.operation .cont_r .pwd_wj{
+	float: none;
+	text-decoration: none;
+}
+.operation .cont_r .pwd_wj:hover{
+	text-decoration: underline;
+}

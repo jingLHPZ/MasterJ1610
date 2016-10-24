@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxt.inter.ICash" >
+  <resultMap id="incomeRate" type="IncomeRate" >
+    <id column="id" property="id"/>
+    <result column="income_rate" property="incomeRate"/>
+    <result column="avg_income_rate" property="avgIncomeRate"/>
+    <result column="rate_time" property="rateTime" />
+    <result column="update_time" property="updateTime"/>
+    <result column="rate_type" property="rateType"/>
+    <result column="sub_uid" property="subUid"/>
+    <result column="check_uid" property="checkUid"/>
+    <result column="rate_date" property="rateDate"/>
+    <result column="rate_status" property="rateStatus"/>
+    <result column="ext_field" property="extField"/>
+    <result column="ext_field2" property="extField2"/>
+  </resultMap>
+  <select id="select" resultMap="incomeRate" parameterType="java.util.Map">
+    select 
+    id, income_rate,avg_income_rate, rate_time, update_time, rate_type,sub_uid,check_uid,rate_date, rate_status, ext_field, ext_field2
+    from ld_income_rate
+    limit #{startRow},#{pageSize}
+  </select>
+  <select id="selectCount" resultType="java.lang.Integer">
+	select count(1) from ld_income_rate
+  </select>
+  <select id="selectByTime" resultMap="incomeRate" parameterType="java.util.Map">
+  	select id, income_rate, avg_income_rate, rate_time, update_time, rate_type,sub_uid,check_uid,rate_date, rate_status, ext_field, ext_field2
+  	from ld_income_rate 
+  	where 1=1
+	<if test="startTime != null and startTime != ''" > <![CDATA[and rate_time >= #{startTime}]]></if>
+	<if test="endTime != null and endTime != ''" > <![CDATA[and rate_time <= #{endTime}]]></if>
+	<if test="incomeRate != null and incomeRate != ''" > and income_rate = #{incomeRate}</if>
+	limit #{startRow},#{pageSize}
+  </select>
+  <select id="selectByTimeCount" resultType="java.lang.Integer" parameterType="java.util.Map">
+  	select count(1)
+  	from ld_income_rate 
+  	where 1=1
+	<if test="startTime != null and startTime != ''" > <![CDATA[and rate_time >= #{startTime}]]></if>
+	<if test="endTime != null and endTime != ''" > <![CDATA[and rate_time <= #{endTime}]]></if>
+	<if test="incomeRate != null and incomeRate != ''" > and income_rate = #{incomeRate}</if>
+  </select>
+
+	<select id="queryNewIncomeRate" resultMap="incomeRate"
+		parameterType="java.util.Map">
+		select
+		id, income_rate, avg_income_rate, rate_time, update_time, rate_type,sub_uid,check_uid,rate_date, rate_status,
+		ext_field, ext_field2
+		from ld_income_rate where rate_type=0 and rate_status=1
+		and DATE_FORMAT(rate_time,'%Y-%m-%d') &lt; DATE_FORMAT(now(),'%Y-%m-%d')
+		order by rate_time desc limit 1
+	</select>
+
+	<select id="querySevenIncomeRate" resultMap="incomeRate">
+		select id, income_rate, avg_income_rate, rate_time, update_time, rate_type,sub_uid,check_uid,rate_date, rate_status,
+		ext_field, ext_field2
+		from ld_income_rate where rate_type=0 and rate_status=1
+		order by rate_time desc limit 0,7
+	</select>
+</mapper>

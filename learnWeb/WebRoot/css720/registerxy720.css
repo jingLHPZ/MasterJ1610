@@ -1,0 +1,44 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+	
+/*top&&footer*/
+.login_top .login_bod {width: 100%;padding: 0 5%;box-sizing: border-box;}
+.login_top .login_bod>div{ background-image: url(../img/icon/logo.png);width: 115px;background-position: -138px;}
+body .lg_copy{height: auto;}
+
+
+/*主体*/
+body .rexy_bod {
+    width: 100%;
+}
+body .regis_tab a {
+    width: 50%;
+    margin-right: 0;
+    text-align: center;
+}
+body .regis_tab {
+    width: 97%;
+    margin: 15px 1.5%;
+}
+body .reg_div {
+    width: 97%;
+    margin: 0px 0px 50px 1.5%;
+}
+body .regXy_tit {
+    width: 100%;
+    padding: 20px 2%;
+    box-sizing: border-box;
+}
+body .reg_div p {
+    width: 96%;
+    margin: 20px 2%;
+}
+body .reg_div .regXy_tit p {
+    width: 100%;
+    margin: 0px;
+}
+body .reg_div h2 {
+    width: 96%;
+    margin: 30px 2%;
+}
+
+}

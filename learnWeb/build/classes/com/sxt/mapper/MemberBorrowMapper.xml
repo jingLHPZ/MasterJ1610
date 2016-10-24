@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IMemberBorrow">
+	 <resultMap type="MemberBorrow" id="memberborrowresult">
+		<id property="id" column="id"/>
+		<result property="uid" column="uid"/>
+		<result property="telphoneNumber" column="telphone_number"/>
+		<result property="isVouch" column="is_vouch"/>
+		<result property="memo" column="memo"/>
+		<result property="borrowDuration" column="borrow_duration"/>
+		<result property="borrowMoney" column="borrow_money"/>
+		<result property="borrowTitle" column="borrow_title"/>
+		<result property="createTime" column="create_time"/>
+		<result property="province" column="province"/>
+		<result property="city" column="city"/>
+		<result property="borrowStatus" column="borrow_status"/>
+		<result property="realName" column="real_name"/>
+	</resultMap>
+	<select id="fqueryborrowlist" parameterType="int" resultMap="memberborrowresult">
+	SELECT * FROM  ld_member_borrow WHERE  uid=#{uid}
+	</select>
+	<insert id="insertBorrow" parameterType="MemberBorrow">
+	INSERT INTO ld_member_borrow(telphone_number,create_time,borrow_status,real_name)VALUES(#{telphoneNumber},now(),0,#{realName})
+	</insert>
+</mapper>

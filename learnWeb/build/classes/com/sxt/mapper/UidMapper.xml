@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IUid">
+	<resultMap type="Uid" id="uidresult">
+		<result property="uid" column="uid" />
+	</resultMap>
+	<select id="selectUid" resultType="Uid">
+		SELECT uid FROM ld_uid
+	</select>
+	<update id="updateUid" parameterType="int">
+		update ld_uid set
+		uid=#{uid}
+	</update>
+</mapper>

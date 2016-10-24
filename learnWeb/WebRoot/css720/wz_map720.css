@@ -1,0 +1,75 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+body .wz_map {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    background-image: none;
+    background: -webkit-linear-gradient(#FFFFFF, #F8F8F8); 
+	background: -o-linear-gradient(#FFFFFF, #F8F8F8); 
+	background: -moz-linear-gradient(#FFFFFF, #F8F8F8); 
+	background: linear-gradient(#FFFFFF, #F8F8F8);
+}
+body .wz_map:before{
+	content: "网站地图";
+	display: block;
+	height: 50px;
+	width: 100%;
+	line-height: 50px;
+	text-align: center;
+	background-color: #ECECEC;
+	color: #727272;
+	font-size: 16px;
+}
+body .wz_map ul {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+body .wz_map ul li {
+	height: auto;
+    width: 100%;
+    margin: 0;
+    float: none;
+}
+body .wz_map ul li:before{
+	display: block;
+	height: 40px;
+	width: 100%;
+	line-height: 40px;
+	font-size: 16px;
+	color: #727272;
+	background-color: #F3F3F3;
+	text-align: center;
+}
+body .wz_map ul li:nth-of-type(1):before{
+	content: "我要投资";
+}
+body .wz_map ul li:nth-of-type(2):before{
+	content: "新人起航";
+}
+body .wz_map ul li:nth-of-type(3):before{
+	content: "关于我们";
+}
+body .wz_map ul li:nth-of-type(4):before{
+	content: "加入学呗";
+}
+body .wz_map ul li:nth-of-type(3) {
+    margin: 0!important;
+}
+body .wz_map ul li:nth-of-type(4) {
+    margin: 0!important;
+}
+body .wz_map ul li a {
+	height: 40px;
+	width: 100%;
+	line-height: 40px;
+    margin: 0;
+    padding-left: 5%;
+    box-sizing: border-box;
+}
+body .wz_map ul li a:hover{
+	background-color: #ffffff;
+}
+
+
+}

@@ -1,0 +1,54 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+
+.toin_body .left_title,
+.toin_body .prod_bod{
+	width: 720px;
+}
+.toin_body .pay_bod {
+    width: 700px;
+    height: auto;
+    box-sizing: border-box;
+}
+.toin_body .prod_title{
+	margin: 10px;
+}
+.toin_body .pay_bod .pay_ul1 {
+    width: 100%;
+}
+.toin_body .pay_bod .pay_ul1 li {
+    padding-left: 0;
+	width: 50%;
+	box-sizing: border-box;
+}
+.toin_body .pay_bod .pay_ul1 .pay_qx{
+	border-right: none;
+}
+.toin_body .pay_bod .pro_ul {
+	height: auto;
+    width: 100%;
+}
+.toin_body .pay_bod .pro_ul .pro_li_jd {
+    width: 49%;
+}
+.toin_body .prod_title ul li .pro_tzye {
+    text-indent: 22%;
+    padding: 0;
+}
+.toin_body .prod_title ul li .pro_jdt {
+    margin: 10px 5px 0px 22%;
+}
+.toin_body .pay_bod .pro_ul li {
+	height: auto;
+	padding-top: 0;
+    width: 49%;
+}
+.toin_body .prod_title ul li p {
+    text-indent: 22%;
+}
+.toin_body .pay_lc {
+    width: 535px;
+    margin: 30px 0px 50px 175px;
+    transition-property: width, margin;
+}
+
+}

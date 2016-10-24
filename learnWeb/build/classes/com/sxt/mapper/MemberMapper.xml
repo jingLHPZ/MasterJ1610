@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IMembers">
+	<resultMap type="Members" id="membersresult">
+		<id property="id" column="id" />
+		<result property="userName" column="user_name" />
+		<result property="userPass" column="user_pass" />
+		<result property="userType" column="user_type" />
+		<result property="payPass" column="pay_pass" />
+		<result property="userEmail" column="user_email" />
+		<result property="userPhone" column="user_phone" />
+		<result property="regTime" column="reg_time" />
+		<result property="isRealName" column="is_real_name" />
+		<result property="isAddCard" column="is_addCard" />
+		<result property="isVip" column="is_vip"/>
+		<result property="status" column="status"/>
+		<result property="uid" column="uid" />
+		<result property="recommender" column="recommender"/>
+		<result property="promotionperson" column="promotionperson"/>
+		<result property="errorCount" column="error_count"/>
+		<result property="jobNumber" column="jobNumber"/>
+		<result property="investorNums" column="investorNums"/>
+		<association property="info" javaType="MemberInfo" resultMap="infoMap" />
+		<association property="contact" javaType="LdMemberContactInfo" resultMap="contactMap" />
+	</resultMap>
+	<resultMap type="MemberInfo" id="infoMap">
+		<result property="address"   column="address"/>
+		<result property="province"   column="province"/>
+		<result property="city"   column="city"/>
+		<result property="area"   column="area"/>
+		<result property="qq"   column="qq"/>
+		<result property="headshotUrl"   column="headshot_url"/>
+		<result property="salesUid"   column="sales_uid"/>
+		<result property="extField"   column="ext_field"/>
+	</resultMap>
+	<resultMap type="LdMemberContactInfo" id="contactMap">
+		<result property="contact1"   column="contact1"/>
+		<result property="contact1Re"   column="contact1_re"/>
+		<result property="contact1Tel"   column="contact1_tel"/>
+	</resultMap>
+	<select id="fquerybyphone" parameterType="String" resultMap="membersresult">
+		SELECT m.*,i.sales_uid,r.jobNumber as jobNumber FROM ld_members  m 
+		left join ld_member_info i on m.uid=i.uid 
+		left join ld_member_sale_relation r on m.uid=r.uid
+		WHERE user_phone=#{user_phone}
+	</select>
+	<insert id="addMembers" parameterType="Members">
+		INSERT INTO
+		ld_members(id,user_name,user_pass,user_type,pay_pass,user_email,user_phone,reg_time,is_real_name,is_addCard,is_vip,status,uid,recommender,promotionperson)
+		VALUES(#{id},#{userName},#{userPass},#{userType},#{payPass},#{userEmail},#{userPhone},#{regTime},#{isRealName},#{isAddCard},#{isVip},#{status},#{uid},#{recommender},#{promotionperson});
+	</insert>
+	<select id="flogin" parameterType="Members" resultMap="membersresult">
+		SELECT * FROM ld_members WHERE user_phone=#{userPhone} AND user_pass=#{userPass}
+	</select>
+	<select id="fQueryNameByUid" parameterType="int" resultMap="membersresult">
+		SELECT * FROM ld_members WHERE uid=#{uid}
+	</select>
+	<select id="login" parameterType="String" resultMap="membersresult">
+		select *
+		from ld_members where user_name=#{username}
+	</select>
+	<select id="selectMember" parameterType="String" resultMap="membersresult">
+		select l.*,i.headshot_url
+		from ld_members l left join ld_member_info i on l.uid=i.uid
+		where (l.user_phone=#{username} or l.user_name=#{username}) 
+	</select>
+	<select id="fQueryRnByState" resultType="String" parameterType="int">
+    	SELECT  is_real_name FROM  ld_members  where uid=#{uid}
+	</select>
+	<select id="fquerycardbystate" resultType="String" parameterType="int">
+	SELECT  is_addCard FROM  ld_members  where uid=#{uid}
+	</select>
+	<select id="validatePass" resultMap="membersresult" parameterType="Map">
+		SELECT  * FROM  ld_members  where uid=#{uid}
+		<if test="userPass!=null and userPass!=''">
+			and user_pass=#{userPass}
+		</if>
+		<if test="payPass!=null and payPass!=''">
+			and pay_pass=#{payPass}
+		</if>
+	</select>
+	<update id="fupdatecard" parameterType="int">
+	UPDATE ld_members SET is_addCard=1 WHERE uid=#{uid}
+	</update>
+	<select id="getMembers" parameterType="int" resultMap="membersresult">
+		SELECT l.*,i.qq,i.headshot_url,i.address,i.province,i.city,i.area,i.ext_field,c.contact1,c.contact1_tel,c.contact1_re FROM ld_members l 
+		left join ld_member_info i on l.uid=i.uid
+		left join ld_member_contact_info c on l.uid=c.uid
+		WHERE l.uid=#{uid}
+	</select>
+	<update id="update" parameterType="Members">
+		UPDATE ld_members
+		<set>
+			<if test="userName != null ">user_name = #{userName},</if>
+			<if test="userEmail != null ">user_email = #{userEmail},</if>
+			<if test="userPass != null ">user_pass = #{userPass},</if>
+			<if test="payPass != null ">pay_pass = #{payPass},</if>
+			<if test="isAddCard != null">is_addCard = #{isAddCard}</if>
+		</set>
+		WHERE uid = #{uid}
+	</update> 
+	<update id="updatePassword" parameterType="Members">
+		UPDATE ld_members set user_pass=#{userPass} WHERE user_phone = #{userPhone}
+	</update> 
+	<update id="updateIsRealName" parameterType="int">
+	UPDATE ld_members SET is_real_name=1 WHERE uid=#{uid}
+	</update>
+	<update id="updateErrorCount" parameterType="int">
+	UPDATE ld_members SET error_count=error_count+1 WHERE uid=#{uid}
+	</update>
+	<select id="queryJobNumber" parameterType="Map" resultMap="membersresult">
+		SELECT m.*,(select count(*) from ld_borrow_investor where investor_uid=m.uid and product_type!=2) as investorNums
+	    FROM ld_members m
+		inner join ld_member_info i on m.uid=i.uid
+		WHERE i.sales_uid=#{salesUid}
+		limit #{startRow},#{pageSize}
+	</select>
+	<select id="queryJobNumberCount"  parameterType="Map" resultType="Integer">
+		SELECT count(*) FROM ld_members m
+		inner join ld_member_info i on m.uid=i.uid
+		WHERE i.sales_uid=#{salesUid}
+	</select>
+	<update id="updateUserName" >
+		UPDATE ld_members set user_name=#{userName} WHERE uid = #{uid}
+	</update> 
+</mapper>

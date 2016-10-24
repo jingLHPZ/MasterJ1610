@@ -1,0 +1,45 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+
+.toin_body .left_title{
+	width: 720px;
+}
+.toin_body .prod_bod{
+	width: 720px;
+}
+.toin_body .assig_bod .pay_bod{
+	margin: 2%;
+	width: 96%;
+	height: 230px;
+}
+.toin_body .prod_title ul{
+	height: auto;
+	width: 100%;
+	overflow: auto;
+}
+.toin_body .pay_bod .pay_ul1 li{
+	width: 50%;
+	height: 70px;
+	box-sizing: border-box;
+}
+.toin_body .prod_title .pro_li_bor{
+	border: none;
+}
+.toin_body .pay_bod .assign .assi_1{
+	border-right: 1px solid #F0EFEF;;
+}
+.toin_body .prod_title ul li h4{
+	margin-top: 10px;
+}
+.toin_body .pay_bod .assign .pay_bord label {
+    font-size: 16px;
+}
+.toin_body .assig_bod .assig_lc {
+    width: 580px;
+    margin: 30px 0px 50px 100px;
+}
+.toin_body .assig_bod .assig_jiag {
+    padding: 0px;
+    margin-left: 40px;
+}
+
+}

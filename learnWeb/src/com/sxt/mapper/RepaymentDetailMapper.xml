@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IRepaymentDetail">
+	 <resultMap type="RepaymentDetail" id="repaymentplanresult">
+		<id property="id" column="id"/>
+		<result property="repaymentTime" column="repayment_time"/>
+		<result property="productId" column="product_id"/>
+		<result property="systemTraceNo" column="system_trace_no"/>
+		<result property="investorUid" column="investor_uid"/>
+		<result property="borrowUid" column="borrow_uid"/>
+		<result property="capital" column="capital"/>
+		<result property="interest" column="interest"/>
+		<result property="interestFee" column="interest_fee"/>
+		<result property="status" column="status"/>
+		<result property="receiveInterest" column="receive_interest"/>
+		<result property="receiveCapital" column="receive_capital"/>
+		<result property="sortOrder" column="sort_order"/>
+		<result property="total" column="total"/>
+		<result property="deadline" column="deadline"/>
+		<result property="expiredMoney" column="expired_money"/>
+		<result property="expiredDays" column="expired_days"/>
+		<result property="callFee" column="call_fee"/>
+		<result property="substituteMoney" column="substitute_money"/>
+		<result property="substituteTime" column="substitute_time"/>
+		<result property="returnType" column="return_type"/>
+		<result property="realReturnDate" column="real_return_date"/>
+	</resultMap>
+	<resultMap type="com.sxt.inter.dto.RepayDetailDto" id="RepayDetailRecord">
+		<result property="productName" column="product_Name"/>
+		<result property="repaymentTime" column="repayment_time"/>
+		<result property="capital" column="capital"/>
+		<result property="interest" column="interest"/>
+		<result property="sortOrder" column="sort_order"/>
+		<result property="total" column="total"/>
+		<result property="investorCapital" column="investor_capital"/>
+		<result property="productType" column="product_type"/>
+		<result property="productId" column="product_id"/>
+		<result property="realReturnDate" column="real_return_date"/>
+		<result property="systemTraceNo" column="system_trace_no"/>
+	</resultMap>
+	<select id="fRepayPlan" parameterType="int" resultType="int" >
+		select  datediff(MAX(repayment_time),now()) FROM ld_repayement_plan WHERE investor_uid=#{investor_uid} GROUP BY investor_uid 
+	</select>
+	<insert id="finsertrepaydetail" parameterType="RepaymentDetail">
+		INSERT INTO ld_repayement_detail(repayment_time,product_id,system_trace_no,investor_uid,borrow_uid,capital,interest,status,sort_order,total,deadline,expired_money,expired_days,call_fee,substitute_money,substitute_time,return_type,real_return_date)
+    	VALUES(#{repaymentTime},#{productId},#{systemTraceNo},#{investorUid},#{borrowUid},#{capital},#{interest},#{status},#{sortOrder},#{total},#{deadline},#{expiredMoney},#{expiredDays},#{callFee},#{substituteMoney},#{substituteTime},#{returnType},#{realReturnDate})
+	</insert>
+	
+	<insert id="insertRepaymentDetailBatch" useGeneratedKeys="true" parameterType="java.util.List">  
+	    <selectKey resultType="long" keyProperty="id" order="AFTER">  
+	        SELECT LAST_INSERT_ID()  
+	    </selectKey>  
+	    INSERT INTO ld_repayement_detail(repayment_time,product_id,system_trace_no,investor_uid,borrow_uid,capital,interest,status,sort_order,total,deadline,expired_money,expired_days,call_fee,substitute_money,substitute_time,return_type,real_return_date) 
+	    VALUES  
+	    <foreach collection="list" item="item" index="index" separator="," >  
+	        (#{item.repaymentTime},#{item.productId},#{item.systemTraceNo},#{item.investorUid},#{item.borrowUid},#{item.capital},#{item.interest},#{item.status},#{item.sortOrder},#{item.total},#{item.deadline},#{item.expiredMoney},#{item.expiredDays},#{item.callFee},#{item.substituteMoney},#{item.substituteTime},#{item.returnType},#{item.realReturnDate})
+	    </foreach>  
+	</insert>  
+	
+	
+	<select id="fqueryprouid" parameterType="map" resultType="Date">
+		SELECT  MIN(DATEDIFF(repayment_time,NOW())) as mintime FROM ld_repayement_detail WHERE product_id=#{product_id} AND investor_uid=#{investor_uid}
+	</select>
+	<select id="fQueryRepayMoneyState1" parameterType="map" resultType="BigDecimal">
+		SELECT SUM(interest) FROM ld_repayement_detail where product_id in  
+		<foreach item="item" index="index" collection="proidlist" open="(" separator="," close=")">  
+			  #{item}  
+		</foreach>
+        and investor_uid =#{uid} AND status=#{status};
+	</select>
+
+	<!-- 有可能是借款人有可能是投资人 -->
+    <select id="fQueryMoneyInterestBybid" parameterType="int" resultType="map">
+		SELECT SUM(capital) investor_capital,SUM(interest) investor_interest FROM ld_repayement_detail 
+		WHERE investor_uid=#{investor_uid} AND status=1
+	</select>  
+	
+	
+	<update id="updateRepaymentDetail" parameterType="RepaymentDetail">
+		update ld_repayement_detail 
+		<set> 
+	          <if test="repaymentTime != null">
+	              repayment_time = #{repaymentTime},
+	          </if> 
+	          <if test="interest != null">
+	              interest = #{interest},
+	          </if> 
+	          <if test="capital != null">
+	              capital = #{capital}
+	          </if> 
+         </set>
+           <where>
+               <if test="systemTraceNo != null">
+                   system_trace_no = #{systemTraceNo}
+               </if>
+           </where>
+	</update>
+	<select id="queryRepaymentPlan" parameterType="String" resultMap="repaymentplanresult">
+		SELECT * FROM ld_repayement_detail WHERE product_id=#{productid}
+	</select>
+	<select id="queryMaxRepayTime" parameterType="String" resultType="Date">
+		SELECT MAX(repayment_time)  FROM ld_repayement_detail WHERE product_id=#{productid}
+	</select>
+	<select id="queryRepaymentPlanByMap" parameterType="java.util.Map" resultMap="repaymentplanresult">
+		SELECT * FROM ld_repayement_detail WHERE 1=1
+		<if test="productId != null">
+			and product_id = #{productId}
+		</if>
+		<if test="sortOrder != null">
+            and sort_order = #{sortOrder}
+        </if>
+        <if test="investorUid">
+        	and investor_uid = #{investorUid}
+        </if>
+        <if test="systemTraceNo">
+        	and system_trace_no = #{systemTraceNo}
+        </if>
+	</select>
+	
+	
+	<update id="updateRepaymentDetailByMap"  parameterType="java.util.Map">
+    	update ld_repayement_detail set status=#{status},real_return_date = NOW() where id in  
+		 <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">  
+		  #{item}  
+		 </foreach> 
+    </update>
+	<select id="queryRepaymentDetailByuid" parameterType="map" resultMap="RepayDetailRecord">
+		SELECT
+			r.*
+			FROM(
+				SELECT 
+				lbi.investor_capital,
+				lbi.product_id,
+				lbi.product_type,
+				rd.sort_order,total,
+				rd.repayment_time,
+				rd.real_return_date,
+				rd.capital,
+				rd.interest,
+				rd.system_trace_no
+				FROM ld_repayement_detail rd 
+				LEFT JOIN  ld_borrow_investor lbi ON rd.system_trace_no=lbi.system_trace_no 
+				WHERE rd.investor_uid=#{uid} AND rd.status=#{status}
+				) r 
+				<if test="status != null and status == 1"> ORDER BY r.repayment_time asc</if>
+				<if test="status != null and status == 2"> ORDER BY r.real_return_date desc</if>
+				  LIMIT #{startRow},#{pageSize}
+				
+	</select>
+	<select id="queryCountRepaymentDetailByuid" parameterType="java.util.Map" resultType="Integer">
+		SELECT
+			count(1)
+			FROM(
+				SELECT 
+				lbi.investor_capital,
+				lbi.product_id,
+				lbi.product_type,
+				rd.sort_order,total,
+				rd.repayment_time,
+				rd.capital,
+				rd.interest
+				FROM ld_repayement_detail rd 
+				LEFT JOIN  ld_borrow_investor lbi ON rd.system_trace_no=lbi.system_trace_no 
+				WHERE rd.investor_uid=#{uid} AND rd.status=#{status}
+				) r 
+				  
+	</select>
+	<select id="queryRepaySumMoney" parameterType="java.util.Map" resultType="java.util.Map">
+	SELECT SUM(capital)  rcapital,SUM(interest)  rinterest FROM ld_repayement_detail WHERE investor_uid=#{uid} AND `status`=#{status}
+	</select>
+	<select id="queryExpectIncome" parameterType="map" resultType="BigDecimal">
+	SELECT SUM(interest) FROM ld_repayement_detail lrd LEFT JOIN ld_borrow_investor lbi ON lrd.system_trace_no=lbi.system_trace_no 
+	WHERE  lrd.investor_uid=#{uid} AND lrd.product_id=#{productId} AND lrd.system_trace_no=#{systemTraceNo}
+	</select>
+	<select id="queryTotalCount" parameterType="map" resultType="Integer">
+	SELECT total FROM ld_repayement_detail 
+	WHERE investor_uid=#{uid} AND product_id=#{productId} AND system_trace_no=#{systemTraceNo} limit 0,1
+	</select>
+	
+	<select id="queryAlDetailByUid" parameterType="map" resultMap="RepayDetailRecord">
+		SELECT
+			r.*
+			FROM(
+				SELECT 
+				lbi.investor_capital,
+				lbi.product_id,
+				lbi.product_type,
+				rd.sort_order,total,
+				rd.repayment_time,
+				rd.real_return_date,
+				rd.capital,
+				rd.interest,
+				rd.system_trace_no
+				FROM ld_repayement_detail rd 
+				LEFT JOIN  ld_borrow_investor lbi ON rd.system_trace_no=lbi.system_trace_no 
+				WHERE rd.investor_uid=#{uid} AND rd.status in(2,4)
+				) r 
+				ORDER BY r.real_return_date desc
+				  LIMIT #{startRow},#{pageSize}
+	</select>
+	<select id="queryAlDetailCountByUid" parameterType="java.util.Map" resultType="Integer">
+		SELECT
+			count(1)
+			FROM(
+				SELECT 
+				lbi.investor_capital,
+				lbi.product_id,
+				lbi.product_type,
+				rd.sort_order,total,
+				rd.repayment_time,
+				rd.capital,
+				rd.interest
+				FROM ld_repayement_detail rd 
+				LEFT JOIN  ld_borrow_investor lbi ON rd.system_trace_no=lbi.system_trace_no 
+				WHERE rd.investor_uid=#{uid} AND rd.status in (2,4)
+				) r 
+	</select>
+	</mapper>

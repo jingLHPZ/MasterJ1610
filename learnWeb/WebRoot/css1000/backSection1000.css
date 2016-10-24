@@ -1,0 +1,31 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+
+/*container*/
+body .content_body{
+	width: 970px;
+}
+/*右侧内容*/
+.content_body .right_main {
+    width: 775px;
+}
+.right_main .bonda_title{
+    background-position: 385px 0px;
+    transition: background-position .2s ease-out;
+}
+.right_main .borwD_bod{
+	width: 100%;
+	margin: 0;
+	padding: 0 15px;
+	box-sizing: border-box;
+}
+.right_main .borwD_bod .borwd_li_div{
+	width: 100%;
+}
+.right_main .borwd_li_div table {
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+}
+
+
+}

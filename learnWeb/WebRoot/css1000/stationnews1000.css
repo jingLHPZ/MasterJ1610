@@ -1,0 +1,43 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+
+*{transition-property: width,margin;}
+.right_main .znxx_lx {
+    width: 96%;
+    margin: 20px 2%;
+}
+.right_main .znxx_lx p {
+    margin-right: 36px;
+}
+.right_main .znxx_tab {
+    width: 96%;
+    margin: 0px 2%;
+    box-sizing: content-box;
+}
+.right_main .stati_pg {
+    width: 96%;
+    margin-left: 2%;
+}
+.right_main .stati_lb_title {
+    width: 96%;
+    margin: 20px 2%;
+}
+.right_main .stati_tzsz .tzsz_tab {
+    width: 96%;
+    margin: 30px 2% 20px;
+}
+.right_main .stati_tzsz .tzsz_tab td div {
+    margin-left: 85px;
+}
+.right_main .stati_xx_bod {
+    width: 96%;
+    margin: 20px 2%;
+    padding: 30px 30px 20px;
+    box-sizing: border-box;
+}
+.right_main .znxx_tab td {
+    line-height: 20px;
+    text-align: left;
+}
+
+
+}

@@ -1,0 +1,22 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+body .banner{
+	height: 255px;
+	background-size: auto 100%;
+	min-width: 0;
+	width: 100%;
+}
+body .raise_tab {
+    min-width: 0;
+}
+body .raise_href{
+	width: 92%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    margin: 50px auto;
+}
+body .raise_tab img{
+	width: 94%;
+}
+
+}

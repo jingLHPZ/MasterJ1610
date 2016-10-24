@@ -1,0 +1,18 @@
+.backse_title{ width: 875px; height: 30px; line-height: 30px; margin: 20px 30px 10px 30px; font-size: 16px; color: #727272; font-weight: bold;}
+.backse_mx{ width: 850px; height: auto; overflow: hidden; margin: 0 0 10px 30px;}
+.backse_mx li{ height: 60px; float: left; width: auto; overflow: hidden; background: #ecf8fe; padding: 10px 30px;}
+.backse_mx li h4{width: auto; height: 30px; line-height: 30px; text-align: center; font-size: 16px; color: #1272a2;}
+.backse_mx li h5{width: 20px; height: 60px; line-height: 60px; text-align: center; font-size: 30px; color: #1272a2;}
+.backse_mx li label{ width: 100%; height: 30px; line-height: 30px; text-align: center; display: inline-block; color: #0D0D0D; font-weight: bold;}
+.backse_mx .backse_pj{ margin-left: 20px; padding: 10px 60px;}
+
+.backse_table{ width: 100%;}
+.backse_table th{ height: 40px; line-height: 40px; text-align: center; background: #f8f8f8; color: #727272;}
+.backse_table td{ height: 40px; line-height: 40px; text-align: center; color: #0d0d0d;}
+.backse_table tr:hover{ background: #fffbf3;}
+.backse_table td a{ color: #37b9fc;}
+.backse_table td a:hover{ text-decoration: underline;}
+
+.toin_pg{ width: 100%; height: 30px; float: right; margin: 20px 0; text-align:center;}
+
+

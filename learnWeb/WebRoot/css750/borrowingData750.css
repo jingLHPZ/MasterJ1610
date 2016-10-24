@@ -1,0 +1,127 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+
+.right_main .borwd_li_div table tr th:nth-of-type(5),
+.right_main .borwd_li_div table tr td:nth-of-type(5){
+	display: none;
+}
+.right_main .bonda_title{
+	background-image: none;
+    height: auto;
+    border: medium none;
+}
+.right_main .bonda_title h2 {
+    margin: 0px 0px 11px 3%;
+    width: auto;
+}
+.right_main .bonda_title p {
+    width: auto;
+    float: right;
+    margin-right: 3%;
+}
+.right_main .bonda_title div {
+    float: left;
+    width: 100%;
+    background-color: rgb(253, 244, 235);
+    border-top: none;
+}
+.right_main .bonda_title div a {
+    width: 50%;
+    margin: 0px;
+    text-align: center;
+}
+.right_main .borwD_bod {
+    width: 96%;
+    margin: 0px 2%;
+}
+.right_main .borwd_ulli {
+    width: 100%;
+    height: auto;
+}
+.right_main .borwd_ulli li {
+    width: 25%;
+    padding: 0px 2%;
+    box-sizing: border-box;
+}
+.right_main .borwd_ulli li:nth-of-type(2),
+.right_main .borwd_ulli li:nth-of-type(4),
+.right_main .borwd_ulli li:nth-of-type(6){
+	display: none;
+}
+.right_main .borwd_li_div{
+	width: 100%;
+	box-sizing: border-box;
+}
+.right_main .borwd_li_div .boli_title {
+	height: auto;
+    width: 96%;
+    margin: 0px 2%;
+}
+.right_main .borwd_li_div .boli_title a{
+	margin: 0 5px;
+}
+.right_main .borwd_li_div .boli_title p {
+    width: auto;
+    float: left;
+    margin-top: 5px;
+}
+.right_main .borwd_li_div table {
+    width: 96%;
+    margin: 20px 2%;
+}
+.right_main .borwd_li_div table tr td{
+    line-height: 20px;
+    padding: 5px;
+}
+.right_main .borwd_li_div table td .bwD_ah{
+	margin-left: 0;
+}
+
+/*弹窗*/
+.right_main .borwD_bod .in_ckxq_bod {
+    width: 700px;
+    margin: -250px 0px 0px -350px;
+}
+.right_main .borwD_bod .in_ckxq_title {
+    width: 96%;
+    margin: 10px 2% 20px;
+} 
+.right_main .borwD_bod .in_ckxq_font {
+    width: 96%;
+    margin: 0 2%;
+}
+.right_main .borwD_bod .in_ckxq_font li {
+    width: 80px;
+    padding-left: 10px;
+}
+.right_main .borwD_bod .in_ckxq_font li:nth-of-type(1),
+.right_main .borwD_bod .in_ckxq_font li:nth-of-type(4){
+	width: 170px;
+}
+.right_main .borwD_bod .in_hkjh_title {
+    width: 96%;
+    margin: 30px 2% 5px;
+}
+.right_main .borwD_bod .in_tab_t {
+    width: 96%;
+    margin: 0 2%;
+}
+.right_main .borwD_bod .in_hkjh_tab{
+    width: 96%;
+    margin: 0 2%;
+}
+.right_main .borwD_bod .in_hkjh_tab table{
+	width: 100%;
+}
+
+/*还款弹窗*/
+.right_main .bwD_hk_qr .hkqr_bod{
+	position: fixed;
+	margin: 0;
+	left: 50%;
+	top: 225px;
+	margin-left: -250px;
+}
+
+
+
+}

@@ -1,0 +1,15 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+
+.about_right_m .partn_div {
+    width: 94%;
+    margin: 35px 3% 0;
+}
+.about_right_m .partn_div h3{
+	margin-right: 0;
+}
+.about_right_m .partn_div ul {
+    width: 91%;
+    margin: 20px 0px 0px 9%;
+}
+
+}

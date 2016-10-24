@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxt.inter.ICash" >
+  <resultMap id="cashProduct" type="CashProduct" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="money_limit" property="moneyLimit" jdbcType="DECIMAL" />
+    <result column="collect_status" property="collectStatus" jdbcType="INTEGER" />
+    <result column="borrow_phone" property="borrowPhone" jdbcType="VARCHAR" />
+    <result column="borrow_uid" property="borrowUid" jdbcType="INTEGER" />
+    <result column="invest_max" property="investMax" jdbcType="DECIMAL" />
+    <result column="invest_min" property="investMin" jdbcType="DECIMAL" />
+    <result column="increase_progressively" property="increaseProgressively" jdbcType="DECIMAL" />
+    <result column="product_contract" property="productContract" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="selectCashProduct" resultMap="cashProduct" >
+    select 
+    id, money_limit, collect_status, borrow_phone, borrow_uid, invest_max, invest_min, 
+    increase_progressively, product_contract, password
+    from ld_cash_product
+  </select>
+</mapper>

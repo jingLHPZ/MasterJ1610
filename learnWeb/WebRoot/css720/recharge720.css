@@ -1,0 +1,254 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+
+body .content_body{
+	width: 100%;
+}
+.content_body .right_main{
+	width: 100%;
+	padding: 0 10px;
+	box-sizing: border-box;
+	margin-top: 10px;
+}
+.right_main .bonda_title{
+	background-image: none;
+}
+.right_main .bonda_title h2{
+	width: 30%;
+	margin-left: 0;
+	text-align: left;
+	text-indent: 5px;
+}
+.right_main .bonda_title div{
+	width: 70%;
+	border-top-color: transparent;
+}
+.right_main .bonda_title div a{
+	width: 50%;
+	margin: 0;
+	text-align: center;
+}
+.right_main .bonda_title div .bonda_ti{
+	background-color: #FCA703;
+	color: #ffffff;
+}
+.right_main .rech_cz {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.right_main .rech_cz_li1 {
+    margin: 20px 0px 10px;
+    width: 100%;
+    height: auto;
+}
+.right_main .rech_cz_li1 input {
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+.right_main .rech_cz_li1 a {
+    width: 222px;
+    margin-left: 0px;
+    width: 100%;
+}
+.right_main .rech_cz_li1 p {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+}
+.right_main .rech_cz_li2 {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+.right_main .rech_cz_li2 p {
+    width: 100%;
+    margin: 0;
+}
+.right_main .rech_fs{
+	margin-top: 30px;
+	width: 100%;
+}
+.right_main .rech_fs ul{
+	margin-left: 0;	
+	width: 100%;
+}
+.right_main .rech_fs ul li{
+	float: none;
+	margin: 0 auto;
+	margin-bottom: 30px;
+}
+.right_main .rech_fs .rech_cz_btn {
+    display: block;
+    margin: 50px auto 0px;
+    float: none;
+}
+.right_main .rech_ts{
+	margin-top: 60px;
+}
+.right_main .rech_ts h3 {
+    margin-left: 5%;
+}
+.right_main .rech_ts p {
+    margin: 10px 0px 0px 5%;
+}
+
+/*线下充值*/
+.right_main .recha_tjcz {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 20px;
+    padding-left: 1%;
+    box-sizing: border-box;
+}
+.right_main .recha_list {
+    width: 96%;
+    margin: 0px 2%;
+    box-sizing: border-box;
+}
+.right_main .recha_list table{
+	width: 96%;
+	min-width: 590px;
+	margin: 10px 2%;
+}
+/*线下充值*/
+.right_main .recha_add .recAdd_tit {
+    width: 100%;
+    height: auto;
+    padding: 0px 0px 20px 4%;
+    margin: 0;
+    box-sizing: border-box;
+}
+.right_main .arcAdd_hkf {
+    width: 90%;
+    box-sizing: border-box;
+    margin: 0px auto;
+    float: none;
+    background-image: none;
+    padding: 0;
+}
+.right_main .arcAdd_hkf .hkf_bord {
+    width: 100%;
+    border-width: 1px 1px 1px 1px;
+	border-style: solid solid solid solid;
+	border-color: #F9A130 #F9A130 #F9A130 #F9A130;
+	box-sizing: border-box;
+}
+.right_main .arcAdd_hkf .hkf_bord ul li label {
+    width: 30%;
+}
+.right_main .arcAdd_hkf .hkf_bord ul li input {
+    width: 50%;
+    margin-left: 3%;
+}
+.right_main .arcAdd_hkf .hkf_bord ul li p {
+    width: 67%;
+}
+.right_main .arcAdd_hkf .hkf_bord .rech_file {
+    margin-left: 3%;
+    width: 23%;
+}
+.right_main .arcAdd_hkf .hkf_bord h3 {
+    margin-left: 3%;
+    width: 32%;
+}
+.right_main .arcAdd_skf {
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 20px;
+    float: none;
+    box-sizing: border-box;
+}
+.right_main .arcAdd_skf .skf_bord {
+	height: 212px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.right_main .arcAdd_skf .skf_bord ul{
+	height: 210px;
+}
+.right_main .arcAdd_skf .skf_bord ul li label {
+    width: 26%;
+    height: auto;
+}
+.right_main .arcAdd_skf .skf_bord ul li p {
+    margin-left: 2%;
+    width: 70%;
+    height: auto;
+}
+.right_main .arcAdd_skf .skf_bord ul li {
+    width: 100%;
+    line-height: 20px;
+    margin: 25px 0px 0px;
+    height: auto;
+}
+.right_main .arcAdd_skf .skf_bord div{
+	display: none;
+}
+.right_main .arcAdd_sub {
+    width: 100%;
+    float: left;
+    margin: 0;
+    padding-top: 35px;
+    margin-top: 35px;
+}
+.right_main .arcAdd_sub input {
+    width: 30%;
+}
+.right_main .arcAdd_sub .arc_sub_1 {
+    margin: 0px 0px 0px 15%;
+}
+.right_main .arcAdd_sub .arc_sub_2 {
+    float: right;
+    margin-right: 15%;
+}
+
+/*弹出窗*/
+.right_main .rech_true .rech_tr_bod {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    top: initial;
+    margin: 0;
+}
+.right_main .rech_true .rech_tr_bod .rech_title {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 0 36px 0 20px;
+    position: relative;
+}
+.right_main .rech_true .rech_tr_bod .rech_title a {
+	height: 32px;
+    position: absolute;
+    right: 2px;
+    top: -5px;
+}
+.right_main .rech_true .rech_tr_bod a{
+	height: auto;
+}
+
+.right_main .rech_cz{
+	margin: 0;
+}
+.right_main .rech_cz .item i {
+    width: 170px;
+    height: 80px;
+    background-size: 80px auto;
+    background-size: 93px auto;
+    background-position: center;
+}
+.right_main .rech_cz .item i span {
+    margin: 44px 0 0 134px;
+}
+.right_main .rech_cz .item{
+	padding-left: 95px;
+}
+.right_main .rech_cz .item label{
+	width: 90px;
+}
+
+
+
+}

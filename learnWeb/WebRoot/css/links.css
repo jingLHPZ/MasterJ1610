@@ -1,0 +1,27 @@
+.links_font{ width: 875px; height: auto; overflow: hidden; padding: 20px 30px; border-bottom: 1px solid #eee; color: #0d0d0d;}
+.links_font h3{ width: 100%; height: 30px; line-height: 30px; font-size: 16px; font-weight: bold; margin-bottom: 10px; float: left;}
+.links_font p{ width: 100%; height: auto; overflow: hidden; line-height: 25px; margin: 10px 0; float: left;}
+.links_font p a{ color: #fca703;}
+.links_font p a:hover{ text-decoration: underline;}
+.links_font label{display: inline-block;height: 32px;padding: 0 40px;line-height: 32px;text-align: center;background: #fc5043;color: #ffffff;border-radius: 3px;cursor: pointer;}
+.links_font label:hover{background: #A93128;}
+
+
+.links_tab{ width: 875px; height: auto; overflow: hidden; padding: 20px 30px;}
+.links_tab h3{ width: 100%; height: 30px; line-height: 30px; font-size: 16px; font-weight: bold; margin-bottom: 10px; float: left; color: #0d0d0d;}
+.links_tab table{ width: 100%;}
+.links_tab table th{ height: 35px; line-height: 35px; color: #c6c6c6; background: #f8f8f8;}
+.links_tab table td{ height: 40px; line-height: 40px; text-align: center; color: #555;}
+.links_tab table tr:hover{background: #fffcf6;}
+.links_pg{ width: 100%; height: 30px; line-height: 30px; margin: 30px 0; float: left; text-align: center;}
+
+
+
+
+
+
+
+
+
+
+

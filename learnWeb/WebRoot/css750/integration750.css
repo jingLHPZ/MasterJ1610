@@ -1,0 +1,43 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+
+/*消耗积分弹出窗*/
+.int_dh_div .intdh_bod {
+    width: 400px;
+    height: 240px;
+    margin: -150px 0px 0px -200px;
+}
+.int_dh_div .intdh_bod div {
+    margin: 40px 0px;
+}
+.int_dh_div .intdh_bod .dh_btn_1 {
+    margin: 0px 30px 0px 85px;
+}
+
+.right_main .integ_div {
+    margin: 35px 0px;
+}
+.right_main .jfjl_title,.right_main .jfjl_time{
+    width: 96%;
+    margin: 0 2%;
+}
+.right_main .jfjl_tab {
+    width: 96%;
+    margin: 10px 2% 0px;
+}
+.right_main .integ_tit{
+	height: auto;
+}
+.right_main .integ_tit div {
+    width: 100%;
+    background-color: #FFF;
+}
+.right_main .integ_tit a {
+    width: 175px;
+}
+.right_main .dhtyj_bod {
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 30px;
+}
+
+}

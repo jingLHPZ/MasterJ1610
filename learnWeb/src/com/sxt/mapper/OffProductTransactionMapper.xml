@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxt.inter.IOffProductTransaction" >
+  <resultMap id="BaseResultMap" type="OffProductTransaction" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="product_name" property="productName" jdbcType="VARCHAR" />
+    <result column="borrow_month_duration" property="borrowMonthDuration" jdbcType="INTEGER" />
+    <result column="borrow_day_duration" property="borrowDayDuration" jdbcType="INTEGER" />
+    <result column="invest_money" property="investMoney" jdbcType="DECIMAL" />
+    <result column="invest_interest_rate" property="investInterestRate" jdbcType="REAL" />
+    <result column="repayment_type" property="repaymentType" jdbcType="INTEGER" />
+    <result column="invest_phone" property="investPhone" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="value_date" property="valueDate" jdbcType="TIMESTAMP" />
+    <result column="last_return_time" property="lastReturnTime" jdbcType="TIMESTAMP" />
+    <result column="income" property="income" jdbcType="DECIMAL" />
+    <result column="borrow_days" property="borrowDays" jdbcType="INTEGER" />
+    <result column="borrow_duration" property="borrowDuration" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, uid, product_name, borrow_month_duration, borrow_day_duration, invest_money, invest_interest_rate, 
+    repayment_type, invest_phone, create_time, update_time, value_date, last_return_time, 
+    income, borrow_days, borrow_duration
+  </sql>
+  <select id="queryOffProductTransaction" resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select 
+    <include refid="Base_Column_List" />
+    from ld_off_product_transaction
+    where invest_phone = #{investPhone,jdbcType=VARCHAR}
+    <if test="weekend!=null and weekend!=''">
+	    AND value_date &gt;= date_add(NOW(), interval -1 week)
+	</if>
+	 <if test="month!=null and month!=''">
+	 	AND value_date &gt;= date_add(NOW(), interval -1 month)
+	 </if>
+	 <if test="otherMonth!=null and otherMont!=''">
+	 	AND value_date &gt;= date_add(NOW(), interval -3 month)
+	 </if>
+	 order by id desc
+	 limit #{startRow},#{pageSize}
+  </select>
+  <select id="queryOffProductTransactionCount" resultType="java.lang.Integer" parameterType="java.util.Map" >
+    select 
+    count(1)
+    from ld_off_product_transaction
+    where invest_phone = #{investPhone,jdbcType=VARCHAR}
+    <if test="weekend!=null and weekend!=''">
+	    AND value_date &gt;= date_add(NOW(), interval -1 week)
+	</if>
+	 <if test="month!=null and month!=''">
+	 	AND value_date &gt;= date_add(NOW(), interval -1 month)
+	 </if>
+	 <if test="otherMonth!=null and otherMont!=''">
+	 	AND value_date &gt;= date_add(NOW(), interval -3 month)
+	 </if>
+  </select>
+</mapper>

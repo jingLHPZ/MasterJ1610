@@ -1,0 +1,28 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+
+.about_right_m .Team_gdbj label {
+    width: 270px;
+    text-indent: 25px;
+}
+.about_right_m .Team_gdbj img {
+    margin: 25px 25px;
+}
+.about_right_m .Team_gstd ul li {
+    width: 100%;
+    min-height: 130px;
+    padding: 20px;
+    padding-left: 120px;
+    box-sizing: border-box;
+    position: relative;
+}
+.about_right_m .Team_gstd ul li div {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.about_right_m .Team_gstd ul li h4,
+.about_right_m .Team_gstd ul li p{
+	width: 100%;
+}
+
+}

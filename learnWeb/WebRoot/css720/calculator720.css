@@ -1,0 +1,94 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+body .left_title{
+	width: 100%;
+}
+body .calcul_bod {
+    width: 100%;
+    padding: 10px 2%;
+    box-sizing: border-box;
+}
+body .cal_list{
+	height: auto;
+	margin: 25px 0;
+}
+body .cal_list li{
+	position: relative;
+	width: 100%;
+	margin-bottom: 10px;
+	padding-left: 60px;
+	box-sizing: border-box;
+}
+body .cal_list li p{
+	position: absolute;
+	width: 60px;
+	text-align: center;
+	left: 0;
+	top: 0;
+}
+body .cal_list li div {
+    position: relative;
+    width: 98%;
+    padding-right: 40px;
+    margin: 4px 0px 0px 2%;
+    box-sizing: border-box;
+}
+body .cal_list li div input {
+    width: 100%;
+    box-sizing: border-box;
+}
+body .cal_list li div label,
+body .cal_list li div .cal_tzqx{
+	position: absolute;
+	right: 0;
+	top: 0;
+	text-align: left;
+}
+body .cal_list li div .cal_tzqx{
+	width: 40px;
+	box-sizing: border-box;
+}
+body .cal_list li .cal_hkfs {
+    width: 98%;
+    transition: none 0s ease 0s;
+    box-sizing: border-box;
+    margin-left: 2%;
+}
+body .cal_btn_js {
+    margin: 20px 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+body .cal_jsjg{
+	width: 100%;
+	position: relative;
+}
+body .cal_jsjg h3{
+	width: 100%;
+	padding: 0;
+}
+body .cal_jsjg .cal_close{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+body .cal_tznum {
+    width: 96%;
+    height: auto;
+    margin: 20px 2%;
+}
+body .cal_jg_ti{
+    width: 96%;
+    margin: 0px 2%;
+}
+body .cal_tab_td{
+	width: 100%;
+	margin: 0;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+body .cal_jsjg table{
+	min-width: 540px;
+}
+
+}

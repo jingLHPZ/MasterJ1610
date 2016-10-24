@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.ILdYingxiangProduct">
+
+	<resultMap type="LdYingxiangProduct" id="ldYingxiangProductMap">
+		<id property="id" column="id" />
+		<result property="productId" column="product_id"/>
+		<result property="productName" column="product_name"/>
+		<result property="borrowUid" column="borrow_uid"/>
+		<result property="borrowMonthDuration" column="borrow_month_duration"/>
+		<result property="borrowDayDuration" column="borrow_day_duration"/>
+		<result property="borrowMoney" column="borrow_money"/>
+		<result property="borrowInterest" column="borrow_interest"/>
+		<result property="borrowInterestRate" column="borrow_interest_rate"/>
+		<result property="borrowFee" column="borrow_fee"/>
+		<result property="repaymentMoney" column="repayment_money"/>
+		<result property="repaymentInterest" column="repayment_interest"/>
+		<result property="expiredMoney" column="expired_money"/>
+		<result property="repaymentType" column="repayment_type"/>
+		<result property="borrowType" column="borrow_type"/>
+		<result property="borrowProceduresRate" column="borrow_procedures_rate"/>
+		<result property="borrowStatus" column="borrow_status"/>
+		<result property="contractID" column="contractID"/>
+		<result property="createTime" column="create_time"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="collectStartTime" column="collect_start_time"/>
+		<result property="fullTime" column="full_time"/>
+		<result property="deadline" column="deadline"/>
+		<result property="lastTime" column="last_time"/>
+		<result property="checkTime" column="check_time"/>
+		<result property="contractTemplate" column="contract_template"/>
+		<result property="checkUser" column="check_user"/>
+		<result property="checkUser2" column="check_user2"/>
+		<result property="checkTime2" column="check_time2"/>
+		<result property="investFee" column="invest_fee"/>
+		<result property="investRate" column="invest_rate"/>
+		<result property="collectEndTime" column="collect_end_time"/>
+		<result property="borrowId" column="borrow_id"/>
+		<result property="ciProductId" column="ci_product_id"/>
+		<result property="productAdaptedType" column="product_adapted_type"/>
+		<result property="productSort" column="product_sort"/>
+		<result property="displayFlag" column="display_flag"/>
+		<result property="interestWay" column="interest_way"/>
+		<result property="minInvest" column="invest_min"/>
+	</resultMap>
+	<insert id="insert" parameterType="LdYingxiangProduct" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO ld_yingxiang_product (
+			<trim suffixOverrides=",">
+			<if test="id != null">id, </if>
+			<if test="productId != null">product_id, </if>
+			<if test="productName != null">product_name, </if>
+			<if test="borrowUid != null">borrow_uid, </if>
+			<if test="borrowMonthDuration != null">borrow_month_duration, </if>
+			<if test="borrowDayDuration != null">borrow_day_duration, </if>
+			<if test="borrowMoney != null">borrow_money, </if>
+			<if test="borrowInterest != null">borrow_interest, </if>
+			<if test="borrowInterestRate != null">borrow_interest_rate, </if>
+			<if test="borrowFee != null">borrow_fee, </if>
+			<if test="repaymentMoney != null">repayment_money, </if>
+			<if test="repaymentInterest != null">repayment_interest, </if>
+			<if test="expiredMoney != null">expired_money, </if>
+			<if test="repaymentType != null">repayment_type, </if>
+			<if test="borrowType != null">borrow_type, </if>
+			<if test="borrowProceduresRate != null">borrow_procedures_rate, </if>
+			<if test="borrowStatus != null">borrow_status, </if>
+			<if test="contractID != null">contractID, </if>
+			<if test="createTime != null">create_time, </if>
+			<if test="updateTime != null">update_time, </if>
+			<if test="collectStartTime != null">collect_start_time, </if>
+			<if test="fullTime != null">full_time, </if>
+			<if test="deadline != null">deadline, </if>
+			<if test="lastTime != null">last_time, </if>
+			<if test="checkTime != null">check_time, </if>
+			<if test="contractTemplate != null">contract_template, </if>
+			<if test="checkUser != null">check_user, </if>
+			<if test="checkUser2 != null">check_user2, </if>
+			<if test="checkTime2 != null">check_time2, </if>
+			<if test="investFee != null">invest_fee, </if>
+			<if test="investRate != null">invest_rate, </if>
+			<if test="collectEndTime != null">collect_end_time, </if>
+			<if test="borrowId != null">borrow_id, </if>
+			<if test="ciProductId != null">ci_product_id, </if>
+			<if test="productAdaptedType != null">product_adapted_type, </if>
+			<if test="productSort != null">product_sort, </if>
+			<if test="displayFlag != null">display_flag, </if>
+			<if test="interestWay != null">interest_way, </if>
+			</trim>
+		) VALUES (
+			<trim suffixOverrides=",">
+			<if test="id != null">#{id}, </if>
+			<if test="productId != null">#{productId}, </if>
+			<if test="productName != null">#{productName}, </if>
+			<if test="borrowUid != null">#{borrowUid}, </if>
+			<if test="borrowMonthDuration != null">#{borrowMonthDuration}, </if>
+			<if test="borrowDayDuration != null">#{borrowDayDuration}, </if>
+			<if test="borrowMoney != null">#{borrowMoney}, </if>
+			<if test="borrowInterest != null">#{borrowInterest}, </if>
+			<if test="borrowInterestRate != null">#{borrowInterestRate}, </if>
+			<if test="borrowFee != null">#{borrowFee}, </if>
+			<if test="repaymentMoney != null">#{repaymentMoney}, </if>
+			<if test="repaymentInterest != null">#{repaymentInterest}, </if>
+			<if test="expiredMoney != null">#{expiredMoney}, </if>
+			<if test="repaymentType != null">#{repaymentType}, </if>
+			<if test="borrowType != null">#{borrowType}, </if>
+			<if test="borrowProceduresRate != null">#{borrowProceduresRate}, </if>
+			<if test="borrowStatus != null">#{borrowStatus}, </if>
+			<if test="contractID != null">#{contractID}, </if>
+			<if test="createTime != null">#{createTime}, </if>
+			<if test="updateTime != null">#{updateTime}, </if>
+			<if test="collectStartTime != null">#{collectStartTime}, </if>
+			<if test="fullTime != null">#{fullTime}, </if>
+			<if test="deadline != null">#{deadline}, </if>
+			<if test="lastTime != null">#{lastTime}, </if>
+			<if test="checkTime != null">#{checkTime}, </if>
+			<if test="contractTemplate != null">#{contractTemplate}, </if>
+			<if test="checkUser != null">#{checkUser}, </if>
+			<if test="checkUser2 != null">#{checkUser2}, </if>
+			<if test="checkTime2 != null">#{checkTime2}, </if>
+			<if test="investFee != null">#{investFee}, </if>
+			<if test="investRate != null">#{investRate}, </if>
+			<if test="collectEndTime != null">#{collectEndTime}, </if>
+			<if test="borrowId != null">#{borrowId}, </if>
+			<if test="ciProductId != null">#{ciProductId}, </if>
+			<if test="productAdaptedType != null">#{productAdaptedType}, </if>
+			<if test="productSort != null">#{productSort}, </if>
+			<if test="displayFlag != null">#{displayFlag}, </if>
+			<if test="interestWay != null">#{interestWay}, </if>
+			</trim>
+		)
+	</insert>
+
+	<update id="update" parameterType="LdYingxiangProduct">
+		UPDATE ld_yingxiang_product 
+		<set>
+		<if test="id != null">id = #{id}, </if>
+		<if test="productId != null">product_id = #{productId}, </if>
+		<if test="productName != null">product_name = #{productName}, </if>
+		<if test="borrowUid != null">borrow_uid = #{borrowUid}, </if>
+		<if test="borrowMonthDuration != null">borrow_month_duration = #{borrowMonthDuration}, </if>
+		<if test="borrowDayDuration != null">borrow_day_duration = #{borrowDayDuration}, </if>
+		<if test="borrowMoney != null">borrow_money = #{borrowMoney}, </if>
+		<if test="borrowInterest != null">borrow_interest = #{borrowInterest}, </if>
+		<if test="borrowInterestRate != null">borrow_interest_rate = #{borrowInterestRate}, </if>
+		<if test="borrowFee != null">borrow_fee = #{borrowFee}, </if>
+		<if test="repaymentMoney != null">repayment_money = #{repaymentMoney}, </if>
+		<if test="repaymentInterest != null">repayment_interest = #{repaymentInterest}, </if>
+		<if test="expiredMoney != null">expired_money = #{expiredMoney}, </if>
+		<if test="repaymentType != null">repayment_type = #{repaymentType}, </if>
+		<if test="borrowType != null">borrow_type = #{borrowType}, </if>
+		<if test="borrowProceduresRate != null">borrow_procedures_rate = #{borrowProceduresRate}, </if>
+		<if test="borrowStatus != null">borrow_status = #{borrowStatus}, </if>
+		<if test="contractID != null">contractID = #{contractID}, </if>
+		<if test="createTime != null">create_time = #{createTime}, </if>
+		<if test="updateTime != null">update_time = #{updateTime}, </if>
+		<if test="collectStartTime != null">collect_start_time = #{collectStartTime}, </if>
+		<if test="fullTime != null">full_time = #{fullTime}, </if>
+		<if test="deadline != null">deadline = #{deadline}, </if>
+		<if test="lastTime != null">last_time = #{lastTime}, </if>
+		<if test="checkTime != null">check_time = #{checkTime}, </if>
+		<if test="contractTemplate != null">contract_template = #{contractTemplate}, </if>
+		<if test="checkUser != null">check_user = #{checkUser}, </if>
+		<if test="checkUser2 != null">check_user2 = #{checkUser2}, </if>
+		<if test="checkTime2 != null">check_time2 = #{checkTime2}, </if>
+		<if test="investFee != null">invest_fee = #{investFee}, </if>
+		<if test="investRate != null">invest_rate = #{investRate}, </if>
+		<if test="collectEndTime != null">collect_end_time = #{collectEndTime}, </if>
+		<if test="borrowId != null">borrow_id = #{borrowId}, </if>
+		<if test="ciProductId != null">ci_product_id = #{ciProductId}, </if>
+		<if test="productAdaptedType != null">product_adapted_type = #{productAdaptedType}, </if>
+		<if test="productSort != null">product_sort = #{productSort}, </if>
+		<if test="displayFlag != null">display_flag = #{displayFlag}, </if>
+		<if test="interestWay != null">interest_way = #{interestWay}, </if>
+		</set>
+		WHERE id = #{id} 
+	</update>
+
+	<delete id="delete" parameterType="Long">
+		DELETE FROM ld_yingxiang_product 
+		WHERE id = #{id} 
+	</delete>
+
+	<select id="queryLdYingxiangProductList"  parameterType="java.util.Map" resultMap="ldYingxiangProductMap">
+		SELECT yp.*,ypd.invest_min FROM ld_yingxiang_product yp
+		left join ld_yingxiang_product_detail ypd on yp.product_id=ypd.product_id
+		WHERE 1=1 and borrow_status not in (0,1,2,7)
+		<if test="borrowStatus != null">
+			and borrow_status = #{borrowStatus}
+			<if test="borrowStatus == 3">
+				and SYSDATE() &gt;= collect_start_time and SYSDATE() &lt;= collect_end_time
+			</if>
+		 </if>
+		ORDER BY borrow_status ASC,product_sort DESC,create_time DESC
+		<if test="startRow != null and pageSize != null"> limit #{startRow},#{pageSize}</if> 
+	</select>
+
+	<select id="queryLdYingxiangProductCount"  parameterType="java.util.Map" resultType="Integer">
+		SELECT count(id) FROM ld_yingxiang_product 
+		WHERE 1=1 and borrow_status not in (0,1,2,7)
+	</select>
+
+	<select id="queryLdYingxiangProductByCondition"  parameterType="LdYingxiangProduct" resultMap="ldYingxiangProductMap">
+		SELECT * FROM ld_yingxiang_product 
+		WHERE 1=1
+		<if test="id != null"> and id = #{id}</if>
+		<if test="productId != null"> and product_id = #{productId}</if>
+	</select>
+	
+	<update id="updateRepaymentMoney" parameterType="LdYingxiangProduct">
+		UPDATE  ld_yingxiang_product set repayment_money=#{repaymentMoney},repayment_interest=#{repaymentInterest},update_time=NOW() WHERE  product_id=#{productId}
+	</update>
+	
+	<update id="updateYxByProductIdAndStatus" parameterType="java.util.Map">
+		UPDATE  ld_yingxiang_product set borrow_status=#{status},update_time=NOW() WHERE  product_id=#{productId}
+	</update>
+	
+
+</mapper>

@@ -1,0 +1,13 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+.about_right_m .item_gdbj {
+    width: 610px;
+    padding-left: 175px;
+}
+.about_right_m .item_gdbj img{
+	left: 0;
+}
+.about_right_m .item_gdbj div{
+	padding: 45px 2% 45px 6%;
+}
+
+}

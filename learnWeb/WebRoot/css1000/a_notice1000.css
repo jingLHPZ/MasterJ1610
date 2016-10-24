@@ -1,0 +1,25 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+
+.about_right_m .notice_list{
+	width: 94%;
+	margin: 30px 3% 20px;
+}
+.about_right_m .notice_list li {
+    width: 100%;
+    box-sizing: border-box;
+}
+.about_right_m .notice_list li div {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    padding-right: 100px;
+}
+.about_right_m .notice_list li div h3 {
+    width: 100%;
+}
+.about_right_m .notice_list li div label {
+    position: absolute;
+    right: 0px;
+}
+
+}

@@ -1,0 +1,74 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+	
+#ab_body .left_title,
+#ab_body .help_bod{
+	width: 970px;
+}
+#ab_body .help_nav{
+	width: 139px;
+}
+#ab_body .help_nav li{
+	width: 136px;
+}
+#ab_body .help_div{
+	width: 820px;
+}
+
+/*帮助中心首页*/
+#ab_body .help_tit{
+	text-indent: 40px;
+}
+#ab_body .help_lc_icon {
+    width: 94%;
+    height: 120px;
+    margin: 0px 3%;
+    background-size: auto 95px;
+    background-position: 25px 15px;
+    box-sizing: border-box;
+    transition-property: all;
+}
+#ab_body .help_fw_rk {
+    width: 94%;
+    margin: 0px 3%;
+    box-sizing: border-box;
+}
+#ab_body .help_fw_rk a {
+    width: 140px;
+    margin-left: 40px;
+}
+#ab_body .help_lxzb {
+    width: 45.5%;
+    margin-left: 3%;
+    box-sizing: border-box;
+    transition-property: all;
+}
+#ab_body .help_lxzb h2{
+	float: none;
+}
+#ab_body .help_lxzb p {
+    margin: auto;
+    width: 246px;
+    text-indent: 33px;
+    float: none;
+    background-position: 0;
+    transition-property: all;
+}
+#ab_body .help_lxzb a {
+    float: none;
+    display: block;
+    transition-property: all;
+    top: 81px;
+	left: 139px;
+}
+
+/*第二页*/
+#ab_body .help_ljzb {
+    width: 96%;
+    margin: 20px 2%;
+}
+#ab_body .help_ljzb li div {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+}

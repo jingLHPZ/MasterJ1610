@@ -1,0 +1,65 @@
+
+.redeem{width:100%;color:#0d0d0d}
+.redeem h3{width:100%;height:100px;line-height:90px;text-align:center;font-size:18px;letter-spacing:1px;border-bottom:dotted 1px #000}
+.redeem ul{width:100%;padding:40px 0 140px}
+.redeem ul li{width:100%;float:left;line-height:36px;font-size:16px;padding:13px 0}
+.redeem ul li label{width:500px;height:36px;float:left;text-align:right}
+.redeem ul li p{width:auto;height:36px;float:left;position:relative}
+.redeem ul li p b{font-size:18px;font-weight:600}
+.redeem ul li p input{height:34px;width:190px;padding:0 15px 0 5px;border:solid 1px #d5dbdb;border-radius:4px}
+.redeem ul li p i{position:absolute;top:0;left:185px}
+.redeem ul .confirm a{height:40px;width:210px;line-height:40px;float:left;border:1px solid #EF4810;border-radius:4px;color:#FFF;background:#EF4810 none repeat scroll 0 0;text-align:center;cursor:pointer}
+.redeem ul .confirm a:hover{background:#D13F0E none repeat scroll 0 0}
+.redeem ul .cancel p{width:210px;height:20px;line-height:20px;text-align:center}
+.redeem ul .cancel p a{cursor:pointer;color:#0D0D0D}
+.redeem ul .cancel p a:hover{color:#ef4810}
+.success{display:none;width:100%;color:#0d0d0d}
+.success .cont{width:350px;margin:30px auto 150px}
+.success .cont h2{height:100px;width:100%;line-height:100px;font-size:24px;text-align:center;background:transparent url(../img/icon/n_greentic_01.png) no-repeat 60px 34px}
+.success .cont ul{width:348px;padding:10px 0;border-radius:4px;border:solid 1px #d5dbdb}
+.success .cont ul li{float:left;width:100%;line-height:48px}
+.success .cont ul li label{width:140px;font-size:16px;float:left;text-align:right}
+.success .cont ul li p{width:auto;float:left;font-size:16px}
+.success .cont ul li p b{font-size:18px;font-weight:600}
+.success .cont ul li p em{color:#ef4810;font-size:18px}
+.success .check_record{height:40px;width:100%;line-height:40px;float:left;margin:30px 0 15px;border:1px solid #EF4810;border-radius:4px;color:#FFF;background:#EF4810 none repeat scroll 0 0;text-align:center;cursor:pointer}
+.success .check_record:hover{background:#D13F0E none repeat scroll 0 0}
+.success .back{width:100%;height:30px;line-height:30px;text-align:center}
+.success .back a{cursor:pointer;color:#0D0D0D;font-size: 16px;}
+.success .back a:hover{color:#ef4810}
+
+@media screen and (min-width:1020px) and (max-width:1230px){
+body .bg{min-width:970px;overflow:hidden}
+body .container{width:970px}
+body .left_title{width:970px}
+.redeem ul li label{width: 410px;}
+}
+
+@media screen and (min-width:750px) and (max-width:1019px){
+body .bg{min-width:705px;overflow:hidden}
+body .container{width:705px}
+body .left_title{width:705px}
+.redeem ul li label{width: 280px;}
+}
+
+@media screen and (max-width:749px){
+body .bg{min-width:0;width: 100%;}
+body .container{width:100%}
+body .left_title{display: none;}
+*{box-sizing: border-box;}
+.bg.main .container:before{content:"学呗活期宝";display:block;height:45px;width:100%;line-height:45px;color:#0d0d0d;font-size:18px;text-align:left;padding:0 4%;box-sizing:border-box}
+.redeem ul{width:100%;padding:40px 15px 140px}
+.redeem ul li{position:relative;line-height:20px;padding-left:115px}
+.redeem ul li label{width:115px;position:absolute;left:0;top:12px}
+.redeem ul li p i{left:initial;right:30%;display:inline-block;width:25px;text-align:center;line-height:34px}
+.redeem ul li p{width:100%;height:auto;word-break:break-all}
+.redeem ul li p input{width:70%;line-height:34px;padding-right:25px}
+.redeem ul .confirm a{width:70%}
+.redeem ul .cancel p{width:70%}
+.success .cont{width:92%;margin:30px 4% 150px}
+.success .cont h2{width:auto;max-width:190px;padding-left:40px;margin:0 auto;text-align:center;background:transparent url(../img/icon/n_greentic_01.png) no-repeat scroll left 34px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.success .cont ul{width:100%}
+.success .cont ul li{padding:10px 4%;line-height:24px}
+.success .cont ul li label{width:auto}
+}
+

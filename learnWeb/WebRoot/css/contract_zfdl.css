@@ -1,0 +1,20 @@
+.container{
+	width: 1170px;
+	margin: 0 auto;
+}
+.container p{
+	background: #ffffff;
+	width: 100%;
+	float: left;
+	text-align: center;
+	margin-bottom: 5px;
+}
+.container .first,
+.container .last{
+	padding-top: 60px;
+}
+.container p img{
+	width: 930px;
+	height: auto;
+	margin: 0;
+}

@@ -1,0 +1,6 @@
+.failure{width: 100%;padding: 120px 0 200px;}
+.failure .container{width:320px;height:220px;margin:0 0 0 -160px;position:relative;left:50%;color:#727272;font-size: 16px;}
+.failure .container h1{height:40px;line-height:40px;background:url(../img/icon/q_icon.png) no-repeat left center;padding-left:50px;font-size:24px;font-weight:700;margin:5px 0;letter-spacing:1px}
+.failure .container p{width:100%;margin:5px 0 0;float:left;letter-spacing:1px}
+.failure .container label{margin:40px 0 5px;float:left}
+.failure .container p a{color:#fdab06;font-weight:700;cursor:pointer}

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IProduct">
+<resultMap type="com.sxt.inter.dto.IndexProductDto" id="allproductlist">
+		<result property="productId" column="product_id"/>
+		<result property="productName" column="product_name"/>
+		<result property="borrowMonthDuration" column="borrow_month_duration"/>
+		<result property="borrowDayDuration" column="borrow_day_duration"/>
+		<result property="borrowInterestRate" column="borrow_interest_rate"/>
+		<result property="repaymentType" column="repayment_type"/>
+		<result property="borrowStatus" column="borrow_status"/>
+		<result property="borrowMoney" column="borrow_money"/>
+		<result property="productSort" column="product_sort"/>
+		<result property="canBonus" column="can_bonus"/>
+		<result property="canAddInterest" column="can_add_interest"/>
+		<result property="productType" column="product_type"/>
+		<result property="investMin" column="invest_min"/>
+		<result property="collectStartTime" column="collect_start_time"/>
+		<result property="collectEndTime" column="collect_end_time"/>
+		<result property="productAdaptedType" column="product_adapted_type"/>
+	</resultMap>
+	<select id="fQueryAllProduct" parameterType="java.util.Map" resultMap="allproductlist">
+		SELECT
+			t.product_id,
+			t.product_name,
+			t.repayment_type,
+			t.borrow_day_duration,
+			t.borrow_month_duration,
+			t.product_sort,
+			t.borrow_interest_rate,
+			t.borrow_status,
+			t.borrow_money,
+			t.collect_start_time,
+			t.collect_end_time,
+			td.can_bonus,
+			td.can_add_interest,
+			td.product_type,
+			td.invest_min
+		FROM
+			${tableName} t
+		LEFT JOIN ${tableNameDetail} td ON t.product_id = td.product_id
+		<where>
+			t.borrow_status in (3,4,6,8)
+			<if test="displayFlag!=null">
+				AND display_flag = 1
+			</if>
+		</where>
+		ORDER BY t.product_sort ASC  LIMIT 0,4
+	</select>
+	
+	<select id="fQueryAllSiproduct" parameterType="java.util.Map" resultMap="allproductlist">
+		SELECT
+			t.product_id,
+			t.product_name,
+			t.repayment_type,
+			t.borrow_day_duration,
+			t.borrow_month_duration,
+			t.product_sort,
+			t.borrow_interest_rate,
+			t.borrow_status,
+			t.borrow_money,
+			t.product_adapted_type,
+			t.collect_start_time,
+			t.collect_end_time,
+			td.can_bonus,
+			td.can_add_interest,
+			td.invest_min
+		FROM
+			${tableName} t
+		LEFT JOIN ${tableNameDetail} td ON t.product_id = td.product_id 
+		WHERE display_flag = 1 and t.borrow_status in (3,4,6,8) and t.product_adapted_type != 1
+	    ORDER BY t.borrow_status ASC,t.product_sort DESC,t.create_time DESC
+	    LIMIT  #{startRow},#{pageSize}
+	</select>
+	
+	<!-- 散标和私募 -->
+	<select id="getSiAndPeProduct" parameterType="java.util.Map" resultMap="allproductlist">
+		SELECT
+			product_id,
+			product_name,
+			repayment_type,
+			borrow_day_duration,
+			borrow_month_duration,
+			product_sort,
+			borrow_interest_rate,
+			borrow_status,
+			borrow_money,
+			collect_start_time,
+			collect_end_time,
+			create_time,
+			product_adapted_type,
+			can_bonus,
+			can_add_interest
+		FROM ld_index_product
+		ORDER BY borrow_status ASC, product_sort DESC,create_time DESC
+	    LIMIT  #{startRow},#{pageSize}
+	</select>
+	
+	<select id="getSiAndPeProductCount" resultType="int">
+		SELECT
+			COUNT(1)
+		FROM ld_index_product
+	</select>
+	
+	<select id="getInvestCiproduct" parameterType="java.util.Map" resultMap="allproductlist">
+		SELECT
+			substring_index(group_concat(t.product_id),',',1) product_id,
+			substring_index(group_concat(t.product_name),',',1) product_name,
+			substring_index(group_concat(t.repayment_type),',',1) repayment_type,
+			substring_index(group_concat(t.borrow_month_duration),',',1) borrow_month_duration,
+			substring_index(group_concat(t.borrow_day_duration),',',1) borrow_day_duration,
+			substring_index(group_concat(t.product_sort),',',1) product_sort,
+			substring_index(group_concat(t.borrow_interest_rate),',',1) borrow_interest_rate,
+			substring_index(group_concat(t.borrow_status),',',1) borrow_status,
+			substring_index(group_concat(t.borrow_money),',',1) borrow_money,
+			substring_index(group_concat(t.collect_start_time),',',1) collect_start_time,
+			substring_index(group_concat(t.collect_end_time),',',1) collect_end_time,
+			substring_index(group_concat(td.can_bonus),',',1) can_bonus,
+			substring_index(group_concat(td.can_add_interest),',',1) can_add_interest,
+			td.product_type,
+			substring_index(group_concat(td.invest_min),',',1) invest_min
+		FROM
+			${tableName} t
+		LEFT JOIN ${tableNameDetail} td ON t.product_id = td.product_id
+		WHERE
+			t.borrow_status in (3,4,6,8)
+		GROUP BY td.product_type
+		ORDER BY t.collect_start_time DESC
+		LIMIT 0,4
+	</select>
+	
+	<select id="fCountAllProduct" parameterType="java.util.Map" resultType="int">
+		SELECT
+			COUNT(1)
+		FROM
+			${tableName} t
+		LEFT JOIN ${tableNameDetail} td ON t.product_id = td.product_id
+		<if test="displayFlag!=null">
+			where display_flag = 1 and t.borrow_status in (3,4,6,8) and t.product_adapted_type != 1
+		</if>
+	</select>
+	<select id="fQueryExperience" parameterType="java.util.Map" resultMap="allproductlist">
+	SELECT
+			t.product_id,
+			t.product_name,
+			t.repayment_type,
+			t.borrow_day_duration,
+			t.borrow_month_duration,
+			t.borrow_interest_rate,
+			t.borrow_status,
+			t.borrow_money,
+			td.invest_min
+		FROM
+			${tableName} t
+		LEFT JOIN ${tableNameDetail} td ON t.product_id = td.product_id
+		ORDER BY t.product_sort ASC
+	</select>
+</mapper>

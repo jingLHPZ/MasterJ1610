@@ -1,0 +1,37 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+.about_right_m .Team_gdbj{
+	height: auto;
+}
+.about_right_m .Team_gdbj label {
+    width: 100%;
+    text-indent: 0px;
+    text-align: center;
+    font-size: 21px;
+    height: 60px;
+    line-height: 60px;
+}
+.about_right_m .Team_gdbj img {
+    height: 25px;
+    margin: 5px 15px;
+}
+.about_right_m .Team_gdbj img:nth-of-type(1){
+	float: left;
+}
+.about_right_m .Team_gdbj img:nth-of-type(2){
+	float: right;
+}
+.about_right_m .Team_gstd ul li {
+    width: 100%;
+    padding: 15px 3%;
+    box-sizing: border-box;
+}
+.about_right_m .Team_gstd ul li div {
+    float: none;
+    margin: 0 auto;
+}
+.about_right_m .Team_gstd ul li h4,
+.about_right_m .Team_gstd ul li p{
+	width: 100%;
+}
+
+}

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.ICiProduct">
+ <resultMap type="CiProduct" id="ciProductResult">
+		<id property="id" column="id"/>
+		<result property="productId" column="product_id"/>
+		<result property="productName" column="product_name"/>
+		<result property="borrowUid" column="borrow_uid"/>
+		<result property="borrowMonthDuration" column="borrow_month_duration"/>
+		<result property="borrowDayDuration" column="borrow_day_duration"/>
+		<result property="borrowMoney" column="borrow_money"/>
+		
+		<result property="borrowInterest" column="borrow_interest"/>
+		<result property="borrowInterestRate" column="borrow_interest_rate"/>
+		<result property="borrowFee" column="borrow_fee"/>
+		<result property="repaymentMoney" column="repayment_money"/>
+		<result property="repaymentInterest" column="repayment_interest"/>
+		
+		<result property="expiredMoney" column="expired_money"/>
+		<result property="repaymentType" column="repayment_type"/>
+		<result property="borrowType" column="borrow_type"/>
+		<result property="borrowStatus" column="borrow_status"/>
+		<result property="contractID" column="contractID"/>
+		
+		<result property="createTime" column="create_time"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="collectStartTime" column="collect_start_time"/>
+		<result property="fullTime" column="full_time"/>
+		<result property="deadline" column="deadline"/>
+		
+		<result property="checkTime" column="check_time"/>
+		<result property="contractTemplate" column="contract_template"/>
+		<result property="checkUser" column="check_user"/>
+		<result property="checkUser2" column="check_user2"/>
+		<result property="checkTime2" column="check_time2"/>
+		
+		<result property="investFee" column="invest_fee"/>
+		<result property="investRate" column="invest_rate"/>
+		<result property="collectEndTime" column="collect_end_time"/>
+		<result property="borrowDays" column="borrow_days"/>
+		<result property="borrowId" column="borrow_id"/>
+		<result property="productSort" column="product_sort"/>
+	</resultMap>
+	<resultMap type="com.sxt.inter.dto.IndexProductDto" id="indexProduct">
+		<result property="productId" column="product_id"/>
+		<result property="productName" column="product_name"/>
+		<result property="borrowMonthDuration" column="borrow_month_duration"/>
+		<result property="borrowDayDuration" column="borrow_day_duration"/>
+		<result property="borrowInterestRate" column="borrow_interest_rate"/>
+		<result property="repaymentType" column="repayment_type"/>
+		<result property="borrowStatus" column="borrow_status"/>
+		<result property="borrowMoney" column="borrow_money"/>
+		<result property="productType" column="product_type"/>
+		<result property="productSort" column="product_sort"/>
+		<result property="canBonus" column="can_bonus"/>
+		<result property="canAddInterest" column="can_add_interest"/>
+		<result property="investMin" column="invest_min"/>
+		<result property="collectStartTime" column="collect_start_time"/>
+		<result property="collectEndTime" column="collect_end_time"/>
+		<result property="createTime" column="create_time"/>
+		<result property="productAdaptedType" column="product_adapted_type"/>
+	</resultMap>
+	<select id="fqueryAllProduct" parameterType="java.util.Map" resultMap="indexProduct">
+		SELECT
+			t.product_id,
+			t.product_name,
+			t.repayment_type,
+			t.borrow_day_duration,
+			t.borrow_month_duration,
+			t.product_sort,
+			t.borrow_interest_rate,
+			t.borrow_status,
+			t.borrow_money,
+			t.collect_start_time,
+			t.collect_end_time,
+			td.can_bonus,
+			td.can_add_interest,
+			td.invest_min
+		FROM
+			${tableName} t
+		LEFT JOIN ${tableNameDetail} td ON t.product_id = td.product_id
+		<if test="displayFlag!=null">
+			where display_flag = 1 and t.borrow_status in (3,4,6,8) and t.product_adapted_type != 1
+		</if>
+		ORDER BY t.borrow_status ASC, t.product_sort desc,t.create_time DESC   LIMIT 0,3
+	</select>
+	
+	
+	<select id="queryAllCiProduct" resultMap="indexProduct">
+		SELECT
+			t.product_id,
+			t.product_name,
+			t.repayment_type,
+			t.borrow_day_duration,
+			t.borrow_month_duration,
+			t.product_sort,
+			t.borrow_interest_rate,
+			t.borrow_status,
+			t.borrow_money,
+			t.collect_start_time,
+			t.collect_end_time,
+			td.product_type,
+			td.can_bonus,
+			td.can_add_interest
+		FROM
+			ld_ci_product t 
+		LEFT JOIN ld_ci_product_detail td ON t.product_id = td.product_id
+		where t.borrow_status in (3,4,6,8)
+		ORDER BY t.product_sort desc,t.create_time DESC   LIMIT 0,4
+	</select>
+	
+	<select id="fQueryAllPro" resultMap="ciProductResult">
+	   SELECT * FROM ld_ci_product ORDER BY product_sort asc   LIMIT 0,3
+	</select>
+	<select id="fQueryProById" parameterType="String" resultMap="ciProductResult">
+	SELECT * FROM ld_ci_product WHERE product_id=#{product_id}
+	</select>
+	<select id="fQueryCiProByUid" parameterType="int" resultMap="ciProductResult">
+	SELECT * FROM ld_ci_product WHERE borrow_uid=#{borrow_uid}
+	</select>
+	
+	<update id="fUpdateStateByProid" parameterType="String">
+	UPDATE  ld_ci_product SET borrow_status=6,full_time=NOW() WHERE  product_id=#{productId}
+	</update>
+	
+	<select id="fqueryProductIds" resultType="String">
+		select product_id from ld_ci_product
+	</select>
+	<select id="fqueryalltype" resultMap="ciProductResult">
+	SELECT * FROM ld_ci_product cip,ld_ci_product_detail cipd WHERE cip.product_id=cipd.product_id  ORDER BY  product_sort DESC LIMIT 0,4 
+	</select>
+	
+	<select id="queryCiproductByMap" parameterType="map" resultMap="ciProductResult">
+			SELECT
+					t.product_id,
+					t.product_name,
+					t.repayment_type,
+					t.borrow_day_duration,
+					t.borrow_month_duration,
+					t.product_sort,
+					t.borrow_interest_rate,
+					t.borrow_status,
+					t.borrow_money,
+					t.collect_start_time
+				FROM
+					ld_ci_product t where t.borrow_status in (4,6,8)
+		ORDER BY t.product_sort desc,t.collect_start_time DESC  LIMIT #{startRow},#{pageSize} 
+	</select>
+	
+	<select id="queryCiproductCount" resultType="java.lang.Integer">
+			SELECT count(1) FROM ld_ci_product t where t.borrow_status in (4,6,8)
+	</select>
+	<select id="queryCiproductByProid" parameterType="String" resultType="String" >
+	select product_name from ld_ci_product where product_id=#{productid}
+	</select>
+	
+	<select id="queryHotProduct" resultMap="indexProduct">
+	select t.product_id,t.product_name,t.borrow_day_duration,t.borrow_month_duration,t.borrow_interest_rate,t.borrow_money,t.borrow_status,t.collect_start_time,t.collect_end_time,ts.invest_min
+	from ld_si_product t left join ld_si_product_detail ts on t.product_id=ts.product_id where ts.is_recommend = 1 and t.borrow_status in (3,4,6,8) ORDER BY t.create_time DESC LIMIT 0,1;
+	</select>
+	
+	<select id="queryQuestionByUid" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+		select count(uid) from ld_member_questionnaire where uid=#{uid}
+	</select>
+	<select id="queryQuestionDateByUid" resultMap="indexProduct" parameterType="java.lang.Integer">
+		select create_time from ld_member_questionnaire where uid=#{uid}
+	</select>
+	<select id="queryIndexProduct" resultMap="indexProduct">
+		select * from ld_index_product ORDER BY borrow_status ASC, product_sort desc, create_time DESC LIMIT 0,3  
+	</select>
+	<select id="queryRiskTipBook" resultType="String" parameterType="String">
+		select risk_tip_book from ld_pe_product_detail_extend where product_id=#{productId}
+	</select>
+	<select id="queryCountRisk" resultType="java.lang.Integer" parameterType="map">
+		select count(uid) from ld_pe_product_risk where uid=#{uid} and product_id=#{productId}
+	</select>
+	<select id="queryRiskDate" resultMap="indexProduct" parameterType="map">
+		select create_time from ld_pe_product_risk where uid=#{uid} and product_id=#{productId}
+	</select>
+	<insert id="insertRisk" parameterType="map">
+	    INSERT INTO ld_pe_product_risk(product_id,uid,create_time) VALUES (#{productId},#{uid},#{createTime})
+    </insert>
+</mapper>

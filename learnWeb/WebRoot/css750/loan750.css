@@ -1,0 +1,76 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+*{transition-property: width,margin,padding,background-position,height;}
+body .loan_main {
+    width: 720px;
+}
+body .loan_banner{
+	height: 270px;
+	background-size: auto 270px;
+}
+body .loan_banner .lo_list {
+    margin: 10px 30px 0px 0px;
+}
+body .loan_main .loan_mk_tit{
+	margin: 50px 110px;
+	width: 500px;
+}
+body .loan_smszb h3,
+body .loan_why h3,
+body .loan_cp h3,
+body .loan_lc h3 {
+    margin: 0px 180px;
+}
+body .loan_smszb .smszb_d1,
+body .loan_smszb .smszb_d3 {
+    width: 720px;
+	padding: 20px 0px 0px 20px;
+	background-position: 430px 40px;
+	box-sizing: border-box;
+	background-size: 270px;
+}
+body .loan_smszb .smszb_d2 {
+    width: 290px;
+	padding: 20px 0px 0px 430px;
+	background-position: 20px 50px;
+}
+body .loan_cp .loan_zyd {
+    width: 680px;
+	margin: 0px 20px 60px;
+}
+body .loan_cp .loan_zyd a {
+    float: right;
+    margin-right: 160px;
+}
+body .loan_cp .loan_zyd h4 {
+    margin: 25px 0px 15px 340px;
+    width: 330px;
+}
+body .loan_cp .loan_zyd ul {
+    width: 330px;
+    margin-left: 340px;
+}
+body .loan_lc .loan_lc_bg {
+    height: 130px;
+	background-size: 700px auto;
+}
+body .loan_sqdk a{
+	margin-left: 205px;
+}
+
+/*弹窗*/
+body .zyd_bod .zyd_main {
+    width: 480px;
+    height: auto;
+    margin-left: -270px;
+    padding: 20px;
+}
+body .zyd_main h1 {
+    width: 380px;
+}
+body .zyd_main .zyd_font {
+    width: 460px;
+    height: auto;
+}
+
+}
+

@@ -1,0 +1,28 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+*{transition-property: width,margin,padding;}
+body .cont{
+	width: 970px;
+}
+body .fk_bz .text{
+	width: 550px;
+}
+body .fk_lz img{
+	width: 950px;
+}
+body .fk_fx img{
+	width: 950px;
+}
+body .fk_zj img{
+	width: 950px;
+}
+body .page_js p{
+	width: 890px;
+}
+body .page_qy p{
+	width: 890px;
+}
+body .page_qy img{
+	width: 900px;
+	height: auto;
+}
+}

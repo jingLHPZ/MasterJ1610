@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxt.inter.ICash" >
+  <resultMap id="cashTransit" type="CashTransit" >
+    <id column="id" property="id"/>
+    <result column="uid" property="uid" />
+    <result column="cash_money" property="cashMoney" />
+    <result column="create_time" property="createTime" />
+    <result column="update_time" property="updateTime" />
+    <result column="cash_type" property="cashType" />
+    <result column="cash_status" property="cashStatus" />
+    <result column="check_uid" property="checkUid" />
+    <result column="special_date" property="specialDate" />
+    <result column="system_trace_no" property="systemTraceNo" />
+    <result column="remark" property="remark" />
+  </resultMap>
+  <select id="getTransitByUid" resultMap="cashTransit" parameterType="java.util.Map" >
+    select 
+    id, uid, cash_money, create_time, update_time, cash_type, cash_status,check_uid,special_date,system_trace_no,remark
+    from ld_cash_transit
+    where uid = #{uid,jdbcType=INTEGER}
+    <if test="startTime != null and startTime != ''"> and create_time &gt;= #{startTime}</if>
+    <if test="endTime != null and endTime != ''"> and create_time &lt;= #{endTime}</if>
+    <if test="cashType != null"> and cash_type = #{cashType}</if>
+    <if test="cashStatus != null and cashStatus != ''"> and cash_status in (${cashStatus})</if>
+    order by id desc
+    limit #{startRow},#{pageSize}
+  </select>
+  <select id="getTransitCountByUid" resultType="java.lang.Integer" parameterType="java.util.Map" >
+    select 
+    count(1)
+    from ld_cash_transit
+    where uid = #{uid,jdbcType=INTEGER}
+   <if test="startTime != null and startTime != ''"> and create_time &gt;= #{startTime}</if>
+    <if test="endTime != null and endTime != ''"> and create_time &lt;= #{endTime}</if>
+    <if test="cashType != null"> and cash_type = #{cashType}</if>
+    <if test="cashStatus != null and cashStatus != ''"> and cash_status in (${cashStatus})</if>
+  </select>
+  <select id="selectCashMoneyByType" resultType="java.math.BigDecimal" parameterType="java.util.Map">
+  	select
+  	sum(cash_money)
+  	from ld_cash_transit
+  	where uid = #{uid}
+  	<if test="cashType != null"> and cash_type = #{cashType}</if>
+  	and cash_status in (0,1)
+  </select>
+  <select id="getTransitInfoByUid" parameterType="java.util.Map" resultMap="cashTransit">
+  	select 
+  	id, uid, cash_money, create_time, update_time, cash_type, cash_status,check_uid,special_date,system_trace_no,remark
+  	from ld_cash_transit
+  	where uid = #{uid}
+  	order by create_time desc
+  	limit 1
+  </select>
+</mapper>

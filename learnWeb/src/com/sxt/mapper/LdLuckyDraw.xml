@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.ILdLuckyDraw">
+	<resultMap type="LdLuckyDraw" id="luckyMap">
+		<id property="id" column="id"/>
+		<result property="uid" column="uid"/>
+		<result property="awardType" column="award_type"/>
+		<result property="awardTime" column="award_time"/>
+		<result property="userName" column="user_name"/>
+		<result property="consumeCore" column="consume_core"/>
+	</resultMap>
+  	 <insert id="add" parameterType="LdLuckyDraw" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO ld_lucky_draw
+		(uid,award_type,award_time,user_name,consume_core)
+		VALUE (#{uid},#{awardType},#{awardTime},#{userName},#{consumeCore})
+	</insert>
+     <select id="queryLuckyDrawList" parameterType="Map" resultMap="luckyMap">
+		select * from ld_lucky_draw where 1=1 
+		<if test="uid!=null">
+			and uid=#{uid}
+		</if>
+		order by award_time desc
+	</select>
+	<select id="queryLuckyDrawCount" parameterType="Integer" resultType="Integer">
+		select count(*) from ld_lucky_draw where uid=#{uid}
+	</select>   
+	<select id="queryLuckyDrawNum" parameterType="Integer" resultType="Integer">
+		select count(*) from ld_lucky_draw where to_days(award_time)=to_days(NOW())  and award_type&lt;&gt;1 and uid=#{uid}
+	</select>       
+</mapper>

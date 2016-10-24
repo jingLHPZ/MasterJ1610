@@ -1,0 +1,204 @@
+.person_tab{ width: 895px; height: 53px; margin: 15px 20px 0 20px; border-bottom: 1px solid #fca703; float: left;}
+.person_tab a{ width: auto; height: 50px; line-height: 50px; margin: 0 20px; padding: 0 5px; float: left; display: inline-block; font-weight: bold; font-size: 16px; color: #727272;}
+.person_tab a:hover{ color: #FCA703; border-bottom: 3px solid #fca703;}
+.person_tab .per_tab_hov{ color: #FCA703; border-bottom: 3px solid #fca703;}
+
+.per_bod{ width: 100%; height: auto; overflow: hidden; display: none;}
+.pesa_1{display: block;}
+.per_bod ul{ width: 100%; height: auto; overflow: hidden; margin-top: 50px;}
+.per_bod ul li{ width: 100%; height:30px; overflow: hidden; margin: 10px 0; float: left; color: #727272;}
+.per_bod ul li label{ width: 240px; height: 30px; line-height: 30px; float: left; text-align: right;}
+.per_bod ul li label span{ color: red; margin-right: 3px;}
+.per_bod ul li .pb_div{width:130px;margin-right: 10px;padding: 0 5px; height: 30px; line-height: 30px; float: left;}
+.per_bod ul li .edit_name{line-height: 30px;color:#fca703;cursor: pointer;}
+.per_bod ul li input{ height: 28px; width:130px; padding: 0 5px; border: 1px solid #aaa; border-radius: 2px; color: #727272; margin-right: 10px; float: left;}
+.per_bod ul li input:hover{ border: 1px solid #fca703;}
+.per_bod ul li .per_zt{ width: 280px;}
+.per_bod ul li select{ height: 30px; width:140px; padding: 0 5px; border: 1px solid #aaa; border-radius: 2px; color: #727272; float: left; margin-right: 10px; float: left;}
+.per_bod ul li select:hover{ border: 1px solid #fca703;}
+.per_bod ul li p{ width: auto; height: 30px; line-height: 30px; float: left;}
+
+.per_bod ul li .email_yz{ width: auto; height: auto; float: left;}
+.per_bod ul li .email_yz input{ width: 85px; height: 24px; background: #fff; border: 1px solid #fca703; border-radius: 2px; color:#fca703; cursor: pointer; margin-top:4px;}
+.per_bod ul li .email_yz input:hover{border-bottom: solid 1px #fca703;}
+
+.per_bod ul li .email_end{ width: auto; height: auto; float: left; display: none;}
+.per_bod ul li .email_end div{width:142px; height: 30px; line-height: 30px; float: left;}
+.per_bod ul li .email_end a{ height: 30px; line-height: 30px; float: left; margin-left:10px; color:#fca703;}
+.per_bod ul li .email_end a:hover{ text-decoration: underline;}
+
+.pesa_1 .yz_email{width: 100%; height:auto; overflow: hidden; background: #fff; display: none;}
+.yz_email h1{ width: 100%; height: 100px; text-align: center; font-size: 16px; color: #fca703; font-weight: bold; background: url(../img/per_email_ti1.png) center bottom no-repeat; float: left; margin: 40px 0; float: left;}
+.yz_email .yz_bod1{ width: 100%; height: auto; overflow: hidden; float: left; display: block; margin: 0; display: none;}
+.yz_email .bod1_block{ display: block;}
+.yz_email .yz_bod1 li{ width: 100%; min-height:50px; height: auto; overflow: hidden; float: left; margin: 0;}
+.yz_email .yz_bod1 li label{ width: 350px;}
+.yz_email .yz_bod1 li .yz_text{ width: 100px;}
+.yz_email .yz_bod1 li .email_text{ width: 180px;}
+.yz_email .yz_bod1 li .yz_img{ width: 70px; height:28px; float: left; border: 1px solid #ccc;}
+.yz_email .yz_bod1 li .yz_img img{ width: 70px; height: 28px; border: none; cursor: pointer;}
+.yz_email .yz_bod1 li .reg_sx{width: 32px;height: 32px;display: inline-block;float: left;background: transparent url("../img/icon/shuaxin_03.png") no-repeat scroll 2px 0px;}
+.yz_email .yz_bod1 li h4{ width: 100%; height: 20px; line-height: 20px; color: red; float: left; font-size: 12px; text-indent: 350px; display: none;}
+.yz_email .yz_bod1 li .yz_but{ width: 70px;height:30px; cursor: pointer; background: #fca703; border: 1px solid #fca703; color: #fff;}
+.yz_email .yz_bod1 li .yz_but:hover{ background:#e69905;}
+.yz_email .yz_bod1 li .yz_djs{ width: 70px;height:28px; line-height: 28px; cursor: pointer; text-align: center; background: #ccc; border: 1px solid #ccc; color: #333; float: left; border-radius: 2px;}
+.yz_email .yz_bod1 li .yz_subm{ margin:30px 0 0 350px; width: 110px; height: 30px; background: #00a0e9; border: 1px solid #00a0e9; color: #fff; cursor: pointer;}
+.yz_email .yz_bod1 li .yz_subm:hover{ background: #0494d5;}
+.yz_email .yz_bod1 .email_href{display: none;}
+.yz_email .yz_bod1 .email_href b{ width: 100%; height: 30px; line-height: 30px; font-size: 16px; color: #0d0d0d; margin: 20px 0 50px 0; text-align: center; display: inline-block;}
+.yz_email .yz_bod1 .email_href p{ width: 100%; height: 20px; line-height: 20px; text-align: center; color: #8a8a8a;}
+.yz_email .yz_bod1 .email_href p a{ margin-left:5px; color: #00a0e9; text-decoration: underline;}
+.yz_email .yz_bod1 .email_href p a:hover{ text-decoration: none;}
+.yz_email .yz_bod1 .email_cg b{ width: 100%; height:30px; line-height: 30px; text-align: center; color: #0d0d0d; font-size: 16px; float: left; margin-bottom: 30px;}
+.yz_email .yz_bod1 .email_cg p{ width: 450px; height: 20px; line-height: 20px; text-align: right; float: left;}
+.yz_email .yz_bod1 .email_cg .email_leve{ width: 100px; height: 4px; border: 1px solid #64bc3b; margin:8px 0 0 10px; overflow: hidden; float: left;}
+.yz_email .yz_bod1 .email_cg .email_leve div{ width: 30%; background: #64bc3b; height:4px; overflow: hidden; float: left;}
+.yz_email .yz_bod1 .email_sb{ display: none;}
+.yz_email .yz_bod1 .email_sb b{ width: 100%; height:30px; line-height: 30px; text-indent: 200px; color: #0d0d0d; font-size: 16px; float: left; margin-bottom:10px;}
+.yz_email .yz_bod1 .email_sb p{ width:700px; height: auto; overflow: hidden; line-height: 30px; padding-left: 200px;}
+
+.yz_email .yz_bod1 li .yz_mb{ margin:50px 0 0 410px;} 
+
+
+.per_bod .per_bc_btn{ height: 40px; margin-top: 30px;}
+.per_bod .per_bc_btn a{ width: 140px; height:38px; line-height: 38px; font-size: 16px; font-weight: bold; text-align: center; display: inline-block; color: #fe3f3b; border: 1px solid #fe3f3b; border-radius: 2px; margin-left: 240px;}
+.per_bod .per_bc_btn a:hover{ background: #fe3f3b; color: #fff;}
+
+.per_bod .pic_tx{ width: 140px; height: 140px; background:#f8f7f7 url(../img/pic/pic_bg.png) 33px 29px no-repeat; border: 1px solid #dcdcdc; margin:100px auto 10px auto;}
+.per_bod .pic_error{width: 100%; height: 20px; text-align: center;color: red; margin-bottom: 50px;}
+.per_bod .pic_alert{ width: 100%; height: 20px; line-height: 20px; text-align: center; color: #727272; margin-bottom: 50px;}
+.per_bod .pic_tx img{ width: 140px; height: 140px; border: none;}
+.per_bod .pic_sc_btn{ width: 190px; height: 50px; line-height: 50px; color: #fe3f3b; font-size: 18px; text-align: center; border: 1px solid #fe3f3b; display: inline-block; border-radius: 2px; margin-left:371px; float: left; overflow: hidden; position: relative;}
+.per_bod .pic_sc_btn:hover{background: #fe3f3b; color: #fff;}
+.per_bod .pic_sc_btn input{ width: 190px height: 100%; position: absolute; z-index: 1; right: 0; top: 0; font-size: 100px; opacity:0; filter: alpha(opacity=0); overflow: hidden;}
+
+.per_bod .per_password{ width: 895px; height: 35px; margin: 0 20px;border-bottom: 1px solid #fca703;}
+.per_bod .per_password p{ width: auto; height: 35px; line-height: 35px; margin: 0 80px 0 25px; float: left; color: #727272;}
+.per_bod .per_password p:hover{color: #fca703; cursor: pointer;}
+.per_bod .per_password .pass_tit{ color: #fca703;}
+.per_bod .end_pass{ width: 100%; height: auto; overflow: hidden; display: none;}
+.per_bod .ep_show{ display:block;}
+.per_bod .end_pass h3{ width: 500px; height: 40px; line-height: 40px; text-align: center; font-size: 18px; color: #0d0d0d; margin:50px 0 20px 90px;}
+
+.pesa_3 ul{ margin: 0;}
+.pesa_3 ul li input{ width: 200px;}
+.pesa_3 ul .per_bc_btn a{ width: 210px;}
+.pesa_3 ul li .pas_yzm{ width: 100px; height: 28px; line-height: 28px; text-align: center; display: inline-block; color: #FE3F3B; border: 1px solid #FE3F3B; border-radius: 2px; float: left;}
+.pesa_3 ul li .pas_yzm:hover{background: #fe3f3b; color: #fff;}
+.pesa_3 ul li .yzm_djs{ width: 100px; height: 30px; line-height: 30px; text-align: center; color: #777; border-radius: 2px; background: #e9e7e7; float: left; display: none;}
+.pesa_3 ul li p{ color: red; font-size: 12px; display: none;}
+
+.pesa_3 ul .per_pass_qd{height: 55px; margin-bottom: 0;}
+.pesa_3 ul .per_pass_qd ul{ width: 250px; height: 20px; margin:5px 0 0 240px; float: left; overflow: hidden;}
+.pesa_3 ul .per_pass_qd ul li{ width: auto; height: 20px; line-height: 20px; float: left; margin:0; float: left; color: #4ec2e5;}
+.pesa_3 ul .per_pass_qd ul .rpb_1{ font-size: 12px; color: #aaa;}
+.pesa_3 ul .per_pass_qd ul .rpb_2{ border: 1px solid #4ec2e5; height: 8px; overflow: hidden; width: 45px; margin: 5px 2px;}
+.pesa_3 ul .per_pass_qd ul .pw_bg{ background: #4ec2e5;}
+
+.smrz_zl ul li input{ width: 170px; color: #0d0d0d;}
+.smrz_zl ul .per_bc_btn a{ width: 180px;}
+.smrz_zl li p{ color: red; font-size: 12px; display: none;}
+.smrz_zl li .open_certifie_gat{ color: #fca703;display: inline-block;width: 170px;text-align: center;}
+
+.password_alert{ width: 100%; height: 100%; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index:9999999; background: url(../img/icon/tb_1_1.png) top left repeat; display: none;}
+.password_alert .ps_al_bod{ width:600px; height: 300px; background: #fff; border-radius:2px; position: fixed; left: 50%; top: 50%; margin: -150px 0 0 -300px;}
+.password_alert .ps_al_bod h1{ width: 100%; height: 40px; line-height: 40px; text-align: center; float: left; margin: 80px 0 50px 0; color: #fca703;}
+.password_alert .ps_al_bod p{ width: 100%; height: 40px; line-height: 40px; text-align: center; float: left; color: #727272; font-size: 16px;}
+
+.Szzf_password{ width: 100%; height: 100%; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index:9999999; background: url(../img/icon/tb_1_1.png) top left repeat; display:;}
+.Szzf_password .szp_bod{ width:600px; height: 380px; background: #f6f4f4; border-radius:2px; position: fixed; left: 50%; top: 50%; margin: -190px 0 0 -300px;}
+.Szzf_password .szp_bod .szp_clo{ width: 32px; height: 32px; background: url(../img/icon/chacha.png) top left no-repeat; float: right; margin: 10px 10px 0 0;}
+.Szzf_password .szp_bod .szp_clo:hover{ background:url(../img/icon/chacha_h.png) top left no-repeat; cursor: pointer;}
+.Szzf_password .szp_bod h3{ width: 100%; height: 40px; line-height: 40px; text-align: center; margin:20px 0 50px 0; float: left; font-size: 20px; font-weight: bold; color: #727272;}
+.Szzf_password .szp_bod .szp_mmk{ width: 270px; height: 70px; float: left; margin: 0 165px;}
+.Szzf_password .szp_bod .szp_mmk .szp_qrli{ display: none;}
+.Szzf_password .szp_bod .szp_mmk ul{ float: left; height: 40px; width:270px; overflow: hidden;border-left: 1px solid #dedede;border-right:none}
+.Szzf_password .szp_bod .szp_mmk ul li{ height: 38px; width: 43px; overflow: hidden; border: 1px solid #dedede; border-left: none; float: left; background: #fff;}
+.Szzf_password .szp_bod .szp_mmk ul li input{ width: 100px; height: 100%; background: none; border: none; font-size: 30px; padding-left: 20px;}
+.Szzf_password .szp_bod .szp_mmk p{ width: 100%; height: 30px; line-height: 30px; color: #54b8fe; float: left;}
+
+.Szzf_password .szp_bod .szp_btn{float: left; width: 314px; height: 35px;margin:30px 0 0 165px; overflow: hidden;}
+.Szzf_password .szp_bod .szp_btn input{ width:110px; height: 35px; border: none; border-radius: 2px; line-height: 35px; color: #fff; font-size: 16px; text-align: center; float: left; margin-right: 44px; cursor: pointer;}
+.Szzf_password .szp_bod .szp_btn .szp_btn_cz{ background:#b2e788;}
+.Szzf_password .szp_bod .szp_btn .szp_btn_qr{ background:#fd6e6e;}
+.Szzf_password .szp_bod .szp_btn .szp_btn_cz:hover{ background:#8dce5a;}
+.Szzf_password .szp_bod .szp_btn .szp_btn_qr:hover{ background:#f35a5a;}
+.Szzf_password .szp_bod .szp_alert{ width: 270px; height:29px; line-height: 29px; background:url(../img/icon/szp_ps_icon.png) top left no-repeat; text-indent: 50px; margin:50px 0 0 165px; float: left; color: #54B8FE; font-size: 18px; display:none;}
+
+.certifie_gat{float: left;}
+.certifie_gat .gt_left{width:400px;float:left}
+.certifie_gat .gt_left ul{width:100%;float:left;margin-top:20px}
+.certifie_gat .gt_left ul li{height:auto;width:100%;float:left;padding:9px 0;line-height:30px;margin:0}
+.certifie_gat .gt_left ul li label{width:135px;height:32px;float:left}
+.certifie_gat .gt_left ul li a{display:inline-block;width:auto;color:#fca703;text-align:center;float:left}
+.certifie_gat .gt_left ul li input{height:30px;width:190px;border:solid 1px #c7c7c7;float:left}
+.certifie_gat .gt_left ul .select_cont{overflow:initial}
+.select_cont .select_gt{position:relative;height:30px;width:200px;border:solid 1px #c7c7c7;float:left;color:#727272}
+.select_cont .select_gt P{height:100%;width:190px;padding:0 5px;background:transparent url(../img/icon/select_down.png) no-repeat 171px 1px;cursor:pointer}
+.select_cont .select_gt ul{position:absolute;left:-1px;top:31px;width:200px;height:auto;border:solid 1px #c7c7c7;background:#fff;margin-top:0;display:none}
+.select_cont .select_gt ul.active{display:block}
+.select_cont .select_gt ul li{height:30px;width:190px;text-align:left;cursor:pointer;background:#fff;padding:0 5px}
+.select_cont .select_gt ul li:hover{background:#E3E3E3}
+.certifie_gat .gt_left ul .add_img{margin-top:8px}
+.certifie_gat .gt_left ul .add_img a{position:relative;display:inline-block;width:93px;height:62px;line-height:62px;float:left;text-align:left;border:solid 1px #c7c7c7;color:#c7c7c7;overflow:hidden;background:transparent url() no-repeat center top/auto 100%}
+.certifie_gat .gt_left ul .add_img a input{position:absolute;height:100px;width:100px;left:0;top:0;opacity:0;filter:alpha(opacity=0);z-index: 1;cursor:pointer}
+.certifie_gat .gt_left ul .add_img .back{margin-left:13px}
+.certifie_gat .gt_left ul .add_img a:hover{border-color:#929292;color:#929292}
+.certifie_gat .gt_left ul .add_img a em{font-size:35px;height:100%;line-height:57px;float:left;margin-left:10px}
+.certifie_gat .gt_left ul li .submit_gt{height:40px;width: 200px;line-height:40px;float:left;background:#FFA350;color:#fff}
+.certifie_gat .gt_left ul li .submit_gt:hover{background:#f2892c}
+.certifie_gat .gt_right{width:530px;float:left;color:#727272;text-align:center}
+.gt_right .imgs_cont{height:220px;width:410px;padding:0 20px;border:solid 1px #c7c7c7;margin-top:79px}
+.gt_right .imgs_cont h4{width:100%;float:left;line-height:32px;margin-top:10px}
+.gt_right .imgs_cont p{width:185px;height:175px;margin:0 10px;float:left}
+.gt_right .imgs_cont img{height:138px;width:183px;border:solid 1px #c7c7c7}
+.gt_right .imgs_cont span{display:inline-block;width:100%;line-height:20px}
+.gt_right .taiwan{display:none}
+.certifie_gat .promopt{width:94%;float:left;margin:0 3%;border-top:solid 1px #c7c7c7;color:#727272;margin-top:60px;line-height:28px}
+.certifie_gat .promopt h4{width:98%;margin:40px 0 0 2%;float:left}
+.certifie_gat .promopt p{width:98%;margin-left:2%;float:left}
+.gat_ing{margin-top:10px;padding-left:45px;width:auto}
+.gat_ing h1{width:100%;font-size:24px;color:#f90;float:left;line-height:100px}
+.gat_ing P{width:100%;line-height:28px}
+.gat_fail{margin-top:10px;padding-left:45px;width:auto}
+.gat_fail h1{width:100%;font-size:24px;color:#f90;float:left;line-height:100px}
+.gat_fail P{width:100%;line-height:28px}
+.gat_fail P em{color:#f90}
+.gat_fail .btn_cont{margin-top:20px}
+.gat_fail P a{display:inline-block;width:160px;height:40px;line-height:40px;float:left;background:#FFA350;color:#fff;text-align:center;border-radius:2px;cursor:pointer}
+.gat_fail P a:hover{background:#f2892c}
+.gat_success ul li{height:auto}
+.gat_success ul li p{width:170px;height:30px;line-height:30px;padding:0 5px;border-radius:2px;border-top:solid 1px #c7c7c7;background:#DDD}
+.gat_success ul li a{width:178px;height:38px;line-height:38px;font-size:16px;font-weight:700;text-align:center;display:inline-block;color:#FE3F3B;border:1px solid #FE3F3B;border-radius:2px}
+
+/*edit account name*/
+.per_bod ul li .edit_name:hover{
+	/* border-bottom: solid 1px #fca703; */
+	text-decoration: underline;
+}
+.pop_edit_name{position:fixed;left:0;top:0;height:100%;width:100%;background:transparent url(../img/icon/top_bg.png) repeat;display:none}
+.pop_edit_name .cont{height:270px;width:500px;position:fixed;left:50%;top:50%;margin-left:-250px;margin-top:-135px;background:#fff;border-radius:6px;display:none}
+.pop_edit_name .cont h3{height:65px;line-height:65px;font-size:16px;color:#fca703;text-align:center;font-weight:600}
+.pop_edit_name .cont p{height:30px;line-height:30px;padding-left:150px;position:relative;margin-bottom:10px}
+.pop_edit_name .cont p label{position:absolute;left:0;top:0;text-align:right;width:150px}
+.pop_edit_name .cont p span{margin-left:20px}
+.pop_edit_name .cont p input{margin-left:20px;height:28px;padding:0 5px;width:175px}
+.pop_edit_name .cont .ipt{height:15px;line-height:15px;color:red;text-indent:20px}
+.pop_edit_name .cont p a{margin-left:20px;width:82px;height:28px;border-radius:4px;background:#fff;color:#FC5043;border:solid 1px #FC5043;display:block;float:left;text-align:center;cursor:pointer;line-height:28px}
+.pop_edit_name .cont p a:hover{background:#fc5043;color:#fff;border-color: #FC5043;}
+.pop_edit_name .cont p i{font-style:normal;margin-left:20px;color:grey;font-size:13px}
+.pop_edit_name .page_2 a{width:128px;height:28px;border-radius:4px;background:#fff;color:#FC5043;border:solid 1px #FC5043;display:block;text-align:center;cursor:pointer;line-height:28px;margin:40px auto 0}
+.pop_edit_name .page_2{height:180px;margin-top:-90px}
+.pop_edit_name .page_2 a:hover{background:#fc5043;color:#fff;border-color: #FC5043;}
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){.pop_edit_name .cont{width:100%;border-radius:0;top:initial;bottom:0;left:0;margin:0}
+.pop_edit_name .cont .ipt{text-indent:0}
+.pop_edit_name .cont p{box-sizing:border-box;padding-left:110px}
+.pop_edit_name .cont p label{width:110px;padding-right:10px}
+.pop_edit_name .cont p span{margin-left:0}
+.pop_edit_name .cont p input{margin-left:0;width:90%;box-sizing:border-box;border:solid 1px #333;height:30px;line-height:30px}
+.pop_edit_name .cont p i{margin-left:0;line-height:18px}
+.pop_edit_name .cont p a{width:42%;margin-left:5%;box-sizing:border-box;height:30px;line-height:30px}
+.pop_edit_name .cont p a.yes{margin-left:0}
+}
+
+

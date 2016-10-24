@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>test</shortname>
+	<uri>http://jakarta.apache.org/struts/tags-bean</uri>
+	
+	<!-- 分页  -->
+	<tag>
+		<name>pagination</name>
+		<tagclass>com.sxt.page.util.PaginationTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<attribute>
+			<name>pageBean</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+<!-- 			<description>page对象,封装分页参数,查询结果</description> -->
+		</attribute>
+		<attribute>
+			<name>methodName</name>
+			<required>true</required>
+<!-- 			<description>页面调用Ajax分页方法名</description> -->
+		</attribute>
+		<attribute>
+			<name>sytleName</name>
+			<required>true</required>
+<!-- 			<description>分页样式</description> -->
+		</attribute>
+	</tag>
+	
+	<!-- 安全资源标签 -->
+	<tag>
+		<name>button</name>
+		<tagclass>com.sxt.page.util.ResourceTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<attribute>
+			<name>request</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>otherAttribute</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+</taglib>

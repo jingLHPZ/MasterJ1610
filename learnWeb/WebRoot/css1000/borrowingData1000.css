@@ -1,0 +1,88 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+*{transition-property: width,background-position;}
+.right_main .bonda_title{
+	background-position: 445px 0px;
+}
+.right_main .bonda_title div {
+    width: 260px;
+}
+.right_main .bonda_title p {
+    width: 250px;
+}
+.right_main .bonda_title h2 {
+    width: 120px;
+}
+.right_main .bonda_title div a {
+    margin: 0px 68px 0px 20px;
+}
+.right_main .borwD_bod {
+    width: 98%;
+    margin: 0px 1%;
+}
+.right_main .borwd_li_div{
+	width: 100%;
+	box-sizing: border-box;
+}
+.right_main .borwd_li_div .boli_title {
+    width: 96%;
+    margin: 0px 2%;
+}
+.right_main .borwd_li_div .boli_title a{
+	margin: 0 5px;
+}
+.right_main .borwd_li_div .boli_title p {
+    width: 200px;
+}
+.right_main .borwd_li_div table {
+    width: 96%;
+    margin: 20px 2%;
+}
+
+/*弹窗*/
+.right_main .borwD_bod .in_ckxq_bod {
+    width: 900px;
+    margin: -250px 0px 0px -450px;
+}
+.right_main .borwD_bod .in_ckxq_title {
+    width: 96%;
+    margin: 10px 2% 30px;
+} 
+.right_main .borwD_bod .in_ckxq_font {
+    width: 96%;
+    margin: 0 2%;
+}
+.right_main .borwD_bod .in_ckxq_font li {
+    width: 160px;
+    padding-left: 10px;
+}
+.right_main .borwD_bod .in_hkjh_title {
+    width: 96%;
+    margin: 30px 2% 5px;
+}
+.right_main .borwD_bod .in_tab_t {
+    width: 96%;
+    margin: 0 2%;
+}
+.right_main .borwD_bod .in_hkjh_tab{
+    width: 96%;
+    margin: 0 2%;
+}
+.right_main .borwD_bod .in_hkjh_tab table{
+	width: 100%;
+}
+
+/*还款弹窗*/
+.right_main .bwD_hk_qr .hkqr_bod{
+	position: fixed;
+	margin: 0;
+	left: 50%;
+	top: 225px;
+	margin-left: -250px;
+}
+
+
+
+
+
+}
+

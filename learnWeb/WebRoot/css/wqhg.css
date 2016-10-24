@@ -1,0 +1,10 @@
+.wqhg_bod{ width: 1170px; height: auto; overflow: hidden; margin:0 auto 100px auto;}
+.wqhg_bod h2{ width: 100%; height: 50px; line-height: 50px; float: left; text-align: center; margin: 30px 0; font-size: 26px;}
+.wqhg_bod table{ width: 1170px; height: auto; overflow: hidden; border: 1px solid #e5e5e5;}
+.wqhg_bod table th{ height: 70px; line-height: 70px; background: #fef2e1; font-size: 16px; color: #595959;}
+.wqhg_bod table td{ height: 70px; line-height: 70px; font-size: 16px; color: #0d0d0d; text-align: center;}
+.wqhg_bod table td a{ color: #fca703;}
+.wqhg_bod table td a:hover{ text-decoration: underline;}
+.wqhg_bod table tr:hover{background: #efeded;}
+
+.wqhg_pg{ width: 100%; height: 30px; float: left; margin-top:20px; text-align: center;}

@@ -1,0 +1,31 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+/*container*/
+body .content_body{
+	width: 970px;
+}
+
+.content_body .right_main{
+	width: 775px;
+}
+.right_main .in_lis_t{
+	width: 740px;
+}
+.right_main .in_lis_t ul{
+	width: 460px;
+}
+.right_main table tr th:nth-of-type(1):{
+	width: 10px;
+}
+.right_main table tr td:nth-of-type(1):{
+	width: 10px;
+}
+.right_main .inve_list table th{
+	line-height: 20px;
+	padding: 6px 0;
+}
+.right_main .inve_list table td{
+	line-height: 20px;
+	padding: 6px 0;
+}
+
+}

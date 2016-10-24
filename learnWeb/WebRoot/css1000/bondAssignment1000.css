@@ -1,0 +1,44 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+/*container*/
+body .content_body{
+	width: 970px;
+}
+.content_body .right_main{
+	width: 775px;
+}
+
+.right_main .bonda_title{
+    transition: background-position .2s ease-out;
+}
+.right_main .bonda_title h2{
+	width: 100px;
+	margin-left: 30px;
+}
+.right_main .bonda_title div{
+	width: 460px;
+}
+.right_main .bonda_title div a{
+	margin-right: 48px;
+}
+.right_main .bonda_gz {
+    width: 100%;
+    margin: 0;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+.right_main .bonda_div {
+    width: 100%;
+    margin: 0;
+    padding: 20px 30px;
+    box-sizing: border-box;
+}
+/*列表换行高度*/
+.bonda_div table tr td{
+	line-height: 20px;
+	
+}
+.bonda_div table tr th{
+	line-height: 20px;
+}
+
+}

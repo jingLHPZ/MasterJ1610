@@ -1,0 +1,32 @@
+.rexy_bod{ width: 1170px; height: auto; overflow: hidden; background: #fff; margin:20px auto;}
+
+.regis_tab{ width:96%; height: auto; border-bottom: 1px solid #eee; margin:15px 2%; float: left;padding: 10px 0;}
+.regis_tab h1{height: auto;width: 100%;line-height: 30px;font-size: 28px;text-align: center;margin-bottom: 20px;}
+.regis_tab h2{float: left;height: 30px;line-height: 30px;width: auto;display: inline-block;margin: 20px 0;font-size: 18px;}
+.regis_tab .code{float: left;height: 30px;line-height: 30px;width: auto;min-width: 150px;border-bottom: solid 1px #636060;margin: 20px 0;padding: 0 15px;font-size: 20px;}
+.znxx_tab{ width: 100%; height: auto; overflow: hidden; float: left; margin: 15px 0; border-left: 1px solid #f0f0f0; border-top: 1px solid #f0f0f0;}
+.znxx_tab td{ height: auto;min-height: 42px;padding: 10px 0; line-height: 20px; text-align: center; color: #727272;border-bottom: 1px solid #f0f0f0;border-right: 1px solid #f0f0f0; color: #333;}
+.reg_div{ width: 1140px; height: auto; overflow: hidden; float: left; margin: 0 0 50px 15px; display:none;}
+.reg_div b{ color: #555;}
+.reg_div h2{ width:100%; height: 30px; line-height: 30px; text-align: center; font-size:18px; font-weight: bold; color:#333; margin:30px 0;}
+.reg_div div{ width: 96%; height: auto; line-height: 26px; overflow: hidden;font-size: 14px; color: #777; margin:20px 2%;}
+.reg_div .th_2{ padding-left: 3%;width: 93%;margin: -20px 2% 0;}
+.rexy_bod .title{height: 30px;line-height: 30px;text-align: center;font-size: 18px;font-weight: bold;color: #333;}
+.reg_div .end{text-align: center;margin: 30px 0;}
+
+
+@media screen and (min-width:1020px) and (max-width:1290px){
+	.rexy_bod{width: 970px;}
+	.reg_div{width: 940px;}
+}
+
+@media screen and (min-width:770px) and (max-width:1019px){
+	.rexy_bod{width: 770px;}
+	.reg_div{width: 740px;}
+}
+
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+	.rexy_bod{width: 96%;margin: 2% auto;}
+	.reg_div{width:100%; padding: 0;margin: 0;}
+}
+

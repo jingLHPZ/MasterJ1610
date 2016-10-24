@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.ILdMemberFirstAward">
+
+	<resultMap type="LdMemberFirstAward" id="ldMemberFirstAwardMap">
+		<id property="id" column="id" />
+		<result property="uid" column="uid"/>
+		<result property="awardType" column="award_type"/>
+		<result property="createTime" column="create_time"/>
+		<result property="operateMode" column="operate_mode"/>
+	</resultMap>
+	<insert id="insert" parameterType="LdMemberFirstAward" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO ld_member_first_award (
+			<trim suffixOverrides=",">
+			<if test="id != null">id, </if>
+			<if test="uid != null">uid, </if>
+			<if test="awardType != null">award_type, </if>
+			<if test="operateMode != null">operate_mode, </if>
+			<if test="createTime != null">create_time, </if>
+			</trim>
+		) VALUES (
+			<trim suffixOverrides=",">
+			<if test="id != null">#{id}, </if>
+			<if test="uid != null">#{uid}, </if>
+			<if test="awardType != null">#{awardType}, </if>
+			<if test="operateMode != null">#{operateMode}, </if>
+			<if test="createTime != null">#{createTime}, </if>
+			</trim>
+		)
+	</insert>
+
+	<update id="update" parameterType="LdMemberFirstAward">
+		UPDATE ld_member_first_award 
+		<set>
+		<if test="id != null">id = #{id}, </if>
+		<if test="uid != null">uid = #{uid}, </if>
+		<if test="awardType != null">award_type = #{awardType}, </if>
+		<if test="createTime != null">create_time = #{createTime}, </if>
+		</set>
+		WHERE id = #{id} 
+	</update>
+
+	<delete id="delete" parameterType="Long">
+		DELETE FROM ld_member_first_award 
+		WHERE id = #{id} 
+	</delete>
+
+	<select id="queryLdMemberFirstAwardList"  parameterType="java.util.Map" resultMap="ldMemberFirstAwardMap">
+		SELECT * FROM ld_member_first_award 
+		WHERE 1=1 
+		<if test="startRow != null and pageSize != null">limit #{startRow},#{pageSize}</if> 
+	</select>
+
+	<select id="queryLdMemberFirstAwardCount"  parameterType="java.util.Map" resultType="Integer">
+		SELECT count(id) FROM ld_member_first_award 
+		WHERE 1=1 
+		<if test="userId != null"> and uid = #{userId}</if>
+		<if test="awardType != null"> and award_type = #{awardType}</if>
+		<if test="operateMode != null"> and operate_mode = #{operateMode}</if>
+	</select>
+
+	<select id="queryLdMemberFirstAwardByCondition"  parameterType="LdMemberFirstAward" resultMap="ldMemberFirstAwardMap">
+		SELECT * FROM ld_member_first_award 
+		WHERE id = #{id} 
+	</select>
+
+</mapper>

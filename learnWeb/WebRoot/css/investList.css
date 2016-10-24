@@ -1,0 +1,17 @@
+.top{width:100%;min-width:1200px;height:713px;margin:0 auto;background:#2f2d4b url(../img/invesReward/top.jpg) no-repeat center}
+.invest_bg{width:100%;height:616px;min-width:1200px;padding-top: 40px;background:#2f2d4b url(../img/invesReward/bg_04.jpg) no-repeat center}
+.invest_bg .container{width:995px;margin:0 auto;position:relative;box-shadow:3px 3px 13px #070406}
+.invest_bg .container h1{position:absolute;width:668px;height:109px;top:-41px;left:50%;margin-left:-334px;background:transparent url(../img/invesReward/title.png) no-repeat center;text-align:center}
+.invest_bg .container h1 img{display:inline-block;margin-top:6px}
+.invest_bg .list{height:525px;width: 865px;padding: 0 65px;background:transparent url(../img/invesReward/bg_05.jpg) no-repeat center}
+.invest_bg .list h2{width: 100%;font-size: 16px;color: #383838;line-height: 20px;margin-top: 80px;text-align: center;font-weight: bold;float: left;}
+.invest_bg .list .title{width:815px;padding:0 25px;float:left;background:#fff0b5;margin:15px 0 0 0}
+dl,dt{margin:0;padding:0}
+.invest_bg .list .title dl{width:100%;height:38px;line-height:38px;font-size:24px;color:#383838;width:100%;display:block;font-weight:600}
+.invest_bg .list .title dl dt{height:100%;width:24%;float:left;text-align:center;letter-spacing: 3px;}
+.invest_bg .list .title dl .last{width:28%;+width: 27%;}
+.invest_bg .list .cont{width:815px;padding:5px 25px 25px;margin-top:7px;background:#ffe8a4;float:left}
+.invest_bg .list .cont dl{height:30px;width:100%;border-bottom:solid 1px #d3c18f;color:#383838;font-size:20px;line-height:37px}
+.invest_bg .list .cont dl dt{height:100%;width:24%;float:left;text-align:center;letter-spacing:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.invest_bg .list .cont dl .last{width:28%;font-size:16px;letter-spacing:0;line-height:39px;+width: 27%;}
+

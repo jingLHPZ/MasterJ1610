@@ -1,0 +1,91 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+/*container*/
+body .content_body{
+	width: 100%;
+	min-width: 170px;
+}
+/*右侧内容*/
+.content_body .right_main {
+    width: 100%;
+    padding: 0 10px;
+	box-sizing: border-box;
+	margin-top: 10px;
+}
+.right_main .bonda_title{
+	background-image: none;
+	height: 40px;
+}
+.right_main .bonda_title h2{
+	margin-left: 0;
+	width: 20%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.right_main .bonda_title div{
+	width: 80%;
+	border-top: none;
+	margin-top: 1px;
+	padding-left: 1%;
+	box-sizing: border-box;
+}
+.right_main .bonda_title div a{
+	width: 33%;
+	height: 100%;
+	margin: 0;
+	text-align: center;
+	box-sizing: border-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.right_main .bonda_title div .bonda_ti {
+    color: #ffffff;
+    border-bottom: none;
+    background-color: #FCA703;
+}
+.right_main .bonda_gz {
+    width: 100%;
+    margin: 0;
+}
+
+.right_main .bonda_div {
+    margin: 0;
+    width: 100%;
+}
+.right_main .bonda_div table{
+	min-width: 525px;
+}
+table tr th:nth-of-type(2){
+	display: none;
+}
+table tr td:nth-of-type(2){
+	display: none;
+}
+table tr td,table tr th{
+	line-height: 20px;
+}
+.right_main table td .bond_name{
+	margin-left: 0;
+}
+
+/*弹窗*/
+.right_main .qx_bonda .qx_bod{
+	width: 100%;
+	margin: 0;
+	bottom: 0;
+	left: 0;
+	top: initial;
+}
+.right_main .qx_bonda .qx_bod input{
+	width: 35%;
+}
+.right_main .qx_bonda .qx_bod .qx_btn_1{
+	margin: 0px 3% 0px 12%;
+}
+.right_main .qx_bonda .qx_bod .qx_btn_2{
+	margin-left: 3%;
+}
+
+
+}

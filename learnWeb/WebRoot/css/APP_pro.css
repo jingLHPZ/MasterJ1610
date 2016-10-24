@@ -1,0 +1,4 @@
+html,body{ margin: 0; padding: 0; font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;-webkit-text-size-adjust: none; overflow: hidden; overflow-y: auto; min-width: 320px;}
+h3{ background:#f0f0f0; float: left; width:94%; padding: 0 3%; height: 50px; line-height: 50px; margin: 0; font-size: 1em; color: #555;}
+p{ width: 94%; height: auto; line-height: 20px; overflow: hidden; margin: 10px 3%; float: left; font-size:0.8em; color: #0d0d0d;}
+img{ margin: 10px 3%; border: none; float: left; height: auto; width:94%;}

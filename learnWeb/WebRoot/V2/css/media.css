@@ -1,0 +1,126 @@
+@media screen and (min-width:1020px) and (max-width:1230px){
+*{transition: width .2s ease-out;}
+
+body .bg{min-width:970px;}
+body .container{width:970px}
+body .top_nav .left_logo{width:90px}
+body .footer .contact{margin-right:0;width:285px}
+body .footer .contact .qq label{display:inline-block;text-align:left}
+body .footer .contact .qq label{text-indent:0}
+body .footer .contact .qq label:nth-child(2){padding-left: 30px;}
+
+}
+
+@media screen and (min-width:750px) and (max-width:1019px){
+*{transition: width .2s ease-out;}
+
+body .bg{min-width:705px;}
+body .container{width:705px}
+body .top_bar ul li:nth-child(1){display:none}
+body .top_bar ul li label{margin:12px 0 0}
+body .top_nav .left_logo{width:90px}
+body .top_nav .top_menu{padding-top:12px}
+body .top_nav .top_menu li{font-size:16px;padding:0 4px}
+body .top_nav .top_menu li a{width:70px;height:26px;line-height:26px}
+body .top_nav .top_menu li span{width:70px;height:26px;line-height:26px}
+body .top_nav .top_menu .sub_menu{top: 25px;}
+body .top_nav .top_menu .my_account{padding-left:0}
+body .top_nav .top_menu .my_account a{top:-5px}
+body .footer{height:230px}
+body .footer .container{width:410px;padding-left:290px;position:relative}
+body .footer .hotline{position:absolute;left:0;top:0;width:290px;height:60px}
+body .footer .contact{margin:0;position:absolute;left:0;top:60px;width:290px;height:auto}
+body .footer .contact .qq label{display:inline-block;text-align:left}
+body .footer .contact .qq label{text-indent:0}
+body .footer .contact .qq label:nth-child(2){padding-left:30px}
+body .footer .icon{width:705px;position:absolute;left:0;top:130px}
+body .footer .copyright{width:705px;position:absolute;left:0;top:200px}
+body .top_nav .top_menu li a::after {height: 26px;width: 70px;}
+
+/*详情页交易密码弹窗*/
+body .passw_bod {width: 360px;margin: -125px 0px 0px -180px;}
+body .passw_mm {margin: 20px 0px 5px 50px;box-sizing: border-box;}
+body .passw_bod p {text-indent: 50px;}
+body .passw_btn {margin: 20px 0px 5px 124px;}
+
+}
+
+@media screen and (max-width:749px){
+	.left_title{display: none;}/*以后去掉*/
+*{transition: width,padding .2s ease-out;box-sizing: border-box;}
+body .bg{min-width:0;width: 100%;}
+body .container{width:100%}
+body .top_bar{line-height:35px}
+body .top_bar p{display:none}
+body .top_bar ul li{display:none;padding:0}
+body .top_bar ul li a{display:block;min-width:75px;text-align:center}
+body .top_bar ul .user{border:solid 2px #ef4810;display:block}
+body .top_bar ul .user.hide{display:none}
+body .top_bar ul .reg a{background:#ef4810;color:#fff}
+body .top_bar ul .reg a:hover{color:#fff}
+body .top_bar ul .welcome{border:none;float:left}
+body .top_bar ul .welcome a{display:inline;color:#ef4810}
+body .top_bar ul .welcome p{width:55px;height:100%;display:inline-block;border-left:solid 1px #e8ebeb;float:left;text-align:center}
+body .top_bar ul .welcome .info{width:auto;border:none}
+body .top_bar ul .welcome .mess{display:inline-block;cursor:pointer;position:relative;background:transparent url(../img/icon/lingdang_01.png) no-repeat scroll center center}
+body .top_bar ul .welcome .mess span{color:#FFF;font-size:10px;background:#FC5043 none repeat scroll 0 0;height:16px;line-height:16px;padding:0 5px;display:inline-block;border-radius:8px;position:absolute;top:1px;right:10px}
+body .nav_warp{height:auto;border-bottom: solid 2px #fd835d;}
+body .top_nav{padding:10px 0;float: none;}
+body .top_nav .left_logo{height:35px;background-size:auto 35px;width:65px}
+body .right_menu{display:none}
+body .footer{height:auto;padding: 0;}
+body .footer .hotline{width:100%;margin:0;display: none;}
+body .footer .contact{width:100%;margin:0;display: none;}
+body .footer .contact p{text-indent:0;padding-left:30px;margin:0;line-height:20px}
+body .footer .map{background-image:none;width:100%;height:auto;display: none;}
+body .footer .map .mask{display:none;position:initial}
+body .footer .map .address{width:100%;height:auto;position:initial;padding:0;background:transparent url(../img/icon/map_sign01.png) no-repeat scroll 2px 2px/auto 18px;white-space:nowrap;overflow:hidden;padding-left:30px}
+body .footer .map .address:hover{background:transparent url(../img/icon/map_sign01.png) no-repeat scroll 2px 2px/auto 18px}
+body .footer .map .address p{text-indent:0;display:initial;line-height:20px;color:#BDBCB7;font-size:14px;float:left}
+body .footer .qr_code{display:none}
+body .footer .icon{display:none}
+body .footer .copyright{padding:10px 0;line-height:18px}
+body .top_nav .list_btn{display:block;float:right;height:35px;width:40px;background:transparent url(../img/icon/nav_btn01.png) no-repeat center/30px auto}
+body .top_nav .container{position:relative}
+body .top_nav .top_menu{position:absolute;top:45px;width:100%;margin:0;padding:0;left:0;z-index:101;overflow:hidden;height:0;transition:height .2s ease-in;box-shadow:0 2px 4px #D7D7D7;-moz-box-shadow:0 2px 4px #D7D7D7}
+body .top_nav_fixed .top_nav .top_menu{top:36px}
+body .top_nav .top_menu.active{height:auto}
+body .top_nav .top_menu li{padding:0;width:100%;line-height:45px;border-bottom:solid 1px #edf1f1;text-align:center;background:#fff}
+body .top_nav .top_menu li a{color:#0d0d0d;font-size:16px;background:#ffffff;display:block;height:100%;width:100%;border-radius:0;transition:none}
+body .top_nav .top_menu li .active{background:#FC5043;color:#fff}
+body .top_nav .top_menu li a:after{content:none}
+body .top_nav .top_menu li a:hover{background:#FC877E;color:#fff}
+body .top_nav .top_menu li span{height: auto;width: 100%;}
+body .top_nav .top_menu li span:hover{background: #ffffff;}
+body .top_nav .top_menu .senior_top label{display: none;}
+body .top_nav .top_menu .senior_top .sub_menu{display: block;position: initial;width: 100%;opacity: 1;top: 0;left: 0;margin: 0;}
+body .top_nav .top_menu .senior_top .sub_menu:before{content: none;}
+body .top_nav .top_menu .senior_top .sub_menu p{padding: 0;background: #ffffff;width: 100%;border-radius: 0;}
+body .top_nav .top_menu .senior_top .sub_menu p a{color:#0d0d0d;font-size:16px;background:transparent;width: 100%;height: 33px;line-height: 33px;}
+body .top_nav .top_menu .sub_menu P.item_1{border-bottom: 1px solid #EDF1F1;}
+body .top_nav .top_menu .sub_menu P.item_1 a{border: none;}
+body .top_nav .top_menu .senior_top .sub_menu p:hover{background:#FC877E ;color:#fff}
+body .top_nav .top_menu .senior_top .sub_menu p.active{background:#FC5043 ;color:#fff}
+body .top_nav .top_menu .senior_top .sub_menu p.active a{color:#fff}
+body .top_nav .top_menu .senior_top .sub_menu p a:hover{background:#FC877E ;color:#fff}
+body .top_nav .top_menu .my_account{padding:0;margin:0;height:auto}
+body .top_nav .top_menu .my_account a{top:0;left:0;height:100%;line-height:none;width:100%;text-indent:0;font-size:16px;text-align:center;background-image:none;transition:none}
+body .top_nav .top_menu .my_account a:hover{background:#FC877E;color:#fff}
+/*圆形逐渐扩展*/
+.round_spread:after{content: none;}
+.round_spread:hover{color: #EF4810!important;background: transparent;}
+/*分页*/
+.pages a{margin: 0 1px;padding: 0 7px;}
+/*当前位置*/
+.tp_crumb{display: none;}
+
+/*详情页交易密码弹窗*/
+body .passw_bod{width:100%;left:0;top:initial;bottom:0;margin:0}
+body .passw_mm{box-sizing:border-box;margin:92px auto 5px;float:none;display:block}
+body .passw_bod p{text-indent:0;width:250px;margin:0 auto;float:none}
+body .passw_btn{float:none;margin:20px auto 5px;display:block}
+
+
+
+
+}

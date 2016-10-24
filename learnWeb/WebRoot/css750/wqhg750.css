@@ -1,0 +1,15 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+	
+.toin_body .left_title,
+.toin_body .wqhg_bod{
+    width: 720px;
+}
+.toin_body .wqhg_bod table{
+	width: 100%;
+}
+.toin_body .wqhg_bod table th,
+.toin_body .wqhg_bod table td{
+    line-height: 20px;
+}
+
+}

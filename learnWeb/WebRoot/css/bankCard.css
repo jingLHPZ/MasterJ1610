@@ -1,0 +1,74 @@
+.bankC_bod{ width: 100%; height: auto; overflow: hidden; margin-top: 23px;}
+.bankC_bod li{ width: 278px; height: 168px; background: #ffffff; float: left; margin-left:23px; border: 1px dashed #ccc; border-radius: 4px; margin-bottom: 20px;}
+.bankC_bod .ban_e{ width: auto; background: none; border: none; line-height: 168px; color: #727272;}
+.bankC_bod .bankcard_add{position: relative;}
+.bankC_bod .bankcard_add .refresh{display: none;position: absolute;height: 100%;width: 100%;background: transparent url("../img/icon/bc_refresh.png") no-repeat scroll center center;}
+
+.bankC_bod li div{ width: 100%; height: 29px; float: left;}
+.bankC_bod li a{ height: 26px; line-height: 26px; text-align: center; width:58px; border: 1px solid #fe3f3b; border-radius: 2px; margin: 3px 3px 0 0; display: inline-block; background:#fe3f3b; color: #fff; float: right; display: none;}
+.bankC_bod li a:hover{ background:none; color:#fe3f3b;}
+.bankC_bod li h1{ width: 100%; height: 40px; line-height: 40px; text-align: center; color: #666; overflow: hidden; float: left; font-size: 20px;font-weight: bold; margin:40px 0 10px 0;}
+.bankC_bod li h1 span{display:inline-block;width:auto;height:100%;padding-left:50px;background:transparent url(../img/bankLogo/cardpic_jsyh.png) no-repeat left top/auto 40px;background-image:none}
+
+.bankC_bod li p{ width: 100%; height: 40px; text-align: center; line-height: 40px; font-size: 18px; font-weight: bold;float: left; overflow: hidden; color: #777;}
+.bankC_bod .bankcard_add{ background:#ffffff url(../img/bankCard_add.png) 69px 69px no-repeat;line-height: 168px;font-size: 20px;font-weight: bold;text-align: center;color: #727272 ;}
+.bankC_bod .bankcard_add:hover{border: 1px solid #ccc; cursor: pointer;background-color: #f8f7f7;}
+
+.bankC_yz{ width: 100%; height:auto; overflow: hidden; margin-top:70px; display: none;}
+.bankC_yz li{ width: 100%; height: auto; overflow: hidden; float: left; margin-bottom:20px;}
+.bankC_yz li h2{ width: 100%; height: 30px; line-height: 30px; text-indent: 410px; font-size: 18px; font-weight: bold; color:#727272; float: left;}
+.bankC_yz li h3{ width: 100%; height: 30px; line-height: 30px; text-indent: 410px; font-size: 14px; color:#bbb; float: left; margin-bottom:10px;}
+.bankC_yz li label{ width: 360px; height:38px; line-height: 38px; text-align: right; float: left; color: #727272; margin-right: 5px;}
+.bankC_yz li input{ border-radius: 2px;}
+.bankC_yz li p{ width: auto; height: 38px; line-height: 38px; float: left; color: #727272;}
+.bankC_yz li .yz_text{ width: 150px; height: 36px; line-height: 36px; border: 1px solid #aaa; float: left; padding: 0 10px; margin-right:10px; color: #333;}
+.bankC_yz li .bankC_yzm{ width: 100px; height: 38px; line-height: 38px; text-align: center; color: #fff; float: left; background: #fca703; border-radius: 2px; cursor: pointer;}
+.bankC_yz li .bankC_yzm:hover{ background:#ee9f06;}
+.bankC_yz li .bankC_djs{ width: 100px; height: 38px; line-height: 38px; text-align: center; color: #777; float: left; background:#e9e7e7; border-radius: 2px; display: none;}
+.bankC_yz li a{ width: auto; height: 38px; line-height: 38px; float: left; display: inline-block; color: #fca703; text-decoration: underline;}
+.bankC_yz li .yz_btn1{ width: 170px; height: 45px; line-height: 45px; text-align: center; float: left; margin: 20px 10px 0 365px; cursor: pointer; border: 1px solid #fe3f3b; background: #fe3f3b; color: #fff; font-size: 16px;}
+.bankC_yz li .yz_btn1:hover{ color:#fe3f3b; background: #fff;}
+.bankC_yz li .yz_btn2{ width: 100px; height: 45px; line-height: 45px; text-align: center; float: left; margin-top: 20px; cursor: pointer;color:#fe3f3b; background: #fff; border: 1px solid #fe3f3b; font-size: 16px;}
+.bankC_yz li .yz_btn2:hover{ color:#fff; background: #fe3f3b;}
+.bankC_yz li h4{ width: auto; height: 38px; line-height: 38px; float: left; margin-left: 10px; color: red; display: none;}
+
+.bankC_del{ width: 100%; height: 100%; position: fixed; top: 0; left: 0; bottom: 0; right: 0; background: url(../img/icon/tb_1_1.png) top left repeat; z-index: 9999999; display: none;}
+.bankC_del .del_bod{ width: 500px; height: 300px; background: #fff; border-radius: 2px; position: fixed; top: 50%; left: 50%; margin: -150px 0 0 -250px;}
+.bankC_del .del_bod h1{ width: 100%; height: 40px; text-align: center; line-height: 40px; color: #fff; font-size: 16px; background: #fd6860; float: left;}
+.bankC_del .del_bod b{ width: 100%; height: 30px; text-align: center; font-size: 16px; color: #69665f; float: left; margin: 60px 0 10px 0;}
+.bankC_del .del_bod p{ width: 100%; height: 30px; text-align: center; font-size: 18px; color: #69665f; float: left;}
+.bankC_del .del_bod input{ width: 110px; height: 35px; text-align: center; line-height: 35px;font-size: 16px; background: #fd6860; color: #fff; border: 1px solid #fd6860; border-radius: 2px; float: left; margin:40px 0 0 195px;}
+.bankC_del .del_bod input:hover{ background: #fff; color:#fd6860; cursor: pointer;}
+
+.add_bc{ width: 100%; height: 100%; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: url(../img/icon/tb_1_1.png) top left repeat; z-index: 9999999; display:none;}
+.add_bc .addb_bod{ width: 760px; height: auto;min-height: 530px; background: #fff; position: fixed; margin: -265px 0 0 -380px; border-radius: 2px; left: 50%; top: 50%;}
+.add_bc .addb_bod .addb_close{width: 32px; height: 32px; float: right; background:url(../img/icon/chacha.png) top left no-repeat; margin:  5px 5px 0 0;}
+.add_bc .addb_bod .addb_close:hover{background: url(../img/icon/chacha_h.png) top left no-repeat; cursor: pointer;}
+.add_bc .addb_bod h3{ width: 100%; height: 50px; line-height: 50px; font-size: 18px; color: #727272; text-align: center; font-weight: bold; float: left; margin-bottom: 40px;}
+.add_bc ul{ width: 600px; height: auto; overflow: hidden; margin-left:130px; float: left;}
+.add_bc ul li{ width: 100%; height: 32px; overflow: hidden; margin-bottom: 20px; color: #727272; float: left;}
+.add_bc ul .checkInfoCont{margin: 0;}
+.add_bc ul .checkInfoCont span{margin-left: 165px;color: #F00;}
+.add_bc ul li label{ width: 155px; height: 32px; line-height: 32px; display: inline-block; text-align: right; margin-right: 10px; float: left;}
+.add_bc ul li input{ width:195px; height: 30px; border: 1px solid #dcdcdc; float: left; padding: 0 5px; border-radius: 2px; color: #727272;}
+.add_bc ul li select{ width:207px; height: 30px; border: 1px solid #dcdcdc; float: left; padding: 0 5px; border-radius: 2px; color: #727272;}
+.add_bc ul #sjld select{width: 100px;margin-right: 10px;height: 30px;line-height: 30px;}
+.add_bc ul li .adb_se_wid{ width: 100px; margin-right: 7px;}
+.add_bc .bank_s_bt{ height: 40px; margin-top: 20px;}
+.add_bc .bank_s_bt input{ width: 207px; height: 40px; text-align: center; line-height: 40px; color: #FFf; font-size: 16px; display: inline-block; background: #fec65b; border-radius: 2px; margin-left: 165px;}
+.add_bc .bank_s_bt input:hover{ background:#ecb64e ;}
+.add_bc .bank_s_bt a{ width: 207px; height: 40px; text-align: center; line-height: 40px; color: #FFf; font-size: 16px; display: inline-block; background: #fec65b; border-radius: 2px; margin-left: 165px;}
+.add_bc .bank_s_bt a:hover{ background:#ecb64e ;}
+
+.bankC_bod .prompt_cont{width: 100%;box-sizing: border-box;padding: 0 23px;margin: 0;background: none;border: none;height: auto;}
+.bankC_bod .prompt_cont div{ width: 100%; height: auto; overflow: hidden;margin-top: 40px; float: left; color: #727272;border-top: solid 1px #e3e0e0;padding: 45px 4% 30px 0;box-sizing: border-box;}
+.bankC_bod .prompt_cont div h3{ font-size: 16px;width: 98%;height: auto;font-size: 16px;text-align: left;color: #ff0000;}
+.bankC_bod .prompt_cont div p{ margin:10px 0 0 60px; line-height: 28px;width: 98%;margin-left: 0;height: auto;font-size: 14px;font-weight: 500;text-align: left;}
+
+/*绑卡弹窗*/
+.success_pop{position:fixed;top:0;left:0;display:none;width:100%;height:100%;background:transparent url(../img/icon/tb_1_1.png) repeat scroll left top}
+.success_pop .cont{position:fixed;top:50%;left:50%;margin:-110px 0 0 -255px;width:510px;height:220px;background:#fff;color:#0d0d0d}
+.success_pop .cont h1{margin-top:10px;width:100%;height:70px;text-align:center;font-size:24px;line-height:70px}
+.success_pop .cont p{width:100%;line-height:20px;color:#505050;font-size:14px;text-align:center;float:left}
+.success_pop .btn{float:left;display:block;margin:25px 15px 0 185px;width:140px;height:40px;border-radius:3px;background:#fd994f;color:#fff;text-align:center;font-size:18px;line-height:40px;cursor:pointer}
+.success_pop .btn:hover{background:#BAB9B9}

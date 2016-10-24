@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IMemberScoreDetail">
+	<resultMap type="MemberScoreDetail" id="memberscoredetaillist">
+		<id property="id" column="id"/>
+		<result property="uid" column="uid"/>
+		<result property="type" column="type"/>
+		<result property="affectScore" column="affect_score"/>
+		<result property="totalScore" column="total_score"/>
+		<result property="info" column="info"/>
+		<result property="createTime" column="create_time"/>
+		<result property="addIp" column="add_ip"/>
+		<result property="systemTraceNo" column="system_trace_no"/>
+		<result property="operateMode" column="operate_mode"/>
+	</resultMap>
+
+	<select id="fQueryScoreByUid" parameterType="map" resultMap="memberscoredetaillist">
+		SELECT * FROM ld_member_score_detail  WHERE uid=#{uid}
+		<choose>
+			<when test="createTimes=='1Week'">
+				<![CDATA[	AND create_time >= date_add(NOW(), interval -1 week)]]>
+			</when>
+			<when test="createTimes=='1Month'">
+				 <![CDATA[	AND create_time >= date_add(NOW(), interval -1 month)]]>
+			</when>
+			<when test="createTimes=='3Month'">
+				 <![CDATA[	AND create_time >= date_add(NOW(), interval -3 month)]]>
+			</when>
+		</choose>
+		<if test="operateMode != null">
+			and operate_mode = #{operateMode}
+		</if>
+		order by create_time desc
+		<if test="startRow != null and pageSize != null"> limit #{startRow},#{pageSize}</if>
+	</select>
+	<select id="getScoreByUidAndTime" parameterType="map" resultType="integer">
+		SELECT COUNT(1) FROM ld_member_score_detail  WHERE uid=#{uid}
+		<choose>
+			<when test="createTimes=='1Week'">
+				<![CDATA[	AND create_time >= date_add(NOW(), interval -1 week)]]>
+			</when>
+			<when test="createTimes=='1Month'">
+				 <![CDATA[	AND create_time >= date_add(NOW(), interval -1 month)]]>
+			</when>
+			<when test="createTimes=='3Month'">
+				 <![CDATA[	AND create_time >= date_add(NOW(), interval -3 month)]]>
+			</when>
+		</choose>
+	</select>
+	<select id="fCountByUid" parameterType="int" resultType="int">
+		SELECT COUNT(1) FROM ld_member_score_detail  WHERE uid=#{uid}
+	</select>
+	<insert id="add" parameterType="MemberScoreDetail" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO ld_member_score_detail
+		(uid,type,affect_score,total_score,info,create_time,add_ip,system_trace_no,operate_mode)
+		VALUE (#{uid},#{type},#{affectScore},#{totalScore},#{info},#{createTime},#{addIp},#{systemTraceNo},#{operateMode})
+	</insert>
+</mapper>

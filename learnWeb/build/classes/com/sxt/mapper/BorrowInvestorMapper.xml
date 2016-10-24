@@ -1,0 +1,1238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IBorrowInvestor">
+	 <resultMap type="com.sxt.models.BorrowInvestor" id="borrowinvestorresult">
+		<id property="id" column="id" />
+		<result property="fromSource" column="from_source" />
+		<result property="productId" column="product_id"/>
+		<result property="investorUid" column="investor_uid" />
+		<result property="borrowUid" column="borrow_uid" />
+		<result property="investorCapital" column="investor_capital" />
+		<result property="investorInterest" column="investor_interest" />
+		
+		<result property="receiveCapital" column="receive_capital" />
+		<result property="receiveInterest" column="receive_interest" />
+		<result property="substituteMoney" column="substitute_money" />
+		<result property="expiredMoney" column="expired_money" />
+		<result property="investFee" column="invest_fee" />
+		
+		<result property="createTime" column="create_time" />
+		<result property="deadline" column="deadline" />
+		<result property="isAuto" column="is_auto" />
+		<result property="rewardMoney" column="reward_money" />
+		<result property="debtStatus" column="debt_status" />
+		
+		<result property="updateTime" column="update_time" />
+		<result property="systemTraceNo" column="system_trace_no" />
+		<result property="status" column="status" />
+		<result property="assignmentMoney" column="assignment_money" />
+		<result property="debtUid" column="debt_uid" />
+		<result property="caninvest" column="caninvest"/>
+		<result property="productType" column="product_type"/>
+		<result property="debtPrice" column="debt_price"/>
+		<result property="investIp" column="invest_ip"/>
+		<result property="salesUid" column="sales_uid"/>
+		<result property="extField" column="ext_field"/>
+		
+	</resultMap>
+	<resultMap type="InvestorMoney" id="investormoney">
+	</resultMap>
+	<resultMap type="com.sxt.inter.dto.InvestRecordDto" id="InvestRecord">
+		<result property="productId" column="product_id"/>
+		<result property="productName" column="product_name"/>
+		<result property="borrowInterestRate" column="borrow_interest_rate"/>
+		<result property="borrowDayDuration" column="borrow_day_duration"/>
+		<result property="borrowMonthDuration" column="borrow_month_duration"/>
+		<result property="borrowStatus" column="borrow_status"/>
+		<result property="systemTraceNo" column="system_trace_no"/>
+		<result property="createTime" column="create_time"/>
+		<result property="investorCapital" column="investor_capital"/>
+		<result property="proValue" column="pro_value"/>
+		<result property="type" column="type"/>
+		<result property="affectExperienceGold" column="affect_experience_gold"/>
+		<result property="repaymentType" column="repayment_type"/>
+		<result property="productAdaptedType" column="product_adapted_type"/>
+		<result property="investLimit" column="invest_limit"/>
+	</resultMap>
+	<resultMap type="com.sxt.inter.dto.AssignmentDebtDto" id="assignmentDebt">
+		<result property="id" column="id"/>
+		<result property="systemTraceNo" column="system_trace_no"/>
+		<result property="productId" column="product_id"/>
+		<result property="productName" column="product_name"/>
+		<result property="investorUid" column="investor_uid"/>
+		<result property="borrowInterestRate" column="borrow_interest_rate"/>
+		<result property="restTime" column="rest_time"/>
+		<result property="restMoney" column="rest_money"/>
+		<result property="nextRepaymentTime" column="next_repayment_time"/>
+		<result property="repaymentType" column="repayment_type"/>
+		<result property="proValue" column="pro_value"/>
+		<result property="debtPrice" column="debt_price"/>
+		<result property="charges" column="charges"/>
+		<result property="createTime" column="create_time"/>
+		<result property="investorCapital" column="investor_capital"/>
+		<result property="investorInterest" column="investor_interest"/>
+		<result property="restDays" column="rest_days"/>
+		<result property="totalTime" column="total_time"/>
+		<result property="status" column="status"/>
+		<result property="deadLine" column="deadline"/>
+		<result property="nextpayDate" column="nextpay_date"/>
+		<result property="borrowDays" column="borrow_days"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="debtStatus" column="debt_status"/>
+		<result property="productType" column="product_type"/>
+		<result property="rewardType" column="reward_type"/>
+		<result property="rewardTraceNo" column="reward_trace_no"/>
+		<result property="fullTime" column="full_time"/>
+		<result property="extField" column="ext_field"/>
+	</resultMap>
+	<resultMap type="com.sxt.models.dto.InvestRewardDto" id="investRewardMap">
+		<result property="investorUid" column="investorUid"/>
+		<result property="investorCapital" column="investorCapital"/>
+		<result property="userName" column="userName"/>
+		<result property="investorCount" column="investorCount"/>
+	</resultMap>
+	
+	<select id="querySumMoney" parameterType="String" resultType="BigDecimal">
+		SELECT SUM(investor_capital) FROM ld_borrow_investor WHERE product_id=#{product_id}
+	</select>
+	<select id="querySumInterest" parameterType="String" resultType="BigDecimal">
+		SELECT SUM(investor_interest) FROM ld_borrow_investor where product_id = #{product_id}
+	</select>
+	<select id="fQueryBypiduid" parameterType="map" resultType="BigDecimal">
+		SELECT investor_interest FROM ld_borrow_investor WHERE
+		product_id=#{product_id} AND investor_uid=#{investor_uid}
+	</select>
+	<select id="fQueryInvestorByBid" parameterType="int"
+		resultType="com.sxt.models.BorrowInvestor">
+		SELECT * FROM ld_borrow_investor WHERE investor_uid NOT IN (SELECT
+		borrow_uid FROM ld_ci_product WHERE borrow_uid=#{borrow_uid})
+	</select>
+	<select id="fQueryInvestorByIid" parameterType="int" resultType="map">
+		SELECT SUM(investor_capital) pinvestor_capital,SUM(investor_interest)
+		pinvestor_interest,SUM(receive_capital)
+		preceive_capital,SUM(receive_interest) preceive_interest FROM
+		ld_borrow_investor WHERE investor_uid=#{investor_uid}
+	</select>
+
+	<select id="fQueryNullByBid" parameterType="String" resultMap="borrowinvestorresult">
+		SELECT * FROM ld_borrow_investor WHERE product_id=#{product_id}
+	</select>
+	<select id="fInvestorMoney" parameterType="map" resultMap="investormoney">
+		SELECT SUM(investor_capital) as ic,SUM(investor_interest) as
+		ii,assignment_money as am FROM ld_borrow_investor WHERE debt_status=1
+		AND product_id=#{product_id} AND investor_uid=#{investor_uid}
+	</select>
+	<select id="fQueryDebt" parameterType="int" resultMap="borrowinvestorresult">
+		SELECT * FROM ld_borrow_investor WHERE debt_status=1 AND
+		investor_uid=#{investor_uid}
+	</select>
+	<select id="fQuerySiproByPid" parameterType="String" resultMap="borrowinvestorresult">
+		SELECT * FROM ld_borrow_investor WHERE product_id=#{product_id} ORDER BY
+		create_time DESC
+	</select>
+	
+	<select id="fQuerySiproPageByPid" parameterType="map" resultMap="borrowinvestorresult">
+		SELECT * FROM ld_borrow_investor WHERE
+		product_id=#{product_id} ORDER BY create_time DESC limit
+		#{startRow},#{pageSize}
+	</select>
+	<select id="fQuerySiproPageCountByPid" parameterType="java.util.Map" resultType="java.lang.Integer">
+		select count(1) from ld_borrow_investor where
+		product_id=#{product_id}
+	</select>
+
+	<insert id="fInsertInvestRecord" parameterType="com.sxt.models.BorrowInvestor">
+		INSERT INTO
+		ld_borrow_investor(from_source,product_id,investor_uid,borrow_uid,investor_capital,investor_interest,receive_capital,receive_interest,substitute_money,expired_money,invest_fee,create_time,is_auto,reward_money,debt_status,status,system_trace_no,assignment_money,product_type,debt_price,invest_ip,sales_uid,ext_field)values
+		(#{fromSource},#{productId},#{investorUid},#{borrowUid},#{investorCapital},#{investorInterest},#{receiveCapital},#{receiveInterest},#{substituteMoney},#{expiredMoney},#{investFee},#{createTime},#{isAuto},#{rewardMoney},#{debtStatus},#{status},#{systemTraceNo},#{assignmentMoney},#{productType},#{debtPrice},#{investIp},#{salesUid},#{extField})
+	</insert>
+
+	<select id="fQueryisinvest" parameterType="int" resultMap="borrowinvestorresult">
+		SELECT * FROM ld_borrow_investor WHERE investor_uid=#{investor_uid}
+	</select>
+	
+	
+	<select id="fqueryBorrowInvestorCount" parameterType="java.util.Map"  resultType="java.lang.Integer">  
+        select  count(1) from ld_borrow_investor 
+        <where>
+        	<if test="investor_uid!=null"> investor_uid=#{investor_uid} </if>
+        	<if test="status!=null"> and status = #{status} </if>
+        	<if test="productIds!=null"> and product_id in  
+				 <foreach item="item" index="index" collection="productIds" open="(" separator="," close=")">  
+				  #{item}  
+				 </foreach> 
+		 	</if>
+		</where>  
+    </select>  
+    
+    <select id="fqueryInvestorCountByProductId" parameterType="String" resultType="java.lang.Integer">
+    	select  count(1) from ld_borrow_investor where product_id=#{product_id}
+    </select>
+    
+    <!-- 我的投资，散标和新手标联合查询 -->
+    <select id="getSiAndNewProductInfo" parameterType="java.util.Map" resultMap="InvestRecord">
+    	SELECT
+			*
+		FROM
+			(
+				(
+					SELECT
+						lsp.product_id,
+						lsp.product_name,
+						lsp.borrow_interest_rate,
+						lsp.borrow_day_duration,
+						lsp.borrow_month_duration,
+						lsp.borrow_status,
+						lbi.system_trace_no,
+						lbi.create_time,
+						lbi.investor_capital,
+						lbi.investor_interest,
+						lrr.pro_value,
+						lrr.type,
+						lsp.product_adapted_type
+					FROM
+						ld_si_product AS lsp
+					LEFT JOIN ld_borrow_investor AS lbi ON lsp.product_id = lbi.product_id
+					LEFT JOIN ld_reward_record AS lrr ON lbi.system_trace_no = lrr.system_trace_no
+					WHERE
+						lbi.investor_uid = #{uid}
+						<if test="productIds!=null and productIds!=''">
+							   and lsp.product_id in  
+								 <foreach item="item" index="index" collection="productIds" open="(" separator="," close=")">  
+								  #{item}
+								 </foreach>
+					 	</if>
+						<if test="weekend!=null and weekend!=''">
+					     <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 week)]]>
+						</if>
+						 <if test="month!=null and month!=''">
+						 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 month)]]>
+						 </if>
+						 <if test="otherMonth!=null and otherMont!=''">
+						 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -3 month)]]>
+						 </if>
+						 <if test="borrowStatus!=0">
+						 	AND lsp.borrow_status = #{borrowStatus} 
+						 </if>
+				)
+				UNION ALL
+					(
+						SELECT
+							lsp.product_id,
+							lsp.product_name,
+							lsp.borrow_interest_rate,
+							lsp.borrow_day_duration,
+							lsp.borrow_month_duration,
+							lsp.borrow_status,
+							lbi.system_trace_no,
+							lbi.create_time,
+							lbi.investor_capital,
+							lbi.investor_interest,
+							lrr.pro_value,
+							lrr.type,
+							0 as product_adapted_type
+						FROM
+							ld_newhand_product AS lsp
+						LEFT JOIN ld_borrow_investor AS lbi ON lsp.product_id = lbi.product_id
+						LEFT JOIN ld_reward_record AS lrr ON lbi.system_trace_no = lrr.system_trace_no
+						WHERE
+							lbi.investor_uid = #{uid}
+							<if test="productIds!=null and productIds!=''">
+							   and lsp.product_id in  
+								 <foreach item="item" index="index" collection="productIds" open="(" separator="," close=")">  
+								  #{item}
+								 </foreach>
+						 	</if>
+							<if test="weekend!=null and weekend!=''">
+						     <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 week)]]>
+							</if>
+							 <if test="month!=null and month!=''">
+							 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 month)]]>
+							 </if>
+							 <if test="otherMonth!=null and otherMont!=''">
+							 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -3 month)]]>
+							 </if>
+							 <if test="borrowStatus!=0">
+							 	AND lsp.borrow_status = #{borrowStatus} 
+							 </if>
+					)
+					UNION ALL
+					(
+						SELECT
+							lsp.product_id,
+							lsp.product_name,
+							lsp.borrow_interest_rate,
+							lsp.borrow_day_duration,
+							lsp.borrow_month_duration,
+							lsp.borrow_status,
+							lbi.system_trace_no,
+							lbi.create_time,
+							lbi.investor_capital,
+							lbi.investor_interest,
+							lrr.pro_value,
+							lrr.type,
+							lsp.product_adapted_type
+						FROM
+							ld_pe_product AS lsp
+						LEFT JOIN ld_borrow_investor AS lbi ON lsp.product_id = lbi.product_id
+						LEFT JOIN ld_reward_record AS lrr ON lbi.system_trace_no = lrr.system_trace_no
+						WHERE
+							lbi.investor_uid = #{uid}
+							<if test="productIds!=null and productIds!=''">
+							   and lsp.product_id in  
+								 <foreach item="item" index="index" collection="productIds" open="(" separator="," close=")">  
+								  #{item}
+								 </foreach>
+						 	</if>
+							<if test="weekend!=null and weekend!=''">
+						     <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 week)]]>
+							</if>
+							 <if test="month!=null and month!=''">
+							 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 month)]]>
+							 </if>
+							 <if test="otherMonth!=null and otherMont!=''">
+							 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -3 month)]]>
+							 </if>
+							 <if test="borrowStatus!=0">
+							 	AND lsp.borrow_status = #{borrowStatus} 
+							 </if>
+					)
+			) t
+		ORDER BY
+			t.create_time DESC
+		LIMIT #{startRow},#{pageSize}
+    </select>
+    
+    <select id="getSiAndNewProductInfoCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+    	SELECT
+			COUNT(1)
+		FROM
+			(
+				(
+					SELECT
+						lsp.product_id,
+						lsp.product_name,
+						lsp.borrow_interest_rate,
+						lsp.borrow_day_duration,
+						lsp.borrow_month_duration,
+						lsp.borrow_status,
+						lbi.system_trace_no,
+						lbi.create_time,
+						lbi.investor_capital,
+						lbi.investor_interest,
+						lrr.pro_value,
+						lrr.type
+					FROM
+						ld_si_product AS lsp
+					LEFT JOIN ld_borrow_investor AS lbi ON lsp.product_id = lbi.product_id
+					LEFT JOIN ld_reward_record AS lrr ON lbi.system_trace_no = lrr.system_trace_no
+					WHERE
+						lbi.investor_uid = #{uid}
+						<if test="productIds!=null and productIds!=''">
+							   and lsp.product_id in  
+								 <foreach item="item" index="index" collection="productIds" open="(" separator="," close=")">  
+								  #{item}
+								 </foreach>
+					 	</if>
+						<if test="weekend!=null and weekend!=''">
+					     <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 week)]]>
+						</if>
+						 <if test="month!=null and month!=''">
+						 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 month)]]>
+						 </if>
+						 <if test="otherMonth!=null and otherMont!=''">
+						 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -3 month)]]>
+						 </if>
+						 <if test="borrowStatus!=0">
+						 	AND lsp.borrow_status = #{borrowStatus} 
+						 </if>
+				)
+				UNION
+					(
+						SELECT
+							lsp.product_id,
+							lsp.product_name,
+							lsp.borrow_interest_rate,
+							lsp.borrow_day_duration,
+							lsp.borrow_month_duration,
+							lsp.borrow_status,
+							lbi.system_trace_no,
+							lbi.create_time,
+							lbi.investor_capital,
+							lbi.investor_interest,
+							lrr.pro_value,
+							lrr.type
+						FROM
+							ld_newhand_product AS lsp
+						LEFT JOIN ld_borrow_investor AS lbi ON lsp.product_id = lbi.product_id
+						LEFT JOIN ld_reward_record AS lrr ON lbi.system_trace_no = lrr.system_trace_no
+						WHERE
+							lbi.investor_uid = #{uid}
+							<if test="productIds!=null and productIds!=''">
+							   and lsp.product_id in  
+								 <foreach item="item" index="index" collection="productIds" open="(" separator="," close=")">  
+								  #{item}
+								 </foreach>
+						 	</if>
+							<if test="weekend!=null and weekend!=''">
+						     <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 week)]]>
+							</if>
+							 <if test="month!=null and month!=''">
+							 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 month)]]>
+							 </if>
+							 <if test="otherMonth!=null and otherMont!=''">
+							 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -3 month)]]>
+							 </if>
+							 <if test="borrowStatus!=0">
+							 	AND lsp.borrow_status = #{borrowStatus} 
+							 </if>
+					)
+			) t
+    </select>
+    
+    
+    <select id="fqueryInvestRecodeByMap" parameterType="java.util.Map" resultMap="InvestRecord">
+    
+				SELECT
+					    lsp.product_id,
+						lsp.product_name,
+						lsp.borrow_interest_rate,
+						lsp.borrow_day_duration,
+						lsp.borrow_month_duration,
+						lsp.borrow_status,
+						lsp.product_adapted_type,
+						lbi.system_trace_no,
+						lbi.create_time,
+						lbi.investor_capital,
+						lbi.investor_interest,
+						lrr.pro_value,
+						lrr.type
+				FROM
+					${tableName}   AS  lsp
+				LEFT JOIN ld_borrow_investor AS lbi ON lsp.product_id = lbi.product_id
+				LEFT JOIN ld_reward_record as lrr on lbi.system_trace_no = lrr.system_trace_no
+	           	WHERE
+					lbi.investor_uid =#{uid}
+						<if test="productIds!=null and productIds!=''">
+							   and lsp.product_id in  
+							 <foreach item="item" index="index" collection="productIds" open="(" separator="," close=")">  
+							  #{item}
+							 </foreach>
+						 </if>
+						<if test="weekend!=null and weekend!=''">
+					     <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 week)]]>
+						</if>
+						 <if test="month!=null and month!=''">
+						 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 month)]]>
+						 </if>
+						 <if test="otherMonth!=null and otherMont!=''">
+						 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -3 month)]]>
+						 </if>
+						 <if test="borrowStatus!=0">
+						 	AND lsp.borrow_status = #{borrowStatus} 
+						 </if>
+						 
+						     ORDER BY lbi.create_time DESC limit #{startRow},#{pageSize}
+         </select>
+      <!-- 盈享投资记录查询 -->
+     <select id="fqueryYxInvestRecodeByMap" parameterType="java.util.Map" resultMap="InvestRecord">
+				SELECT
+					    lsp.product_id,
+						lsp.product_name,
+						lsp.borrow_interest_rate,
+						lsp.borrow_day_duration,
+						lsp.borrow_month_duration,
+						lsp.borrow_status,
+						lbi.system_trace_no,
+						lbi.create_time,
+						lbi.investor_capital,
+						lbi.investor_interest,
+						lrr.pro_value,
+						lrr.type
+				FROM
+					${tableName}   AS  lsp
+				LEFT JOIN ld_borrow_investor AS lbi ON lsp.product_id = lbi.product_id
+				LEFT JOIN ld_reward_record as lrr on lbi.system_trace_no = lrr.system_trace_no
+	           	WHERE
+					lbi.investor_uid =#{uid}
+						<if test="productIds!=null and productIds!=''">
+							   and lsp.product_id in  
+							 <foreach item="item" index="index" collection="productIds" open="(" separator="," close=")">  
+							  #{item}
+							 </foreach>
+						 </if>
+						<if test="weekend!=null and weekend!=''">
+					     <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 week)]]>
+						</if>
+						 <if test="month!=null and month!=''">
+						 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 month)]]>
+						 </if>
+						 <if test="otherMonth!=null and otherMont!=''">
+						 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -3 month)]]>
+						 </if>
+						 <if test="borrowStatus!=0">
+						 	AND lsp.borrow_status = #{borrowStatus} 
+						 </if>
+						 
+						     ORDER BY lbi.create_time DESC limit #{startRow},#{pageSize}
+         </select>    
+      
+     <!--体验标投资记录查询 -->
+     <select id="fqueryExInvestRecodeByMap" parameterType="java.util.Map" resultMap="InvestRecord">
+				SELECT
+					    lsp.product_id,
+						lsp.product_name,
+						lsp.borrow_day_duration,
+						lsp.borrow_month_duration,
+						lsp.borrow_status,
+						lbi.system_trace_no,
+						lbi.create_time,
+						lbi.investor_capital,
+						lbi.investor_interest,
+						lrr.pro_value,
+						lrr.type,
+						lpe.borrow_interest_rate,
+						lpe.invest_limit
+				FROM
+					${tableName}   AS  lsp
+				LEFT JOIN ld_borrow_investor AS lbi ON lsp.product_id = lbi.product_id
+				LEFT JOIN ld_reward_record as lrr on lbi.system_trace_no = lrr.system_trace_no
+				LEFT JOIN ld_product_extend_info AS lpe ON lbi.system_trace_no = lpe.system_trace_no
+	           	WHERE
+					lbi.investor_uid =#{uid}
+						<if test="productIds!=null and productIds!=''">
+							   and lsp.product_id in  
+							 <foreach item="item" index="index" collection="productIds" open="(" separator="," close=")">  
+							  #{item}
+							 </foreach>
+						 </if>
+						<if test="weekend!=null and weekend!=''">
+					     <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 week)]]>
+						</if>
+						 <if test="month!=null and month!=''">
+						 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 month)]]>
+						 </if>
+						 <if test="otherMonth!=null and otherMont!=''">
+						 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -3 month)]]>
+						 </if>
+						 <if test="borrowStatus!=0">
+						 	AND lsp.borrow_status = #{borrowStatus} 
+						 </if>
+						 
+						     ORDER BY lbi.create_time DESC limit #{startRow},#{pageSize}
+         </select>    
+         
+         <select id="fqueryNewInvestRecodeByMap" parameterType="java.util.Map" resultMap="InvestRecord">
+    
+				SELECT
+					    lsp.product_id,
+						lsp.product_name,
+						lsp.borrow_interest_rate,
+						lsp.borrow_day_duration,
+						lsp.borrow_month_duration,
+						lsp.borrow_status,
+						lbi.system_trace_no,
+						lbi.create_time,
+						lbi.investor_capital,
+						lbi.investor_interest,
+						lrr.pro_value,
+						lrr.type
+				FROM
+					${tableName}   AS  lsp
+				LEFT JOIN ld_borrow_investor AS lbi ON lsp.product_id = lbi.product_id
+				LEFT JOIN ld_reward_record as lrr on lbi.system_trace_no = lrr.system_trace_no
+	           	WHERE
+					lbi.investor_uid =#{uid}
+						<if test="productIds!=null and productIds!=''">
+							   and lsp.product_id in  
+							 <foreach item="item" index="index" collection="productIds" open="(" separator="," close=")">  
+							  #{item}
+							 </foreach>
+						 </if>
+						<if test="weekend!=null and weekend!=''">
+					     <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 week)]]>
+						</if>
+						 <if test="month!=null and month!=''">
+						 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 month)]]>
+						 </if>
+						 <if test="otherMonth!=null and otherMont!=''">
+						 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -3 month)]]>
+						 </if>
+						 <if test="borrowStatus!=0">
+						 	AND lsp.borrow_status = #{borrowStatus} 
+						 </if>
+						 
+						     ORDER BY lbi.create_time DESC limit #{startRow},#{pageSize}
+         </select>    
+         
+    <select id="getProductById" parameterType="String" resultMap="InvestRecord" >
+		SELECT borrow_day_duration,borrow_month_duration,repayment_type FROM ld_ci_product WHERE product_id = #{product_id}
+		UNION SELECT borrow_day_duration,borrow_month_duration,repayment_type FROM ld_si_product WHERE product_id = #{product_id}
+		UNION SELECT borrow_day_duration,borrow_month_duration,repayment_type FROM ld_experience_product WHERE product_id = #{product_id}
+		UNION SELECT borrow_day_duration,borrow_month_duration,repayment_type FROM ld_pe_product WHERE product_id = #{product_id}
+		UNION SELECT borrow_day_duration,borrow_month_duration,repayment_type FROM ld_yingxiang_product WHERE product_id = #{product_id}
+	</select>
+    <select id="fqueryInvestRecodeCountByMap" parameterType="java.util.Map" resultType="java.lang.Integer">
+		    SELECT
+			count(1)
+			FROM
+				(
+				SELECT
+					    lsp.product_id,
+						lsp.product_name,
+						lsp.borrow_interest_rate,
+						lsp.borrow_day_duration,
+						lsp.borrow_month_duration,
+						lsp.borrow_status,
+						lbi.system_trace_no,
+						lbi.create_time,
+						lbi.investor_capital,
+						lbi.investor_interest,
+						lrr.pro_value,
+						lrr.type
+				FROM
+					${tableName}   AS  lsp
+				LEFT JOIN ld_borrow_investor AS lbi ON lsp.product_id = lbi.product_id
+				LEFT JOIN ld_reward_record as lrr on lbi.system_trace_no = lrr.system_trace_no
+	           	WHERE
+					lbi.investor_uid =#{uid}
+						<if test="productIds!=null and productIds!=''">
+							   and lsp.product_id in  
+							 <foreach item="item" index="index" collection="productIds" open="(" separator="," close=")">  
+							  #{item}
+							 </foreach>
+						 </if>
+						<if test="weekend!=null and weekend!=''">
+					     <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 week)]]>
+						</if>
+						 <if test="month!=null and month!=''">
+						 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -1 month)]]>
+						 </if>
+						 <if test="otherMonth!=null and otherMont!=''">
+						 <![CDATA[	AND lbi.create_time >= date_add(NOW(), interval -3 month)]]>
+						 </if>
+						 <if test="borrowStatus!=0">
+						 	AND lsp.borrow_status = #{borrowStatus} 
+						 </if>
+						 
+						     ORDER BY lbi.create_time DESC
+					
+				) rs
+    </select>
+    	<select id="fquerycountinvestuid" parameterType="String" resultType="int">
+    	SELECT COUNT(DISTINCT(investor_uid))  FROM ld_borrow_investor WHERE product_id=#{proid} 
+    	</select>
+    	
+    
+      <select id="queryAssignmentDebt" parameterType="map" resultMap="assignmentDebt">
+			SELECT
+				T.id,
+				T.system_trace_no,
+				T.product_id,
+				T.product_name,
+				T.investor_uid,
+				T.borrow_interest_rate,
+				T.pro_value,
+				T.rest_time,
+				T.capital,
+				T.interest,
+				T.next_repayment_time,
+				T.debt_price,
+				T.create_time,
+				T.investor_capital,
+				T.investor_interest,
+				T.total_time,
+				T.status,
+				T.deadline,
+				T.rest_days,
+				T.update_time
+			FROM
+				(
+					<!-- (
+						SELECT
+							A.id,
+							A.investor_uid,
+							A.create_time,
+							A.system_trace_no,
+							A.product_id,
+							A.debt_price,
+							A.investor_capital,
+							A.investor_interest,
+							A.status,
+							A.update_time,
+							B.product_name,
+							B.borrow_interest_rate,
+							C.pro_value,
+							D.next_repayment_time,
+							D.rest_time,
+							D.interest,
+							D.capital,
+							D.deadline,
+							E.total_time,
+							(B.borrow_days - (TO_DAYS(NOW())-TO_DAYS(B.full_time))) rest_days
+						FROM
+							ld_borrow_investor A
+						JOIN ld_ci_product B ON A.product_id = B.product_id
+						LEFT JOIN (
+							SELECT
+								pro_value,
+								id
+							FROM
+								ld_reward_record
+							WHERE
+								type = 2
+							AND use_status = 1
+						) C ON A.reward_id = C.id
+						LEFT JOIN (
+							SELECT
+								COUNT(*) rest_time,
+								SUM(interest) interest,
+								SUM(capital) capital,
+								MIN(repayment_time) next_repayment_time,
+								system_trace_no,
+								MAX(repayment_time) deadline
+							FROM
+								ld_repayement_detail
+							WHERE
+								STATUS != 2
+							GROUP BY
+								system_trace_no
+						) D ON A.system_trace_no = D.system_trace_no
+						LEFT JOIN (
+							SELECT 
+								COUNT(*) total_time,system_trace_no,investor_uid
+							FROM 
+								ld_repayement_detail
+							GROUP BY system_trace_no
+						) E ON A.system_trace_no = E.system_trace_no AND A.investor_uid = E.investor_uid
+						<where>
+							A.status != 0 
+							<if test="debt_status != null and debt_status == 0">
+								<![CDATA[
+									AND TO_SECONDS(B.full_time)+2592000 < TO_SECONDS(NOW())
+									AND TO_SECONDS(D.deadline)-2592000 > TO_SECONDS(NOW())
+									AND TO_DAYS(D.next_repayment_time ) != TO_DAYS(NOW())
+								]]>
+							</if>
+							<if test="investor_uid!=null"> AND A.investor_uid = #{investor_uid}</if>
+							<if test="debt_status!=null">AND A.debt_status = #{debt_status}</if>
+						</where>
+					) 
+					UNION ALL-->
+						(
+							SELECT
+								A.id,
+								A.investor_uid,
+								A.create_time,
+								A.system_trace_no,
+								A.product_id,
+								A.debt_price,
+								A.investor_capital,
+								A.investor_interest,
+								A.status,
+								A.update_time,
+								B.product_name,
+								B.borrow_interest_rate,
+								C.pro_value,
+								D.next_repayment_time,
+								D.rest_time,
+								D.interest,
+								D.capital,
+								D.deadline,
+								E.total_time,
+								(B.borrow_days - (TO_DAYS(NOW())-TO_DAYS(B.full_time))) rest_days
+							FROM
+								ld_borrow_investor A
+							JOIN ld_si_product B ON A.product_id = B.product_id
+							LEFT JOIN (
+								SELECT
+									pro_value,
+									id
+								FROM
+									ld_reward_record
+								WHERE
+									type = 2
+								AND use_status = 1
+							) C ON A.reward_id = C.id
+							LEFT JOIN (
+								SELECT
+									COUNT(*) rest_time,
+									SUM(interest) interest,
+									SUM(capital) capital,
+									MIN(repayment_time) next_repayment_time,
+									system_trace_no,
+									MAX(repayment_time) deadline
+								FROM
+									ld_repayement_detail
+								WHERE
+									STATUS != 2
+								GROUP BY
+									system_trace_no
+							) D ON A.system_trace_no = D.system_trace_no
+							LEFT JOIN (
+							SELECT 
+								COUNT(*) total_time,system_trace_no,investor_uid
+							FROM 
+								ld_repayement_detail
+								GROUP BY system_trace_no
+							) E ON A.system_trace_no = E.system_trace_no AND A.investor_uid = E.investor_uid
+							<where>
+								A.status != 0 
+								<if test="debt_status != null and debt_status == 0">
+									<![CDATA[
+										AND TO_SECONDS(B.full_time)+86400 < TO_SECONDS(NOW())
+										AND TO_SECONDS(D.deadline)-2592000 > TO_SECONDS(NOW())
+										AND TO_DAYS(D.next_repayment_time ) != TO_DAYS(NOW()) 
+									]]>
+								</if>
+								<if test="investor_uid!=null"> AND A.investor_uid = #{investor_uid}</if>
+								<if test="debt_status!=null">AND A.debt_status = #{debt_status}</if>
+							</where>
+						)
+				) T ORDER BY T.create_time DESC
+			LIMIT #{startRow},#{pageSize};
+    </select>
+	 
+	 
+	  <select id="queryToSaleDebt" parameterType="map" resultMap="assignmentDebt">
+			SELECT
+				T.id,
+				T.system_trace_no,
+				T.product_id,
+				T.product_name,
+				T.investor_uid,
+				T.borrow_interest_rate,
+				T.pro_value,
+				T.rest_time,
+				T.capital,
+				T.interest,
+				T.next_repayment_time,
+				T.debt_price,
+				T.create_time,
+				T.investor_capital,
+				T.investor_interest,
+				T.total_time,
+				T.status,
+				T.deadline,
+				T.rest_days,
+				T.debt_status,
+				T.update_time,
+				T.ext_field
+			FROM
+				(
+					<!-- (
+						SELECT
+							A.id,
+							A.investor_uid,
+							A.create_time,
+							A.system_trace_no,
+							A.product_id,
+							A.debt_price,
+							A.investor_capital,
+							A.investor_interest,
+							A.status,
+							A.debt_status,
+							A.update_time,
+							A.ext_field,
+							B.product_name,
+							B.borrow_interest_rate,
+							C.pro_value,
+							D.next_repayment_time,
+							D.rest_time,
+							D.capital,
+							D.interest,
+							D.deadline,
+							E.total_time,
+							(B.borrow_days - (TO_DAYS(NOW())-TO_DAYS(B.full_time))) rest_days
+						FROM
+							ld_borrow_investor A
+						JOIN ld_ci_product B ON A.product_id = B.product_id
+						LEFT JOIN (
+							SELECT
+								pro_value,
+								id
+							FROM
+								ld_reward_record
+							WHERE
+								type = 2
+							AND use_status = 1
+						) C ON A.reward_id = C.id
+						LEFT JOIN (
+							SELECT
+								COUNT(*) rest_time,
+								SUM(interest) interest,
+								SUM(capital) capital,
+								MIN(repayment_time) next_repayment_time,
+								system_trace_no,
+								MAX(repayment_time) deadline
+							FROM
+								ld_repayement_detail
+							WHERE
+								return_type = 1
+							GROUP BY
+								system_trace_no
+						) D ON A.system_trace_no = D.system_trace_no
+						LEFT JOIN (
+							SELECT 
+								COUNT(*) total_time,system_trace_no,investor_uid
+							FROM 
+								ld_repayement_detail
+							WHERE return_type = 1
+							GROUP BY system_trace_no
+						) E ON A.system_trace_no = E.system_trace_no AND A.investor_uid = E.investor_uid
+						<where>
+							<![CDATA[A.status != 0 AND A.debt_status != 0 AND TO_DAYS(B.full_time)+30 < TO_DAYS(NOW())]]>
+							<if test="investor_uid!=null"> AND A.investor_uid = #{investor_uid}</if>
+						</where>
+					)
+					UNION ALL -->
+						(
+							SELECT
+								A.id,
+								A.investor_uid,
+								A.create_time,
+								A.system_trace_no,
+								A.product_id,
+								A.debt_price,
+								A.investor_capital,
+								A.investor_interest,
+								A.status,
+								A.debt_status,
+								A.update_time,
+								A.ext_field,
+								B.product_name,
+								B.borrow_interest_rate,
+								C.pro_value,
+								D.next_repayment_time,
+								D.rest_time,
+								D.capital,
+								D.interest,
+								D.deadline,
+								E.total_time,
+								(B.borrow_days - (TO_DAYS(NOW())-TO_DAYS(B.full_time))) rest_days
+							FROM
+								ld_borrow_investor A
+							JOIN ld_si_product B ON A.product_id = B.product_id
+							LEFT JOIN (
+								SELECT
+									pro_value,
+									id
+								FROM
+									ld_reward_record
+								WHERE
+									type = 2
+								AND use_status = 1
+							) C ON A.reward_id = C.id
+							LEFT JOIN (
+								SELECT
+									COUNT(*) rest_time,
+									SUM(interest) interest,
+									SUM(capital) capital,
+									MIN(repayment_time) next_repayment_time,
+									system_trace_no,
+									MAX(repayment_time) deadline
+								FROM
+									ld_repayement_detail
+								WHERE
+									status != 2
+								GROUP BY
+									system_trace_no
+							) D ON A.system_trace_no = D.system_trace_no
+							LEFT JOIN (
+								SELECT 
+									COUNT(*) total_time,system_trace_no,investor_uid
+								FROM 
+									ld_repayement_detail
+								WHERE return_type = 1
+								GROUP BY system_trace_no
+							) E ON A.system_trace_no = E.system_trace_no AND A.investor_uid = E.investor_uid
+							<where>
+								<![CDATA[A.status != 0 AND A.debt_status != 0 ]]>
+								<if test="investor_uid!=null"> AND A.investor_uid = #{investor_uid}</if>
+							</where>
+						)
+				) T ORDER BY debt_status,update_time ASC
+			LIMIT #{startRow},#{pageSize};
+    </select>
+	 
+	<!-- 查询投资表信息 --> 
+	<select id="queryInvestorInfo" parameterType="java.lang.Integer" resultMap="borrowinvestorresult">
+		SELECT * FROM ld_borrow_investor where id = #{id};
+	</select>
+    
+   <!-- 查询可转让记录总数 -->
+    <select id="queryAssignmentDebtCount" parameterType="map" resultType="java.lang.Integer">
+		SELECT
+			COUNT(1)
+		FROM
+			ld_borrow_investor A
+		JOIN ld_si_product B ON A.product_id = B.product_id
+		LEFT JOIN (
+			SELECT
+				MIN(repayment_time) next_repayment_time,
+				system_trace_no,
+				MAX(repayment_time) deadline
+			FROM
+				ld_repayement_detail
+			WHERE
+				STATUS != 2
+			GROUP BY
+				system_trace_no
+		) D ON A.system_trace_no = D.system_trace_no
+		WHERE 1=1
+		<if test="debt_status !=null and debt_status == 0">
+			<![CDATA[AND TO_SECONDS(B.full_time) + 86400 < TO_SECONDS(NOW())
+			AND TO_SECONDS(D.deadline) - 2592000 > TO_SECONDS(NOW())
+			AND TO_DAYS(D.next_repayment_time) != TO_DAYS(NOW())]]>
+			AND debt_status = #{debt_status}
+		</if>
+		<if test="investor_uid!=null">AND A.investor_uid = #{investor_uid}</if>
+		<if test="debt_status !=null and debt_status != 0">
+			AND debt_status = #{debt_status}	
+		</if>
+    </select>
+    
+  <!-- 根据系统跟踪号查询剩余待收金额  -->
+    <select id="queryRestMoneyByTraceNo" parameterType="String" resultType="BigDecimal">
+    	SELECT SUM(capital+interest) FROM ld_repayement_detail WHERE system_trace_no = #{system_trace_no} AND status != 2;
+    </select>
+    
+    <select id="getCapAndInterByTraceNo" parameterType="map" resultMap="assignmentDebt">
+    	SELECT SUM(capital) capital, SUM(interest)interest,MAX(repayment_time) deadline,MIN(repayment_time) next_repayment_time FROM ld_repayement_detail 
+    	WHERE system_trace_no = #{systemTraceNo} 
+    	<if test="status != null">AND status != #{status}</if>
+    	<if test="returnType != null">AND return_type != #{returnType}</if>
+    </select>
+    
+   <!-- 收益方式、    剩余期限、年化收益--> 
+    <select id="queryProductInfo" parameterType="String" resultMap="assignmentDebt">
+    	<!-- SELECT repayment_type,borrow_interest_rate,product_name,borrow_days,full_time FROM ld_ci_product WHERE product_id = (SELECT DISTINCT(product_id) FROM ld_borrow_investor WHERE system_trace_no = #{system_trace_no})
+    	UNION ALL -->
+    	SELECT repayment_type,borrow_interest_rate,product_name,borrow_days,full_time,product_id FROM ld_si_product WHERE product_id = (SELECT DISTINCT(product_id) FROM ld_borrow_investor WHERE system_trace_no = #{system_trace_no});
+    </select>
+    
+    
+    <!-- 债权发标 ,取消债权转让  -->
+    <update id="updateDebtStatusByTraceNo" parameterType="map" >
+    	UPDATE ld_borrow_investor 
+    	SET debt_status = #{debt_status} ,debt_price = #{debt_price},update_time = #{update_time},ext_field = #{extField}
+		WHERE id = #{id};    		
+    </update> 
+   
+  	<!-- 债权转让成功后，更新原投资记录 -->
+    <update id="updateOriginAssign" parameterType="map">
+    	UPDATE ld_borrow_investor SET debt_status = 2,debt_uid = #{debt_uid},update_time = #{update_time} WHERE id = #{id};
+    </update>
+   
+    <!-- 债权转让成功后，生成新的投资记录 -->
+    <insert id="insertAssignmentDebt" parameterType="com.sxt.models.BorrowInvestor">
+    	<!-- INSERT INTO ld_borrow_investor(from_source,product_id,investor_uid,borrow_uid,investor_capital,investor_interest,receive_capital,receive_interest,substitute_money,expired_money,invest_fee,create_time,deadline,is_auto,reward_money,debt_status,update_time,system_trace_no,status,assignment_money,debt_uid,reward_id,reward_type,recast_flag,recast_rate,recast_dead_date)
+    	VALUES(#{from_source},#{product_id},#{investor_uid},#{borrow_uid},#{investor_capital},#{investor_interest},#{receive_capital},#{receive_interest},#{substitute_money},#{expired_money},#{invest_fee},#{create_time},#{deadline},#{is_auto},#{reward_money},#{debt_status},#{update_time},#{system_trace_no},#{status},#{assignment_money},#{debt_uid},#{reward_id},#{reward_type},#{recast_flag},#{recast_rate},#{recast_dead_date}); -->
+    	INSERT INTO
+		ld_borrow_investor(from_source,product_id,investor_uid,borrow_uid,investor_capital,investor_interest,receive_capital,receive_interest,substitute_money,expired_money,invest_fee,create_time,is_auto,reward_money,debt_status,status,system_trace_no,assignment_money,product_type,debt_price,update_time)values
+		(#{fromSource},#{productId},#{investorUid},#{borrowUid},#{investorCapital},#{investorInterest},#{receiveCapital},#{receiveInterest},#{substituteMoney},#{expiredMoney},#{investFee},#{createTime},#{isAuto},#{rewardMoney},#{debtStatus},#{status},#{systemTraceNo},#{assignmentMoney},#{productType},#{debtPrice},#{updateTime})
+    </insert>
+    
+    <update id="updateUidByTraceNo" parameterType="map">
+    	UPDATE ld_repayement_detail SET investor_uid = #{investor_uid} WHERE system_trace_no = #{system_trace_no} AND status != 2; 
+    </update>
+	<select id="queryInvestorForRepayment" parameterType="java.lang.String" resultMap="borrowinvestorresult">
+		select product_id,investor_uid,borrow_uid,investor_capital,investor_interest,system_trace_no,invest_ip
+	 	from ld_borrow_investor t where t.product_id = #{productId}
+	</select>
+	
+	<update id="updateStatusByProductId" parameterType="map" >
+    	UPDATE ld_borrow_investor SET status = #{status} WHERE product_id = #{productId}; 
+    </update> 
+   <select id="queryExperienceGoldByProid" parameterType="map" resultType="Bigdecimal">
+ 	SELECT SUM(investor_capital) FROM ld_borrow_investor WHERE product_id=#{proid} AND investor_uid=#{uid}
+ 	</select>
+ 	
+ 	<select id="queryUidByTraceNo" parameterType="String" resultType="int">
+ 		SELECT investor_uid FROM ld_borrow_investor 
+ 		<where>
+ 			debt_status != 2
+ 			<if test="system_trace_no!=null"> AND system_trace_no = #{system_trace_no} </if>
+ 		</where>
+ 	</select>
+ 	<!-- <select id="queryDeadLine" parameterType="int" resultMap="assignmentDebt">
+ 		SELECT A.deadline,A.system_trace_no,B.nextpay_date 
+ 		FROM 
+ 			ld_borrow_investor A
+ 		LEFT JOIN
+ 		(
+ 			SELECT 
+ 				MIN(repayment_time) nextpay_date,system_trace_no
+ 			FROM 
+ 				ld_repayement_detail
+ 			WHERE status != 2
+ 			GROUP BY system_trace_no
+ 		) B
+ 		ON A.system_trace_no = B.system_trace_no
+ 		<where>
+ 			A.debt_status = 1
+ 			AND A.investor_uid = #{investor_uid}
+ 		</where> 
+ 	</select> -->
+ 	<select id="checkAssignable" parameterType="String" resultMap="assignmentDebt">
+ 		SELECT
+			A.system_trace_no,B.deadline,B.next_repayment_time
+		FROM
+			ld_borrow_investor A
+		LEFT JOIN 
+		(SELECT
+			MIN(repayment_time) next_repayment_time,
+			system_trace_no,
+			MAX(repayment_time) deadline
+		FROM
+			ld_repayement_detail
+		WHERE
+			STATUS != 2
+		GROUP BY
+			system_trace_no) B
+		ON A.system_trace_no = B.system_trace_no
+		WHERE
+			A.debt_status = 1
+			AND A.system_trace_no = #{systemTraceNo}
+ 	</select>
+ 	
+ 	<select id="payDetailByTraceNo" parameterType="String" resultMap="assignmentDebt">
+ 		SELECT
+			COUNT(*) rest_time,
+			SUM(interest) interest,
+			SUM(capital) capital,
+			MIN(repayment_time) next_repayment_time,
+			system_trace_no,
+			MAX(repayment_time) deadline
+		FROM
+			ld_repayement_detail
+		WHERE
+			STATUS != 2 AND system_trace_no = #{system_trace_no}
+		GROUP BY system_trace_no;
+ 	</select>
+ 	
+ 	<select id="queryDebtPrice" parameterType="map" resultMap="assignmentDebt">
+ 		SELECT A.debt_price,A.system_trace_no,A.update_time,B.pro_value,A.id,A.debt_status,A.product_type,A.investor_uid,B.system_trace_no reward_trace_no,A.reward_type,A.product_id
+ 		FROM ld_borrow_investor A
+ 		LEFT JOIN (
+			SELECT
+				pro_value,
+				id,
+				system_trace_no
+			FROM
+				ld_reward_record
+			WHERE
+				type = 2
+			AND use_status = 1
+		) B ON A.reward_id = B.id
+ 		WHERE A.id = #{id} 
+ 		<if test="debtStatus != null and debtStatus == 0">
+ 			AND A.debt_status = 0
+ 		</if>
+ 		<if test="debtStatus != null and debtStatus != 0">
+ 			AND A.debt_status != 0
+ 		</if>
+ 	</select>
+ 	
+ 	<select id="queryAssignCount" parameterType="map" resultType="java.lang.Integer">
+ 		SELECT COUNT(*) FROM ld_borrow_investor 
+    	WHERE debt_status != 0;
+    </select>
+
+ 	<!-- 根据还款期获取剩余待收 -->
+ 	<select id="getCollectMoneyByTraceNo" parameterType="map" resultType="Bigdecimal">
+ 		SELECT 
+ 			SUM(capital+interest) FROM ld_repayement_detail 
+ 		WHERE
+ 			system_trace_no = #{systemTraceNo}
+ 			<if test="repaymentTime != null">
+ 				AND <![CDATA[repayment_time >= #{repaymentTime}]]>
+ 			</if>
+ 			<if test="returnType != null">
+ 				AND return_type = #{returnType}
+ 			</if>
+ 		GROUP BY system_trace_no
+ 	</select>
+ 	
+	<select id="queryBorrowInvest" parameterType="map" resultMap="borrowinvestorresult">
+		select * from ld_borrow_investor where 1=1
+		<if test="systemTraceNo != null">
+			and system_trace_no = #{systemTraceNo}
+		</if>
+		<if test="product_type != null">
+			and product_type = #{product_type}
+		</if>
+	</select>
+ 	
+ 	<!-- 项目详情 -->
+ 	<select id="getProductInfoById" parameterType="String" resultType="map">
+ 		SELECT borrow_info,risk_control FROM ld_ci_product_detail WHERE product_id = #{productId}
+ 		UNION ALL
+ 		SELECT borrow_info,risk_control FROM ld_si_product_detail WHERE product_id = #{productId}
+ 	</select>
+ 	
+ 	<select id="getExperGoldByNoAndId" parameterType="map" resultMap="InvestRecord">
+ 		SELECT
+			affect_experience_gold
+		FROM
+			ld_member_experience_gold_detail
+		<where>
+			1=1
+			<if test="systemTraceNo!=null">AND system_trace_no = #{systemTraceNo}</if>
+			<if test="uid!=null">AND uid = #{uid}</if>		
+		</where>
+ 	</select>
+ 	
+ 	<select id="queryInvestMoneyByPhone" parameterType="map" resultType="map">
+ 		select IFNULL(SUM(bi.investor_capital),0) investTotalMoney
+		from ld_borrow_investor bi
+		inner join ld_members m on bi.investor_uid=m.uid
+		left join ld_si_product sp on bi.product_id=sp.product_id
+		left join ld_ci_product cp on bi.product_id=cp.product_id
+		left join ld_newhand_product np on bi.product_id=np.product_id
+		where m.user_phone in (#{userPhones}) 
+		<if test="startTime != null">
+			and bi.create_time &gt;= #{startTime}
+		</if>
+		<if test="endTime != null">
+			and bi.create_time &lt; #{endTime}
+		</if>
+		and (sp.borrow_status in (6,8,9) or cp.borrow_status in (6,8,9) or np.borrow_status in (6,8,9));
+ 	</select>
+ 	
+ 	
+ 	<select id="queryCountInvestorByProductId" parameterType="String" resultType="int">
+ 		select count(DISTINCT investor_uid) from ld_borrow_investor where product_id =#{productId} 
+ 	</select>
+ 	<select id="queryInvestRewardList" parameterType="Map" resultMap="investRewardMap">
+ 		select 
+ 		i.investor_uid as investorUid,
+ 		sum(i.investor_capital) as investorCapital,
+ 		count(i.investor_uid) as investorCount,
+ 		m.user_name as userName
+ 		from ld_borrow_investor i
+		left join ld_members m on m.uid=i.investor_uid
+		where 1=1
+		<if test="startInvestTime != null">
+			and i.create_time &gt;= #{startInvestTime}
+		</if>
+		<if test="endInvestTime != null">
+			and i.create_time &lt;= #{endInvestTime}
+		</if>
+ 		GROUP BY i.investor_uid order by sum(i.investor_capital) desc 
+ 		<if test="limit != null">
+			limit 10
+		</if>
+ 	</select>
+ 	
+ 	<select id="queryInvestMoneySum" parameterType="Map" resultType="Map">
+ 		select IFNULL(SUM(t.investor_capital),0) totalCapital, count(distinct t.investor_uid) totalInvestor
+ 		from ld_borrow_investor t 
+ 		where t.product_id=#{productId} and t.product_type=#{productType};
+ 	</select>
+ 	
+ 	<select id="queryBorrowInvestByUid" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+ 		select count(1) from ld_borrow_investor where investor_uid = #{investorUid} and product_id not like '8%'
+ 	</select>
+</mapper>

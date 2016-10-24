@@ -1,0 +1,30 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+#ab_body .about_right_m {
+    min-height: 300px;
+}
+.about_right_m .notice_list{
+	width: 94%;
+	margin: 20px 3% 10px;
+}
+.about_right_m .notice_list li {
+    width: 100%;
+    box-sizing: border-box;
+}
+.about_right_m .notice_list li div {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    padding-right: 100px;
+}
+.about_right_m .notice_list li div h3 {
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.about_right_m .notice_list li div label {
+    position: absolute;
+    right: 0px;
+}
+
+}

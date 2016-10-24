@@ -1,0 +1,22 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+
+body .banner{
+	height: 420px;
+	background-size: auto 100%;
+	min-width: 720px;
+}
+body .raise_tab {
+    min-width: 720px;
+}
+body .raise_tab img{
+	width: 750px;
+}
+body .raise_href{
+	width: 270px;
+	height: 65px;
+	line-height: 65px;
+	font-size: 25px;
+	margin: 70px auto;
+}
+
+}

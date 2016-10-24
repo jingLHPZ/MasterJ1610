@@ -1,0 +1,39 @@
+.top{width:100%;min-width:1200px;height:713px;margin:0 auto;background:#2f2d4b url(../img/invesReward/top.jpg) no-repeat center}
+.invest_bg{width:100%;height:1963px;min-width:1200px;padding-top: 40px;background:#2f2d4b url(../img/invesReward/bg_01.jpg) no-repeat center}
+.invest_bg .container{width:995px;margin:0 auto;position:relative;box-shadow:3px 3px 13px #070406}
+.invest_bg .container h1{position:absolute;width:668px;height:109px;top:-41px;left:50%;margin-left:-334px;background:transparent url(../img/invesReward/title.png) no-repeat center;text-align:center}
+.invest_bg .container h1 img{display:inline-block;margin-top:6px}
+.invest_bg .car{height:284px;background:transparent url(../img/invesReward/bg_02.jpg) no-repeat center}
+.car .text{height:160px;width:420px;float:right;margin:85px 60px 0 0}
+.car .text p{font-size:18px;color:#383838;line-height:30px;float:left}
+.car .text .p_2th{margin-top:10px}
+.car .text p b{color:red;font-weight:700}
+.car .text span{float:left;margin-top:10px;line-height:22px;color:#383838}
+.invest_bg .month{height:903px;margin-top:74px;background:transparent url(../img/invesReward/bg_03.jpg) no-repeat center}
+.month h4{width:100%;color:#383838;font-size:18px;margin-top:80px;text-align:center;float:left}
+.month ul li h3{font-size:18px;line-height:26px;color:#ff7200;font-weight:700}
+.month ul{float:left}
+.month ul li{width:165px;margin-right:30px;font-size:14px;line-height:18px;color:#14px;float:left;text-align:center;color:#383838}
+.month .mul_1th{margin:490px 0 0 132px}
+.month .mul_2th{margin:148px 0 0 224px}
+.month .mul_2th li{margin-right:36px}
+.invest_bg .btns{width:955px;height:69px;margin-top:50px;padding:0 20px;box-shadow:none}
+.btns a{height:69px;width:220px;line-height:62px;display:inline-block;float:left;color:#fff2cd;font-size:22px;font-weight:700;letter-spacing:2px;text-align:right;background:transparent url(../img/invesReward/btn_bg.png) no-repeat left top;cursor:pointer;margin-right:66px;padding-right:54px}
+.btns a.last{margin-right:0}
+.invest_bg .explain{height:454px;width:991px;margin-top:53px;border:solid 2px #b0b2d9;text-align:center;background:url(../img/invesReward/bg_point.png) repeat}
+.explain h2{height:36px;line-height:36px;font-size:24px;font-weight:700;color:#403b88;padding-left:44px;margin-top:18px;display:inline-block;background:transparent url(../img/invesReward/star.png) no-repeat left top}
+.explain .mode{height:175px;width:620px;padding:0 301px 0 70px;margin-top:20px;background:transparent url(../img/invesReward/erweima.png) no-repeat 710px top}
+.explain p{color:#403b88;font-size:15px;text-align:left;line-height:24px}
+.explain .mode p{margin-top:16px;position:relative;padding-left:18px}
+.explain .mode p span{position:absolute;left:0;top:0}
+.explain .red_packet{margin:25px 0 20px}
+.explain>p{padding:0 70px}
+.explain .end{margin-top:30px}
+
+.mask{position:fixed;top:0;left:0;height:100%;width:100%;background:transparent url(../img/icon/top_bg.png) repeat scroll left top;display:none}
+.mask .cont{position:fixed;height:325px;width:469px;left:50%;top:50%;margin:-164px 0 0 -234px;float:left}
+.pop_waiting .cont{background:transparent url(../img/invesReward/waiting_bg.png) no-repeat left top}
+.pop_over .cont{background:transparent url(../img/invesReward/over_bg.png) no-repeat left top}
+.pop_nstart .cont{background:transparent url(../img/invesReward/nstart_bg.png) no-repeat left top}
+.mask .cont a{display:block;height:40px;width:130px;float:left;margin:248px 0 0 172px;background:transparent url(../img/invesReward/pop_btn.png) no-repeat left top}
+
