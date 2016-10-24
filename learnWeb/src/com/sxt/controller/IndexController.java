@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sxt.base.utils.HttpClientUtil;
@@ -49,28 +50,38 @@ import com.sxt.util.StringUtil;
 @Controller
 @RequestMapping("/system")
 public class IndexController extends AbstractGeneralController {
+	
 	@Autowired
 	private NewHandProductService newHandProductService;
+	
 	@Autowired
 	private ExperienceProductService experienceProductService;
+	
 	@Autowired
 	private SiProductService  siProductService;
+	
 	@Autowired
 	private BorrowInvestorService borrowInvestorService;
+	
 	@Autowired
 	private CiProductService ciProductService;
+	
 	@Autowired
 	private NewsInformationService newsInformationService;
+	
 	@Autowired
 	private NewsNoticeService nowsNoticeSevice;
+	
 	@Autowired
 	private StaticSourceService staticSourceService;
+	
 	@Autowired
 	private CashService cashService;
+	
 	@Autowired
 	private YingXiangProductService yingXiangProductService;
 	
-	@RequestMapping("/fquerysumway.htm")
+	@RequestMapping(value="/fquerysumway.htm",method=RequestMethod.GET)
 	public ModelAndView  fSumWay(HttpServletRequest request){
 		ModelAndView model=new ModelAndView("/index");
 		LocalUserDto localUser = super.getLocalUser(request);
