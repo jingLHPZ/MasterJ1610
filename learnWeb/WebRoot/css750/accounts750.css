@@ -1,0 +1,76 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+
+/*container*/
+body .content_body{
+	width: 720px;
+}
+.accou_xi .accou_x2 .conz,
+.accou_xi .accou_x2 .tixa{
+	float: left;
+}
+/*右侧内容*/
+.content_body .right_main {
+    width: 525px;
+    min-height: 1353px;
+    overflow: hidden;
+}
+.right_main .accou_xi .accou_x1 {
+    width: 510px;
+}
+.right_main .accou_xi .accou_x1 .ljzq_txt{
+	width: 250px;
+}
+.right_main .accou_xi .accou_x1 .ljzq_txt:nth-of-type(1){
+	width: 220px;
+}
+.right_main .accou_xi .accou_x1 .ljzq_txt .kt_2{
+	font-size: 28px;
+}
+.right_main .accou_xi .accou_x2 {
+    width: 485px;
+    height: 45px;
+	margin: 20px 20px 0px 0px;
+	transition: all .2s ease-out;
+}
+.right_main .accou_xi .accou_x2 .woyjk{
+	display: none;
+}
+.right_main .accou_xi .accou_x2 .tixa {
+    width: 120px;
+    float: right;
+    margin-top: initial;
+}
+.right_main .accou_xi .accou_x3 {
+    width: 480px;
+}
+.right_main .acc_title{
+	width: 400px;
+}
+.right_main .accou_zc ul{
+	width: 475px;
+	margin: 0 20px 20px 25px;
+}
+.right_main .accou_zc ul .tit_font1,.right_main .accou_zc ul .tit_font2{
+	width: 475px;
+}
+.right_main .accou_zc ul li{
+	width: 473px;
+}
+.right_main .accou_tz{
+	display: none;
+}
+.right_main .acc_table{
+	width: 475px;
+}
+.payment {
+    width: 473px;
+    margin-left: 25px;
+}
+.payment .left {
+    padding: 0px 10px;
+}
+.calendar {
+    width: 303px;
+}
+
+}

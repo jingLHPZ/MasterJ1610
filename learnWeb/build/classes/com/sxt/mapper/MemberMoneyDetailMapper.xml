@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IMemberMoneyDetail">
+	<resultMap type="MemberMoneyDetail" id="moneydetailresult">
+		<id property="id" column="id" />
+		<result property="type" column="type" />
+		<result property="uid" column="uid" />
+		<result property="affectMoney" column="affect_money" />
+		<result property="accountMoney" column="account_money" />
+		<result property="backMoney" column="back_money" />
+		<result property="collectMoney" column="collect_money" />
+
+		<result property="freezeMoney" column="freeze_money" />
+		<result property="info" column="info" />
+		<result property="createTime" column="create_time" />
+		<result property="addIp" column="add_ip" />
+		<result property="targetUid" column="target_uid" />
+
+		<result property="targetUname" column="target_uname" />
+		<result property="updateTime" column="update_time" />
+		<result property="systemTraceNo" column="system_trace_no" />
+		<result property="incomeMoney" column="income_money" />
+
+	</resultMap>
+	<insert id="fInsertMoneyDetail" parameterType="MemberMoneyDetail"  useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO
+		ld_member_money_detail(uid,type,affect_money,account_money,back_money,collect_money,freeze_money,info,create_time,add_ip,target_uid,target_uname,system_trace_no,income_money)
+		VALUES(#{uid},#{type},#{affectMoney},#{accountMoney},#{backMoney},#{collectMoney},#{freezeMoney},#{info},NOW(),#{addIp},#{targetUid},#{targetUname},#{systemTraceNo},#{incomeMoney})
+	</insert>
+	<select id="fquerymonbytype" parameterType="map" resultMap="moneydetailresult">
+		SELECT * FROM ld_member_money_detail WHERE uid=#{uid}
+		AND type NOT IN (10,16,24,25,28,29,30,33,292)
+		<if test="types!= null and types!='' and types!=0">
+			and type=#{types}
+		</if>
+		<if test="timeType!= null and timeType!='' and timeType==1">
+			AND date(create_time) = curdate()
+		</if>
+		<if test=" timeType!= null and timeType!='' and timeType==2">
+	     	<![CDATA[	AND create_time >= date_add(NOW(), interval -1 week)]]>
+		</if>
+		<if test="timeType!= null and timeType!='' and  timeType==3">
+		 	<![CDATA[	AND create_time >= date_add(NOW(), interval -1 month)]]>
+		</if>
+		<if test="timeType!= null and timeType!='' and  timeType==4">  
+		 	<![CDATA[	AND create_time>= date_add(NOW(), interval -1 year)]]>
+		</if>
+		order by id DESC 
+		limit #{startRow},#{pageSize}
+	</select>
+	<select id="fQueryMmPageCountByPid" resultType="int"
+		parameterType="int">
+		select count(1) from ld_member_money_detail where uid=#{uid}
+		AND type NOT IN(10,16,24,25,28,29,30,33,292)
+	</select>
+	<select id="getMoneyDetailBySystemTraceNo" resultMap="moneydetailresult" parameterType="java.lang.String">
+		select * from ld_member_money_detail where system_trace_no=#{systemTraceNo}
+	</select>
+	<select id="getMoneyDetailByMap" resultMap="moneydetailresult" parameterType="map">
+		select * from ld_member_money_detail where 1=1
+		<if test="uid != null">
+			and uid = #{uid}
+		</if>
+		<if test="type != null">
+			and type = #{type}
+		</if>
+	</select>
+	<select id="fquerycount" parameterType="map" resultType="int">
+		SELECT COUNT(1) FROM ld_member_money_detail WHERE uid=#{uid}
+		AND type NOT IN(10,16,24,25,28,29,30,33,292)
+		<if test="types!= null and types!='' and types!=0">
+			AND type=#{types}
+		</if>
+		<if test="timeType==1">
+			AND date(create_time) = curdate()
+		</if>
+		<if test="timeType==2">
+     <![CDATA[	AND create_time >= date_add(NOW(), interval -1 week)]]>
+		</if>
+		<if test="timeType==3">
+	 <![CDATA[	AND create_time >= date_add(NOW(), interval -1 month)]]>
+		</if>
+		<if test="timeType==4">  
+	 <![CDATA[	AND create_time>= date_add(NOW(), interval -1 year)]]>
+		</if>
+	</select>
+</mapper>

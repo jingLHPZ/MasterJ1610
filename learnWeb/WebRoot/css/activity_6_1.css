@@ -1,0 +1,67 @@
+.pop-mask{position:fixed;top:0;left:0;height:100%;width:100%;background-color:rgba(0,0,0,.3);z-index:9999;display:none}
+.pop-bg{position:relative;top:50%;left:50%;height:663px;width:609px;margin-top:-332px;margin-left:-305px;z-index:1002;border-top:solid 1px transparent;display:none}
+.pop-bg .btn-cont,.pop-bg .btns-cont{margin-top:400px;height:39px;width:100%}
+.pop-bg .btn-cont .btn{height:39px;width:131px;margin:0 auto;cursor:pointer}
+.pop-bg .btns-cont .btn{height:39px;width:131px;cursor:pointer;float:left;margin-left:153px}
+.pop-bg .btns-cont .btn:nth-of-type(2){margin-left:39px!important}
+.pop-bg .btn:active{opacity:.8}
+.pop-win{background:url(../img/activity06/pop_win.png) top center no-repeat}
+.pop-win .title-cont{height:133px;width:330px;margin:0 auto;margin-top:242px;white-space:normal;display:table}
+.pop-win .text-title{vertical-align:middle;display:table-cell;text-align:center;font-size:28px;font-weight:700;color:#FE0405;font-family:"微软雅黑";overflow:hidden}
+.pop-win .promopt{font-size:13px;color:#313338;text-align:center}
+.pop-win .btn-cont{margin-top:10px;height:39px;width:100%}
+.pop-win .win-btn{height:39px;width:131px;margin:0 auto;cursor:pointer;background:url(../img/activity06/popbtn_ok.png) top center no-repeat}
+.pop-mask .use-credit{background:url(../img/activity06/use_credit.png) top center no-repeat}
+.use-credit .yes-btn{background:url(../img/activity06/popbtn_yes.png) top center no-repeat}
+.use-credit .no-btn{background:url(../img/activity06/popbtn_no.png) top center no-repeat}
+.pop-mask .pop-login{background:url(../img/activity06/pop_login.png) top center no-repeat}
+.pop-login .login-btn{background:url(../img/activity06/popbtn_login.png) top center no-repeat}
+.pop-login .reg-btn{background:url(../img/activity06/popbtn_reg.png) top center no-repeat}
+.pop-mask .credit-low{background:url(../img/activity06/pop_creditlow.png) top center no-repeat}
+.credit-low .ok-btn{background:url(../img/activity06/popbtn_ok.png) top center no-repeat}
+.pop-mask .once-again{background:url(../img/activity06/pop_onceagain.png) top center no-repeat}
+.once-again .again-btn{background:url(../img/activity06/popbtn_onceagain.png) top center no-repeat}
+.lucky-bg{height:1050px;width:100%;min-width:1200px;padding-top:450px;background:url(../img/activity06/activity_bg_01.jpg) top center no-repeat}
+.lucky-bg .lucky-cont{position:relative;width:1200px;margin:0 auto;height:1000px}
+.lucky-bg .gift-title1{width:374px;height:261px;background:url(../img/activity06/gift_title1.png) top center no-repeat}
+.lucky-bg .gift_promopt{height:77px;width:366px;position:absolute;right:75px;top:55px;background:url(../img/activity06/gift_prompt1.png) top center no-repeat}
+.lucky-bg .basic-info{position:absolute;padding-top:15px;padding-left:10px;top:90px;right:75px;height:117px;width:238px;box-sizing:border-box;background:url(../img/activity06/dzp_nums.png) top center no-repeat}
+.basic-info p{height:35px;width:95%;line-height:35px;font-size:18px;color:#E74E02;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}
+.basic-info span{color:#E95502}
+.lucky-dzp{position:absolute;top:131px;left:45px;height:620px;width:932px;background:url(../img/activity06/dzp.png) no-repeat;background-size:932px 632px;background-position:7px 1px}
+.lucky-dzp .lucky-light1{position:absolute;left:174px;top:10px;height:600px;width:600px;background:url(../img/activity06/dzp_light1.png) center no-repeat;background-size:100% 100%;display:block}
+.lucky-dzp .duoduo-shadow{position:absolute;left:25px;bottom:10px;width:200px;height:307px;background:url(../img/activity06/dd-shadow.png) center no-repeat;z-index:29}
+.lucky-dzp .lucky-light2{position:absolute;left:174px;top:10px;height:600px;width:600px;background:url(../img/activity06/dzp_light2.png) center no-repeat;background-size:100% 100%;display:none}
+.light-flash .lucky-light1{display:none}
+.light-flash .lucky-light2{display:block}
+.lucky-dzp .lucky-point{position:absolute;top:64px;left:451px;height:304px;width:46px;background:url(../img/activity06/dzp_point.png) center no-repeat;transform-origin:23px 247px;-webkit-transform-origin:23px 247px;-moz-transform-origin:23px 247px;-ms-transform-origin:23px 247px}
+.lucky-dzp .lucky-point-transition{transition:transform 7s cubic-bezier(.075,.82,.165,1);-webkit-transition:transform 7s cubic-bezier(.075,.82,.165,1);-moz-transition:transform 7s cubic-bezier(.075,.82,.165,1);-ms-transition:transform 7s cubic-bezier(.075,.82,.165,1)}
+.lucky-dzp .lucky-btn{position:absolute;top:189px;left:358px;height:235px;width:235px;background:url(../img/activity06/dzp_click.png) center no-repeat;cursor:pointer}
+.name-list{position:absolute;right:60px;top:195px;height:515px;width:270px;padding-top:63px;background:url(../img/activity06/dzp_list_bg.png) center no-repeat;box-sizing:border-box;user-select:none;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none}
+.name-list .title{height:50px;width:100px;margin-left:30px;float:left;box-sizing:border-box;cursor:pointer}
+.name-list .active{background:url(../img/activity06/dzp_btn.png) center no-repeat;cursor:auto}
+.name-list .title img{height:17px;width:75px;margin:0 auto;margin-top:12px;display:block}
+.name-list .my-prize-title{margin-left:5px}
+.name-list .lists-cont{width:200px;height:340px;margin:0 auto;margin-top:50px;box-sizing:border-box;padding:5px;overflow:hidden;position:relative}
+.name-list .list_bz{margin-top:30px}
+.list_bz{color:#fff;font-size:15px;text-align:center;font-weight:600;letter-spacing:1px}
+.name-list ul{width:200px}
+.name-list .scroll-bar{position:absolute;right:26px;top:120px;height:325px;width:4px;background:url(../img/activity06/dzp_silder_bg.png) top center no-repeat;overflow:hidden}
+.scroll-bar .scroll-silder{position:absolute;top:0;height:30px;width:4px;background:url(../img/activity06/dzp_silder.png) top center no-repeat}
+.lucky-list .item{width:100%;height:30px;line-height:30px;color:#0F0F0F;box-sizing:border-box;cursor:pointer}
+.lucky-list .item:hover{border-bottom:solid 1px #DEDEDE}
+.lucky-list .name{width:55px;height:100%;float:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lucky-list .prize-option{width:130px;height:100%;float:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.my-prize .item{width:100%;height:56px;color:#0F0F0F;box-sizing:border-box;padding:6px 8px;border-bottom:solid 1px #E6E6E6;cursor:pointer}
+.my-prize .prize-name{position:relative;height:24px;width:100%;font-size:16px;color:#181815}
+.my-prize .prize-name:after{position:absolute;left:-12px;top:10px;content:"";display:block;height:4px;width:4px;background-color:#BE7A49}
+.my-prize .time{height:20px;line-height:20px;width:100%;font-size:12px;color:#3E3B3B}
+.rule-cont{height:185px;width:100%;position:absolute;top:777px;color:#fff}
+.rule-cont *{box-sizing:border-box}
+.rule-titles{height:165px;width:130px;float:left;margin-left:60px;font-size:22px;font-weight:600}
+.rule-titles>div{height:40px;width:100%;line-height:40px;text-align:center;background:transparent url(../img/activity06/item_bg.png) no-repeat 0 5px}
+.rule-titles .rule-title2,.rule-titles .rule-title3{margin-top:12px}
+.rule-cont .rule{height:165px;width:925px;font-size:18px;float:left;letter-spacing:1px;line-height:26px}
+.rule .time{margin-top:8px;margin-left:10px}
+.rule .join{margin-top:26px;margin-left:10px}
+.rule .receive-prize{margin-top:25px;margin-left:10px}

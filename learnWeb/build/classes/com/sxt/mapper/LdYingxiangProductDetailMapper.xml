@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.ILdYingxiangProductDetail">
+
+	<resultMap type="LdYingxiangProductDetail" id="ldYingxiangProductDetailMap">
+		<id property="id" column="id" />
+		<result property="productId" column="product_id"/>
+		<result property="borrowType" column="borrow_type"/>
+		<result property="datetime" column="datetime"/>
+		<result property="addIp" column="add_ip"/>
+		<result property="borrowInfo" column="borrow_info"/>
+		<result property="total" column="total"/>
+		<result property="hasPay" column="has_pay"/>
+		<result property="substituteMoney" column="substitute_money"/>
+		<result property="rewardVouchRate" column="reward_vouch_rate"/>
+		<result property="rewardVouchMoney" column="reward_vouch_money"/>
+		<result property="rewardType" column="reward_type"/>
+		<result property="rewardMin" column="reward_min"/>
+		<result property="rewardValue" column="reward_value"/>
+		<result property="investMin" column="invest_min"/>
+		<result property="investMax" column="invest_max"/>
+		<result property="vouchMember" column="vouch_member"/>
+		<result property="password" column="password"/>
+		<result property="isRecommend" column="is_recommend"/>
+		<result property="informationDisclosure" column="information_disclosure"/>
+		<result property="vouchUid" column="vouch_uid"/>
+		<result property="vouchMoney" column="vouch_money"/>
+		<result property="autoMaxLimit" column="auto_max_limit"/>
+		<result property="riskControl" column="risk_control"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="expiredRate" column="expired_rate"/>
+		<result property="rewardTotalScore" column="reward_total_score"/>
+		<result property="rewardExperienceGold" column="reward_experience_gold"/>
+		<result property="rewardWay" column="reward_way"/>
+		<result property="canBonus" column="can_bonus"/>
+		<result property="canAddInterest" column="can_add_interest"/>
+		<result property="contractType" column="contract_type"/>
+		<result property="increaseProgressively" column="increase_progressively"/>
+		<result property="extField" column="ext_field"/>
+		<result property="extField2" column="ext_field2"/>
+		<result property="version" column="version"/>
+	</resultMap>
+	<insert id="insert" parameterType="LdYingxiangProductDetail" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO ld_yingxiang_product_detail (
+			<trim suffixOverrides=",">
+			<if test="id != null">id, </if>
+			<if test="productId != null">product_id, </if>
+			<if test="borrowType != null">borrow_type, </if>
+			<if test="datetime != null">datetime, </if>
+			<if test="addIp != null">add_ip, </if>
+			<if test="borrowInfo != null">borrow_info, </if>
+			<if test="total != null">total, </if>
+			<if test="hasPay != null">has_pay, </if>
+			<if test="substituteMoney != null">substitute_money, </if>
+			<if test="rewardVouchRate != null">reward_vouch_rate, </if>
+			<if test="rewardVouchMoney != null">reward_vouch_money, </if>
+			<if test="rewardType != null">reward_type, </if>
+			<if test="rewardMin != null">reward_min, </if>
+			<if test="rewardValue != null">reward_value, </if>
+			<if test="investMin != null">invest_min, </if>
+			<if test="investMax != null">invest_max, </if>
+			<if test="vouchMember != null">vouch_member, </if>
+			<if test="password != null">password, </if>
+			<if test="isRecommend != null">is_recommend, </if>
+			<if test="informationDisclosure != null">information_disclosure, </if>
+			<if test="vouchUid != null">vouch_uid, </if>
+			<if test="vouchMoney != null">vouch_money, </if>
+			<if test="autoMaxLimit != null">auto_max_limit, </if>
+			<if test="riskControl != null">risk_control, </if>
+			<if test="updateTime != null">update_time, </if>
+			<if test="expiredRate != null">expired_rate, </if>
+			<if test="rewardTotalScore != null">reward_total_score, </if>
+			<if test="rewardExperienceGold != null">reward_experience_gold, </if>
+			<if test="rewardWay != null">reward_way, </if>
+			<if test="canBonus != null">can_bonus, </if>
+			<if test="canAddInterest != null">can_add_interest, </if>
+			<if test="contractType != null">contract_type, </if>
+			<if test="increaseProgressively != null">increase_progressively, </if>
+			<if test="extField != null">ext_field, </if>
+			<if test="extField2 != null">ext_field2, </if>
+			<if test="version != null">version, </if>
+			</trim>
+		) VALUES (
+			<trim suffixOverrides=",">
+			<if test="id != null">#{id}, </if>
+			<if test="productId != null">#{productId}, </if>
+			<if test="borrowType != null">#{borrowType}, </if>
+			<if test="datetime != null">#{datetime}, </if>
+			<if test="addIp != null">#{addIp}, </if>
+			<if test="borrowInfo != null">#{borrowInfo}, </if>
+			<if test="total != null">#{total}, </if>
+			<if test="hasPay != null">#{hasPay}, </if>
+			<if test="substituteMoney != null">#{substituteMoney}, </if>
+			<if test="rewardVouchRate != null">#{rewardVouchRate}, </if>
+			<if test="rewardVouchMoney != null">#{rewardVouchMoney}, </if>
+			<if test="rewardType != null">#{rewardType}, </if>
+			<if test="rewardMin != null">#{rewardMin}, </if>
+			<if test="rewardValue != null">#{rewardValue}, </if>
+			<if test="investMin != null">#{investMin}, </if>
+			<if test="investMax != null">#{investMax}, </if>
+			<if test="vouchMember != null">#{vouchMember}, </if>
+			<if test="password != null">#{password}, </if>
+			<if test="isRecommend != null">#{isRecommend}, </if>
+			<if test="informationDisclosure != null">#{informationDisclosure}, </if>
+			<if test="vouchUid != null">#{vouchUid}, </if>
+			<if test="vouchMoney != null">#{vouchMoney}, </if>
+			<if test="autoMaxLimit != null">#{autoMaxLimit}, </if>
+			<if test="riskControl != null">#{riskControl}, </if>
+			<if test="updateTime != null">#{updateTime}, </if>
+			<if test="expiredRate != null">#{expiredRate}, </if>
+			<if test="rewardTotalScore != null">#{rewardTotalScore}, </if>
+			<if test="rewardExperienceGold != null">#{rewardExperienceGold}, </if>
+			<if test="rewardWay != null">#{rewardWay}, </if>
+			<if test="canBonus != null">#{canBonus}, </if>
+			<if test="canAddInterest != null">#{canAddInterest}, </if>
+			<if test="contractType != null">#{contractType}, </if>
+			<if test="increaseProgressively != null">#{increaseProgressively}, </if>
+			<if test="extField != null">#{extField}, </if>
+			<if test="extField2 != null">#{extField2}, </if>
+			<if test="version != null">#{version}, </if>
+			</trim>
+		)
+	</insert>
+
+	<update id="update" parameterType="LdYingxiangProductDetail">
+		UPDATE ld_yingxiang_product_detail 
+		<set>
+		<if test="id != null">id = #{id}, </if>
+		<if test="productId != null">product_id = #{productId}, </if>
+		<if test="borrowType != null">borrow_type = #{borrowType}, </if>
+		<if test="datetime != null">datetime = #{datetime}, </if>
+		<if test="addIp != null">add_ip = #{addIp}, </if>
+		<if test="borrowInfo != null">borrow_info = #{borrowInfo}, </if>
+		<if test="total != null">total = #{total}, </if>
+		<if test="hasPay != null">has_pay = #{hasPay}, </if>
+		<if test="substituteMoney != null">substitute_money = #{substituteMoney}, </if>
+		<if test="rewardVouchRate != null">reward_vouch_rate = #{rewardVouchRate}, </if>
+		<if test="rewardVouchMoney != null">reward_vouch_money = #{rewardVouchMoney}, </if>
+		<if test="rewardType != null">reward_type = #{rewardType}, </if>
+		<if test="rewardMin != null">reward_min = #{rewardMin}, </if>
+		<if test="rewardValue != null">reward_value = #{rewardValue}, </if>
+		<if test="investMin != null">invest_min = #{investMin}, </if>
+		<if test="investMax != null">invest_max = #{investMax}, </if>
+		<if test="vouchMember != null">vouch_member = #{vouchMember}, </if>
+		<if test="password != null">password = #{password}, </if>
+		<if test="isRecommend != null">is_recommend = #{isRecommend}, </if>
+		<if test="informationDisclosure != null">information_disclosure = #{informationDisclosure}, </if>
+		<if test="vouchUid != null">vouch_uid = #{vouchUid}, </if>
+		<if test="vouchMoney != null">vouch_money = #{vouchMoney}, </if>
+		<if test="autoMaxLimit != null">auto_max_limit = #{autoMaxLimit}, </if>
+		<if test="riskControl != null">risk_control = #{riskControl}, </if>
+		<if test="updateTime != null">update_time = #{updateTime}, </if>
+		<if test="expiredRate != null">expired_rate = #{expiredRate}, </if>
+		<if test="rewardTotalScore != null">reward_total_score = #{rewardTotalScore}, </if>
+		<if test="rewardExperienceGold != null">reward_experience_gold = #{rewardExperienceGold}, </if>
+		<if test="rewardWay != null">reward_way = #{rewardWay}, </if>
+		<if test="canBonus != null">can_bonus = #{canBonus}, </if>
+		<if test="canAddInterest != null">can_add_interest = #{canAddInterest}, </if>
+		<if test="contractType != null">contract_type = #{contractType}, </if>
+		<if test="increaseProgressively != null">increase_progressively = #{increaseProgressively}, </if>
+		<if test="extField != null">ext_field = #{extField}, </if>
+		<if test="extField2 != null">ext_field2 = #{extField2}, </if>
+		<if test="version != null">version = #{version}, </if>
+		</set>
+		WHERE id = #{id} 
+	</update>
+
+	<delete id="delete" parameterType="Long">
+		DELETE FROM ld_yingxiang_product_detail 
+		WHERE id = #{id} 
+	</delete>
+
+	<select id="queryLdYingxiangProductDetailList"  parameterType="java.util.Map" resultMap="ldYingxiangProductDetailMap">
+		SELECT * FROM ld_yingxiang_product_detail 
+		WHERE 1=1 
+		<if test="startRow != null and pageSize != null">limit #{startRow},#{pageSize}</if> 
+	</select>
+
+	<select id="queryLdYingxiangProductDetailCount"  parameterType="java.util.Map" resultType="Integer">
+		SELECT * FROM ld_yingxiang_product_detail 
+		WHERE 1=1 
+	</select>
+
+	<select id="queryLdYingxiangProductDetailByCondition"  parameterType="LdYingxiangProductDetail" resultMap="ldYingxiangProductDetailMap">
+		SELECT * FROM ld_yingxiang_product_detail 
+		WHERE 1=1
+		<if test="id != null"> and id = #{id}</if>
+		<if test="productId != null"> and product_id = #{productId}</if>
+	</select>
+
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IStaticSource">
+	<resultMap type="com.sxt.inter.dto.ImageDto" id="imageResult">
+		<id property="id" column="id"/>
+		<result property="type" column="type"/>
+		<result property="url" column="url"/>
+		<result property="imageIndex" column="image_index"/>
+		<result property="expireTime" column="expire_time"/>
+		<result property="inOperationTime" column="in_operation_time"/>
+		<result property="imageName" column="image_name"/>
+		<result property="status" column="status"/>
+	</resultMap>
+	<select id="getImageByType" resultMap="imageResult" parameterType="java.lang.Integer">
+		SELECT
+			id,
+			type,
+			url,
+			image_index,
+			expire_time,
+			in_operation_time,
+			image_name,
+			status
+		FROM
+			ld_image_config
+		WHERE 
+			type = #{type}
+			and status = 0
+		ORDER BY
+			image_index ASC
+	</select>
+</mapper>

@@ -1,0 +1,131 @@
+.list{padding:30px 0 80px;color:#0d0d0d;background:#edf1f1;min-height: 500px;}
+.list .cont{min-height:500px;width:1026px;position:relative;padding:11px 0 0 144px;background:transparent url(../img/bg/list_menu.png) no-repeat left top}
+.list .cont .menu{position:absolute;width:134px;left:10px;top:0}
+.list .menu li{height:38px;width:100%;margin-top:15px;}
+.list .menu li.active{background:transparent url(../img/bg/list_li.png) no-repeat right top}
+.list .menu li.active label{font-weight:600}
+.list .menu li b{display:inline-block;height:26px;width:3px;background:#f94e18;margin:4px 7px 0 0;float:left}
+.list .menu li label{display:inline-block;height:30px;width:96px;line-height:30px;font-size:16px;text-align:center;color:#FFF;border:solid 1px transparent;border-radius:4px;float:left;cursor:pointer;margin-top:1px;transition:border .1s ease}
+.list .menu li label:hover{border-color:#fff}
+.list .menu li.active label:hover{border-color:transparent}
+.list .menu li.ban label{cursor: default;}
+.list .menu li.ban label:hover{border-color:transparent}
+.list .menu li.li_2{margin-top: 0;}
+.list .menu li.li_2 label{margin-left: 13px;font-size: 14px;}
+.list .box{width:100%;display:none}
+.list .box.active{display:block}
+.list .main{width:100%}
+.list .main li{width:auto;height:138px;padding:0 52px 0 56px;border:solid 1px #d8d9d9;position:relative;z-index:0;margin-top:-1px;transition:border .3s ease-in-out;background:#fff}
+.list .main li:hover{z-index:1;border-color:#fd835d;background:#fff5e9}
+.list .main li dl{width:740px;float:left}
+.list .main li dt{width:100%;height:60px;line-height:60px;font-size:18px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.list .main li dt a{color:#0d0d0d}
+.list .main li dl dd{min-width:140px;float:left}
+.list .main li dl .th_1{min-width:180px;}
+.loan .main li dl .th_1{min-width: 150px;}
+.loan .main li dl .th_2{padding-right: 30px;}
+.loan .main li dl .th_2 span{font-size: 18px;}
+.loan .main li dl .th_3 span{font-size: 18px;}
+.list .main li dl .th_4{width:220px;float:right}
+.partner .main li dl .th_1,.broker .main li dl .th_1{min-width: 160px;margin-right: 30px;}
+.list .main li dl .th_5{width: auto;float: left;margin-left: 10px;}
+.list .main li dl .th_5 h4 span{font-size: 16px;}
+.list .main li dl dd h4{height:30px;line-height:30px;color:#505050}
+.list .main li dl dd h4 em{font-size:26px;color:#f77d07}
+.list .main li dl dd h4 small{color:#f77d07;font-size:14px}
+.list .main li dl dd h4 span{font-size:22px}
+.list .main li dl dd p{line-height:20px;font-size:12px;color:#999}
+.list .main li dl dd.th_4 p{font-size:14px;color:#505050}
+.list .main li dl dd .progress_bar{width:218px;height:3px;margin:5px 0;border-color:#fd835d}
+.list .main li dl dd .progress_bar div{background:#fd835d}
+.list .main li>a{display:block;width:128px;height:46px;border-radius:4px;font-size:16px;line-height:46px;text-align:center;float:right;margin-top:55px}
+.list .main li .btn{border:solid 1px #ef4810;color:#ef4810}
+.list .main li .btn_failed{border:solid 1px #c8c8c8;color:#adacac;display:none}
+.list .main li .btn_failed:hover{color: #ffffff;background: #adacac;transition: all .1s ease-out;}
+.list .main .open_mask .btn{border-color:#c8c8c8;color:#adacac}
+.open_mask .mask_jjks{display:block}
+.open_mask .mask_jjks_ex{display:block}
+.open_mask .mask_jjks_nh{display:block}
+.page_box{margin:30px 0;width:100%;text-align:center}
+.guide{
+	margin-top: 60px;
+}
+.guide img{
+	width: 100%;
+	height: auto;
+}
+
+/*新手*/
+.list .main li dl dd h5{height:40px;line-height:40px;font-size:16px;position:relative;padding-left:20px}
+.list .main li dl dd h5 b{display:block;position:absolute;top:16px;left:0;height:8px;width:8px;background:#fd835d;border-radius:4px}
+/*涨业贷*/
+.list .loan .main li dl dd .progress_bar{border-color:#26d6eb}
+.list .loan .main li dl dd .progress_bar div{background:#26d6eb}
+
+ul li .waiting{
+	display: block;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	background: #ffffff url(../img/bg/list_waiting02.png) no-repeat 25px bottom / auto 117px;
+}
+ul li .waiting img{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+
+@media screen and (min-width:1020px) and (max-width:1230px){
+.list .cont{width:826px}
+.list .main li{padding:0 40px}
+.list .main li dl{width:580px}
+.list .main li dl dd{min-width:110px}
+.list .main li dl .th_1{min-width:120px}
+.list .main li dl .th_4{width:190px}
+.list .main li dl dd .progress_bar{width:188px}
+.loan .main li dl .th_1{min-width: 110px;}
+.loan .main li dl .th_2{padding-right: 20px;}
+}
+
+@media screen and (min-width:750px) and (max-width:1019px){
+.list .cont{width:561px}
+.list .main li{padding:0 30px}
+.list .main li dl{width:345px}
+.list .main li dl dd{min-width:100px}
+.list .main li dl .th_1{min-width:110px}
+.list .main li dl .th_4{display: none;}
+.list .main li dl .th_5{display: none;}
+.loan .main li dl .th_1{min-width: 100px;}
+.loan .main li dl .th_2{padding-right: 20px;}
+}
+
+@media screen and (max-width:749px){
+.list{padding:55px 0 30px;}
+.list .cont{width:100%;padding:0;background-image:none;min-height: 200px;}
+.list .cont .menu{position:relative;width:100%;height:35px;margin:10px 0;top:0;left:0}
+.list .cont .menu li{height:100%;width:20%;text-align:center;background:#fd835d;float:left;text-align:center;margin:0}
+.list .cont .menu li.cash,
+.list .cont .menu li.ban{display: none;}
+.list .cont .menu .active label{background:#f4501a}
+.list .cont .menu li:hover label{background:#f4501a}
+.list .cont .menu li label{height:31px;width:90%;line-height:31px;border:none;margin:2px 5%}
+.list .cont .menu li label:hover{border:none}
+.list .cont .menu li b{display:none}
+.list .main li{height:auto;width:100%;padding:0 20px}
+.list .main li:hover{background: #ffffff;}
+.list .main li dl{width:100%;float:left}
+.list .main li dl dt{height:50px;line-height:50px}
+.list .main li dl dd{min-width:30%}
+.list .main li dl dd h4 em{font-size:24px}
+.list .main li dl dd h4 span{font-size:20px}
+.list .main li dl .th_1{min-width:30%}
+.partner .main li dl .th_1,.broker .main li dl .th_1{margin-right: 5%;}
+.list .main li dl .th_4{display:none}
+.list .main li dl .th_5{display:none}
+.list .main li>a{width:100%;margin:10px 0;float:left}
+.loan .main li dl .th_2{padding-right: 10px;}
+ul li .waiting{height: 170px;}
+}

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IExperienceProduct">
+ <resultMap type="ExperienceProduct" id="experienceProductResult">
+		 <id property="id" column="id"/>
+		<result property="productId" column="product_id"/>
+		<result property="productName" column="product_name"/>
+		<result property="borrowUid" column="borrow_uid"/>
+		<result property="borrowMonthDuration" column="borrow_month_duration"/>
+		<result property="borrowDayDuration" column="borrow_day_duration"/>
+		<result property="borrowMoney" column="borrow_money"/>
+		
+		<result property="borrowInterest" column="borrow_interest"/>
+		<result property="borrowInterestRate" column="borrow_interest_rate"/>
+		<result property="borrowFee" column="borrow_fee"/>
+		<result property="repaymentMoney" column="repayment_money"/>
+		<result property="repaymentInterest" column="repayment_interest"/>
+		
+		<result property="expiredMoney" column="expired_money"/>
+		<result property="repaymentType" column="repayment_type"/>
+		<result property="borrowType" column="borrow_type"/>
+		<result property="borrowProceduresRate" column="borrow_procedures_rate"/>
+		<result property="borrowStatus" column="borrow_status"/>
+		<result property="contractID" column="contractID"/>
+		
+		<result property="createTime" column="create_time"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="collectStartTime" column="collect_start_time"/>
+		<result property="fullTime" column="full_time"/>
+		<result property="deadline" column="deadline"/>
+		
+		<result property="checkTime" column="check_time"/>
+		<result property="contractTemplate" column="contract_template"/>
+		<result property="checkUser" column="check_user"/>
+		<result property="checkUser2" column="check_user2"/>
+		<result property="checkTime2" column="check_time2"/>
+		
+		<result property="investFee" column="invest_fee"/>
+		<result property="investRate" column="invest_rate"/>
+		<result property="collectEndTime" column="collect_end_time"/>
+		<result property="surplusmon" column="surplusmon"/>
+		<result property="caninvest" column="caninvest"/>
+		<result property="borrowDays" column="borrow_days"/>
+		
+		<!-- 另外加的列 -->
+		<result property="investorcapital" column="investor_capital"/>
+		<result property="investorinterest" column="investor_interest"/>
+		<result property="investMin" column="invest_min"/>
+		<result property="investMax" column="invest_max"/>
+		<result property="progressiveInvestment" column="progressive_investment"/>
+		
+	</resultMap>
+	<select id="fQueryProduct" resultMap="experienceProductResult">
+	  		SELECT
+				t.product_id,
+				t.product_name,
+				t.repayment_type,
+				t.borrow_day_duration,
+				t.borrow_month_duration,
+				t.borrow_interest_rate,
+				t.borrow_status,
+				t.borrow_money,
+				t.collect_start_time,
+				t.collect_end_time,
+				td.invest_min,
+				td.invest_max,
+				td.progressive_investment
+			FROM
+				ld_experience_product t 
+			LEFT JOIN ld_experience_product_detail td ON t.product_id = td.product_id
+		ORDER BY create_time DESC   LIMIT 0,1
+	</select>
+	
+	
+	<select id="fqueryProductById" parameterType="String" resultMap="experienceProductResult">
+		SELECT * FROM ld_experience_product WHERE product_id=#{productId}
+	</select>
+	
+	
+	<update id="fUpdateStateByProid" parameterType="String">
+	UPDATE  ld_experience_product SET borrow_status=4,full_time=NOW() WHERE  product_id=#{productId}
+	</update>
+	
+	<select id="fQueryProid" resultMap="experienceProductResult">
+	select product_id, borrow_interest_rate, borrow_day_duration from ld_experience_product;
+	</select>
+	<select id="queryExperienceProductByProid" parameterType="String" resultType="String" >
+	select product_name from ld_experience_product where product_id=#{productid}
+	</select>
+	
+	<select id="queryAffectExperienceGold" parameterType="java.util.Map" resultType="BigDecimal">
+		select sum(affect_experience_gold) from ld_member_experience_gold_detail where system_trace_no in 
+		 <foreach item="item" index="index" collection="systemTraceNos" open="(" separator="," close=")">  
+		  #{item}  
+		 </foreach> 
+	</select>
+	
+	<select id="querySystemTraceNos" parameterType="java.util.Map" resultType="String">
+		select system_trace_no from ld_borrow_investor where product_id = #{productId};
+	</select>
+	
+	<select id="querySystemTraceNosByUid" parameterType="java.util.Map" resultType="String">
+		select system_trace_no from ld_borrow_investor where 
+			product_id = #{productId} and investor_uid=#{investorUid}
+ 			<if test="mon != null">
+ 				AND <![CDATA[create_time >= #{mon}]]>
+ 			</if>
+ 			<if test="sun != null">
+ 				AND <![CDATA[create_time <= #{sun}]]>
+ 			</if>
+	</select>
+	<select id="queryExProductNameByTraceNo" parameterType="String" resultType="String">
+		select product_name from ld_product_extend_info where system_trace_no=#{systemTraceNo}
+	</select>
+</mapper>

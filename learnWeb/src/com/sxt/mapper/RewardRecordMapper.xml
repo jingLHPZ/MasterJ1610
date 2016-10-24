@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IRewardRecord">
+	<resultMap type="RewardRecord" id="rewardrecordlist">
+		<id property="id" column="id"/>
+		<result property="type" column="type"/>
+		<result property="proValue" column="pro_value"/>
+		<result property="createTime" column="create_time"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="systemTraceNo" column="system_trace_no"/>
+		<result property="useStatus" column="use_status"/>
+		<result property="uid" column="uid"/>
+		<result property="content" column="content" />
+		<result property="expireTime" column="expire_time"/>
+		<result property="useTime" column="use_time"/>
+		<result property="memo" column="memo"/>
+	</resultMap>
+	<resultMap type="com.sxt.inter.dto.RewardRecordDto" id="RewardRecordDto">
+	    <result property="content" column="content"/>
+	    <result property="proValue" column="pro_value"/>
+		<result property="type" column="type"/>
+		<result property="useTime" column="use_time"/>
+		<result property="expireTime" column="expire_time"/>
+		<result property="memo" column="memo"/>
+		<result property="productId" column="product_id"/>
+		<result property="productName" column="product_name"/>
+		<result property="createTime" column="create_time"/>
+		<result property="productType" column="product_type"/>
+		<result property="updateTime" column="update_time"/>
+	</resultMap>
+
+<select id="fselectredbyuid" parameterType="int" resultMap="rewardrecordlist" >
+	SELECT * FROM ld_reward_record WHERE uid=#{uid}
+</select>
+	
+<select id="queryRewardByUid" parameterType="int" resultMap="rewardrecordlist">
+	select * from ld_reward_record 
+	<where> 
+		uid=#{uid} and use_status=0 and type in (2,3) 
+		<![CDATA[ and expire_time > NOW()]]>
+		order by type desc,create_time desc
+	</where>
+</select>
+
+<select id="queryCountRewardByMap" parameterType="map" resultType="int">
+	select count(1) from ld_reward_record 
+	<where>
+	uid=#{uid} and id=#{id} and use_status=0 and type in (2,3)
+	<![CDATA[ and expire_time > NOW()]]>
+	</where>
+</select>
+
+<select id="queryRewardById" parameterType="int" resultMap="rewardrecordlist">
+	select * from ld_reward_record WHERE id=#{id}
+</select>
+	
+<update id="updateRewardRecord" parameterType="RewardRecord">
+	update ld_reward_record 
+		<set> 
+             use_status = #{useStatus},
+             update_time = #{updateTime},
+             system_trace_no = #{systemTraceNo},
+             use_time = #{useTime},
+             memo = #{memo}
+        </set>
+          where id = #{id}
+</update>
+
+<!-- 查询已领取的现金红包 （CashRed）-->
+ <select id="queryAlreadyGetCashRed" parameterType="map" resultMap="rewardrecordlist" >
+	SELECT * FROM ld_reward_record WHERE use_status=1  AND type=1  AND   uid=#{uid} limit #{startRow},#{pageSize}
+</select>
+<select id="queryAlreadyGetCashRedCount" parameterType="map" resultType="int">
+	SELECT COUNT(1) FROM ld_reward_record WHERE use_status=1  AND type=1  AND   uid=#{uid}
+</select>
+<!--查询未领取的奖励 -->
+<select id="queryNoGetCashRed" resultMap="rewardrecordlist" parameterType="map">
+	SELECT
+		*
+	FROM
+		ld_reward_record
+	WHERE
+		use_status = 2
+	AND ISNULL(uid)
+	AND content = #{content} 
+	AND type = #{rewardtype} 
+	<![CDATA[AND expire_time > NOW()]]>
+</select>
+<update id="updateUid" parameterType="RewardRecord" >
+ update ld_reward_record SET use_status=0,use_time=NOW(),uid=#{uid}  WHERE content=#{content}
+</update>
+
+<!--我的投资红包 未使用 -->
+<select id="queryInvestRedNo" parameterType="map" resultMap="rewardrecordlist">
+	SELECT * FROM ld_reward_record WHERE use_status=0 AND type=3 AND uid=#{uid} 
+	AND expire_time > NOW()
+	limit #{startRow},#{pageSize}
+</select>
+<select id="queryInvestRedNoCount" parameterType="map" resultType="int">
+	SELECT COUNT(1) FROM ld_reward_record WHERE use_status=0 AND type=3 AND uid=#{uid} AND expire_time > NOW()
+</select>
+
+<!--我的投资红包 已使用 -->
+<select id="queryInvestRedUsed" parameterType="map" resultMap="RewardRecordDto">
+	SELECT  *  FROM (
+	      SELECT 
+	      rr.content,
+	      rr.pro_value,
+	      rr.type,
+	      rr.use_time,
+	      rr.expire_time,
+	      rr.memo,
+	      rr.update_time,
+	      lbi.create_time,
+	      lbi.product_id,
+	      lbi.product_type
+	      FROM ld_reward_record rr  LEFT JOIN ld_borrow_investor lbi 
+	      ON rr.system_trace_no=lbi.system_trace_no AND rr.uid = lbi.investor_uid 
+	      WHERE rr.use_status=1 AND rr.type=3 AND rr.uid=#{uid} )r
+	      limit #{startRow},#{pageSize}
+</select>
+<select id="queryInvestRedUsedCount" parameterType="map" resultType="int">
+	SELECT  count(1)  FROM (
+	      SELECT 
+	      rr.content,
+	      rr.pro_value,
+	      rr.type,
+	      rr.use_time,
+	      rr.expire_time,
+	      rr.memo,
+	      lbi.create_time,
+	      lbi.product_id,
+	      lbi.product_type
+	      FROM ld_reward_record rr  LEFT JOIN ld_borrow_investor lbi ON rr.system_trace_no=lbi.system_trace_no
+	      AND rr.uid = lbi.investor_uid 
+	      WHERE rr.use_status=1 AND rr.type=3 AND rr.uid=#{uid} )r
+</select>
+
+<!--我的加息券 可使用 -->
+<select id="queryAddInterestNo" resultMap="rewardrecordlist" parameterType="map">
+	SELECT * FROM ld_reward_record WHERE type=2 AND use_status=0 AND uid=#{uid} AND expire_time > NOW()
+	limit #{startRow},#{pageSize}
+</select>
+<select id="queryAddInterestNoCount" resultType="int" parameterType="map">
+	SELECT count(1) FROM ld_reward_record WHERE type=2 AND use_status=0 AND uid=#{uid} AND expire_time > NOW()
+</select>
+<!--我的加息券 已使用 -->
+<select id="queryAddInterestUsed" parameterType="map" resultMap="RewardRecordDto">
+	SELECT * FROM (
+         SELECT 
+         rr.content,
+         rr.pro_value,
+         rr.type,
+         rr.use_time,
+         rr.expire_time,
+         rr.memo,
+         rr.update_time,
+         lbi.create_time,
+         lbi.product_id,
+    	 lbi.product_type
+         FROM ld_reward_record rr  LEFT JOIN ld_borrow_investor lbi ON rr.system_trace_no=lbi.system_trace_no
+         AND rr.uid = lbi.investor_uid 
+         WHERE use_status=1 AND type=2 AND uid=#{uid} )r
+         limit #{startRow},#{pageSize}
+</select>
+<select id="queryAddInterestUsedCount" parameterType="map" resultType="int">
+	SELECT count(1) FROM (
+         SELECT 
+         rr.content,
+         rr.pro_value,
+         rr.type,
+         rr.use_time,
+         rr.expire_time,
+         rr.memo,
+         lbi.create_time,
+         lbi.product_id
+         FROM ld_reward_record rr  LEFT JOIN ld_borrow_investor lbi ON rr.system_trace_no=lbi.system_trace_no
+         AND rr.uid = lbi.investor_uid 
+         WHERE use_status=1 AND type=2 AND uid=#{uid} )r
+</select>
+
+<select id="queryProval" parameterType="String" resultType="BigDecimal">
+	select pro_value from ld_reward_record WHERE system_trace_no=#{systemtraceno}
+</select>
+
+<select id="queryRewardRecord" parameterType="String" resultMap="rewardrecordlist">
+	select * from ld_reward_record WHERE system_trace_no=#{systemtraceno} 
+</select>
+
+<!-- 领取奖励 -->
+<update id="updateRewardRecordById" parameterType="map">
+	UPDATE
+		ld_reward_record
+	SET 
+		use_status = #{useStatus},
+        update_time = #{updateTime},
+        use_time = #{useTime},
+        uid = #{uid}
+    WHERE
+    	content = #{content}
+</update>
+
+<insert id="add" parameterType="RewardRecord" useGeneratedKeys="true" keyProperty="id">
+	INSERT INTO Ld_reward_record
+	(type, pro_value, create_time, update_time, system_trace_no, use_status, uid, content,expire_time,use_time,memo)
+	VALUE (#{type},#{proValue},#{createTime},#{updateTime},#{systemTraceNo},#{useStatus},#{uid},#{content},#{expireTime},#{useTime},#{memo})
+</insert>
+
+<select id="getRewardRecordByType" parameterType="map" resultMap="rewardrecordlist">
+	SELECT * FROM ld_reward_record WHERE 1=1 
+	<if test="systemTraceNo!=null and systemTraceNo!=''">
+		AND system_trace_no=#{systemTraceNo}
+	</if>
+	<if test="type!=null and type!=''">
+		AND type = #{type}
+	</if>
+	<if test="useStatus!=null and useStatus!=''">
+		AND use_status = #{useStatus}
+	</if>
+	<if test="content!=null and content!=''">
+		AND content = #{content}
+	</if>
+</select>
+</mapper>

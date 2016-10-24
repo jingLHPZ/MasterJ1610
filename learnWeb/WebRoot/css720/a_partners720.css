@@ -1,0 +1,25 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+
+.about_right_m .partn_div {
+    width: 94%;
+    margin: 35px 3% 0;
+}
+.about_right_m .partn_div h3{
+	margin-right: 0;
+}
+.about_right_m .partn_div ul {
+    width: 95%;
+    margin-top: 20px;
+    margin-left: 5%;
+}
+.about_right_m .partn_div ul li{
+	margin: 0px 15px 10px 0px;
+	height: auto;
+	width: 150px;
+}
+.about_right_m .partn_div ul li img{
+	height: auto;
+	width: 150px;
+}
+
+}

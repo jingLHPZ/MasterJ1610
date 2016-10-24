@@ -1,0 +1,177 @@
+/* CSS Document 
+	* author:Jikey
+	* time:11.29
+	 */
+*{
+margin: 0;
+padding: 0;
+}
+body,td,th {
+	color: #000000;
+	font-family: Arial, Helvetica, sans-serif, "ËÎÌו";
+	margin:0;
+	line-height:150%;
+	font-size:12px;
+
+}
+p{
+	font-size:12px;
+	line-height:150%;
+	}
+a {
+color: #000000; 
+text-decoration: none;
+}
+a:visited {
+color: #000000;
+}
+a:hover {
+color: #000000;
+text-decoration: underline;
+}
+/*top star*/
+.logo{ text-align:left;}
+.register{
+	height:13px;
+	font-size:12px;
+	color:#000000;
+	}
+.nav01{
+	background:#F3F3F3;
+	height:4px;
+	}
+.nav02{
+	background:#3EC027;
+	height:10px;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #fffff;
+	}
+	/*login css*/
+.loginnav{
+	background: url(../images/login_headerbg.gif) repeat-x;
+	height:26px;
+}
+.loginborder{
+	border:1px solid #C0C0C0;
+	font-size:12px;
+	}
+.loginregisterheader{
+	background:#E2FCFF;
+	font-size:12px;
+	color:#0074BC;
+	height:35px;
+	font-weight: bold;
+}
+.loginbody{
+	margin-right: auto; 
+	margin-left: auto;
+	}
+
+.login{
+text-align:left;
+}
+.login td{
+	height:24px;}
+.login a:link,.login visited{
+	color:#003399;
+	text-decoration: underline;
+	}	
+.login a:hover{
+	color:#FF6600;	
+}
+.loginnotice{
+	border:1px solid #3EA0C4;
+	background:#E2FCFF;
+	margin-top:6px;
+	text-indent:1em;
+}
+.loginnotice td{
+	height:15px;
+	text-align: left;
+}
+.loginnotice a:link,.loginnotice visited{
+	color:#000;
+	}	
+.loginnotice a:hover{
+	color:#FF6600;	
+	text-decoration: underline;
+}
+#footer{
+	font-size:12px;
+	font-weight:normal;
+	text-align:center;
+}
+/*footer end*/
+
+.payheader{
+	background:#008EAC;
+	border-bottom:#D7EDF2 1px solid;
+	height:11px;
+	}
+.paymainfont{
+	font-size:12px;
+	font-weight:bold;
+	color:#ff0000;
+	border-bottom:#cccccc 1px solid;
+	}
+.offer{
+	color:#999999;
+	border-bottom:1px solid #cccccc;
+	padding-left:15px;
+	}
+.offermain{
+	float:right;
+	margin-top:15px;
+	margin-right:62px;
+	}
+.warning{
+	margin-top:150px;
+	}
+.back a:link,.back a:visited{color:#3333FF;}
+.back a:hover{}
+.button_height20
+{
+    BORDER-RIGHT: darkgray 1px solid;
+    BORDER-TOP: darkgray 1px solid;
+    FONT-SIZE: 9pt;
+    BACKGROUND: url(../images/bottom_over.gif);
+    BORDER-LEFT: darkgray 1px solid;
+    CURSOR: hand;
+    BORDER-BOTTOM: darkgray 1px solid;
+    FONT-FAMILY: verdana;
+    HEIGHT: 20px
+}
+.button_height20_over
+{
+    BORDER-RIGHT: darkgray 1px solid;
+    BORDER-TOP: darkgray 1px solid;
+    FONT-SIZE: 9pt;
+    BACKGROUND: url(../images/bottom.gif);
+    BORDER-LEFT: darkgray 1px solid;
+    CURSOR: hand;
+    BORDER-BOTTOM: darkgray 1px solid;
+    FONT-FAMILY: Verdana,Arial;
+    HEIGHT: 20px
+}
+.copyright{
+	font-weight:normal;
+	}
+.paying {
+	border:2px solid #0A8DA9;
+}
+.paybig{
+	font-size:14px;
+	}
+.paybig2 {
+	font-size:14px;
+	font-weight:bold;
+	color:#18A840;
+}
+
+#MsgWindow {
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	margin-left: -217px;
+}

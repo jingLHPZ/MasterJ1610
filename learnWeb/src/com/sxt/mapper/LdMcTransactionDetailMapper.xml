@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxt.inter.ILdMcTransactionDetail" >
+	<resultMap id="BaseResultMap" type="LdMcTransactionDetail" >
+	    <id column="id" property="id" jdbcType="INTEGER" />
+	    <result column="mer_order_id" property="merOrderId" jdbcType="VARCHAR" />
+	    <result column="subject" property="subject" jdbcType="VARCHAR" />
+	    <result column="bank_no" property="bankNo" jdbcType="VARCHAR" />
+	    <result column="card_no" property="cardNo" jdbcType="VARCHAR" />
+	    <result column="expired_date" property="expiredDate" jdbcType="TIMESTAMP" />
+	    <result column="cvv2" property="cvv2" jdbcType="VARCHAR" />
+	    <result column="amount" property="amount" jdbcType="DECIMAL" />
+	    <result column="cust_name" property="custName" jdbcType="VARCHAR" />
+	    <result column="cust_id_no" property="custIdNo" jdbcType="VARCHAR" />
+	    <result column="cust_id_type" property="custIdType" jdbcType="INTEGER" />
+	    <result column="save_cust_flag" property="saveCustFlag" jdbcType="INTEGER" />
+	    <result column="cust_id" property="custId" jdbcType="INTEGER" />
+	    <result column="phone_no" property="phoneNo" jdbcType="INTEGER" />
+	    <result column="phone_vercode" property="phoneVercode" jdbcType="VARCHAR" />
+	    <result column="phoneToken" property="phonetoken" jdbcType="VARCHAR" />
+	    <result column="storable_card_no" property="storableCardNo" jdbcType="VARCHAR" />
+	    <result column="backUrl" property="backurl" jdbcType="VARCHAR" />
+	    <result column="msg_ext" property="msgExt" jdbcType="VARCHAR" />
+	    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  	</resultMap>
+  	<sql id="Base_Column_List" >
+	    id, mer_order_id, subject, bank_no, card_no, expired_date, cvv2, amount, cust_name, 
+	    cust_id_no, cust_id_type, save_cust_flag, cust_id, phone_no, phone_vercode, phoneToken, 
+	    storable_card_no, backUrl, msg_ext, create_time
+  	</sql>
+	<select id="selectByMerOrderId" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select 
+	    <include refid="Base_Column_List" />
+	    from ld_mc_transaction_detail
+	    where mer_order_id = #{oriMerorderId}
+	</select>
+  	<insert id="insert" parameterType="LdMcTransactionDetail" >
+	    insert into ld_mc_transaction_detail (id, mer_order_id, subject, 
+	      bank_no, card_no, expired_date, 
+	      cvv2, amount, cust_name, 
+	      cust_id_no, cust_id_type, save_cust_flag, 
+	      cust_id, phone_no, phone_vercode, 
+	      phoneToken, storable_card_no, backUrl, 
+	      msg_ext, create_time)
+	    values (#{id,jdbcType=INTEGER}, #{merOrderId,jdbcType=VARCHAR}, #{subject,jdbcType=VARCHAR}, 
+	      #{bankNo,jdbcType=VARCHAR}, #{cardNo,jdbcType=VARCHAR}, #{expiredDate,jdbcType=TIMESTAMP}, 
+	      #{cvv2,jdbcType=VARCHAR}, #{amount,jdbcType=DECIMAL}, #{custName,jdbcType=VARCHAR}, 
+	      #{custIdNo,jdbcType=VARCHAR}, #{custIdType,jdbcType=INTEGER}, #{saveCustFlag,jdbcType=INTEGER}, 
+	      #{custId,jdbcType=INTEGER}, #{phoneNo,jdbcType=INTEGER}, #{phoneVercode,jdbcType=VARCHAR}, 
+	      #{phonetoken,jdbcType=VARCHAR}, #{storableCardNo,jdbcType=VARCHAR}, #{backurl,jdbcType=VARCHAR}, 
+	      #{msgExt,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+  	</insert>
+  	<update id="updatePayStatus" parameterType="LdMcTransactionDetail">
+		UPDATE ld_mc_transaction_detail
+		<set>
+			<if test="status != null ">status = #{status},</if>
+		</set>
+		WHERE mer_order_id = #{merOrderId}
+  	</update>
+  
+</mapper>

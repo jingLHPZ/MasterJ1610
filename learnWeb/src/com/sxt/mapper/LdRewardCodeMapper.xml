@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.ILdRewardCode">
+
+	<resultMap type="LdRewardCode" id="ldRewardCodeMap">
+		<id property="id" column="id" />
+		<result property="uid" column="uid"/>
+		<result property="code" column="code"/>
+		<result property="rewardTypeId" column="reward_type_id"/>
+		<result property="isUsed" column="is_used"/>
+		<result property="createTime" column="create_time"/>
+		<result property="useTime" column="use_time"/>
+		<result property="source" column="source"/>
+	</resultMap>
+	<insert id="insert" parameterType="LdRewardCode" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO ld_reward_code (
+			<trim suffixOverrides=",">
+			<if test="id != null">id, </if>
+			<if test="uid != null">uid, </if>
+			<if test="code != null">code, </if>
+			<if test="rewardTypeId != null">reward_type_id, </if>
+			<if test="isUsed != null">is_used, </if>
+			<if test="createTime != null">create_time, </if>
+			<if test="useTime != null">use_time, </if>
+			<if test="source != null">source, </if>
+			</trim>
+		) VALUES (
+			<trim suffixOverrides=",">
+			<if test="id != null">#{id}, </if>
+			<if test="uid != null">#{uid}, </if>
+			<if test="code != null">#{code}, </if>
+			<if test="rewardTypeId != null">#{rewardTypeId}, </if>
+			<if test="isUsed != null">#{isUsed}, </if>
+			<if test="createTime != null">#{createTime}, </if>
+			<if test="useTime != null">#{useTime}, </if>
+			<if test="source != null">#{source}, </if>
+			</trim>
+		)
+	</insert>
+
+	<update id="update" parameterType="LdRewardCode">
+		UPDATE ld_reward_code 
+		<set>
+		<if test="id != null">id = #{id}, </if>
+		<if test="uid != null">uid = #{uid}, </if>
+		<if test="code != null">code = #{code}, </if>
+		<if test="rewardTypeId != null">reward_type_id = #{rewardTypeId}, </if>
+		<if test="isUsed != null">is_used = #{isUsed}, </if>
+		<if test="createTime != null">create_time = #{createTime}, </if>
+		<if test="useTime != null">use_time = #{useTime}, </if>
+		<if test="source != null">source = #{source}, </if>
+		</set>
+		WHERE id = #{id} 
+	</update>
+
+	<delete id="delete" parameterType="Long">
+		DELETE FROM ld_reward_code 
+		WHERE id = #{id} 
+	</delete>
+
+	<select id="queryLdRewardCodeList"  parameterType="java.util.Map" resultMap="ldRewardCodeMap">
+		SELECT * FROM ld_reward_code 
+		WHERE 1=1 
+		<if test="rewardTypeId != null and rewardTypeId !=''">
+			and reward_type_id in (${rewardTypeId})
+		</if>
+		<if test="isUsed != null and isUsed != ''">
+			<if test="isUsed == 0"> and (is_used is null or is_used = 0)</if>
+			<if test="isUsed == 1"> and is_used == 1</if>
+		</if>
+		<if test="orderBy != null and orderBy != ''">
+			order by ${orderBy}
+		</if>
+		<if test="startRow != null and pageSize != null">limit #{startRow},#{pageSize}</if> 
+	</select>
+
+	<select id="queryLdRewardCodeCount"  parameterType="java.util.Map" resultType="Integer">
+		SELECT * FROM ld_reward_code 
+		WHERE 1=1 
+	</select>
+
+	<select id="queryLdRewardCodeByCondition"  parameterType="LdRewardCode" resultMap="ldRewardCodeMap">
+		SELECT * FROM ld_reward_code 
+		WHERE id = #{id} 
+	</select>
+
+</mapper>

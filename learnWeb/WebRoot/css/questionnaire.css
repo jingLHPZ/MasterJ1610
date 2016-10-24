@@ -1,0 +1,55 @@
+.questi_body{ width: 100%; height:auto; overflow: hidden; background: url(../img/question_bg.jpg) top center no-repeat;background-size: auto 100%;}
+.questi_title{ width: 100%; height:31px;line-height: 31px;font-weight: bold; position: absolute;font-size: 28px; text-align: center;letter-spacing: 3px; margin: 80px 0 0 0px;/*background:url(../img/question_titie.png) top center no-repeat;*/}
+.questi_tab{ width: 900px; height: auto; overflow: hidden; padding:0 35px 100px 35px; background:url(../img/icon/while_tm.png) 0 0 repeat; border-radius:10px; margin:100px auto;}
+
+.questi_sm{ width: 100%; height: auto; overflow: hidden; float: left; margin-top: 50px;}
+.questi_sm h3{ font-size: 16px; color: #213434; margin-bottom: 10px;}
+.questi_sm p{ font-size: 14px; color: #213434; line-height: 25px; text-indent: 2em;}
+
+.questi_fl{width: 100%; height: auto; overflow: hidden; float: left; margin:20px 0 10px 0;}
+.questi_fl h2{ font-size: 16px; font-weight: bold; color: #213434; width: 100%; height: auto; overflow: hidden; float: left;}
+.questi_fl h3{font-size: 14px; font-weight: bold; color: #213434; width:98%; float: right; height: auto; overflow: hidden; margin: 10px 0;}
+.questi_fl h3 label{ color: red;display: none;}
+.questi_fl ul{ width: 96%; height: auto; overflow: hidden; float: right; margin-bottom: 10px;}
+.questi_fl li{ height: 20px; line-height: 20px; overflow: hidden; float: left; margin-bottom: 10px;}
+.questi_fl li input{ margin-right: 5px; vertical-align: middle; cursor: pointer;}
+.questi_fl .fl_25 li{ width: 25%;}
+.questi_fl .fl_100 li{ width: 100%;}
+.first h3{width: 100%;}
+.first .fl_100 li{width: 97.5%;height: auto;padding-left: 2.5%;position: relative;}
+.first .fl_100 li input{position: absolute;left: 0;top: 2px;}
+
+.questi_tk{ width: 858px; height:auto; overflow: hidden; line-height: 25px; background: #fcfaed; border: 1px solid #ccc; padding: 10px 20px; float: left; margin:20px 0;}
+.questi_tk b{ margin-bottom:5px; display: inline-block;}
+
+.questi_check{ width:190px; height:auto; overflow: hidden; line-height: 20px; float: left; margin:50px 0 0 355px;}
+.questi_check label{ width: 18px; height: 18px; border: 1px solid #bbb; float: left; display: inline-block; margin-right: 5px; cursor: pointer; background:url(../img/icon/check_d.png) 1px 2px no-repeat;}
+.questi_check p{ width:auto; height:20px; float: left; font-weight: bold; line-height: 20px; cursor: pointer;}
+.questi_check input{ width: 180px; height: 50px; line-height: 50px; border: 1px solid #fe3f3b; background: #fe3f3b; color: #fff; font-size: 16px; border-radius: 2px; cursor: pointer; margin-top: 20px;}
+.questi_check input:hover{ background: none; color:#fe3f3b;}
+.questi_check .notcli{ border: 1px solid #ccc; background: #ccc; color: #fff;}
+.questi_check .notcli:hover{border: 1px solid #ccc; background: #ccc; color: #fff;}
+
+
+.questi_jg{ width: 974px; height:auto; overflow: hidden; margin:70px auto; display: none;}
+.jg_title{ width: 100%; height: auto; font-size: 24px; color: #213434; font-weight: bold; text-align: center; float: left;}
+.jg_df{ width: 100%; height: 280px; background: url(../img/question_bg2.jpg) top center no-repeat; float: left; margin: 50px 0;}
+.jg_df h3{ width: 100%; height: 20px; text-align: center; color: #213434; margin-top: 30px;}
+.jg_df .jg_df_p1{ width: 100%; height: auto; overflow: hidden; float: left; font-size: 30px; color: #fe3f3b; text-align:center; margin: 20px 0;}
+.jg_df .jg_df_p1 b{ font-size: 85px; margin-right: 10px;}
+.jg_df .jg_df_p2{ width: 100%; height: auto; overflow: hidden; float: left; font-size:18px; color: #213434; text-align:center;}
+.jg_df .jg_df_p2 b{ font-size:24px; color: #fe3f3b;}
+.jg_qj{ width: 100%; height: 20px; line-height: 20px; text-align: center; color: #213434; margin:20px 0; float: left;}
+.jg_qj.time{margin: 20px 0 0;}
+.jg_qj.prompt{margin: 10px 0;}
+.jg_qj.prompt span{color: red;}
+.jg_table{ width:90%; height: auto; margin: 20px 0 0 5%; border-top: 1px solid #ddd;border-left: 1px solid #ddd;}
+.jg_table th{ background: #f3f3f3; text-align: center; font-size: 16px; font-weight: bold; color: #727272; height: 65px; border-bottom: 1px solid #ddd;border-right: 1px solid #ddd;}
+.jg_table td{ text-align: center; font-size: 14px; color: #213434; height:100px;padding: 0 5px; border-bottom: 1px solid #ddd;border-right: 1px solid #ddd;}
+.jg_btn{width:200px; height:60px; line-height: 60px; border: 1px solid #fe3f3b; background: #fe3f3b; color: #fff; font-size: 16px; border-radius: 2px; float: left; cursor: pointer; margin:50px 0 40px 385px;}
+.jg_btn:hover{ background: none; color:#fe3f3b;}
+.jg_href{ width: 100px; height: 20px; line-height: 20px; display: inline-block; float: left; margin:0 0 100px 435px; text-align: center; font-size: 16px; color: #727272; text-decoration: underline;}
+.jg_href:hover{ text-decoration: none;}
+
+
+

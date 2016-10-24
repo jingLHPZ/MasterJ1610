@@ -1,0 +1,111 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+	
+/*container*/
+body .content_body{
+	width: 720px;
+}
+
+/*右侧内容*/
+.content_body .right_main {
+    width: 525px;
+    min-height: 1353px;
+    overflow: hidden;
+}
+
+.inve_list .in_lis_t{
+	width: 495px;
+}
+.inve_list .in_lis_t ul{
+	width: 290px;
+}
+.inve_list .in_lis_t li{
+	padding: 0 5px;
+}
+.inve_list .in_lis_t .in_lis_sele{
+	width: 130px;
+}
+.inve_list .in_lis_t .in_lis_sele select{
+	width: 60px;
+}
+
+/*列表隐藏*/
+.inve_list table tr th:nth-of-type(2){
+	display: none;
+}
+.inve_list table tr th:nth-of-type(6){
+	display: none;
+}
+.inve_list table tr td:nth-of-type(2){
+	display: none;
+}
+.inve_list table tr td:nth-of-type(6){
+	display: none;
+}
+.right_main .zqzr_bod table tbody tr th:nth-of-type(2){
+	display: table-cell;
+}
+.right_main .zqzr_bod table tbody tr th:nth-of-type(6){
+	display: table-cell;
+}
+.right_main .zqzr_bod table tbody tr td:nth-of-type(2){
+	display: table-cell;
+}
+.right_main .zqzr_bod table tbody tr td:nth-of-type(6){
+	display: table-cell;
+}
+.right_main .inve_list table th{
+	line-height: 20px;
+	padding: 6px 0;
+}
+.right_main .inve_list table td{
+	line-height: 20px;
+	padding: 6px 0;
+}
+
+
+/*弹出窗*/
+.inves_ckxq .in_ckxq_bod{
+	width: 700px;
+	height: 550px;
+	margin-left: -350px;
+}
+.inves_ckxq .in_ckxq_title{
+	width: 660px;
+}
+.inves_ckxq .in_ckxq_font{
+	width: 640px;
+}
+.inves_ckxq .in_ckxq_font li{
+	width: 120px;
+	padding-left: 0px;
+}
+.inves_ckxq .in_ckxq_font .ick_lis1{
+	width: 190px;
+}
+.inves_ckxq .in_hkjh_title{
+	width: 640px;
+}
+.inves_ckxq .in_tab_t{
+	width: 640px;
+}
+.inves_ckxq .in_hkjh_tab{
+	width: 640px;
+}
+.inves_ckxq .in_ckxq_font .ick_lis2{
+	float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

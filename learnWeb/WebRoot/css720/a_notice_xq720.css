@@ -1,0 +1,28 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+#ab_body .about_right_m{
+	min-height: 300px;
+}
+.about_right_m .not_xq_title {
+    width: 94%;
+    margin: 40px 3% 20px;
+    box-sizing: border-box;
+    padding-right: 110px;
+    padding-left: 1%;
+    position: relative;
+}
+.about_right_m .not_xq_title label{
+	position: absolute;
+	right: 10px;
+}
+.about_right_m .not_xq_title h3{
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.about_right_m .not_xq_bod {
+    width: 92%;
+    margin: 0px 4%;
+}
+	
+}

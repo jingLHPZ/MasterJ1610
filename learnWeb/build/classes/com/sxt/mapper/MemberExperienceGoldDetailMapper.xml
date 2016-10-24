@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IMemberExperienceGoldDetail">
+	<resultMap type="MemberExperienceGoldDetail" id="experiencelist">
+		<id property="id" column="id"/>
+		<result property="uid" column="uid"/>
+		<result property="type" column="type"/>
+		<result property="affectexperiencegold" column="affect_experience_gold"/>
+		<result property="totalexperiencegold" column="total_experience_gold"/>
+		<result property="info" column="info"/>
+		<result property="createtime" column="create_time"/>
+		<result property="addip" column="add_ip"/>
+		<result property="systemtraceno" column="system_trace_no"/>
+		<result property="operateMode" column="operate_mode"/>
+	</resultMap>
+	<select id="fQueryExperience" parameterType="map" resultMap="experiencelist">
+	SELECT * FROM ld_member_experience_gold_detail WHERE uid=#{uid} ORDER BY create_time DESC  
+	 LIMIT  #{startRow},#{pageSize}
+	</select>
+	<select id="fQueryCountExperience" parameterType="map" resultType="int">
+	SELECT COUNT(*) FROM ld_member_experience_gold_detail WHERE uid=#{uid} ORDER BY create_time DESC;
+	</select>
+	<select id="fSumExperienceGold" parameterType="int" resultType="BigDecimal">
+	SELECT SUM(affect_experience_gold)  FROM ld_member_experience_gold_detail WHERE type=1 AND uid=#{uid}
+	</select>
+	<select id="fQueryInvestGold" parameterType="int" resultType="BigDecimal">
+	SELECT SUM(affect_experience_gold) FROM ld_member_experience_gold_detail as egd LEFT JOIN ld_borrow_investor  as bi ON egd.system_trace_no=bi.system_trace_no LEFT JOIN ld_experience_product as ep
+    ON bi.product_id=ep.product_id  WHERE egd.uid=#{uid} AND egd.type=2 AND ep.borrow_status=3
+	</select>
+	<insert id="insert"  parameterType="MemberExperienceGoldDetail">
+    INSERT INTO  ld_member_experience_gold_detail(uid,type,affect_experience_gold,total_experience_gold,info,create_time,add_ip,system_trace_no,operate_mode)
+    VALUES (#{uid},#{type},#{affectexperiencegold},#{totalexperiencegold},#{info},#{createtime},#{addip},#{systemtraceno},#{operateMode})
+	</insert>
+	
+	<select id="queryExperienceGoldDetail" parameterType="map" resultMap="experiencelist">
+		SELECT * FROM ld_member_experience_gold_detail WHERE 1=1
+		<if test="uid"> and uid=#{uid}</if>
+		<if test="operateMode"> and operate_mode=#{operateMode}</if>
+		ORDER BY create_time DESC;
+	</select>
+	<select id="queryInvestgoldByUid" parameterType="java.lang.Integer" resultType="BigDecimal">
+		SELECT
+			sum(affect_experience_gold)
+		FROM
+			ld_member_experience_gold_detail
+		WHERE
+		system_trace_no IN (
+			SELECT
+				system_trace_no
+			FROM
+				ld_borrow_investor
+			WHERE
+				investor_uid = #{uid}
+			AND product_id IN (
+				SELECT
+					product_id
+				FROM
+					ld_experience_product
+			)
+			AND STATUS in(0,1)
+		)
+	</select>
+</mapper>

@@ -1,0 +1,52 @@
+/*距离结束时间*/
+.prod_title ul li p{
+	text-indent: 40px;
+}
+
+@media screen and (min-width:1020px) and (max-width:1290px){
+
+.toin_body .left_title,
+.toin_body .prod_bod{
+	width: 970px;
+}
+.toin_body .pay_bod {
+    width: 930px;
+}
+.toin_body .prod_title{
+	margin: 20px;
+}
+.toin_body .pay_bod .pay_ul1 {
+    width: 100%;
+}
+.toin_body .pay_bod .pay_ul1 li {
+    padding-left: 0;
+}
+.toin_body .prod_title ul li {
+    width: 49.5%;
+}
+.toin_body .pay_bod .pro_ul {
+    width: 413px;
+}
+.toin_body .pay_bod .pro_ul .pro_li_jd {
+    width: 218px;
+}
+.toin_body .prod_title ul li .pro_tzye {
+    text-indent: 15px;
+    padding: 0;
+}
+.toin_body .prod_title ul li .pro_jdt {
+    margin: 10px 5px 0px 15px;
+}
+.toin_body .pay_bod .pro_ul li {
+    width: 192px;
+}
+.toin_body .prod_title ul li p {
+    text-indent: 15px;
+}
+.toin_body .pay_lc {
+    width: 650px;
+    margin: 30px 0px 50px 300px;
+    transition-property: width,margin;
+}
+
+}

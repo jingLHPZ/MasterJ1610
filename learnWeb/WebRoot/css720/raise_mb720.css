@@ -1,0 +1,54 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+
+body .raise_mbb {
+    width: 96%;
+    background-size: 640px auto;
+    box-sizing: border-box;
+}
+body .raise_mbb .top_title{
+	width: 90%;
+	height: auto;
+}
+body .ra_mbb_inp{
+    margin: 90px 3% 0px;
+    width: 94%;
+    height: 260px;
+}
+.ra_mbb_inp p {
+    padding-left: 0;
+    text-align: center;
+    font-size: 16px;
+    height: 60px;
+    line-height: 60px;
+}
+.raise_mbb img{
+	width: 100%;
+	height: auto;
+}
+body .ra_mbb_tit{
+	margin: 50px 3% 0px;
+    width: 94%;
+}
+body .ra_mbb_js {
+    margin: 50px 3% 0px;
+    width: 94%;
+}
+body .ra_mbb_div {
+    margin: 50px 3% 0px;
+    width: 94%;
+}
+body .ra_gz {
+    margin: 100px 3%;
+    width: 94%;
+    line-height: 50px;
+}
+body .ra_mbb_foot {
+    margin: 50px 3%;
+    width: 94%;
+    line-height: 40px;
+}
+body .ra_gz{
+	background-position: 33px 60px;
+}
+
+}

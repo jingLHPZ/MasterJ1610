@@ -1,0 +1,33 @@
+.banner{height: 349px;width: 100%;min-width: 1200px;float: left;background: transparent url("../img/banner/recruit_zfdl.jpg") no-repeat scroll center top;}
+.recruit{width: 100%;background: #5c6dae;min-width: 1200px;padding-bottom:130px;}
+.cont{width: 1200px;height: 1184px;margin: 45px auto 0;overflow: hidden;background: #3e52a4;font-size: 20px;border: solid 1px #7cb8ff;}
+.cont>label{display: block;height: 72px;width: 129px;padding-right: 20px;color: #c1e1fd;line-height: 72px;text-align: right;float: left;border-right: solid 1px #697cc4;border-bottom: solid 1px #697cc4;}
+.cont>p{width: 1050px;height: 72px;line-height: 72px;font-size: 18px;border-bottom: solid 1px #697cc4;text-indent: 20px;float: left;color: #fdf9cf;}
+.cont .profit{height: 350px; +height:356px;;line-height: 350px;font-size: 20px;}
+.cont ul{width: 1050px;float: left;display: block;}
+.cont ul .title{height: 80px;line-height: 80px;color: #c1e1fd;}
+.cont .title div{border-right: solid 1px #697cc4;border-bottom: solid 1px #697cc4;text-indent: 20px;font-size: 18px;float: left;}
+.cont .title .pro_1{height: 100%;}
+.cont .title .pro_5{height: 100%;}
+.cont .title .pro_2{height: 100%;width: 418px;}
+.cont .title .pro_3{width: 188px;}
+.cont .title .pro_4{height: 100%;}
+.cont ul .pro_1{height: 134px;width: 139px;}
+.cont ul .pro_5{height: 134px;width: 149px;}
+.cont ul .pro_2{height: 100%;width: 419px;}
+.cont ul .pro_3{height: 100%;width: 189px;}
+.cont ul .pro_4{height: 134px;width: 152px;border-right:none;}
+.cont ul li{height: 135px;line-height: 135px;color: #fdf9cf;font-size: 16px;display: block;}
+.cont ul li label{border-right: solid 1px #697cc4;border-bottom: solid 1px #697cc4;float: left;text-indent: 20px;}
+.cont ul li div{height: 100%;float: left;}
+.cont ul li div p{height: 44px;width: 100%;line-height: 44px;text-indent: 20px;border-right: solid 1px #697cc4;border-bottom: solid 1px #697cc4;}
+.cont .hkly_l{height: 130px;line-height: 130px;}
+.cont .hkly_p{height: 90px;width: 1010px;line-height: 30px;text-indent: 0;padding: 20px;}
+.cont .fkcs_l{height: 165px;line-height: 165px;}
+.cont .fkcs_p{height: 125px;width: 1010px;line-height: 30px;text-indent: 0;padding: 20px;}
+.cont .brief_l{height: 170px;line-height: 170px;border-bottom: none;}
+.cont .brief_p{height: 130px;width: 1010px;line-height: 30px;text-indent: 0;padding: 20px;border-bottom: none;}
+.btn_cont{width: 325px;height: 80px;margin: 130px auto;background: #816924;position: relative;margin-bottom:0;}
+.btn_cont .btn{position: absolute;top: -5px;left: -5px;height: 100%;width: 100%;background: #eec03c;line-height: 80px;text-align: center;font-size: 30px;color: #000000;cursor: pointer;}
+.btn_cont:hover .btn{top: 0;left: 0;}
+.btn_cont.btn:hover{top: 0;left: 0;}

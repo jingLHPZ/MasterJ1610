@@ -1,0 +1,47 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+body .cont {
+    width: 720px;
+}
+body .page_fk h2 {
+    margin: 40px 0px 40px;
+}
+body .fk_bz .text {
+	width: 100%;
+    height: auto;
+    float: none;
+    margin-bottom: 30px;
+}
+body .fk_bz img {
+    float: none;
+    display: block;
+    margin: 0px auto 40px;
+}
+body .fk_lz img {
+    width: 96%;
+    display: block;
+    margin: 0px auto 40px;
+}
+body .fk_fx img{
+	width: 96%;
+    display: block;
+    margin: 0px auto 40px;
+}
+body .fk_zj img{
+	width: 96%;
+    display: block;
+    margin: 0px auto 40px;
+}
+body .page_js p {
+    width: 650px;
+}
+body .page_qy p{
+    width: 650px;
+}
+body .page_qy img {
+    margin: 30px 0px 50px 46px;
+    height: auto;
+    width: 638px;
+}
+
+
+}

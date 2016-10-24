@@ -1,0 +1,85 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+	
+.right_main .bankC_bod .ban_e {
+    height: 100px;
+    line-height: 100px;
+    width: 100%;
+    text-indent: 5px;
+}
+.right_main .bankC_yz li h2 {
+    text-indent: 185px;
+}
+.right_main .bankC_yz li h3 {
+    text-indent: 185px;
+}
+.right_main .bankC_yz li h4{
+	margin-left: 150px;
+}
+.right_main .bankC_yz li label {
+    width: 145px;
+}
+.right_main .bankC_yz li .yz_btn1 {
+    margin: 20px 10px 0px 150px;
+}
+
+/*添加银行弹出窗*/
+.right_main .add_bc .addb_bod {
+    width: 560px;
+    height: 620px;
+    margin: -310px 0px 0px -280px;
+}
+.right_main .add_bc ul {
+    width: 525px;
+    margin-left: 35px;
+}
+.right_main .add_bc ul li{
+	height: auto;
+}
+.right_main .bankC_del .del_bod {
+    width: 400px;
+    margin: -150px 0px 0px -200px;
+}
+.right_main .bankC_del .del_bod input {
+    margin: 40px 0px 0px 145px;
+}
+.content_body .add_bc ul li span {
+    width: 100%;
+    display: block;
+    float: left;
+    text-indent: 165px;
+}
+.content_body .add_bc ul li #seachdistrict_div{
+	width: 100px;
+}
+.content_body .add_bc ul li #checkInfo {
+    width: auto;
+    display: initial;
+    text-indent: 0;
+}
+
+/*充值密码弹出窗*/
+body .Szzf_password .szp_bod {
+    width: 400px;
+    margin: -190px 0px 0px -200px;
+}
+body .Szzf_password .szp_bod .szp_mmk{
+	margin: 0 65px;
+}
+body .Szzf_password .szp_bod .szp_btn{
+	margin-left: 65px;
+}
+body .Szzf_password .szp_bod .szp_alert{
+	margin-left: 65px;
+}
+
+/*找回交易密码弹窗*/
+body .zhjy_body{
+	height: 380px;
+	width: 400px;
+	margin-top: -190px;
+}
+body .zhjy_body ul li label{
+	width: 115px;
+}
+
+}

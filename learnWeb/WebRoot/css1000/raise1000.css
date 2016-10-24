@@ -1,0 +1,15 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+
+body .banner{
+	height: 540px;
+	background-size: auto 100%;
+	min-width: 970px;
+}
+body .raise_tab {
+    min-width: 970px;
+}
+body .raise_tab img{
+	width: 1000px;
+}
+
+}

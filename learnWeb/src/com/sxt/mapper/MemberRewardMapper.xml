@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IMemberReward">
+	<resultMap type="MemberReward" id="MemberRewardResult">
+		<id property="id" column="id" />
+		<result property="type" column="type" />
+		<result property="pro_name" column="pro_name" />
+		<result property="pro_value" column="pro_value" />
+		<result property="create_time" column="create_time" />
+		<result property="update_time" column="update_time" />
+		<result property="status" column="status" />
+		<result property="reward_type" column="reward_type" />
+		<result property="proObject" column="pro_object" />
+		<result property="proWay" column="pro_way" />
+		<result property="rewardLimit" column="reward_limit" />
+	</resultMap>
+	<select id="findMemberRewardList" parameterType="MemberReward" resultMap="MemberRewardResult">
+		select * from ld_member_reward where 1=1
+		<if test="pro_name != null">
+			and pro_name = #{pro_name}
+		</if>
+		<if test="status != null">
+			and status = #{status}
+		</if>
+		<if test="reward_type != null">
+			and reward_type = #{reward_type}
+		</if>
+		<if test="type != null">
+			and type = #{type}
+		</if>
+	</select>
+</mapper>

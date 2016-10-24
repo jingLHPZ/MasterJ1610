@@ -1,0 +1,32 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+body .wz_map {
+    width: 720px;
+    height: 470px;
+    background-size: auto 440px;
+    background-position: -53px 0px;
+    transition-property: all;
+}
+body .wz_map ul {
+    width: 720px;
+    margin: 116px 0px 0px;
+    transition-property: all;
+}
+body .wz_map ul li {
+    width: 72px;
+    margin: 0px 100px 0px 28px;
+    transition-property: all;
+}
+body .wz_map ul li:nth-of-type(3) {
+    margin-left: 37px !important;
+}
+body .wz_map ul li:nth-of-type(4) {
+    margin-left: 26px !important;
+    margin-right: 0px !important;
+}
+body .wz_map ul li a {
+    margin-bottom: 9px;
+}
+
+
+
+}

@@ -1,0 +1,38 @@
+.bonda_title{ width: 100%; height: 41px; float: left; margin: 30px 0; border-bottom: 1px solid #fca703; background: url(../img/zqzr_line.png) 250px 0 no-repeat;}
+.bonda_title h2{ width: 200px; height: 30px; line-height: 30px; margin:0 0 11px 50px; float: left; font-size: 20px; font-weight: bold; color: #b6b3b3; font-family: "微软雅黑";}
+.bonda_title div{ width: 618px; height: 40px;border-top: 1px solid #fca703; float: right;}
+.bonda_title div a{ width: auto; height: 38px; line-height: 38px; margin: 0 80px 0 20px; float: left; font-size: 14px; color: #0d0d0d;}
+.bonda_title div a:hover{ color: #fca703; border-bottom: 2px solid #fca703;}
+.bonda_title div .bonda_ti{ color: #fca703; border-bottom: 2px solid #fca703;}
+
+.bonda_gz{ width: 835px; height: auto; overflow: hidden; margin:0 50px; float: left; border-bottom: 1px solid #ccc;}
+.bonda_gz h2{ font-size: 16px; font-weight: bold; color: #0d0d0d; float: left;}
+.bonda_gz p{ color: #727272; width: 100%; height: auto; line-height: 25px; float: left; margin:10px 0 20px 0;}
+.bonda_div{width: 835px; height: auto; overflow: hidden; margin:20px 50px; float: left; display: none;}
+.bonda_dbl{ display: block;}
+table{ width: 100%; float: left;}
+table th{ height: 50px; line-height: 20px;padding: 0 5px;font-size: 14px;}
+table tr:hover{ background: #f5f5f5;}
+table td{height: 50px; line-height: 20px;padding: 0 5px; text-align: center; color: #727272;word-break: break-all;}
+table td .bond_name{ float: left; margin-left: 10px; color: #248cdc;}
+table td .bond_name:hover{ text-decoration: underline;}
+table td .bond_zrhref{ color: #fca703;}
+table td .bond_zrhref:hover{text-decoration: underline;}
+table th label{position: relative;height: 14px;width: 14px;line-height: 14px;border-radius: 50%;display: inline-block;text-align: center;background-color: #ff6633;color: #ffffff;font-size: 12px;cursor: pointer;}
+table th label:hover p{display: block;}
+table th label p:before{position: absolute;top: 0px;left: -10px;content: "";box-sizing: border-box;border-right: solid #fbf5aa 11px;border-top: solid transparent 11px;border-bottom: solid transparent 11px;}
+table th label p{position: absolute;top: -4px;left: 24px;height: 22px;width: 140px;display: none;line-height: 22px;background-color: #fbf5aa;color: #ff6633;border-radius: 2px;}
+
+.bonda_pg{ width: 100%; height: 30px; float: left; margin: 20px 0; text-align: center;}
+
+.qx_bonda{ width: 100%; height: 100%; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: url(../img/icon/tb_1_1.png) top left repeat; z-index:9999999; display: none;}
+.qx_bonda .qx_bod{ width:450px; height: 280px; position: fixed; top: 50%; left: 50%; margin: -140px 0 0 -225px; background: #fff; border-radius: 2px;}
+.qx_bonda .qx_bod h1{ width: 100%; height: 50px; line-height: 50px; font-size: 16px; text-align: center; color: #fff; background:#fd6860; float: left;}
+.qx_bonda .qx_bod p{ width: 80%; line-height: 30px; height: 60px; font-size: 16px; text-align: center; overflow: hidden; margin:60px 10% 30px 10%; float: left; color: #727272;}
+.qx_bonda .qx_bod p label{ color: #fd6860;}
+.qx_bonda .qx_bod input{ width: 110px; height: 38px; line-height: 38px; text-align: center; border-radius: 2px; float: left; cursor: pointer;}
+.qx_bonda .qx_bod .qx_btn_1{ color: #727272; background: #fff; border: 1px solid #999; margin: 0 20px 0 105px;}
+.qx_bonda .qx_bod .qx_btn_1:hover{ background: #f5f5f5; color: #fd6860;}
+.qx_bonda .qx_bod .qx_btn_2{ color: #fff; background: #fd6860; border: 1px solid #fd6860;}
+.qx_bonda .qx_bod .qx_btn_2:hover{ background: #fff; color: #fd6860;}
+

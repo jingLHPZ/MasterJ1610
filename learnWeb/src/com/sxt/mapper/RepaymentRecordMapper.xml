@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IRepaymentRecord">
+	 <resultMap type="RepaymentRecord" id="repaymentrecordresult">
+		<id property="id" column="id"/>
+		<result property="repaymentTime" column="repayment_time"/>
+		<result property="systemTraceNo" column="system_trace_no"/>
+		<result property="investorUid" column="investor_uid"/>
+		<result property="borrowUid" column="borrow_uid"/>
+		<result property="capital" column="capital"/>
+		<result property="interest" column="interest"/>
+		<result property="interestFee" column="interest_fee"/>
+		<result property="status" column="status"/>
+		<result property="receiveInterest" column="receive_interest"/>
+		<result property="receiveCapital" column="receive_capital"/>
+		<result property="sortOrder" column="sort_order"/>
+		<result property="total" column="total"/>
+		<result property="deadline" column="deadline"/>
+		<result property="expiredMoney" column="expired_money"/>
+		<result property="expiredDays" column="expired_days"/>
+		<result property="callFee" column="call_fee"/>
+		<result property="substituteMoney" column="substitute_money"/>
+		<result property="substituteTime" column="substitute_time"/>
+		
+	</resultMap>
+	 <resultMap type="SumMoney" id="repayrecord">
+	 	<result property="investorUid" column="investor_uid"/>
+	 	<result property="productId" column="product_id" />
+		<result property="receiveCapital" column="rc"/>
+		<result property="receiveInterest" column="ri"/>
+	</resultMap>
+	<!-- <select id="fQueryProByUidTime" parameterType="map" resultMap="repaymentrecordresult">
+	SELECT * FROM ld_si_product AS p INNER JOIN ld_repayment_record AS r ON  p.product_id=r.product_id AND r.investor_uid=#{investor_uid}  AND `status`=1  
+	<if test="time!=null and time!=''">
+	AND r.repayment_time=#{day}
+	</if>
+	<if test="weekend==null and weekend==''">
+   <![CDATA[	AND subdate(repayment_time,7)<= #{weekend} <= subdate(repayment_time,0)]]>
+	</if>
+	 <if test="month!=null and month!=''">
+	 AND    DATE_SUB(CURDATE(), INTERVAL 30 DAY) >= date(repayment_time)
+	 </if>
+	 <if test="year!=null and year!=''">  
+	 AND DATE_FORMAT(r.repayment_time,'%Y')-1=#{year} 
+	 </if>          
+	</select> -->
+	<!-- <select id="fQueryProstateByUidTime" parameterType="map" resultMap="repaymentrecordresult">
+	SELECT * FROM ld_si_product AS p INNER JOIN ld_repayment_record AS r ON  p.product_id=r.product_id AND r.investor_uid=#{investor_uid}  AND `status`=2  
+	<if test="time!=null and time!=''">
+	AND r.repayment_time=#{day}
+	</if>
+	<if test="weekend==null and weekend==''">
+   <![CDATA[	AND subdate(repayment_time,7)<= #{weekend} <= subdate(repayment_time,0)]]>
+	</if>
+	 <if test="month!=null and month!=''">
+	 AND    DATE_SUB(CURDATE(), INTERVAL 30 DAY) >= date(repayment_time)
+	 </if>
+	 <if test="year!=null and year!=''">  
+	 AND DATE_FORMAT(r.repayment_time,'%Y')-1=#{year} 
+	 </if>          
+	</select> -->
+	<select id="fQueryRecord" resultMap="repayrecord">
+		SELECT SUM(receive_capital) as rc ,SUM(receive_interest) as ri,investor_uid,product_id  FROM ld_repayment_record r WHERE `status`=2 GROUP BY investor_uid
+	</select>
+	<select id="fQueryTimeByPid" parameterType="String" resultType="int">
+		select datediff(MAX(repayment_time),now()) FROM ld_repayment_record WHERE `status`=2 GROUP BY product_id AND product_id=#{product_id}
+	</select>
+</mapper>

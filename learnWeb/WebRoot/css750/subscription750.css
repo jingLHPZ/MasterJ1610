@@ -1,0 +1,39 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+
+.toin_body .left_title,
+.toin_body .prod_bod{
+	width: 720px;
+}
+.toin_body .pay_bod {
+    width: 700px;
+    height: auto;
+    margin: 10px;
+}
+.toin_body .pay_bod .assign{
+	width: 100%;
+	height: 110px;
+}
+.toin_body .prod_title ul li h4{
+	margin-top: 27px;
+}
+
+.toin_body .pay_bod .assign .assi_1 {
+	width: 170px;
+}
+.toin_body .pay_bod .pay_ul1 li {
+    padding-left: 34px;
+    transition-property: width,padding;
+}
+.toin_body .pay_bod .pro_li_bor {
+    width: 130px;
+}
+.toin_body .pay_bod .assign .pay_qx {
+    width: 130px;
+}
+.toin_body .pay_lc {
+    width: 535px;
+    margin: 30px 0px 50px 175px;
+    transition-property: width, margin;
+}
+
+}

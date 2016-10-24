@@ -1,0 +1,23 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+
+.about_right_m .journ_list {
+    width: 94%;
+    margin: 30px 3% 20px;
+}
+.about_right_m .journ_list li {
+    width: 100%;
+    box-sizing: border-box;
+}
+.about_right_m .journ_list li div{
+	width: 100%;
+	box-sizing: border-box;
+	padding-right: 37px;
+	background-position: right 37px;
+}
+.about_right_m .journ_list li div h3,
+.about_right_m .journ_list li div label,
+.about_right_m .journ_list li div p{
+	width: 100%;
+}
+
+}

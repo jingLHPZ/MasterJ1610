@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IMemberlogin">
+	<!-- <resultMap type="Member_login" id="member_loginresult">
+		<id javaType="id" column="id"/>
+		<result javaType="ip" column="ip"/>
+		<result javaType="create_time" column="create_time"/>
+		<association property="members" javaType="Members" >
+		<id property="id" column="id"/>
+		<result property="user_name" column="user_name"/>
+		<result property="user_pass" column="user_pass"/>
+		<result property="user_type" column="user_type"/>
+		<result property="pay_pass" column="pay_pass"/>
+		<result property="user_email" column="user_email"/>
+		<result property="user_phone" column="user_phone"/>
+		<result property="reg_time" column="reg_time"/>
+		<result property="is_real_name" column="is_real_name"/>
+		<result property="is_addCard" column="is_addCard"/>
+		<result property="uid" column="uid"/>
+		</association>
+	</resultMap> -->
+	 <insert id="add" parameterType="Memberlogin" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO ld_member_login
+		(uid,ip,create_time,type)
+		VALUE (#{uid},#{ip},#{createTime},#{type})
+	</insert>
+</mapper>

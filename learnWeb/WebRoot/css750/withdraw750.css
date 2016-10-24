@@ -1,0 +1,41 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+.right_main .widhd_title {
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+    margin: 20px 0 10px;
+}
+.right_main .widhd_ul li label {
+    width: 130px;
+}
+.right_main .widhd_ul li h5 {
+    line-height: 20px;
+    margin-left: 145px;
+    width: 380px;
+    color: #CCCBCB;
+}
+.right_main .widhd_ul li:nth-of-type(3),
+.right_main .widhd_ul li:nth-of-type(6){
+	height: 48px;
+}
+.right_main .widhd_ul .wit_alert_ft p{
+	text-indent: 145px;
+}
+.right_main .widhd_ul .wid_submin a{
+	margin-left: 145px;
+}
+.right_main .widhd_ul #checkpwd{
+	height: auto;
+	line-height: 20px;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding-left: 145px;
+}
+.right_main .widhd_ul .wid_submin input{
+	margin-left: 145px;
+}
+
+
+
+}

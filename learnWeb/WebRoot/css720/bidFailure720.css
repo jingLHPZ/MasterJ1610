@@ -1,0 +1,22 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+body .failure {
+	padding: 90px 0 150px;
+	text-align: center;
+}
+body .failure .container{
+	width: 320px;
+	left: 0;
+	margin: 0 10px;
+	box-sizing: border-box;
+	display: inline-block;
+	text-align: left;
+}
+body .failure .container h1{
+	height: auto;
+}
+body .failure .container p{
+	word-break: break-all;
+	box-sizing: border-box;
+}
+
+}

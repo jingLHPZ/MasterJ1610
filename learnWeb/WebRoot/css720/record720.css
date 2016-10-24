@@ -1,0 +1,74 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+
+.right_main .record_cz {
+	height: auto;
+    width: 96%;
+    margin: 20px 2%;
+}
+.right_main .record_cz p{
+	width: 100%;
+	height: auto;
+	min-width: initial;
+	box-sizing: border-box;
+}
+.right_main .record_cz p b{
+	margin: 0 5px;
+}
+.right_main .record_cz .cz_href{
+	margin-left: 20px;
+}
+.right_main .record_cz .tx_href{
+	margin-right: 20px;
+	margin-left: 0;
+	float: right;
+}
+.right_main .cz_title,
+.right_main .czje_bod{
+    width: 96%;
+    margin: 0 2%;
+}
+.right_main .czje_pg {
+    width: 96%;
+    margin: 20px 2%;
+}
+.cz_tab{
+	min-width: 620px;
+}
+
+/*撤销提现弹窗*/
+.right_main .revoke_mask .revoke_bod {
+    top: initial;
+    bottom: 0px;
+    width: 100%;
+    margin: 0px;
+    left: 0px;
+}
+.right_main .revoke_bod > div{
+	height: auto;
+	min-height: 200px;
+}
+.right_main .revoke_bod .page_1 h3{
+	height: auto;
+}
+.right_main .revoke_bod .page_1 p{
+	height: auto;
+}
+.right_main .revoke_bod .page_1 input{
+	width: 50%;
+	margin: 20px 5% 0px;
+}
+.right_main .revoke_bod .page_1 a{
+	width: 35%;
+	margin: 20px 5% 0px 0px;
+	text-align: left;
+}
+.right_main .revoke_bod .page_2 h1{
+	height: auto;
+}
+.right_main .revoke_bod .page_2 input{
+	width: 90%;
+	margin: 20px 5% 0px;
+}
+
+
+}

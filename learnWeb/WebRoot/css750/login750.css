@@ -1,0 +1,71 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+body{width: 100%;}
+*{transition: width .2s ease-out;}
+
+/*top*/
+.login_top .login_bod {width: 720px;}
+.login_bod>div{ background-image: url(../img/icon/logo.png);width: 315px;background-position: 0px;}
+.login_top .login_bod p {padding-left: 20px;margin-left: 20px;}
+
+/*登录框*/
+body .login_from {
+    width: 720px;
+    height: 275px;
+    margin: 60px auto 150px;
+    background-size: auto 275px;
+}
+body .login_from *{
+	transition: width .1s ease-out;
+}
+.login_from .lf_bod{
+	width: 282px;
+	height: 273px;
+}
+.login_from .lf_bod ul{
+	width: 260px;
+	margin-top: 10px;
+}
+.login_from .lf_bod li{
+	margin-bottom: 12px;
+	width: 220px;
+}
+.login_from .lf_bod .yzm {
+    width: 66px;
+}
+.login_from .lf_bod .yzm_img {
+    width: 80px;
+}
+.login_from .lf_bod .lf_alert {
+    margin: 0px;
+}
+.login_from .lf_bod .lf_tit{
+    margin: 0px;
+}
+.login_from .lf_bod .uname,.login_from  .pwd{
+	width: 163px;
+}
+.login_from .lf_bod .btn input{
+	width: 215px;
+}
+
+/*footer*/
+body .log_ys{
+	height: 80px;
+}
+body .log_ys ul{
+	width: 720px;
+}
+body .log_ys ul li {
+    width: 142px;
+    padding-left: 95px;
+	background-size: 80px 80px!important;
+    margin-left: 2px;
+}
+body .log_ys li h3 {
+    margin: 3px 0px 10px;
+}
+body .log_ys li p {
+    width: 90%;
+}
+
+}

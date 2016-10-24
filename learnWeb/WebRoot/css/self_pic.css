@@ -1,0 +1,23 @@
+body {
+	font-family: "ËÎÌו";
+	font-size: 12px;
+	text-align: center;
+	background-color: #F2F2FF;
+}
+.main_img{
+	text-align:center;
+	width:750px;
+}
+.main_img li {
+	font-family: "ËÎÌו";
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	list-style-type: none;
+	text-align:left;
+}
+.main_img li img{
+	width:750px;
+	height:480px;
+}
+

@@ -1,0 +1,14 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+
+.about_right_m .cont_map {
+    float: none;
+    margin: 70px auto;
+    display: block;
+}
+.about_right_m .cont_list {
+    overflow: hidden;
+    margin: 0 auto;
+    float: none;
+}
+
+}

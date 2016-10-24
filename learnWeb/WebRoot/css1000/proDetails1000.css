@@ -1,0 +1,105 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+*{transition-property: width,padding,margin,text-indent;}
+
+.toin_body .left_title {
+    width: 970px;
+}
+.toin_body .prod_bod {
+    width: 970px;
+}
+.toin_body .prod_title {
+    width: 638px;
+    margin: 20px;
+}
+.toin_body .prod_title ul li {
+    width: 182px;
+    padding-left: 30px;
+}
+.toin_body .prod_title ul .loan_amount{
+	width: 182px;
+	padding-left: 30px;
+}
+.toin_body .prod_title .pro_ul li {
+    width: 181px;
+    padding-left: 30px;
+}
+.toin_body .prod_title ul li .pro_tzye,
+.toin_body .prod_title ul .pro_li_bor p{
+    text-indent: 0;
+    line-height: 18px;
+    height: auto;
+    padding: 0;
+}
+.toin_body .prod_title ul li .pro_jdt{
+	width: 115px;
+	margin: 10px 0 0;
+}
+.toin_body .prod_title ul li:nth-of-type(3) .pro_tzye{
+	text-indent: 0px!important;
+	height: auto;
+	line-height: 18px;
+}
+.toin_body .prod_rgzt {
+    width: 270px;
+    margin: 20px 0px;
+}
+.toin_body .prod_rgzt .rgzt_1 {
+    width: 100%;
+    padding: 0px 20px;
+    margin: 20px 0px;
+    box-sizing: border-box;
+}
+.toin_body .prod_rgzt .rgzt_2 {
+    width: 100%;
+    margin: 20px 0px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.toin_body .prod_rgzt .rgzt_2 a {
+    width: 95%;
+}
+.toin_body .prod_rgzt .rgzt_1 li {
+    width: 100%;
+}
+.toin_body .prod_rgzt .rgzt_1 .rg_rgje .rg_alert {
+    width: 230px;
+}
+.toin_body .prod_rgzt .rgzt_1 .rg_rgje .rg_alert p {
+    width: 100%;
+}
+.toin_body .prod_rgzt .rgzt_1 .rg_rgje div {
+    width: 95%;
+}
+.toin_body .prod_rgzt .rgzt_1 .rg_btn .rg_btn_hide {
+    width: 95%;
+}
+.toin_body .prod_rgzt .rgzt_1 .rg_btn .rg_btn_show {
+    width: 95%;
+}
+.toin_body .prod_xq {
+    width: 970px;
+    margin: 0 0 30px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.toin_body .pxq_main {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.toin_body .pxq_main p {
+    width: 100%;
+    box-sizing: border-box;
+}
+.toin_body .pxq_brief{
+	padding: 0;
+}
+.toin_body .pxq_brief p{
+	padding: 0;
+}
+.toin_body .prod_pg {
+    width: 100%;
+}
+
+
+}

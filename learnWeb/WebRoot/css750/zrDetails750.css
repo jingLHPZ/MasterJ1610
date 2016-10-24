@@ -1,0 +1,139 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+*{transition-property: width,padding,margin,text-indent;}
+
+
+/*主体*/
+
+.toin_body .left_title {
+    width: 720px;
+}
+.toin_body .prod_bod {
+    width: 720px;
+}
+.toin_body .prod_title {
+    width: 486px;
+    margin: 10px;
+}
+.toin_body .prod_title h3{
+	position: relative;
+	padding-right: 110px;
+	text-indent: 20px;
+	box-sizing: border-box;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.toin_body .prod_title h3 div{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 110px;
+	text-align: center;
+	text-indent: 0;
+}
+.toin_body .prod_title ul li {
+    width: 135px;
+    padding-left: 25px;
+}
+.toin_body .prod_title ul .pro_li_bor .arD_jxq {
+    height: auto;
+    width: 100%;
+    position: initial;
+}
+.toin_body .prod_title ul .pro_li_bor .arD_jxq>div{
+	width: auto;
+}
+.toin_body .prod_title ul .pro_li_bor .arD_jxq>div a{
+	display: none;
+}
+
+.toin_body .prod_title .pro_ul{
+	height: auto;
+	padding: 25px 0;
+}
+.toin_body .prod_title .pro_ul li {
+    width: 50%;
+    height: auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.toin_body .prod_title .pro_ul li:nth-of-type(2) p{
+	height: auto;
+	line-height: 16px;
+}
+.toin_body .prod_title .pro_ul li p{
+	text-indent: 0;
+}
+.toin_body .prod_title .pro_ul .pro_li_bor p{
+	height: 25px;	
+	line-height: 25px;
+}
+
+
+.toin_body .prod_rgzt {
+    width: 200px;
+    margin: 10px 0px;
+}
+.toin_body .prod_rgzt .rgzt_1 {
+    width: 100%;
+    padding: 0px 10px;
+    margin: 20px 0px;
+    box-sizing: border-box;
+}
+.toin_body .prod_rgzt .rgzt_1 li {
+    width: 100%;
+}
+.toin_body .prod_rgzt .rgzt_1 li .prod_cz {
+    width: 50px;
+    margin: 2px 6px;
+}
+.toin_body .prod_rgzt .rgzt_1 .rg_zrp{
+	padding: 3px 0;
+}
+.toin_body .prod_rgzt .rgzt_1 .rg_zrp p{
+	height: auto;
+}
+.toin_body .prod_rgzt .rgzt_1 .rg_zrp p span{
+	width: 100%;
+}
+.toin_body .prod_rgzt .rgzt_1 .rg_btn .rg_btn_show {
+    width: 95%;
+}
+.toin_body .prod_xq {
+    width: 720px;
+    margin: 0 0 30px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.toin_body .prod_ahref {
+    height: 42px;
+}
+.toin_body .prod_ahref a {
+	width: 130px;
+    height: 40px;
+    line-height: 40px;
+}
+.toin_body .prod_ahref .prod_wqhg{
+	margin-top: 2px;
+	width: 175px;
+}
+.toin_body .pxq_main {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.toin_body .pxq_main p {
+    width: 100%;
+    box-sizing: border-box;
+}
+.toin_body .prod_pg {
+    width: 100%;
+}
+.toin_body .prod_ck_btn {
+    margin-left:272px;
+}
+
+
+
+
+}

@@ -1,0 +1,26 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+
+#ab_body .about_right_m{
+	min-height: 730px;
+}
+.about_right_m .cont_map {
+    float: none;
+    margin: 30px 3%;
+    display: block;
+    width: 94%;
+    height: auto;
+}
+.about_right_m .cont_list {
+    overflow: hidden;
+    float: none;
+    width: 94%;
+    margin: 0px 3%;
+}
+.about_right_m .cont_list li {
+    height: auto;
+    line-height: 20px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+}

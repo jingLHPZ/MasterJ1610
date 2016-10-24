@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxt.inter.ICash" >
+  <resultMap id="cashAccountDetail" type="CashAccountDetailDto" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="cash_id" property="cashId" jdbcType="INTEGER" />
+    <result column="rate_id" property="rateId" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="cash_amount" property="cashAmount" jdbcType="DECIMAL" />
+    <result column="cash_income" property="cashIncome" jdbcType="DECIMAL" />
+    <result column="cash_time" property="cashTime" jdbcType="TIMESTAMP" />
+    <result column="cash_rate" property="cashRate" jdbcType="REAL" />
+    <result column="cash_type" property="cashType" jdbcType="INTEGER" />
+    <result column="cash_status" property="cashStatus" jdbcType="INTEGER" />
+  </resultMap>
+  <select id="getDetailByUid" resultMap="cashAccountDetail" parameterType="java.util.Map" >
+    select 
+    id, cash_id, rate_id, uid, cash_amount, cash_income, cash_time,
+    cash_rate, cash_type, cash_status,cash_avg_rate
+    from ld_cash_account_detail
+    where uid = #{uid,jdbcType=INTEGER} 
+    <if test="startTime != null and startTime != ''"> and cash_time &gt;= #{startTime}</if>
+    <if test="endTime != null and endTime!= ''"> and cash_time &lt;= #{endTime}</if>
+    <if test="cashType != null"> and cash_type = #{cashType}</if>
+    order by id desc
+    limit #{startRow},#{pageSize}
+  </select>
+  <select id="getDetailCountByUid" resultType="java.lang.Integer" parameterType="java.util.Map" >
+    select 
+    count(1)
+    from ld_cash_account_detail
+    where uid = #{uid,jdbcType=INTEGER}
+     <if test="startTime != null and startTime != ''"> and cash_time &gt;= #{startTime}</if>
+    <if test="endTime != null and endTime!= ''"> and cash_time &lt;= #{endTime}</if>
+    <if test="cashType != null"> and cash_type = #{cashType}</if>
+   <!--  <if test="cashTime != null"> and DATE_FORMAT(cash_time,'%Y-%m-%d') = #{cashTime}</if> -->
+  </select>
+ 
+</mapper>

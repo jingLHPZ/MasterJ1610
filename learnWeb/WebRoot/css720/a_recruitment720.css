@@ -1,0 +1,15 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+
+.about_right_m .recrui_title {
+    width: 94%;
+    margin: 25px 3% 10px;
+}
+.about_right_m .recrui_list {
+    width: 92%;
+    margin: 10px 4% 100px;
+}
+.about_right_m .recrui_list li{
+	background-position: right 26px!important;
+}
+
+}

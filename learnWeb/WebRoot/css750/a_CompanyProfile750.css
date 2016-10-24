@@ -1,0 +1,27 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+
+.about_right_m .zb_logo_icon {
+    width: 94%;
+    margin: 30px 3%;
+    padding-left: 250px;
+    box-sizing: border-box;
+    position: relative;
+}
+.about_right_m .zb_logo_icon p{
+	width: 100%;
+}
+.about_right_m .comp_p{
+	width: 94%;
+	margin: 20px 3% 10px;
+}
+.about_right_m .comp_ul {
+    width: 94%;
+    margin: 50px 3% 0px;
+}
+.about_right_m .comp_ul li{
+	width: 100%;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+}

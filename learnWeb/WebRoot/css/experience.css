@@ -1,0 +1,18 @@
+.exper_title{width: 875px; height: 30px; line-height: 30px; font-size: 16px; font-weight: bold; margin:30px 30px 0 30px; float: left;}
+.exper_tyj{ width: 875px; height: 135px; margin:10px 30px 20px 30px; background: #faf8f8; float: left;}
+.exper_tyj p{ width: 300px; height: 30px; line-height: 30px; float: left; margin: 5px 0 0 20px;}
+.exper_tyj p b{ margin-left: 20px;}
+.exper_tyj p label{ height: 30px; line-height: 30px; display: inline-block; margin-left: 10px;}
+.exper_tyj .extyj_ti{ width:835px; margin:10px 0 10px 20px; font-size: 16px;}
+
+.right_main form{float: left;width: 100%;}
+.exper_tab{width: 873px; height: auto; overflow: hidden; margin: 0 30px; border: 1px solid #faf8f8;}
+.exper_tab th{ height: 45px; line-height: 45px; background: #faf8f8; color: #727272;}
+.exper_tab td{height: 50px; line-height: 50px; text-align: center; color: #474646; width: 33.33%;}
+.exper_tab td label{ color:#fe3f3b;}
+.exper_tab td span{ color:#31d680;}
+
+.exper_sm{width: 833px; height: auto; overflow: hidden; margin:20px 30px 0 30px; border: 1px solid #faf8f8; padding: 0 20px;}
+.exper_sm h4{ font-weight: bold; color: #0d0d0d; width: 100%; height: 25px; line-height: 25px; margin-top: 15px;}
+.exper_sm p{ color: #727272; width: 100%; height: auto; overflow: hidden; line-height: 25px; margin-bottom: 20px;}
+.bonda_pg{width: 100%;height: 31px;float: left;margin: 20px 0px;text-align: center;}

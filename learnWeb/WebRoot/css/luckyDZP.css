@@ -1,0 +1,23 @@
+.lucky_bod{width: 100%; height: 1300px; background: #fde7d7 url(../img/activity/dzp_bg1.jpg) top center no-repeat; float: left;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.lucky_font{ width: 100%; height: auto; overflow: hidden; background: #fff; float: left;}
+.lu_font_div{ width: 1200px; height: auto; overflow: hidden; margin: 30px auto;}
+.lu_font_div h3{ width: 800px; height: auto; overflow: hidden; font-size: 16px; font-weight: bold; color: #0d0d0d; float: left; margin: 10px 0;}
+.lu_font_div p{ width: 800px; height: auto; line-height: 23px; overflow: hidden; font-size: 16px; color: #0d0d0d; float: left; margin-bottom: 20px;}
+.lu_font_div div{ width:150px; height:20px; padding-top: 150px; text-align: center; color: #0d0d0d; line-height:20px; background: url(../img/wx_ewm.png) top right no-repeat; background-size: 150px; float: right; margin:20px 200px 0 0;}
+
+

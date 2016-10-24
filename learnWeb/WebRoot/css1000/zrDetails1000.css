@@ -1,0 +1,65 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+*{transition-property: width,padding,margin,text-indent;}
+
+.toin_body .left_title {
+    width: 970px;
+}
+.toin_body .prod_bod {
+    width: 970px;
+}
+.toin_body .prod_title {
+    width: 638px;
+    margin: 20px;
+}
+.toin_body .prod_title ul li {
+    width: 162px;
+    padding-left: 50px;
+}
+.toin_body .prod_title .pro_ul li {
+    width: 50%;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+.toin_body .prod_title .pro_ul li p{
+	text-indent: 0;
+}
+
+.toin_body .prod_rgzt {
+    width: 270px;
+    margin: 20px 0px;
+}
+.toin_body .prod_rgzt .rgzt_1 {
+    width: 100%;
+    padding: 0px 20px;
+    margin: 20px 0px;
+    box-sizing: border-box;
+}
+.toin_body .prod_rgzt .rgzt_1 li {
+    width: 100%;
+}
+.toin_body .prod_rgzt .rgzt_1 .rg_btn .rg_btn_show {
+    width: 95%;
+}
+.toin_body .prod_xq {
+    width: 970px;
+    margin: 0 0 30px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.toin_body .pxq_main {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.toin_body .pxq_main p {
+    width: 100%;
+    box-sizing: border-box;
+}
+.toin_body .prod_pg {
+    width: 100%;
+}
+.toin_body .prod_ck_btn {
+    margin-left:397px;
+}
+
+}

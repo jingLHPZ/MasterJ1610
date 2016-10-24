@@ -1,0 +1,66 @@
+.media_table_cont{
+	width: 100%;
+	float: left;
+	overflow-x: auto;
+}
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+	.right_main .accou_xi .accou_x1 {
+	    width: 100%;
+	    height: auto;
+	}
+	.right_main .accou_xi .accou_x1 .ljzq_txt{
+		min-width: 150px;
+		height: auto;
+		width: auto;
+	}
+	.right_main .accou_xi .accou_x1 .ljzq_txt .kt_2{
+		font-size: 28px;
+	}
+	.right_main .accou_xi .accou_x2 {
+	    width: 100%;
+	    height: 45px;
+		margin: 20px 0;
+		padding: 0 25px;
+		box-sizing: border-box;
+		transition: all .2s ease-out;
+	}
+	.right_main .accou_xi .accou_x2 .woyjk{
+		display: none;
+	}
+	.right_main .accou_xi .accou_x2 .tixa {
+	    width: 120px;
+	    float: right;
+	    margin-top: initial;
+	}
+	.right_main .accou_xi .accou_x3 {
+	    width: 100%;
+	    box-sizing: border-box;
+	    margin: 0;
+	    padding: 0 25px;
+	}
+	
+	/*表格*/
+	.right_main .tran_table{
+		min-width: 525px;
+	}
+	.right_main .in_lis_t{
+		height: auto;
+	}
+	.right_main .tra_title ul{
+		width: 100%;
+		box-sizing: border-box;
+		margin: 0;
+		padding-left: 5px;
+		height: auto;
+	}
+	.right_main .tran_table tr th {
+	    line-height: 20px;
+	}
+	.right_main .tran_table tr td {
+	    line-height: 20px;
+	}
+	
+	
+	
+	
+}

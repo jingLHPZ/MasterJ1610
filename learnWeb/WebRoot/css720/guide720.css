@@ -1,0 +1,59 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+body .guide_banner {
+    height: 165px;
+    background-size: auto 100%;
+}
+body .cont{
+	width: 100%;
+	padding:0 2%;
+	box-sizing: border-box;	
+}
+body .title{
+	width: 100%;
+	position: initial;
+	margin-top: 30px;
+}
+body .guide_d0{
+	height: auto;
+}
+.guide_d0 .cont h3{
+	height: 60px;
+	line-height: 60px;
+}
+body .guide_d0 .cont img{
+	width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+}
+body .cont img{
+	height: auto;
+	width: 100%;
+	margin-top: 40px;
+}
+body .guide_d1 .title{
+	margin-top: 30px;
+}
+body .guide_d5 .title{
+	border-top: solid 1px transparent ;
+}
+body .guide_d5 .title p{
+	line-height: 28px;
+	font-size:18px;
+}
+body .guide_d5 .cont img{
+	height: auto;
+	width: 100%;
+	margin-top: 20px;
+}
+body .guide_d5 .secu_resgi {
+    width: 206px;
+    height: 50px;
+    background-size: auto 100%;
+    float: none;
+    margin: 120px auto 0;
+}
+body .guide_d5 .secu_resgi:hover{
+    background-size: auto 100%;
+}
+
+}

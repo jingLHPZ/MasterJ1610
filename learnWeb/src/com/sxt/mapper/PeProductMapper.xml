@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IPeProduct">
+ <resultMap type="PeProduct" id="peproductresult">
+		 <id property="id" column="id"/>
+		<result property="productId" column="product_id"/>
+		<result property="productName" column="product_name"/>
+		<result property="borrowUid" column="borrow_uid"/>
+		<result property="borrowMonthDuration" column="borrow_month_duration"/>
+		<result property="borrowDayDuration" column="borrow_day_duration"/>
+		<result property="borrowMoney" column="borrow_money"/>
+		
+		<result property="borrowInterest" column="borrow_interest"/>
+		<result property="borrowInterestRate" column="borrow_interest_rate"/>
+		<result property="borrowFee" column="borrow_fee"/>
+		<result property="repaymentMoney" column="repayment_money"/>
+		<result property="repaymentInterest" column="repayment_interest"/>
+		
+		<result property="expiredMoney" column="expired_money"/>
+		<result property="repaymentType" column="repayment_type"/>
+		<result property="borrowType" column="borrow_type"/>
+		<result property="borrowProceduresRate" column="borrow_procedures_rate"/>
+		<result property="borrowStatus" column="borrow_status"/>
+		<result property="contractID" column="contractID"/>
+		
+		<result property="createTime" column="create_time"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="collectStartTime" column="collect_start_time"/>
+		<result property="fullTime" column="full_time"/>
+		<result property="deadline" column="deadline"/>
+		
+		<result property="checkTime" column="check_time"/>
+		<result property="contractTemplate" column="contract_template"/>
+		<result property="checkUser" column="check_user"/>
+		<result property="checkUser2" column="check_user2"/>
+		<result property="checkTime2" column="check_time2"/>
+		
+		<result property="investFee" column="invest_fee"/>
+		<result property="investRate" column="invest_rate"/>
+		<result property="collectEndTime" column="collect_end_time"/>
+		<result property="surplusmon" column="surplusmon"/>
+		<result property="caninvest" column="caninvest"/>
+		<result property="borrowDays" column="borrow_days"/>
+		<result property="borrowId" column="borrow_id"/>
+		<result property="ciProductId" column="ci_product_id"/>
+		<result property="interestWay" column="interest_way"/>
+		
+		<!-- 另外加的列 -->
+		<result property="investorcapital" column="investor_capital"/>
+		<result property="investorinterest" column="investor_interest"/>
+		
+	</resultMap>
+	<select id="fQuerySiPro" resultMap="peproductresult">
+	  SELECT * FROM ld_pe_product where display_flag=1 ORDER BY create_time DESC   LIMIT 0,3
+	</select>
+	<select id="fQueryProById" parameterType="String" resultMap="peproductresult">
+		SELECT * FROM ld_pe_product WHERE product_id=#{product_id}
+	</select>
+	<select id="fQuerySiProObj" resultMap="peproductresult" parameterType="map">
+		SELECT  sp.*FROM ld_pe_product sp,ld_pe_product_detail spd WHERE sp.product_id=spd.product_id
+		 ORDER BY sp.create_time DESC, borrow_interest DESC, borrow_days ASC,spd.total DESC
+		 limit #{startRow},#{pageSize} 
+	</select>
+	<select id="fquerycountsipro" resultType="int">
+	 SELECT COUNT(1) FROM ld_pe_product
+	</select>
+	
+	<select id="fquerybyparam" parameterType="map" resultMap="peproductresult">
+		SELECT  sp.*FROM ld_pe_product sp,ld_pe_product_detail spd WHERE sp.product_id=spd.product_id
+		<if test="para==1">
+		  order by sp.create_time DESC
+		</if>
+		<if test="para==2">
+		  order by sp.borrow_interest DESC
+		</if>
+		<if test="para==3">
+		   order by sp.borrow_days ASC  
+		</if>
+		   limit #{startRow},#{pageSize} 
+	</select>
+	<select id="fquerycountbypara" parameterType="map" resultType="int">
+		SELECT COUNT(1) FROM ld_pe_product sp,ld_pe_product_detail spd WHERE sp.product_id=spd.product_id
+	<if test="para==1">
+	   order by sp.create_time DESC
+	</if>
+	<if test="para==2">
+	   order by sp.borrow_interest DESC
+	</if>
+	<if test="para==3">
+	   order by sp.borrow_days ASC  
+	</if>
+	</select>
+	<update id="fUpdateStateByProid" parameterType="String">
+		UPDATE  ld_pe_product SET borrow_status=6,full_time=NOW() WHERE  product_id=#{product_id}
+	</update>
+	<select id="fQueryListSiProByUid"  parameterType="int" resultMap="peproductresult">
+		SELECT * FROM ld_borrow_investor WHERE borrow_uid=#{borrow_uid}
+	</select>
+	<select id="fQuerySiProByUid" parameterType="int" resultMap="peproductresult">
+		SELECT * FROM ld_pe_product WHERE borrow_uid=#{borrow_uid}
+	</select>
+	<!-- <select id="fsiproductmoney" parameterType="int" resultType="map">
+	SELECT SUM(borrow_money) borrow_money,SUM(borrow_interest) borrow_interest,SUM(repayment_money) repayment_money,SUM(repayment_interest) repayment_interest FROM ld_si_product   WHERE borrow_uid=#{borrow_uid}
+	</select>
+	 -->
+	<select id="fQueryPageByMap" parameterType="map" resultMap="peproductresult">
+		SELECT borinv.create_time,borinv.investor_capital as investorcapital, borinv.investor_interest as investorinterest
+		,date_add(borinv.create_time, interval product.borrow_days+1 day) as deadline,
+		product.product_id,product.product_name,product.borrow_interest_rate,product.borrow_days 
+		 FROM ld_pe_product product,ld_borrow_investor borinv
+		WHERE product.product_id=borinv.product_id  AND investor_uid=#{investor_uid}
+		<if test="status!=null and status!=''">
+		AND borinv.`status` = #{status} 
+		</if>
+		 <if test="time!=null and time!=''">
+			AND date(borinv.create_time) = curdate()
+		</if>
+		<if test="weekend==null and weekend==''">
+	     <![CDATA[	AND borinv.create_time >= date_add(NOW(), interval -1 week)]]>
+		</if>
+		 <if test="month!=null and month!=''">
+		 <![CDATA[	AND borinv.create_time >= date_add(NOW(), interval -1 month)]]>
+		 </if>
+		 <if test="year!=null and year!=''">  
+		 <![CDATA[	AND borinv.create_time>= date_add(NOW(), interval -1 year)]]>
+		 </if>    
+		     ORDER BY borinv.create_time DESC limit #{startRow},#{pageSize}  
+	</select>
+	<select id="fQueryPageCountByMap" parameterType="java.util.Map" resultType="java.lang.Integer">
+		SELECT count(1) FROM ld_pe_product sipro,ld_borrow_investor borinv 
+		WHERE sipro.product_id=borinv.product_id AND investor_uid=#{investor_uid} 
+		<if test="status!=null and status!=''">
+		AND borinv.`status` = #{status} 
+		</if>
+		 <if test="time!=null and time!=''">
+			AND date(borinv.create_time) = curdate()
+		</if>
+		<if test="weekend==null and weekend==''">
+	     <![CDATA[	AND borinv.create_time >= date_add(NOW(), interval -1 week)]]>
+		</if>
+		 <if test="month!=null and month!=''">
+		 <![CDATA[	AND borinv.create_time >= date_add(NOW(), interval -1 month)]]>
+		 </if>
+		 <if test="year!=null and year!=''">  
+		 <![CDATA[	AND borinv.create_time>= date_add(NOW(), interval -1 year)]]>
+		 </if>     
+	</select>
+	
+		
+	<select id="fQueryNewHandProductByMap" parameterType="map" resultMap="peproductresult">
+		SELECT borinv.create_time,borinv.investor_capital as investorcapital, borinv.investor_interest as investorinterest
+		,date_add(borinv.create_time, interval product.borrow_days+1 day) as deadline,
+		product.product_id,product.product_name,product.borrow_interest_rate,product.borrow_days 
+		FROM ld_newhand_product product,ld_borrow_investor borinv
+		WHERE product.product_id=borinv.product_id  AND investor_uid=#{investor_uid}
+		<if test="status!=null and status!=''">
+			AND borinv.`status` = #{status} 
+		</if>    
+	     ORDER BY borinv.create_time DESC 
+	</select>
+	
+		
+	<select id="fQueryExperienceProductByMap" parameterType="map" resultMap="peproductresult">
+		SELECT borinv.create_time,borinv.investor_capital as investorcapital, borinv.investor_interest as investorinterest
+		,date_add(borinv.create_time, interval product.borrow_days+1 day) as deadline,
+		product.product_id,product.product_name,product.borrow_interest_rate,product.borrow_days 
+		FROM ld_experience_product product,ld_borrow_investor borinv
+		WHERE product.product_id=borinv.product_id  AND investor_uid=#{investor_uid}
+		<if test="status!=null and status!=''">
+		AND borinv.`status` = #{status} 
+		</if>    
+	     ORDER BY borinv.create_time DESC 
+	</select>
+	
+	
+	<select id="fqueryCountbyCiProductId" parameterType="java.lang.String" resultType="java.lang.Integer">
+		SELECT COUNT(1) FROM ld_pe_product WHERE ci_product_id=#{ci_product_id}
+	</select>
+	<select id="fquerySiProductbyCiProductId" parameterType="map" resultMap="peproductresult">
+		SELECT product_id,product_name,borrow_month_duration,borrow_day_duration,borrow_money,borrow_interest_rate,repayment_type,ci_product_id FROM ld_pe_product WHERE ci_product_id=#{ci_product_id} limit #{startRow},#{pageSize} 
+	</select>
+	<select id="fquerysiproduct" parameterType="map" resultMap="peproductresult">
+    	SELECT * FROM ld_pe_product limit #{startRow},#{pageSize} 
+	</select>
+	
+	<select id="querySiProductbyCiProductId" parameterType="java.lang.String" resultMap="peproductresult">
+		SELECT ls.* FROM ld_ci_si_product lcs
+			LEFT JOIN ld_pe_product ls ON lcs.si_product_id = ls.product_id
+		WHERE lcs.ci_product_id=#{ci_product_id} and type=1
+	</select>
+	
+	<select id="queryProductIdbyCiProductId" parameterType="java.lang.String" resultType="java.lang.String">
+		SELECT ls.product_id FROM ld_ci_si_product lcs
+			LEFT JOIN ld_pe_product ls ON lcs.si_product_id = ls.product_id
+		WHERE lcs.ci_product_id=#{ci_product_id} and type=1
+	</select>
+	
+	<select id="getProductById" parameterType="String" resultMap="peproductresult">
+		SELECT * FROM ld_pe_product WHERE product_id=#{productId}
+	</select>
+	
+	<update id="updateStateByProid" parameterType="java.util.Map">
+		UPDATE  ld_pe_product SET borrow_status=6,full_time=NOW() 
+		WHERE  product_id in  
+		 <foreach item="item" index="index" collection="productIds" open="(" separator="," close=")">  
+		  #{item}  
+		 </foreach> 
+	</update>
+	<select id="querySiproductByProid" parameterType="String" resultType="String" >
+	select product_name from ld_pe_product where product_id=#{productid}
+	</select>
+	
+	<update id="updateByProductIdAndStatus" parameterType="java.util.Map">
+		UPDATE  ld_pe_product set borrow_status=#{status},update_time=NOW() WHERE  product_id=#{productId}
+	</update>
+	
+	<update id="update" parameterType="PeProduct">
+		UPDATE  ld_pe_product set repayment_money=#{repaymentMoney},repayment_interest=#{repaymentInterest},update_time=NOW() WHERE  product_id=#{productId}
+	</update>
+</mapper>

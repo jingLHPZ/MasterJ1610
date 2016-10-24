@@ -1,0 +1,60 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+body .left_title{
+	width: 720px;
+}
+body .calcul_bod {
+    width: 720px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+body .cal_list{
+	height: auto;
+}
+body .cal_list li{
+	width: 50%;
+	margin-bottom: 10px;
+}
+body .cal_list li div {
+    width: 180px;
+}
+body .cal_list li div input {
+    width: 130px;
+}
+body .cal_list li .cal_hkfs {
+    width: 182px;
+	transition: none;
+}
+body .cal_btn_js {
+    margin: 190px auto 40px;
+    float: none;
+    display: block;
+} 
+body .cal_jsjg{
+	width: 100%;
+	position: relative;
+}
+body .cal_jsjg h3{
+	width: 100%;
+	padding: 0;
+}
+body .cal_jsjg .cal_close{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+body .cal_tznum {
+    width: 96%;
+    margin: 20px 2%;
+}
+body .cal_jg_ti{
+    width: 96%;
+    margin: 0px 2%;
+}
+body .cal_tab_td{
+	width: 100%;
+	margin: 0;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+
+}

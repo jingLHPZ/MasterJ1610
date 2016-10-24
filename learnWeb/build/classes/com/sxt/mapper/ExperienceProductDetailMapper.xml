@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IExperienceProductDetail">
+	 <resultMap type="ExperienceProductDetail" id="experienceProductdetailresult">
+		<id property="id" column="id"/>
+		<result property="productId" column="productId"/>
+		<result property="borrowType" column="borrow_type"/>
+		<result property="datetime" column="datetime"/>
+		<result property="addIp" column="add_ip"/>
+		<result property="borrowInfo" column="borrow_info"/>
+		
+		<result property="total" column="total"/>
+		<result property="hasPay" column="has_pay"/>
+		<result property="substituteMoney" column="substitute_money"/>
+		<result property="rewardVouchRate" column="reward_vouch_rate"/>
+		<result property="rewardVouchMoney" column="reward_vouch_money"/>
+		
+		<result property="rewardType" column="reward_type"/>
+		<result property="rewardMin" column="reward_min"/>
+		<result property="rewardValue" column="reward_value"/>
+		<result property="investMin" column="invest_min"/>
+		<result property="investMax" column="invest_max"/>
+		
+		<result property="vouchMember" column="vouch_member"/>
+		<result property="password" column="password"/>
+		<result property="isRecommend" column="is_recommend"/>
+		<result property="canAuto" column="can_auto"/>
+		<result property="informationDisclosure" column="information_disclosure"/>
+		
+		<result property="vouchUid" column="vouch_uid"/>
+		<result property="vouchMoney" column="vouch_money"/>
+		<result property="autoMaxLimit" column="auto_max_limit"/>
+		<result property="riskControl" column="risk_control"/>
+		<result property="updateTime" column="update_time"/>
+		
+		<result property="expiredRate" column="expired_rate"/>
+		<result property="rewardTotalScore" column="reward_total_score"/>
+		<result property="rewardExperienceGold" column="reward_experience_gold"/>
+		<result property="rewardWay" column="reward_way"/>
+		<result property="progressiveInvestment" column="progressive_investment"/>
+		<result property="investTotal" column="invest_total"/>
+	</resultMap>
+	<select id="fQueryMaxMinByPid" parameterType="String" resultMap="experienceProductdetailresult">
+	SELECT * FROM ld_experience_product_detail WHERE  product_id=#{productId}
+	</select>
+</mapper>

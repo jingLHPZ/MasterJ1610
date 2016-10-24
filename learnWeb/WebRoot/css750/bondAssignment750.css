@@ -1,0 +1,51 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+
+/*container*/
+body .content_body{
+	width: 720px;
+}
+/*右侧内容*/
+.content_body .right_main {
+    width: 525px;
+}
+.right_main .bonda_title{
+    background-position: 100px 0px;
+    transition: background-position .2s ease-out;
+}
+.right_main .bonda_title h2{
+    width: 100px;
+    margin-left: 20px;
+}
+.right_main .bonda_title div{
+	width: 355px;
+}
+.right_main .bonda_title div a{
+	margin-right: 14px;
+}
+.right_main .bonda_gz {
+    width: 100%;
+    padding: 0px 20px;
+    margin: 0;
+    box-sizing: border-box;
+}
+.right_main .bonda_div {
+    width: 100%;
+    padding: 0 20px;
+    margin: 0;
+    box-sizing: border-box;
+}
+table tr th:nth-of-type(2){
+	display: none;
+}
+table tr td:nth-of-type(2){
+	display: none;
+}
+table tr td,table tr th{
+	line-height: 20px;
+}
+.right_main table td .bond_name{
+	margin-left: 0;
+}
+
+
+}

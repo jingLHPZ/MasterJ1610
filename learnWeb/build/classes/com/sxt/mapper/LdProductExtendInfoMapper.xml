@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.ILdProductExtendInfo">
+ 	<resultMap type="LdProductExtendInfo" id="productExtendInfo">
+	 	<id property="id" column="id"/>
+		<result property="productId" column="product_id"/>
+		<result property="productName" column="product_name"/>
+		<result property="systemTraceNo" column="system_trace_no"/>
+		<result property="investUid" column="invest_uid"/>
+		<result property="borrowInterestRate" column="borrow_interest_rate"/>
+		<result property="investLimit" column="invest_limit"/>
+		<result property="createTime" column="create_time"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="productAdaptedType" column="product_adapted_type"/>
+	</resultMap>
+	<insert id="insertProductExtendInfo" parameterType="com.sxt.models.LdProductExtendInfo">
+		INSERT INTO ld_product_extend_info(product_id,product_name,system_trace_no,invest_uid,borrow_interest_rate,invest_limit,create_time,update_time,product_adapted_type)values
+		(#{productId},#{productName},#{systemTraceNo},#{investUid},#{borrowInterestRate},#{investLimit},#{createTime},#{updateTime},#{productAdaptedType})
+	</insert>
+</mapper>

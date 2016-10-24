@@ -1,0 +1,15 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+
+.about_right_m .recrui_title {
+    width: 94%;
+    margin: 40px 3% 20px;
+}
+.about_right_m .recrui_list {
+    width: 92%;
+    margin: 10px 4% 100px;
+}
+.about_right_m .recrui_list li{
+	background-position: right 26px!important;
+}
+
+}

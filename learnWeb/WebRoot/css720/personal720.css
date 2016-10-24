@@ -1,0 +1,275 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+*{transition: margin,width .2s ease-out;}
+.right_main .per_bod ul li {
+    height: auto;
+    padding: 5px 0;
+}
+.right_main .per_bod ul li label {
+    text-align: left;
+    width: 100%;
+    text-indent: 2%;
+}
+.right_main .per_bod ul li input {
+	height: 28px;
+	line-height: 24px;
+    width: 96%!important;
+    box-sizing: border-box;
+    margin: 0px 2%;
+}
+.right_main .per_bod ul li .open_certifie_gt{
+	width: 96%;
+    box-sizing: border-box;
+    margin: 0px 2%;
+    text-align: left;
+}
+.right_main .per_bod ul li p {
+    width: 96%;
+    margin: 0px 2%;
+}
+.right_main .person_tab {
+    width: 100%;
+    margin: 15px 0px 0px;
+}
+.right_main .person_tab a {
+    width: 25%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 38px;
+	line-height: 40px;
+	font-size: 15px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.right_main .person_tab{
+	height: 41px;
+}
+.right_main .person_tab .per_tab_hov{
+	background-color: #FCA703;
+	color: #ffffff;
+}
+.right_main .per_bod ul li select {
+    width: 47%;
+    margin: 0;
+    margin-left: 2%;
+}
+.right_main .per_bod ul .per_bc_btn a {
+    display: block;
+	margin: 0px 2%;
+	width: 96%;
+}
+.right_main .per_bod .pic_sc_btn {
+    display: block;
+    float: none;
+    margin: 0 auto;
+    height: 38px;
+    line-height: 38px;
+    width: 96%;
+}
+.right_main .per_bod .per_password {
+    width: 94%;
+    margin: 0 3%;
+}
+.right_main .per_bod .per_password p {
+    width: 33%;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.right_main .per_bod .end_pass h3 {
+    width: 100%;
+    margin: 30px 0;
+    height: auto;
+	line-height: 25px;
+}
+.right_main .pesa_3 ul .per_pass_qd ul {
+	height: 30px;
+    width: 96%;
+    margin: 5px 2%;
+}
+.right_main .per_bod ul li .pb_div {
+    margin-left: 2%;
+}
+
+/*弹窗*/
+.right_main .Szzf_password .szp_bod,.right_main .password_alert .ps_al_bod{
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	top: initial;
+	margin: 0;
+}
+.right_main .Szzf_password .szp_bod .szp_mmk{
+	margin: 0 auto;
+	float: none;
+}
+.right_main .Szzf_password .szp_bod .szp_btn{
+	float: none;
+	margin: 180px auto 0;
+	width: 268px;
+	
+}
+.right_main .Szzf_password .szp_bod .szp_btn .szp_btn_qr{
+	margin-right: 0;
+}
+.right_main .Szzf_password .szp_bod .szp_alert {
+    width: 270px;
+    margin: 180px auto 0px;
+    float: none;
+}
+
+/*邮箱验证*/
+.right_main .per_bod ul li .email_yz{
+	width: 100%;
+}
+.yz_email .yz_bod1 li h4{
+	text-indent: 2%;
+	text-align: left;
+}
+.right_main .yz_email h1{
+	background-size: 100% auto!important;
+	height: 60px;
+}
+.right_main .yz_email .yz_bod1 li .yz_subm{
+	transition-property: margin;
+	margin: 30px 2%;
+	width: 96%;
+}
+.right_main .yz_email .yz_bod1 .email_href{
+	height: 250px;
+}
+.right_main .yz_email .yz_bod1 li .yz_text {
+    width: 56%;
+    margin: 0px 2%;
+    margin-bottom: 5px;
+}
+.right_main .yz_email .yz_bod1 li .yz_djs{
+	margin-left: 2%;
+}
+.right_main .yz_email .yz_bod1 li .yz_but{
+	margin-bottom: 5px;
+}
+.right_main .yz_email .yz_bod1 li .email_text {
+    width: 180px;
+    width: 96%;
+    marign: 0 2%;
+}
+.right_main .yz_email .yz_bod1 .email_href p{
+	width: 96%;
+}
+.right_main .yz_email .yz_bod1 .email_cg p {
+    text-align: center;
+    width: 96%;
+    margin-bottom: 10px;
+}
+.yz_email .yz_bod1 .email_cg .email_leve {
+    margin: 0px auto;
+    float: none;
+}
+.right_main .yz_email .yz_bod1 li .yz_img{
+	margin: 0 2%;
+}
+
+.right_main .certifie_gat .gt_left{
+	width: 100%;
+}
+.right_main .per_bod ul li .select_gt {
+    height: 32px;
+    line-height: 32px;
+    width: 96% !important;
+    box-sizing: border-box;
+    margin: 0px 2%;
+    padding-right: 1px;
+}
+.right_main .per_bod ul li .select_gt p {
+    background-position: right 1px;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+.right_main .select_cont .select_gt ul{
+	width: 100%;
+}
+.right_main .right_main .select_cont .select_gt ul li{
+	width: 100%;
+}
+.right_main .certifie_gat .gt_left ul .add_img a{
+	margin-left: 2%;
+}
+.right_main .certifie_gat .gt_left ul li .submit_gt{
+	width: 96%;
+	margin: 0 2%;
+}
+.right_main .certifie_gat .gt_right{
+	width: 100%;
+}
+.right_main .gt_right .imgs_cont {
+    height: auto;
+    width: 96%;
+    padding: 0px 3%;
+    border: 1px solid #C7C7C7;
+    margin-top: 79px;
+    margin: 20px 2% 0;
+    box-sizing: border-box;
+}
+.right_main .gt_right .imgs_cont:after{
+	content: " ";
+	height: 0;
+	display: block;
+	clear: both;
+}
+.right_main .gt_right .imgs_cont p{
+	height: auto;
+	width: 50%;
+	padding: 0 2%;
+	box-sizing: border-box;
+	margin: 20px 0;
+}
+.right_main .gt_right .imgs_cont img{
+	width: 100%;
+	height: auto;
+}
+.right_main .gt_right .imgs_cont h4{
+	line-height: 20px;
+	padding: 5px 0;
+}
+.right_main .certifie_gat .gt_left ul{
+	margin: 0;
+}
+.right_main .gat_ing {
+    width: 96%;
+    padding: 0;
+    margin: 20px 2% 130px;
+}
+.right_main .gat_fail{
+    width: 96%;
+    padding: 0;
+    margin: 20px 2% 130px;
+}
+.right_main .gat_fail P a{
+	width: 100%;
+}
+.right_main .gat_success ul{
+	margin-top: 0px;
+}
+.right_main .gat_success ul li p{
+	padding: 0 5px;
+	box-sizing: border-box;
+}
+.right_main .gat_success ul li a{
+	width: 100%;
+	box-sizing: border-box;
+}
+.right_main .certifie_gat .gt_left ul li a{
+	margin-left: 2%;
+}
+.right_main .smrz_zl li .open_certifie_gat{
+	width: 96%;
+	margin: 0 2%;
+	text-align: left;
+}
+
+}

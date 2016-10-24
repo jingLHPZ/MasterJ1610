@@ -1,0 +1,24 @@
+.tra_title{width: 100%; margin: 0; padding: 5px 0; background: #f8f8f8;}
+.tra_title ul{width: 400px; height: 40px; float: left; margin-left: 100px;}
+.tra_title .tra_select{ width: auto; overflow: hidden; height: 40px; margin-left: 25px; padding: 0; float: left;}
+.tra_title .tra_select label{ height: 40px; line-height: 40px; float: left;  display: inline-block;color: #727272;}
+.tra_title .tra_select select{ width: 120px; height: 26px; float: left; line-height: 40px; margin: 7px 0 7px 5px;}
+
+.tran_table{ width: 100%;}
+.tran_table th{ height:50px; line-height: 50px; text-align: center;}
+.tran_table tr:hover{ background: #fffcf6;}
+.tran_table td{ height:50px; line-height: 50px; text-align: center;}
+.tran_table .remarks{max-width: 150px;padding-right: 20px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;cursor: default;}
+.tran_table td div{height: 40px; line-height: 20px; margin: 5px 0;}
+.tran_table td div span{ font-size: 12px; font-family: "宋体"; color: #aaa;}
+.tran_table td span{color: #61beec; font-weight: bold;}
+.tran_table td .font_red{ color: red;}
+.tran_table td .font_ger{ color: #64bc3b;}
+.tran_table td a{ color: #f49742; text-decoration: underline;}
+.tran_table td a:hover{ text-decoration: none;}
+
+.tran_pg{ width: 100%; height: 30px; float: right; margin: 20px 0; text-align:center;}
+
+
+
+

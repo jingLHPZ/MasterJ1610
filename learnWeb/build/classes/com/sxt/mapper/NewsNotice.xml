@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.INewsNotice">
+	<resultMap type="NewsNotice" id="newsnoticelist">
+		<id property="newsid" column="news_id"/>
+		<result property="newstitle" column="news_title"/>
+		<result property="newscontent" column="news_content"/>
+		<result property="newsurl" column="news_url"/>
+		<result property="createdate" column="create_date"/>
+		<result property="newsorder" column="news_order"/>
+		<result property="status" column="status"/>
+	</resultMap>
+	<select id="fquerynewsnotice" resultMap="newsnoticelist" parameterType="int">
+	    SELECT * FROM ld_news_notice where status=2 ORDER BY news_order DESC  LIMIT 0,4
+	    
+	</select>
+	<select id="fquerynewscontent" parameterType="int" resultMap="newsnoticelist">
+		SELECT * FROM ld_news_notice WHERE news_id=#{newsid}
+	</select>
+	<select id="fqueryallnotice" resultMap="newsnoticelist" parameterType="map">
+	    SELECT * FROM ld_news_notice where status=2 ORDER BY news_order DESC
+	    <if test="startRow != null and pageSize != null">
+				limit #{startRow},#{pageSize}
+		</if>
+	</select>
+	<select id="queryAllNoticeCount" resultType="Integer">
+		 SELECT COUNT(*)  FROM ld_news_notice where status=2
+	</select>
+</mapper>

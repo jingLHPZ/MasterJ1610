@@ -1,0 +1,113 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+/*container*/
+body .content_body{
+	width: 720px;
+}
+
+/*右侧内容*/
+.content_body .right_main {
+    width: 525px;
+    min-height: 1353px;
+    overflow: hidden;
+}
+
+/*线上充值*/
+.right_main .bonda_title{
+	background-position: 140px 0px;
+	transition: background-position .2s ease-out;
+}
+.right_main .rech_cz{
+	width: 96%;
+}
+.right_main .rech_cz_li1 {
+    width: 100%;
+    margin: 20px 0px 10px 0px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.right_main .rech_cz_li1 input {
+    width: 180px;
+}
+.right_main .rech_cz_li1 p {
+    margin-left: 0px;
+}
+.right_main .rech_cz_li2 {
+    height: auto;
+    line-height: 30px;
+    width: 100%;
+    margin: 0px 0px 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.right_main .rech_cz_li2 p {
+    width: 100%;
+}
+.right_main .rech_fs {
+    margin-top: 20px;
+    width: 96%;
+}
+.right_main .rech_fs ul {
+    width: 100%;
+    margin: 0;
+}
+.right_main .rech_fs ul li {
+    margin: 20px auto;
+    float: none;
+}
+.right_main .rech_fs .rech_cz_btn {
+    margin: 70px auto 0px;
+    float: none;
+    display: block;
+}
+.right_main .rech_ts{
+	margin-top: 60px;
+}
+.right_main .rech_ts h3 {
+    margin-left: 30px;
+}
+.right_main .rech_ts p {
+    margin-left: 30px;
+}
+
+/*线下充值*/
+.right_main .recha_tjcz {
+    width: 500px;
+    margin: 0px 0px 20px 20px;
+}
+.right_main .recha_list {
+    width: 96%;
+    margin: 0px 2%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.right_main .recha_list table td {
+    height: 45px;
+    color: #0D0D0D;
+    padding-left: 20px;
+    padding: 5px 0 5px 20px;
+}
+.right_main .recha_list table td {
+    padding: 5px 0px 5px 20px;
+}
+/*新增*/
+.right_main .arcAdd_hkf {
+    margin-left: 65px;
+}
+.right_main .arcAdd_skf {
+    margin-left: 65px;
+    margin-top: 20px;
+} 
+.right_main .arcAdd_sub {
+    width: 430px;
+}
+.right_main .arcAdd_sub .arc_sub_1 {
+    margin: 0;
+    margin-left: 60px;
+}
+.right_main .arcAdd_sub .arc_sub_2 {
+    float: right;
+    margin-right: 60px;
+}
+
+
+}

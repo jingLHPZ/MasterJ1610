@@ -1,0 +1,92 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+/*container*/
+body .content_body{
+	width: 970px;
+}
+.content_body .right_main{
+	width: 775px;
+}
+.right_main .bonda_title{
+	background-position: 385px 0px;
+	transition: background-position .2s ease-out;
+}
+.right_main .rech_cz {
+    width: 735px;
+}
+.right_main .rech_fs {
+    width: 735px;
+}
+.right_main .rech_cz_li1 {
+    width: 740px;
+}
+.right_main .rech_cz_li2 {
+    width: 660px;
+}
+.right_main .rech_fs ul{
+	margin-left: 20px;
+	transition: margin-left .2s ease-out;
+}
+.right_main .rech_fs .rech_cz_btn{
+	margin-left: 312px;
+}
+.right_main .rech_ts h3 {
+    margin-left: 40px;
+}
+.right_main .rech_ts p{
+    margin-left: 40px;
+}
+.right_main .recha_tjcz{
+	width: 100%;
+	margin-left: 0;
+	padding-left: 30px;
+	box-sizing: border-box;
+}
+.right_main .recha_list {
+    width: 98%;
+    margin: 0px 1%;
+    box-sizing: border-box;
+}
+/*新增充值*/
+.right_main .recha_add .recAdd_tit {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 30px;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+.right_main .arcAdd_hkf {
+    width: 360px;
+    margin: 0px 7px;
+    padding-right: 35px;
+}
+.right_main .arcAdd_hkf .hkf_bord {
+    width: 359px;
+}
+.right_main .arcAdd_hkf .hkf_bord ul li label {
+    width: 90px;
+}
+.right_main .arcAdd_skf {
+    width: 360px;
+}
+.right_main .arcAdd_skf .skf_bord {
+    width: 358px;
+    margin-top: 10px;
+}
+.right_main .arcAdd_skf .skf_bord ul li label {
+    width: 80px;
+}
+.right_main .arcAdd_skf .skf_bord ul li p {
+    width: 266px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.right_main .arcAdd_sub {
+    width: 98%;
+    margin-left: 1%;
+}
+.right_main .arcAdd_sub .arc_sub_1{
+	margin-left: 243px;
+}
+
+
+}

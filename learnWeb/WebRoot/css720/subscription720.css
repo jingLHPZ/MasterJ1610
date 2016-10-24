@@ -1,0 +1,125 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+
+/*table*/
+.toin_body .prod_bod{
+	width: 100%;
+    margin-bottom: 0;
+}
+.toin_body .pay_bod {
+    width: 96%;
+    height: auto;
+    margin: 10px 2%;
+}
+.toin_body .prod_title h3{
+	padding: 15px;
+    text-indent: 0;
+    text-align: center;
+	height: auto;
+	line-height: 20px;
+	box-sizing: border-box;
+}
+.toin_body .pay_bod .assign{
+	width: 100%;
+	height: auto;
+	padding: 0;
+}
+.toin_body .prod_title ul li h4{
+	margin-top: 5px;
+	height: auto;
+}
+.toin_body .pay_bod .pay_ul1 li {
+	width: 50%;
+    padding-left: 7%;
+    height: auto;
+    box-sizing: border-box;
+    transition-property: width,padding;
+    margin: 10px 0;
+}
+.toin_body .pay_bod .pay_ul1 .assi_1{
+	min-width: 50%;
+	width: auto;
+}
+.toin_body .pay_bod .pay_ul1 .assi_2{
+	border-right: none;
+}
+.toin_body .pay_bod .pay_ul1 .pro_li_bor{
+	width: auto;
+	border-right: none;
+}
+
+
+
+/*info*/
+.toin_body .pay_lc {
+    width: 650px;
+    margin: 30px 0px 50px 300px;
+    transition-property: width,margin;
+}
+.toin_body .pay_lc {
+    width: 96%;
+    transition-property: width, margin;
+    margin: 20px 2%;
+}
+.toin_body .pay_lc ul li input {
+    width: 100%;
+    box-sizing: border-box;
+}
+.toin_body .pay_lc .assign_jymm a{
+	margin-left: 0;
+}
+.toin_body .pay_lc ul li label {
+    text-align: left;
+    width: 75px;
+}
+.toin_body .pay_lc ul li img{
+	margin-top: 5px;
+}
+.toin_body .pay_lc ul .check_xy label {
+    display: none;
+}
+.toin_body .pay_lc ul li .pay_qr,
+.toin_body .pay_lc ul li .pay_check{
+	height: 36px;
+	line-height: 36px;
+    margin: 30px 0;
+    width: 55%;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-right: 3%;
+    float: left;
+}
+.toin_body .pay_lc ul li .pay_qx{
+	width: 42%;
+	height: 36px;
+	line-height: 36px;
+    margin: 30px 0!important;
+    display: inline-block;
+    box-sizing: border-box;
+    float: left;
+}
+
+/*认购成功*/
+.toin_body .subscg_bod {
+    width: 96%;
+}
+.toin_body .subscg_bod .sub_tit {
+    width: 100%;
+}
+.toin_body .subscg_bod .sub_tit p {
+    width: 100%;
+    text-align: center;
+}
+.toin_body .subscg_bod .sub_tit p label {
+    text-align: left;
+    float: none;
+    width: initial;
+    margin-left: 0px;
+}
+.toin_body .subscg_bod .sub_tit p b{
+	float: none;
+}
+.toin_body .subscg_bod a{
+	width: 45%;
+}
+
+}

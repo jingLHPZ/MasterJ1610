@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IMemberInfo">
+	 <resultMap type="MemberInfo" id="memberInforesult">
+		<result property="uid" column="uid"/>
+		<result property="sex" column="sex"/>
+		<result property="zy" column="zy"/>
+		<result property="info" column="info"/>
+		<result property="marry" column="marry"/>
+		<result property="education" column="education"/>
+		<result property="income" column="income"/>
+		<result property="age" column="age"/>
+		<result property="idcard" column="idcard"/>
+		<result property="cardImg" column="card_img"/>
+		<result property="realName" column="real_name"/>
+		<result property="address" column="address"/>
+		<result property="province" column="province"/>
+		<result property="city" column="city"/>
+		<result property="area" column="area"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="bankCardNo" column="bank_card_no"/>
+		<result property="createTime" column="create_time"/>
+		<result property="cardBank" column="card_bank"/>
+		<result property="cardBranchBank" column="card_branch_bank"/>
+		<result property="canAuto" column="can_auto"/>
+		<result property="qq" column="qq"/>
+		<result property="headshotUrl" column="headshot_url"/>
+		<result property="twoDimensionCodeUrl" column="two_dimension_code_url"/>
+		<result property="firstAddCard" column="first_add_card"/>
+		<result property="thirdUserId" column="third_user_id"/>
+		<result property="salesUid" column="sales_uid"/>
+		<result property="extField" column="ext_field"/>
+		<result property="extField2" column="ext_field2"/>
+		<result property="firstBuy" column="first_buy"/>
+		<result property="rewardTypeIds" column="reward_type_ids"/>
+		<association property="checkInfo" javaType="LdMemberCertificateCheck" resultMap="checkMap" />
+	</resultMap>
+	 <resultMap type="LdMemberCertificateCheck" id="checkMap">
+	 	<result property="status" column="status"/>
+	 	<result property="reason" column="reason"/>
+	 </resultMap>
+	<insert id="finsertinfo" parameterType="int">
+	INSERT INTO ld_member_info(uid) VALUES(#{uid})
+	</insert>
+	<insert id="fAddMemberInfo" parameterType="MemberInfo">
+	INSERT INTO ld_member_info(uid,real_name,bank_card_no,card_bank,address,province,city,area,card_branch_bank) VALUES(#{uid},#{realName},#{bankCardNo},#{cardBank},#{address},#{province},#{city},#{area},#{cardBranchBank})
+	</insert>
+	<select id="fQueryMemberInfoByUid" parameterType="int" resultMap="memberInforesult">
+	  SELECT i.* FROM ld_member_info i
+	  <!-- left join ld_member_certificate_check c on i.uid=c.uid -->
+	  WHERE i.uid=#{uid}
+	</select>
+	<update id="fUpdateMemberInfo" parameterType="MemberInfo">
+		UPDATE ld_member_info SET real_name=#{realName},bank_card_no=#{bankCardNo},card_bank=#{cardBank},
+		address=#{address},province=#{province},city=#{city},area=#{area},card_branch_bank=#{cardBranchBank} 
+		<if test="firstAddCard != null">
+			,first_add_card=#{firstAddCard}
+		</if>
+		WHERE uid=#{uid}
+	</update>
+	 <insert id="add" parameterType="MemberInfo" >
+		INSERT INTO ld_member_info
+		(uid,sex,zy,info,marry,education,income,age,idcard,card_img_background,card_img_front,real_name,address,province,city,area,update_time,bank_card_no,create_time,card_bank,card_branch_bank,can_auto,qq,headshot_url)
+		VALUE (#{uid},#{sex},#{zy},#{info},#{marry},#{education},#{income},#{age},#{idcard},#{cardImgBackground},#{cardImgFront},#{realName},#{address},#{province},#{city},#{area},#{updateTime},#{bankCardNo},#{createTime},#{cardBank},#{cardBranchBank},#{canAuto},#{qq},#{headshotUrl})
+	</insert>
+	<update id="update" parameterType="MemberInfo">
+		UPDATE ld_member_info
+		<set>
+			<if test="address != null ">address = #{address},</if>
+			<if test="province != null ">province = #{province},</if>
+			<if test="city != null ">city = #{city},</if>
+			<if test="area != null ">area = #{area},</if>
+			<if test="updateTime != null ">update_time = #{updateTime},</if>
+			<if test="qq != null ">qq = #{qq},</if>
+			<if test="headshotUrl != null ">headshot_url = #{headshotUrl},</if>
+			<if test="bankCardNo != null">bank_card_no = #{bankCardNo},</if>
+			<if test="cardBank != null">card_bank = #{cardBank},</if>
+			<if test="cardBranchBank != null">card_branch_bank = #{cardBranchBank},</if>
+			<if test="firstAddCard != null">first_add_card = #{firstAddCard},</if>
+			<if test="firstBuy != null">first_buy = #{firstBuy}</if>
+		</set>
+		WHERE uid = #{uid}
+	</update> 
+	<insert id="addRealName" parameterType="MemberInfo">
+		INSERT INTO ld_member_info(uid,real_name,idcard,updateTime,createTime) VALUES(#{uid},#{realName},#{idcard},#{updateTime},#{createTime})
+	</insert>
+	<update id="updateRealName" parameterType="MemberInfo">
+		UPDATE ld_member_info set real_name=#{realName},idcard=#{idcard}
+		WHERE uid = #{uid}
+	</update> 
+	<insert id="addRegister" parameterType="MemberInfo">
+	INSERT INTO ld_member_info(uid,create_time,update_time,first_buy,sales_uid) VALUES(#{uid},#{createTime},#{updateTime},#{firstBuy},#{salesUid})
+	</insert>
+	<update id="updateTwoDimensionCodeUrl" parameterType="MemberInfo">
+		UPDATE ld_member_info set two_dimension_code_url=#{twoDimensionCodeUrl}
+		WHERE uid = #{uid}
+	</update> 
+	<select id="queryIdCard" parameterType="String" resultMap="memberInforesult">
+	  SELECT * FROM ld_member_info WHERE idcard=#{idcard}
+	</select>
+	<select id="querySalemanBySaleUid" parameterType="Integer" resultMap="memberInforesult">
+		select mi.* from ld_member_info mi
+		inner join ld_member_sale_relation msr on mi.uid=msr.uid
+		where msr.jobNumber=#{saleUid}
+	</select>
+	<update id="updateExtfiled" parameterType="Integer">
+		UPDATE ld_member_info set ext_field=1 WHERE uid = #{uid}
+	</update> 
+</mapper>

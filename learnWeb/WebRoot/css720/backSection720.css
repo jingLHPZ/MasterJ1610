@@ -1,0 +1,71 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+
+body .content_body{
+	width: 100%;
+}
+.content_body .right_main{
+	width: 100%;
+	padding: 0 10px;
+	box-sizing: border-box;
+	margin-top: 10px;
+}
+.right_main .bonda_title{
+	background-image: none;
+	height: 40px;
+}
+.right_main .bonda_title h2{
+	margin-left: 0;
+	width: 30%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.right_main .bonda_title div{
+	width: 70%;
+	border-top: none;
+	margin-top: 1px;
+	padding-left: 1%;
+	box-sizing: border-box;
+}
+.right_main .bonda_title div a{
+	width: 50%;
+	height: 100%;
+	margin: 0;
+	text-align: center;
+	box-sizing: border-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.right_main .bonda_title div .bonda_ti {
+    color: #ffffff;
+    border-bottom: none;
+    background-color: #FCA703;
+}
+.right_main .borwD_bod {
+    width: 100%;
+    margin: 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.right_main .borwd_li_div{
+	width: 100%;
+    box-sizing: border-box;
+}
+.right_main .borwd_li_div table{
+	width: 96%;
+	min-width: 475px;
+	margin: 2%;
+}
+.right_main .borwd_li_div table td{
+	padding: 10px 0;
+	line-height: 20px;
+}
+.borwd_li_div table tr th:nth-of-type(5){
+	display: none;
+}
+.borwd_li_div table tr td:nth-of-type(5){
+	display: none;
+}
+
+}

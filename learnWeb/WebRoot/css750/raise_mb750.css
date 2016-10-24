@@ -1,0 +1,39 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+
+body .raise_mbb {
+    width: 746px;
+    background-size: 640px auto;
+}
+body .raise_mbb .top_title{
+	width: 90%;
+	height: auto;
+}
+body .ra_mbb_inp{
+    margin: 120px 3% 0px;
+    width: 94%;
+}
+.ra_mbb_inp p {
+    padding-left: 150px;
+}
+body .ra_mbb_tit{
+	margin: 50px 3% 0px;
+    width: 94%;
+}
+body .ra_mbb_js {
+    margin: 50px 3% 0px;
+    width: 94%;
+}
+body .ra_mbb_div {
+    margin: 50px 3% 0px;
+    width: 94%;
+}
+body .ra_gz {
+    margin: 100px 3%;
+    width: 94%;
+}
+body .ra_mbb_foot {
+    margin: 50px 3%;
+    width: 94%;
+}
+
+}

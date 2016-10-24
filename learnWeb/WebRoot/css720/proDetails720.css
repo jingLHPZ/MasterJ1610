@@ -1,0 +1,234 @@
+
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+
+*{transition-property: width,padding,margin,text-indent;}
+
+/*弹窗*/
+.toin_body .passw_bod {
+    width: 100%;
+    left: 0;
+    top: initial;
+    bottom: 0;
+    margin: 0;
+}
+.toin_body .passw_mm {
+    box-sizing: border-box;
+    margin: 92px auto 5px;
+    float: none;
+    display: block;
+}
+.toin_body .passw_bod p {
+    text-indent: 0px;
+    width: 250px;
+    margin: 0 auto;
+    float: none;
+}
+.toin_body .passw_btn {
+	float: none;
+    margin: 20px auto 5px;
+    display: block;
+}
+
+/*主体*/
+.toin_body .prod_bod {
+    width: 100%;
+}
+.toin_body .prod_title {
+    width: 96%;
+	height: auto;    
+    margin: 2%;
+    box-sizing: border-box;
+}
+.toin_body .prod_title h3>span{
+	display: none;
+}
+.toin_body .prod_title h3 img{
+	display: none;
+}
+.toin_body .prod_title h3 .time_cont{
+	float: left;
+	padding-right: 0;
+	text-indent: 10px;
+}
+.toin_body .prod_title ul li {
+    width: 33%;
+    padding-left: 3%;
+    box-sizing: border-box;
+}
+.prod_title ul li label{
+	height: auto;
+	line-height: 20px;
+	word-break: break-all;
+	margin-top: 13px;
+}
+.toin_body .prod_title ul li h4{
+	height: auto;
+}
+.toin_body .prod_title .pro_ul{
+	height: auto;
+	padding: 0;
+}
+.toin_body .prod_title .pro_ul li {
+    width: 100%;
+    height: auto;
+    padding: 30px 0;
+    border-bottom: 1px solid #F0EFEF;
+}
+.toin_body .prod_title ul .pro_li_bor{
+	border-left: none;
+	border-right: none;
+}
+.toin_body .prod_title ul li .pro_tzye,
+.toin_body .prod_title ul .pro_li_bor p{
+    text-indent: 0;
+    height: auto;
+    text-align: center;
+    line-height: 18px;
+    padding: 0;
+}
+.prod_title ul li .pro_jdt{
+	width: 50%;
+	margin: 10px 5px 0px 25%;
+}
+.toin_body .prod_rgzt {
+    width: 96%;
+    height: auto;
+	margin: 2%;
+	box-sizing: border-box;
+}
+.toin_body .prod_rgzt .rgzt_1 {
+    width: 100%;
+    padding: 0px 10px;
+    margin: 20px 0px;
+    box-sizing: border-box;
+    height: auto;
+}
+.toin_body .prod_rgzt .rgzt_2 {
+    width: 100%;
+    padding: 0 10px;
+    margin: 10px 0px;
+    box-sizing: border-box;
+}
+.toin_body .prod_rgzt .rgzt_2 a {
+    width: 100%;
+    box-sizing: border-box;
+}
+.toin_body .prod_rgzt .rgzt_1 li {
+    width: 100%;
+    height: auto;
+}
+.toin_body .prod_rgzt .rgzt_1 li .prod_cz{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	margin: 2px 0;
+	box-sizing: border-box;
+}
+.toin_body .prod_rgzt .rgzt_1 .rg_rgje .rg_alert {
+    width: 180px;
+}
+.toin_body .prod_rgzt .rgzt_1 .rg_rgje .rg_alert p {
+    width: 100%;
+}
+.toin_body .prod_rgzt .rgzt_1 .rg_rgje div {
+    width: 100%;
+    box-sizing: border-box;
+}
+.toin_body .prod_rgzt .rgzt_1 .rg_btn .rg_btn_hide {
+    width: 100%;
+    height: 40px;
+	line-height: 40px;
+    box-sizing: border-box;
+}
+.toin_body .prod_rgzt .rgzt_1 .rg_btn .rg_btn_show {
+    width: 100%;
+    height: 40px;
+	line-height: 40px;
+    box-sizing: border-box;
+}
+.toin_body .prod_xq {
+    width: 96%;
+	margin: 2%;
+	padding: 0px;
+	box-sizing: border-box;
+}
+.toin_body .prod_ahref {
+    height: 32px;
+}
+.toin_body .prod_ahref a {
+	width: 25%;
+    height: 34px;
+    line-height: 34px;
+    margin-right: 0;
+}
+.toin_body .prod_ahref .prod_wqhg{
+	width: 25%;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	margin-top: 0px;
+	background-image: none;
+	border-top: 2px solid #E4E3E3;
+	background: #F8F7F7 none repeat scroll 0% 0%;
+}
+.toin_body .prod_ahref .prod_wqhg:hover{
+	border-top: 2px solid #FCA703;
+	background-color: #FEF2E1;
+}
+.toin_body .prod_ahref .prod_wqhg:after{
+	content: "往期回顾";
+	display: inline;
+}
+.toin_body .pxq_main {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    top: 4px;
+}
+.toin_body .pxq_main p {
+    width: 100%;
+    box-sizing: border-box;
+}
+.toin_body .pxq_brief{
+	padding: 0;
+}
+.toin_body .pxq_brief p{
+	padding: 0;
+}
+.pxq_main p img{
+	height: auto;
+	max-width: 100%;
+}
+.toin_body .prod_pg {
+    width: 100%;
+}
+.toin_body .pxq_main table th {
+    line-height: 20px;
+    width: 33.33%;
+    padding-left: 0%;
+    text-align: center;
+}
+.toin_body .pxq_main table td {
+    line-height: 20px;
+    width: 33.33%;
+    padding-left: 0%;
+    text-align: center;
+}
+.toin_body .pxq_main .media_table_cont table{
+	min-width: 625px;
+	width: 100%;
+}
+.toin_body .pxq_main .prod_tzxm th{
+	width: auto;
+}
+.toin_body .pxq_main .prod_tzxm td{
+	width: auto;
+}
+
+
+
+
+
+
+}

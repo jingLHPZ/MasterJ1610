@@ -1,0 +1,97 @@
+.banner{height: 632px;width: 100%; min-width: 1200px;background: transparent url("../img/banner/ywys.png") no-repeat scroll center top;float: left;}
+.bg{width: 100%;float: left;min-width: 1200px;}
+.cont{width: 1200px;height: 1410px;margin: 45px auto 0;overflow: hidden;background: #ed4e4e;font-size: 20px;}
+.cont>label{display: block;height: 72px;width: 129px;padding-right: 20px;color: #f9d46b;line-height: 72px;text-align: right;float: left;border-right: solid 1px #f2855c;border-bottom: solid 1px #f2855c;}
+.cont>p{width: 1050px;height: 72px;line-height: 72px;border-bottom: solid 1px #f2855c;text-indent: 20px;float: left;color: #ffffff;}
+.cont .profit{height: 620px; +height:634px;;line-height: 620px;font-size: 20px;}
+.cont ul{width: 1050px;float: left;display: block;}
+.reise_list .title{height: 80px;line-height: 80px;color: #ffffff;}
+.title div{border-right: solid 1px #f2855c;border-bottom: solid 1px #f2855c;text-indent: 20px;font-size: 20px;float: left;}
+.title .pro_1{height: 100%;}
+.title .pro_4{height: 100%;}
+.cont ul .pro_1{height: 134px;width: 139px;}
+.cont ul .pro_2{height: 100%;width: 569px;}
+.cont ul .pro_3{height: 100%;width: 189px;}
+.cont ul .pro_4{height: 134px;width: 150px;border-right:none;}
+.cont ul li{height: 135px;line-height: 135px;color: #190000;font-size: 14px;display: block;}
+.cont ul li label{border-right: solid 1px #f2855c;border-bottom: solid 1px #f2855c;float: left;text-indent: 20px;}
+.cont ul li div{height: 100%;float: left;}
+.cont ul li div p{height: 44px;width: 100%;line-height: 44px;text-indent: 20px;border-right: solid 1px #f2855c;border-bottom: solid 1px #f2855c;}
+.cont .income_l{height: 129px;line-height: 130px;}
+.cont .income_p{height: 90px;width: 1010px;line-height: 30px;text-indent: 0;padding: 20px;}
+.cont .brief_l{height: 220px;line-height: 220px;border-bottom: none;}
+.cont .brief_p{height: 180px;width: 1010px;line-height: 30px;text-indent: 0;padding: 20px;border-bottom: none;}
+.btn_cont{width: 325px;height: 80px;margin: 130px auto;background: #816924;position: relative;}
+.btn_cont .btn{position: absolute;top: -5px;left: -5px;height: 100%;width: 100%;background: #eec03c;line-height: 80px;text-align: center;font-size: 30px;color: #000000;cursor: pointer;}
+.btn_cont:hover .btn{top:-3px;left: -3px;}
+.btn_cont.btn:hover{top: 0;left: 0;}
+
+
+
+.raise_tab {
+	width: 100%;
+	height: 3159px;
+	min-width: 1200px;
+	float: left;
+	background: transparent url(../img/pic/ywys_bg01.jpg) no-repeat center center;
+	position: relative;
+}
+.raise_href{
+	height: 80px;
+	line-height: 80px;
+	width: 320px;
+	position: absolute;
+	bottom: 162px;
+	left: 50%;
+	margin-left: 236px;
+	cursor: pointer;
+	background: #ffffff;
+	color: #EA5654;
+	font-size: 30px;
+	font-weight: 600;
+	font-family: "¿¬Ìå";
+	text-align: center;
+	transition: background-color .2s ease-out;
+}
+.right_btn{
+	height: 80px;
+	line-height: 80px;
+	width: 320px;
+	position: absolute;
+	bottom: 105px;
+	right: 50%;
+	margin-right: 120px;
+	cursor: pointer;
+	background: #DECB4A;
+	color: #ffffff;
+	font-size: 30px;
+	font-weight: 600;
+	font-family: "¿¬Ìå";
+	text-align: center;
+	transition: background-color .2s ease-out;
+}
+.right_btn:hover{
+	background: #BCA928 ;
+}
+.raise_href:hover{
+	background: #E6E6E6 ;
+}
+
+
+
+
+.raise_mbb{ width: 1196px; height: auto; overflow: hidden; margin: 10px auto; background: #fefde9; border: 2px solid #8f7373;}
+.raise_mbb .top_title{display: block;margin: 50px auto;}
+.ra_mbb_inp{ width:830px; height: 350px; margin:165px 183px 0 183px; background:url(../img/activity/ht_bg2.png) center bottom no-repeat;}
+.ra_mbb_inp p{ width:100%; height:80px; line-height:80px; font-size: 24px; color: #282828; padding-left: 200px; box-sizing: border-box;}
+.ra_mbb_tit{width:830px; height: auto; line-height: 50px; font-size: 30px; color: #282828; text-align: center; margin:50px 183px 0 183px; }
+.ra_mbb_js{width:830px; height: auto; line-height: 33px; font-size: 16px; color: #075999; margin:50px 183px 0 183px; float: left;}
+.ra_mbb_div{width:830px; height: auto; margin:50px 183px 0 183px; float: left;}
+.ra_mbb_div h1{ width: 100%; height: auto; line-height: 40px; font-size: 22px; color:#000; font-weight: bold;}
+.ra_mbb_div h2{ width: 100%; height: auto; line-height: 40px; font-size: 18px; color:#555;font-weight: bold;}
+.ra_mbb_div h3{ width: 100%; height: auto; line-height: 40px; font-size: 20px; text-align: center; color:red;font-weight: bold; margin-top: 30px;}
+.ra_mbb_div p{ width: 100%; height: auto; line-height:30px; font-size: 16px; color:#282828;}
+.ra_mbb_time{ width: 100%; height: auto; line-height:60px; text-align: right; font-size:18px; margin: 50px 0;}
+.ra_mbb_time label{ width: 150px; height: 20px; display: inline-block;}
+.ra_gz{width:830px; height: auto; margin:100px 183px; height: auto; line-height:70px; overflow: hidden; float: left; font-size: 16px; background: url(../img/activity/ywys_gz.png) 200px 30px no-repeat;}
+.ra_mbb_foot{width:830px; height: auto; margin:50px 183px; height: auto; line-height:70px; overflow: hidden; float: left; text-align: center; font-size: 24px;}

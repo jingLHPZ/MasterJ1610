@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	 	http://www.springframework.org/schema/aop 
+	 	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+
+	<context:component-scan base-package="com.sxt.*">
+		<context:exclude-filter type="annotation"  expression="org.springframework.stereotype.Service" />
+	</context:component-scan>
+	
+	<mvc:annotation-driven />
+
+
+	<mvc:resources mapping="/static/**" location="/static/" />
+	<mvc:default-servlet-handler />
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/pages/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
+	<!-- 用于将对象转换为 JSON -->
+	<bean id="stringConverter"
+		class="org.springframework.http.converter.StringHttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>text/plain;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="jsonConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"></bean>
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="stringConverter" />
+				<ref bean="jsonConverter" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- SpringMVC上传文件时，需要配置MultipartResolver处理器 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8" />
+		<!-- 指定所上传文件的总大小不能超过200KB。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 -->
+		<property name="maxUploadSize" value="10485760000" />
+		<property name="maxInMemorySize" value="40960" />
+	</bean>
+	<!-- SpringMVC在超出上传文件限制时，会抛出org.springframework.web.multipart.MaxUploadSizeExceededException -->
+	<!-- 该异常是SpringMVC在检查上传的文件信息时抛出来的，而且此时还没有进入到Controller方法中 -->
+	<bean id="exceptionResolver"
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<!-- 遇到MaxUploadSizeExceededException异常时，自动跳转到/WEB-INF/jsp/error_fileupload.jsp页面 -->
+				<prop
+					key="org.springframework.web.multipart.MaxUploadSizeExceededException">error_fileupload</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<mvc:interceptors>
+	     <mvc:interceptor>
+	         <mvc:mapping path = "/**"/>
+	         <bean class = "com.sxt.inter.interceptors.AvoidDuplicateSubmissionInterceptor" />
+	     </mvc:interceptor>
+     
+    	<bean class="com.sxt.inter.interceptors.AuthenticationIntercepter" >
+    		<property name="passUnAuthentications">
+    			<list>
+    				<value>/login/login.htm</value>
+	    			<value>/system/logout.htm</value>
+	   	    	    <value>/login/kaptchaVer.htm</value>
+	   	    	    <value>/login/getSession.htm</value>
+	   	    	    <value>/login/loginSub.htm</value>
+	    			<value>/system/fquerysumway.htm</value>
+	    			<value>/login.jsp</value>
+	    			<value>/captcha-image.htm</value>
+	    			<value>/mainIndex.jsp</value>
+	    			<value>/register.jsp</value>
+    				<value>/register/checkMoblie.htm</value>
+    				<value>/register/register.htm</value>
+    				<value>/message/checkYzm.htm</value>
+    				<value>/message/sendMessage.htm</value>
+    				<value>/register/checkName.htm</value>
+	    			<value>/siproduct/fquerybisipro.htm</value>
+	    			<value>/message/queryMessagePage.htm</value>
+	    			<value>/login/zhPassword.htm</value>
+	    			<value>/payment/payCall.htm</value>
+	    			<value>/payment/allInPayNotify.htm</value>
+	    			<value>/payment/allInPayCall.htm</value>
+	    			<value>/siproduct/fqueryPage.htm</value>
+	    			<value>/payment/fqueryMpPage.htm</value>
+	    			<value>/payment/fqueryMvPage.htm</value>
+	    			<value>/message/equalToCode.htm</value>
+	    			
+	    			<value>/newHandProduct/fqueryNewHandProduct.htm</value>
+	    			<value>/newHandProduct/fqueryPage.htm</value>
+
+	    			<value>/newsinformation/fquerynewsinformation.htm</value>
+	    			<value>/newsnotice/fquerynewsnotice.htm</value>
+	    			<value>/newsnotice/fquerynotice.htm</value>
+	    			<value>/newsinformation/fqueryinfocontent.htm</value>
+	    			
+	    			<value>/experienceProduct/fqueryExperienceProduct.htm</value>
+	    			<value>/experienceProduct/fqueryPage.htm</value>
+	    			<value>/newsnotice/fqueryallnotice.htm</value>
+	    			<value>/newsinformation/fqueryallinformation.htm</value>
+	    			
+	    			<value>/ciProduct/fqueryCiProduct.htm</value>
+	    			<value>/ciProduct/fqueryPage.htm</value>
+	    			<value>/ciProduct/fqueryProductPage.htm</value>
+	    			<value>/ciProduct/fquerySiProduct.htm</value>
+	    			<value>/ciProduct/fqueryCiProductList.htm</value>
+	    			<value>/ciProduct/fqueryCiProductPage.htm</value>
+	    			<value>/iReward/loadIntegralRewardParam.htm</value>
+	    			<value>/product/fqueryallproduct.htm</value>
+	    			<value>/borrow/querystaticborrow.htm</value>
+	    			<value>/borrow/insertborrow.htm</value>
+	    			<value>/newHandProduct/querynewhand.htm</value>
+	    			<value>/loan/queryBorrowPlan.htm</value>
+	    			<value>/product/queryassigndebt.htm</value>
+	    			<value>/loan/querySettleBorrow.htm</value>
+					<value>/calculator/toCalculator.htm</value>
+					<value>/calculator/findRepaymentList.htm</value>
+					<value>/assignmentdebt/zrdetailinfo.htm</value>
+					<value>/aboutus/queryAboutUs.htm</value>
+					<value>/aboutus/querySecurity.htm</value>
+					<value>/aboutus/queryPayZn.htm</value>
+					<value>/assignmentdebt/investorpage.htm</value>
+					<value>/product/queryPage.htm</value>
+					<value>/luckyDraw/loadLuckyDraw.htm</value>
+					<value>/luckyDraw/loadInvestReward.htm</value>
+					<value>/luckyDraw/loadActivity.htm</value>
+					<value>/luckyDraw/loadActivityDZP.htm</value>
+					<value>/membercardcoupons/checkcardbm.htm</value>
+					<value>/system/friendsInvite.htm</value>
+					<value>/borrowinvest/analyseQuestion.htm</value>
+					<value>/person/toMailLogin.htm</value>
+					<value>/person/mailVerify.htm</value>
+					<value>/newsinformation/raise.htm</value>
+					<value>/newsinformation/raiseMb.htm</value>
+					<value>/newsinformation/yingxiang.htm</value>	
+					<value>/withdraw/clikcDetermineRevoke.htm</value>
+					<value>/cash/toPurchaseApplyDetail.htm</value>
+					<value>/cash/checkMemberInfo.htm</value>
+					<value>/yingxiang/queryYingXiangDetail.htm</value>
+					<value>/product/queryYingXiangPageList.htm</value>
+					<value>/newsinformation/queryNewInfoOther.htm</value>
+					<value>/newsnotice/queryAllNoticeOther.htm</value>
+    			</list>
+    		</property>
+	   	     <property name="excludes">
+	   	    	 <list>
+	   	    	 	<value>/login/login.htm</value>
+	   	    	    <value>/system/logout.htm</value>
+	   	    	    <value>/login/kaptchaVer.htm</value>
+	   	    	    <value>/login/getSession.htm</value>
+	   	    	    <value>/login/loginSub.htm</value>
+	    			<value>/system/fquerysumway.htm</value>
+	    			<value>/captcha-image.htm</value>
+	    			<value>/login.jsp</value>
+	    			<value>/mainIndex.jsp</value>
+	    			<value>/register.jsp</value>
+	    			<value>/register/checkMoblie.htm</value>
+	    			<value>/register/register.htm</value>
+	    			<value>/message/checkYzm.htm</value>
+    				<value>/message/sendMessage.htm</value>
+    				<value>/register/checkName.htm</value>
+	    			<value>/siproduct/fquerybisipro.htm</value>
+	    			<value>/message/queryMessagePage.htm</value>
+	    			<value>/login/zhPassword.htm</value>
+	    			<value>/payment/payCall.htm</value>
+	    			<value>/siproduct/fqueryPage.htm</value>
+	    			<value>/payment/fqueryMpPage.htm</value>
+	    			<value>/payment/fqueryMvPage.htm</value>
+	    			<value>/payment/allInPayNotify.htm</value>
+	    			<value>/payment/allInPayCall.htm</value>	
+	    			<value>/message/equalToCode.htm</value>
+
+	    			<value>/newHandProduct/fqueryNewHandProduct.htm</value>
+	    			<value>/newHandProduct/fqueryPage.htm</value>
+
+	    			<value>/newsinformation/fquerynewsinformation.htm</value>
+	    			<value>/newsnotice/fquerynewsnotice.htm</value>
+	    			<value>/newsnotice/fquerynotice.htm</value>
+	    			<value>/newsinformation/fqueryinfocontent.htm</value>
+	    			
+	    			<value>/experienceProduct/fqueryExperienceProduct.htm</value>
+	    			<value>/experienceProduct/fqueryPage.htm</value>
+	    			<value>/newsnotice/fqueryallnotice.htm</value>
+	    			<value>/newsinformation/fqueryallinformation.htm</value>
+	    			
+	    			
+	    			<value>/ciProduct/fqueryCiProduct.htm</value>
+	    			<value>/ciProduct/fqueryPage.htm</value>
+	    			<value>/ciProduct/fqueryProductPage.htm</value>
+	    			<value>/ciProduct/fquerySiProduct.htm</value>
+	    			<value>/ciProduct/fqueryCiProductList.htm</value>
+	    			<value>/ciProduct/fqueryCiProductPage.htm</value>
+	    			<value>/iReward/loadIntegralRewardParam.htm</value>
+	    			<value>/product/fqueryallproduct.htm</value>
+	    			<value>/borrow/querystaticborrow.htm</value>
+	    			<value>/borrow/insertborrow.htm</value>
+	    			<value>/newHandProduct/querynewhand.htm</value>
+	    			<value>/loan/queryBorrowPlan.htm</value>
+	    			<value>/product/queryassigndebt.htm</value>
+	    			<value>/loan/querySettleBorrow.htm</value>
+	    			<value>/calculator/toCalculator.htm</value>
+	    			<value>/calculator/findRepaymentList.htm</value>
+	    			<value>/assignmentdebt/zrdetailinfo.htm</value>
+	    			<value>/aboutus/queryAboutUs.htm</value>
+	    			<value>/aboutus/querySecurity.htm</value>
+	    			<value>/aboutus/queryPayZn.htm</value>
+	    			<value>/assignmentdebt/investorpage.htm</value>
+	    			<value>/product/queryPage.htm</value>
+	    			<value>/luckyDraw/loadLuckyDraw.htm</value>
+	    			<value>/luckyDraw/loadInvestReward.htm</value>
+	    			<value>/luckyDraw/loadActivity.htm</value>
+	    			<value>/luckyDraw/loadActivityDZP.htm</value>
+	    			<value>/membercardcoupons/checkcardbm.htm</value>
+	    			<value>/system/friendsInvite.htm</value>
+	    			<value>/borrowinvest/analyseQuestion.htm</value>
+	    			<value>/person/toMailLogin.htm</value>
+	    			<value>/person/mailVerify.htm</value>
+	    			<value>/newsinformation/raise.htm</value>
+	    			<value>/newsinformation/raiseMb.htm</value>
+	    			<value>/newsinformation/yingxiang.htm</value>
+	    			<value>/withdraw/clikcDetermineRevoke.htm</value>
+	    			<value>/cash/toPurchaseApplyDetail.htm</value>
+	    			<value>/cash/checkMemberInfo.htm</value>
+	    			<value>/yingxiang/queryYingXiangDetail.htm</value>
+	    			<value>/product/queryYingXiangPageList.htm</value>
+	    			<value>/newsinformation/queryNewInfoOther.htm</value>
+	    			<value>/newsnotice/queryAllNoticeOther.htm</value>
+    			</list>
+	   	     </property>
+    	</bean>
+    </mvc:interceptors>
+    <!-- <aop:aspectj-autoproxy proxy-target-class=”true” /> -->
+    <aop:aspectj-autoproxy/>
+</beans>

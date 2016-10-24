@@ -1,0 +1,414 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+
+.toin_body .toin_m{
+	width: 100%;
+}
+.toin_body .toi_tab li{
+	margin-right: 0;
+	width: 20%;
+	line-height: 42px;
+}
+.toin_body .toi_tab .toi_title{
+	background-color: #FE3F3B;
+	color: #FFFFFF;
+}
+
+/*涨中宝*/
+.toin_body .toin_zzb .zzb_bod{
+	height: auto;
+	overflow: auto;
+}
+.toin_body .toin_zzb .zzb_bod img{
+	display: none;
+}
+.toin_body .toin_zzb .zzb_bod ul{
+	width: 100%;
+	padding: 0 25px;
+	box-sizing: border-box;
+	height: auto;
+}
+.toin_body .toin_zzb .zzb_bod ul li{
+	width: 35%;
+	height: auto;
+	padding: 5px 0;
+}
+.toin_body .toin_zzb .zzb_bod ul li p{
+	height: auto;
+}
+.toin_body .toin_zzb .zzb_bod ul li *{
+	text-align: left;
+}
+.toin_body .toin_zzb .zzb_bod ul li:nth-of-type(2){
+	display: none;
+}
+.toin_body .toin_zzb .zzb_bod ul li:nth-of-type(3){
+	width: 65%;
+}
+.toin_body .toin_zzb .zzb_bod ul li:nth-of-type(3) *{
+	text-align: right;
+}
+.toin_body .toin_zzb .zzb_bod ul li h1{
+	width: auto;
+	font-size: 26px;
+}
+.toin_body .toin_zzb .zzb_bod ul li h2{
+	font-size: 21px;
+}
+.toin_body .toin_zzb .zzb_bod .zzb_btn{
+	width: 100%;
+    border-left: none;
+}
+.toin_body .toin_zzb .zzb_bod .zzb_btn p{
+	width: 50%;
+}
+.toin_body .toin_zzb .zzb_bod .zzb_btn p label{
+	width: 100%;
+	display: inline-block;
+}
+.toin_body .toin_zzb .zzb_bod .zzb_btn p:nth-of-type(2){
+	text-align: right;
+}
+.toin_body .toin_zzb .zzb_bod .zzb_btn p:nth-of-type(2) label{
+	text-align: right;
+}
+.toin_body .toin_zzb .zzb_bod .zzb_btn input {
+	height: 34px;
+    width: 100%;
+    line-height: 32px;
+    margin: 10px 0;
+    text-align: center;
+}
+.toin_body .toin_zzb .zzb_bod .zzb_btn .zzb_jjks {
+    right: 5%;
+    margin: 0;
+}
+.toin_body .toin_zzb .zzb_bod .zzb_btn .xs_ymb{
+	width: 100%;
+}
+.toin_body .toin_zzb .zzb_bod .zzb_btn .xs_ymb p {
+    width: 60px;
+    left: 50%;
+    position: relative;
+    margin-left: -30px;
+}
+
+
+/*新手标*/
+.toin_body .toin_sb .xszx_bod1 {
+    width: 100%;
+    height: auto;
+    padding: 20px 25px;
+    box-sizing: border-box;
+}
+.toin_body .toin_sb .xszx_bod1 .xszx_hover{
+	display: none;
+}
+.toin_body .toin_sb .xszx_bod1 ul {
+    width: 100%;
+    height: auto;
+    border-right: none;
+}
+.toin_body .toin_sb .xszx_bod1 ul li{
+	border: none;
+	padding-left: 0;
+	width: 100%;
+}
+.toin_body .toin_sb .xszx_bod1 .xs_b_1 div {
+    width: 135px;
+    float: initial;
+    margin: 0 auto;
+}
+.toin_body .toin_sb .xszx_bod1 .xs_b_1 p,
+.toin_body .toin_sb .xszx_bod1 .xs_b_3,
+.toin_body .toin_sb .xszx_bod1 .xs_b_5{
+	display: none;
+}
+.toin_body .toin_sb .xszx_bod1 .xs_b_2{
+	width: 35%;
+}
+.toin_body .toin_sb .xszx_bod1 .xs_b_2 h1{
+	font-size: 26px;
+}
+.toin_body .toin_sb .xszx_bod1 .xs_b_2 h1:nth-of-type(2){
+	display: none;
+}
+.toin_body .toin_sb .xszx_bod1 .xs_b_4{
+	width: 65%;
+	padding-right: 20px;
+	text-align: right;
+	position: relative;
+	box-sizing: border-box;
+}
+.toin_body .toin_sb .xszx_bod1 ul .xs_b_4 b{
+	position: absolute;
+	right: 0;
+}
+.toin_body .toin_sb .xszx_bod1 ul .xs_b_4 h1{
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 21px;
+}
+.toin_body .toin_sb .xszx_bod1 ul .xs_b_4 span{
+	position: relative;
+	right: -20px;
+}
+.toin_body .toin_sb .xszx_bod1 .xs_right,
+.toin_body .toin_sb .xszx_bod1 .xs_right p,
+.toin_body .toin_sb .xszx_bod1 .xs_right .xs_jdt,
+.toin_body .toin_sb .xszx_bod1 .xs_right .xs_ymb{
+	width: 100%;
+}
+.toin_body .toin_sb .xszx_bod1 .xs_right .xs_djs,
+.toin_body .toin_sb .xszx_bod1 .xs_right a  {
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+}
+.toin_body .toin_sb .xszx_bod1 .xs_right .xs_ymb p{
+	width: 50px;
+	margin: 0 auto;
+	float: initial;
+}
+
+/*体验标*/
+.toin_body .ind_tyb{
+	width: 100%;
+	box-sizing: border-box;
+}
+.toin_body .ind_tyb .xszx_tab{
+	display: none;
+}
+.toin_body .ind_tyb{
+	width: 100%;
+	padding: 0;
+	padding: 10px 0;
+}
+.toin_body .ind_tyb .xszx_bod1{
+	width: 100%;
+	height: auto;
+}
+.toin_body .ind_tyb .xszx_bod1 ul{
+	width: 100%;
+	height: auto;
+	border-right: none;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+.toin_body .ind_tyb .xszx_bod1 ul li{
+	width: 50%;
+	box-sizing: border-box;
+	margin-bottom: 4px;
+	padding: 0;
+	border-right: none;
+}
+.toin_body .ind_tyb .xszx_bod1 ul .xs_b_2{
+	width: 35%;
+}
+.toin_body .ind_tyb .xszx_bod1 ul .xs_b_4{
+	width: 65%;
+}
+.toin_body .ind_tyb .xszx_bod1 ul li h1{
+	height: 30px;
+	line-height: 30px;
+	font-size: 26px;
+}
+.toin_body .ind_tyb .xszx_bod1 ul li h1:nth-of-type(2){
+	display: none;
+}
+.toin_body .ind_tyb .xszx_bod1 ul li b{
+	margin-top: 9px;
+}
+.toin_body .ind_tyb .xszx_bod1 ul .xs_b_3{
+	display: none;
+}
+.toin_body .ind_tyb .xszx_bod1 ul .xs_b_5{
+	display: none;
+}
+.toin_body .ind_tyb .xszx_bod1 ul .xs_b_1{
+	width: 100%;
+	position: relative;
+	padding-left: 40px;
+}
+.toin_body .ind_tyb .xszx_bod1 ul .xs_b_1:before{
+	content: "（7天）";
+	display: block;
+	height: ;
+	width: auto;
+    height: 20px;
+    line-height: 20px;
+    margin: 15px 0 0 40px;
+    color: #adacac;
+    float: left;
+}
+.toin_body .ind_tyb .xszx_bod1 ul .xs_b_1 a{
+	display: block;
+	height: ;
+	width: auto;
+    height: 20px;
+    line-height: 20px;
+    margin: 5px 0 0 40px;
+    color: #adacac;
+    float: right;
+    cursor: pointer;
+}
+.toin_body .ind_tyb .xszx_bod1 ul .xs_b_1 h2{
+	position: absolute;
+	left: 0px;
+}
+.toin_body .ind_tyb .xszx_bod1 ul .xs_b_1 p{
+	display: none;
+}
+.toin_body .ind_tyb .xszx_bod1 ul .xs_b_4{
+	padding-right: 20px;
+	position: relative;
+	box-sizing: border-box;
+}
+.toin_body .ind_tyb .xszx_bod1 ul .xs_b_4 h1{
+	text-align: right;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 22px;
+}
+.toin_body .ind_tyb .xszx_bod1 ul .xs_b_4 span{
+	text-align: right;
+	position: relative;
+	right: -20px;
+}
+.toin_body .ind_tyb .xszx_bod1 ul .xs_b_4 b{
+	position: absolute;
+	right: 2px;
+}
+.toin_body .ind_tyb .xszx_bod1 .xszx_btn {
+	height: 34px;
+	line-height: 32px;
+    width: 90%;
+    padding: 0;
+    margin-top: 12px;
+    margin-left: 5%;
+    display: block;
+    float: left;
+    font-size: 17px;
+    overflow: hidden;
+}
+
+
+/*转让专区*/
+.toin_body .zr_zq {
+	height: auto;
+    width: 100%;
+    padding-left: 0;
+    background-image: none;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.toin_body .zr_zq h2 {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+.toin_body .zr_zq .zq_btn {
+    width: 100%;
+    padding: 0;
+    position: relative;
+    top: 40px;
+    border-left: none;
+}
+.toin_body .zr_zq .zq_btn p {
+    width: 100%;
+}
+.toin_body .zr_zq .zq_btn p label{
+	margin-right: 0;
+}
+.toin_body .zr_zq .zq_btn input{
+	width: 100%;
+	height: 34px;
+	line-height: 32px;
+}
+.toin_body .zr_zq .zq_label {
+    height: 40px;
+    float: left;
+    width: 100%;
+    position: relative;
+    top: -120px;
+    overflow: hidden;
+}
+.toin_body .zr_zq .zq_label .zla_1{
+	font-size: 22px;
+	margin: 0 2px;
+}
+.toin_body .zr_zq .zq_label .zla_2{
+	margin-right: 15px;
+}
+.toin_body .zr_zq .zq_label .zla_3{
+	font-size: 16px;
+	margin: 9px 3px 0 3px;
+}
+.toin_body .zr_zq .zq_label label:nth-of-type(4),
+.toin_body .zr_zq .zq_label label:nth-of-type(5),
+.toin_body .zr_zq .zq_label label:nth-of-type(6),
+.toin_body .zr_zq .zq_label label:nth-of-type(7){
+	display: none;
+}
+
+
+/*众筹专区*/
+.toin_body .toin_zc .zc_list{
+	width: 92%;
+	height: auto;
+	transition-property: width,margin;
+	margin: 10px 4% 20px;
+}
+.toin_zc .zc_list:nth-of-type(3n-1){
+	margin: 10px 4% 20px!important;
+}
+.toin_body .zc_list .zc_img{
+	width: 100%;
+	height: auto;
+}
+.toin_body .zc_img .zc_zt {
+	width: 33%;
+	height: auto;
+	right: 0;
+	margin-left: 0;
+}
+.toin_body .zc_img div{
+	width: 100%;
+	margin-top: 0;
+	bottom: 0;
+}
+.toin_body .zc_list .zc_img .zc_ph {
+    width: 100%;
+    height: auto;
+}
+.toin_body .zc_list ul {
+    width: 96%;
+    margin: 2%;
+    height: auto;
+}
+.toin_body .zc_list .zc_lis_1 .zc_jdt {
+    margin: 2px 0px;
+    width: 100%;
+}
+.toin_body .zc_list ul li{
+	height: auto;
+}
+.toin_body .zc_list .zc_lis_2 {
+    width: 45%;
+}
+.toin_body .zc_list .zc_lis_3 {
+    width: 25%;
+}
+.toin_body .zc_list .zc_lis_4 {
+    width: 30%;
+}
+.toin_body .zc_list ul li p{
+	height: auto;
+}
+
+
+
+}

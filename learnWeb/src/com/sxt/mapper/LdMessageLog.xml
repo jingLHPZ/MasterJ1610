@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.ILdMessageLog">
+	 <insert id="add" parameterType="LdMessageLog" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO ld_message_log
+		(uid,message_content,send_date,send_status,update_time,create_time,type,mobile)
+		VALUE (#{uid},#{messageContent},#{sendDate},#{sendStatus},#{updateTime},#{createTime},#{type},#{mobile})
+	</insert>
+	<resultMap type="LdMessageLog" id="logMap">
+		<id property="id" column="id"/>
+		<result property="uid" column="uid"/>
+		<result property="messageContent" column="message_content"/>
+		<result property="sendDate" column="send_date"/>
+		<result property="sendStatus" column="send_status"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="createTime" column="create_time"/>
+		<result property="readStatus" column="read_status"/>
+		<result property="type" column="type"/>
+		<result property="mobile" column="mobile"/>
+	</resultMap>
+	<select id="queryMessageLogListPage" parameterType="java.util.Map" resultMap="logMap">
+		select * from ld_message_log where type=2 and uid=#{uid} 
+	 <if test="read_status!=null and read_status!=''">  
+	 AND read_status=#{read_status} 
+	 </if> 
+	 <if test="read_status==null">  
+	 AND read_status !='D' 
+	 </if> order by create_time desc  limit #{startRow},#{pageSize}
+	</select>
+	
+	<select id="queryMessageLogListPageCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+		select count(1) from ld_message_log where  type=2 and uid=#{uid}
+	 <if test="read_status!=null and read_status!=''">  
+	 AND read_status=#{read_status} 
+	 </if>
+	 <if test="read_status==null">  
+	 AND read_status !='D' 
+	 </if>
+	</select>
+	
+	
+	<select id="fqueryMessageLogListPage" parameterType="java.util.Map" resultMap="logMap">
+		select * from ld_message_log where  type=2 and uid=#{uid} and read_status !='D' 
+		order by create_time desc limit #{startRow},#{pageSize}
+	</select>
+	<select id="fqueryMessageLogListPageCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+		select count(1) from ld_message_log where  type=2 and uid=#{uid} and read_status !='D'  
+	</select>
+	
+	<update id="updateStatusMessage" parameterType="java.util.Map">  
+        update ld_message_log set read_status = #{read_status} where id in  
+		 <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">  
+		  #{item}  
+		 </foreach> 
+    </update>  
+	<select id="fQueryMessageLogById" parameterType="String" resultMap="logMap">
+	SELECT * FROM ld_message_log WHERE id=#{id}
+	</select>
+	<select id="fQueryMessageLogByStep" parameterType="java.util.Map" resultMap="logMap">
+	select * from ld_message_log where  type=2 and
+	id = 
+	<if test="step=='P'.toString()">(select id from ld_message_log  where id  &gt; #{id} and uid = #{uid} and read_status != #{read_status} and type =2 order by id asc limit 1)</if>
+	<if test="step=='N'.toString()">(select id from ld_message_log  where id  &lt; #{id} and uid = #{uid} and read_status != #{read_status} and type =2 order by id desc limit 1)</if>
+	and uid = #{uid} and read_status != #{read_status};
+	</select>
+	<select id="fQueryMessagebyUid" parameterType="int" resultType="int">
+		SELECT COUNT(1) FROM ld_message_log WHERE type=2 AND read_status='T' AND uid=#{uid}
+	</select>
+</mapper>

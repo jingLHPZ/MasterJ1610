@@ -1,0 +1,134 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+.right_main .widhd_title {
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+    margin: 20px 0 10px;
+    text-indent: 2%;
+}
+.right_main .widhd_ul li{
+	position: relative;
+	float: left;
+	height: auto;
+	box-sizing: border-box;
+	padding-left: 105px;
+	margin: 5px 0 10px;
+}
+.right_main .widhd_ul li:nth-of-type(1) p{
+	margin-right: 5px;
+}
+.right_main .widhd_ul .wid_a_btn{
+	margin-left: 0;
+}
+.right_main .widhd_ul li label {
+    width: 100px;
+    position: absolute;
+    left: 0;
+}
+.right_main .widhd_ul li h5 {
+	height: auto;
+    line-height: 20px;
+    margin-left: 0;
+    width: 100%;
+    color: #CCCBCB;
+}
+.right_main .widhd_ul .wit_alert_ft p{
+	text-indent: 115px;
+}
+.right_main .widhd_ul .wid_submin a{
+	margin-left: 115px;
+}
+.right_main .widhd_ul .wid_yzm {
+    width: 80px;
+    text-align: center;
+    padding: 0 10px;
+}
+.right_main .widhd_ul li:nth-of-type(7) input{
+	width: 80px;
+}
+.right_main .widhd_ul .wid_a_jymi {
+    width: 110px;
+}
+.right_main .widhd_ul #checkpwd{
+	height: auto;
+	line-height: 20px;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding-left: 0;
+}
+.right_main .widhd_ul #checkpwd p{
+	height: auto;
+	line-height: 20px;
+}
+.right_main .widhd_ul .wid_submin input{
+	margin-left: 0;
+}
+
+/*设置交易密码弹窗*/
+#openReal .Szzf_password .szp_bod,#openReal .password_alert .ps_al_bod{
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	top: initial;
+	margin: 0;
+}
+#openReal .Szzf_password .szp_bod .szp_mmk{
+	margin: 0 auto;
+	float: none;
+}
+#openReal .Szzf_password .szp_bod .szp_btn{
+	float: none;
+	margin: 180px auto 0;
+	width: 268px;
+	
+}
+#openReal .Szzf_password .szp_bod .szp_btn .szp_btn_qr{
+	margin-right: 0;
+}
+#openReal .Szzf_password .szp_bod .szp_alert {
+    width: 270px;
+    margin: 180px auto 0px;
+    float: none;
+}
+#openReal .password_alert .ps_al_bod{
+	width: 100%;
+	height: 250px;
+	left: 0;
+	top: initial;
+	margin: 0;
+	bottom: 0;
+}
+
+
+
+.right_main .rech_cz .item{
+	padding: 0;
+	width: 90%;
+	margin: 0 5% 10px;
+}
+.right_main .rech_cz .item label{
+	position: relative;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 100%;
+	margin: 0;
+	text-align: left;
+}
+.right_main .rech_ts p {
+    margin: 0;
+}
+.right_main .rech_ts {
+    width: 96%;
+    margin: 40px 2%;
+    padding: 15px 10px 20px;
+    box-sizing: border-box;
+}
+.rech_cz .item a{
+	display: inline-block;
+}
+.right_main 
+
+
+}

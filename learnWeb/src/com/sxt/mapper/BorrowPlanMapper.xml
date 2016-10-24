@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IBorrowPlan">
+	<resultMap type="BorrowPlan" id="borrowplanlist">
+		<id property="id" column="id" />
+		<result property="repaymentTime" column="repayment_time" />
+		<result property="productId" column="product_id" />
+		<result property="borrowUid" column="borrow_uid" />
+		<result property="capital" column="capital" />
+		<result property="interest" column="interest" />
+		<result property="interestFee" column="interest_fee" />
+		<result property="status" column="status" />
+		<result property="sortOrder" column="sort_order" />
+		<result property="total" column="total" />
+		<result property="productType" column="product_type" />
+	</resultMap>
+	<resultMap type="BorrowPlanDto" id="borrowPlanResult">
+		<id property="id" column="id" />
+		<result property="repaymentTime" column="repayment_time" />
+		<result property="productId" column="product_id" />
+		<result property="borrowUid" column="borrow_uid" />
+		<result property="capital" column="capital" />
+		<result property="interest" column="interest" />
+		<result property="interestFee" column="interest_fee" />
+		<result property="status" column="status" />
+		<result property="sortOrder" column="sort_order" />
+		<result property="total" column="total" />
+		<result property="productType" column="product_type" />
+		<result property="productName" column="product_name" />
+		<result property="borrowStatus" column="borrow_status" />
+		<result property="borrowMonthDuration" column="borrow_month_duration" />
+		<result property="borrowDayDuration" column="borrow_day_duration" />
+		<result property="borrowInterestRate" column="borrow_interest_rate" />
+		<result property="borrowMoney" column="borrow_money" />
+		<result property="deadline" column="deadline" />
+		<result property="repaymentType" column="repayment_type" />
+		<result property="realReturnDate" column="real_return_date"/>
+	</resultMap>
+	
+	<resultMap type="BorrowPlanDto" id="borrowPlanSumResult">	
+		<result property="capital" column="sumCapital" />
+		<result property="interest" column="sumInterest" />
+	</resultMap>
+	
+    <insert id="finsertborrowplan" parameterType="BorrowPlan">
+    INSERT INTO  ld_borrow_plan(repayment_time,product_id,borrow_uid,capital,interest,status,sort_order,total,product_type)
+    VALUES (#{repaymentTime},#{productId},#{borrowUid},#{capital},#{interest},#{status},#{sortOrder},#{total},#{productType})
+    </insert>
+    
+    
+	
+	<insert id="insertBorrowPlanBatch" useGeneratedKeys="true" parameterType="java.util.List">  
+	    <selectKey resultType="long" keyProperty="id" order="AFTER">  
+	        SELECT LAST_INSERT_ID()  
+	    </selectKey>  
+	    INSERT INTO  ld_borrow_plan(repayment_time,product_id,borrow_uid,capital,interest,status,sort_order,total,product_type)
+	    VALUES  
+	    <foreach collection="list" item="item" index="index" separator="," >  
+	    	(#{item.repaymentTime},#{item.productId},#{item.borrowUid},#{item.capital},#{item.interest},#{item.status},#{item.sortOrder},#{item.total},#{item.productType})
+	    </foreach>  
+	</insert>  
+    
+    <select id="fqueryborrowmoney" parameterType="int" resultType="map">
+    SELECT SUM(capital) investor_capital,SUM(interest) investor_interest FROM ld_borrow_plan WHERE borrow_uid=#{uid} AND `status`=1
+    </select> 
+    
+    
+    <select id="queryBorrowPlanByMap" parameterType="java.util.Map" resultMap="borrowPlanResult">
+    	select 
+    	t.id,t.repayment_time,t.product_id,t.borrow_uid,t.capital,t.interest,t.status,t.product_name,t.borrow_status
+    	from
+    	(
+    	(select bp.id,bp.repayment_time,bp.product_id,bp.borrow_uid,bp.capital,bp.interest,bp.status,lsp.product_name,lsp.borrow_status
+ 		from ld_borrow_plan bp 
+ 		LEFT JOIN  ld_index_product lsp on bp.product_id = lsp.product_id)
+ 		union all
+ 		(select bp.id,bp.repayment_time,bp.product_id,bp.borrow_uid,bp.capital,bp.interest,bp.status,lyx.product_name,lyx.borrow_status
+ 		from ld_borrow_plan bp 
+ 		LEFT JOIN  ld_yingxiang_product lyx on bp.product_id = lyx.product_id)
+ 		) t
+ 		<where> 
+ 			t.borrow_uid=#{uid} and t.borrow_status = 6
+ 			<if test="status!=null and status!=''">
+ 				and t.status = #{status} 
+ 			</if>
+ 			<if test="selectType==1">
+ 				<![CDATA[	and t.repayment_time > NOW()]]>
+ 			</if>
+ 			<if test="selectType==2">
+ 				<![CDATA[	and t.repayment_time < NOW()]]>
+ 			</if>
+ 			<if test="day!=null and day!=''">
+ 				<![CDATA[ AND DATE(t.repayment_time) >= CURDATE() and DATE(t.repayment_time) <= DATE_ADD(CURDATE(), INTERVAL 24 HOUR) ]]>
+ 			</if>
+			<if test="week!=null and week!=''">
+		     <![CDATA[	and t.repayment_time <= date_add(NOW(), interval 1 week) ]]>
+			</if>
+			<if test="month!=null and month!=''">
+		     <![CDATA[	and t.repayment_time <= date_add(NOW(), interval 1 month) ]]>
+			</if>
+			<if test="otherMonth!=null and otherMonth!=''">
+		     <![CDATA[	and t.repayment_time <= date_add(NOW(), interval 3 month) ]]>
+			</if>
+ 			ORDER BY t.repayment_time ASC limit #{startRow},#{pageSize}
+ 		</where>
+    </select>    
+    
+    <select id="queryBorrowPlanCountByMap" parameterType="java.util.Map" resultType="java.lang.Integer">
+    	select COUNT(1)	from
+    	(
+    	(select bp.id,bp.repayment_time,bp.product_id,bp.borrow_uid,bp.capital,bp.interest,bp.status,lsp.product_name,lsp.borrow_status
+ 		from ld_borrow_plan bp 
+ 		LEFT JOIN  ld_index_product lsp on bp.product_id = lsp.product_id)
+ 		union all
+ 		(select bp.id,bp.repayment_time,bp.product_id,bp.borrow_uid,bp.capital,bp.interest,bp.status,lyx.product_name,lyx.borrow_status
+ 		from ld_borrow_plan bp 
+ 		LEFT JOIN  ld_yingxiang_product lyx on bp.product_id = lyx.product_id)
+ 		) t 
+ 		<where> 
+ 			t.borrow_uid=#{uid} and t.borrow_status = 6
+ 			<if test="status!=null and status!=''">
+ 				and t.status = #{status} 
+ 			</if>
+ 			<if test="selectType==1">
+ 				<![CDATA[	and t.repayment_time > NOW()]]>
+ 			</if>
+ 			<if test="selectType==2">
+ 				<![CDATA[	and t.repayment_time < NOW()]]>
+ 			</if>
+ 			<if test="day!=null and day!=''">
+ 				<![CDATA[ AND DATE(t.repayment_time) >= CURDATE() and DATE(t.repayment_time) <= DATE_ADD(CURDATE(), INTERVAL 24 HOUR) ]]>
+ 			</if>
+			<if test="week!=null and week!=''">
+		     <![CDATA[	AND t.repayment_time <= date_add(NOW(), interval 1 week) ]]>
+			</if>
+			<if test="month!=null and month!=''">
+		     <![CDATA[	AND t.repayment_time <= date_add(NOW(), interval 1 month) ]]>
+			</if>
+			<if test="otherMonth!=null and otherMonth!=''">
+		     <![CDATA[	AND t.repayment_time <= date_add(NOW(), interval 3 month) ]]>
+			</if>
+ 		</where>
+    </select>
+    
+    <select id="queryBorrowMoneyByMap" parameterType="java.util.Map" resultMap="borrowPlanResult">
+    	SELECT SUM(capital) as capital,SUM(interest) as interest FROM ld_borrow_plan 
+    	<where>
+    		borrow_uid=#{uid}
+    		<if test="status!=null and status!=''">
+    			and status = #{status}
+    		</if>
+    	</where>  
+    </select>   
+    
+     <select id="getBorrowPlanByProductId" parameterType="java.util.Map" resultMap="borrowplanlist">
+    	  select * from ld_borrow_plan where status=1 and product_id=#{productId} 
+    	  <if test="sortOrder!=null and sortOrder!=''">
+			and sort_order=#{sortOrder}
+		  </if>
+		  <if test="status!=null and status!=''">
+			and status=#{status}
+		  </if>
+    </select>
+    
+    <select id="getBorrowPlanByProductIdAndStatus" parameterType="java.util.Map" resultMap="borrowplanlist">
+    	  select * from ld_borrow_plan where product_id=#{productId} 
+		  <if test="status!=null and status!=''">
+			and status=#{status}
+		  </if>
+		  <if test="borrowUid!=null and borrowUid!=''">
+			and borrow_uid=#{borrowUid}
+		  </if>
+    </select>
+    
+    <select id="getBorrowPlanByBorrowId" parameterType="java.util.Map" resultMap="borrowplanlist">
+    	  select * from ld_borrow_plan where  id=#{borrowId} 
+    	  <if test="status!=null and status!=''">
+			   and status=#{status}
+		  </if>
+    </select>
+    
+    <update id="updateBorrowPlanByid"  parameterType="java.util.Map">
+    	update ld_borrow_plan set status=#{status} where id in  
+		 <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">  
+		  #{item}  
+		 </foreach> 
+    </update> 
+    
+    <select id="querySettleProductPage" parameterType="java.util.Map" resultMap="borrowPlanResult">
+    	select 
+    	tt.product_id,tt.product_name,tt.borrow_month_duration,tt.borrow_day_duration,tt.borrow_interest_rate ,tt.borrow_money,tt.deadline,tt.repayment_type,tt.real_return_date,tt.borrow_uid,tt.borrow_status
+    	from
+    	(
+    	(select a.product_id,a.product_name,a.borrow_month_duration,a.borrow_day_duration,a.borrow_interest_rate ,a.borrow_money,a.deadline,a.repayment_type,t.real_return_date,a.borrow_uid,a.borrow_status
+		from ld_index_product a
+		LEFT JOIN (SELECT MAX(real_return_date)real_return_date,product_id FROM ld_repayement_detail GROUP BY product_id) t
+		ON a.product_id = t.product_id)
+    	union all
+	    (select a.product_id,a.product_name,a.borrow_month_duration,a.borrow_day_duration,a.borrow_interest_rate ,a.borrow_money,a.deadline,a.repayment_type,t.real_return_date,a.borrow_uid,a.borrow_status
+		from ld_yingxiang_product a
+		LEFT JOIN (SELECT MAX(real_return_date)real_return_date,product_id FROM ld_repayement_detail GROUP BY product_id) t
+		ON a.product_id = t.product_id)
+		)tt
+		<where>
+		tt.borrow_uid = #{uid} and tt.borrow_status = 8
+ 			<if test="day!=null and day!=''">
+ 				<![CDATA[ AND DATE(tt.real_return_date) >= CURDATE() and DATE(tt.real_return_date) <= DATE_ADD(CURDATE(), INTERVAL 24 HOUR) ]]>
+ 			</if>
+			<if test="week!=null and week!=''">
+		     <![CDATA[	and tt.real_return_date <= date_add(NOW(), interval 1 week) ]]>
+			</if>
+			<if test="month!=null and month!=''">
+		     <![CDATA[	and tt.real_return_date <= date_add(NOW(), interval 1 month) ]]>
+			</if>
+			<if test="otherMonth!=null and otherMonth!=''">
+		     <![CDATA[	and tt.real_return_date <= date_add(NOW(), interval 3 month) ]]>
+			</if>
+		</where>
+		ORDER BY tt.real_return_date DESC limit #{startRow},#{pageSize}
+    </select>
+    
+    <select id="querySettleProductCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+	    select 
+    	count(1)
+    	from
+    	(
+    	(select a.product_id,a.product_name,a.borrow_month_duration,a.borrow_day_duration,a.borrow_interest_rate ,a.borrow_money,a.deadline,a.repayment_type,t.real_return_date,a.borrow_uid,a.borrow_status
+		from ld_index_product a
+		LEFT JOIN (SELECT MAX(real_return_date)real_return_date,product_id FROM ld_repayement_detail GROUP BY product_id) t
+		ON a.product_id = t.product_id)
+    	union all
+	    (select a.product_id,a.product_name,a.borrow_month_duration,a.borrow_day_duration,a.borrow_interest_rate ,a.borrow_money,a.deadline,a.repayment_type,t.real_return_date,a.borrow_uid,a.borrow_status
+		from ld_yingxiang_product a
+		LEFT JOIN (SELECT MAX(real_return_date)real_return_date,product_id FROM ld_repayement_detail GROUP BY product_id) t
+		ON a.product_id = t.product_id)
+		)tt
+		<where>
+		tt.borrow_uid = #{uid} and tt.borrow_status = 8
+ 			<if test="day!=null and day!=''">
+ 				<![CDATA[ AND DATE(tt.real_return_date) >= CURDATE() and DATE(tt.real_return_date) <= DATE_ADD(CURDATE(), INTERVAL 24 HOUR) ]]>
+ 			</if>
+			<if test="week!=null and week!=''">
+		     <![CDATA[	and tt.real_return_date <= date_add(NOW(), interval 1 week) ]]>
+			</if>
+			<if test="month!=null and month!=''">
+		     <![CDATA[	and tt.real_return_date <= date_add(NOW(), interval 1 month) ]]>
+			</if>
+			<if test="otherMonth!=null and otherMonth!=''">
+		     <![CDATA[	and tt.real_return_date <= date_add(NOW(), interval 3 month) ]]>
+			</if>
+		</where>
+    </select>
+    
+    <select id="sumBorrowPlanById"  parameterType="java.util.Map" resultMap="borrowPlanSumResult">
+    	select SUM(capital) sumCapital,SUM(interest) sumInterest from ld_borrow_plan  where id in  
+		 <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">  
+		  #{item}  
+		 </foreach> 
+    </select>
+    <select id="queryNextPaymentTime" parameterType="java.lang.Integer" resultType="java.util.Date">
+    	select repayment_time from ld_repayement_detail t where t.status=1 and investor_uid=#{investorUid} ORDER BY repayment_time ASC LIMIT 1;
+    </select>
+    <select id="queryPaymentTime" parameterType="java.util.Map" resultMap="borrowPlanResult">
+	    select lvr.capital,lvr.status,lvr.product_id,lvr.repayment_time,IFNULL(lvr.product_name,lvp.product_name) as product_name 
+		from Ld_view_repayment as lvr 
+		LEFT JOIN ld_view_product_info as lvp on lvr.product_id = lvp.product_id
+		where lvr.investor_uid = #{investorUid} and <![CDATA[ repayment_time>=date(#{firstDate}) and repayment_time <= DATE_ADD(date(#{firstDate}), INTERVAL #{countDay} DAY) ]]>
+		order by repayment_time asc
+    </select>
+    <select id="queryBorrowPlanByUid" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+    	select count(1) from ld_borrow_plan where borrow_uid = #{borrowUid}
+    </select>
+    <select id="queryTotalMoney" parameterType="java.util.Map" resultType="BigDecimal">
+    	select sum(capital+interest) as totalMoney from ld_borrow_plan where product_id = #{productId} and borrow_uid = #{borrowUid};
+    </select>
+</mapper>

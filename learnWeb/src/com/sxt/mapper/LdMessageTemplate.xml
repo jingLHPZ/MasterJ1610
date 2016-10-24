@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.ILdMessageTemplate">
+	 <insert id="add" parameterType="LdMessageTemplate" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO ld_message_template
+		(uid,message_content,status,update_time,create_time,type,message_type)
+		VALUE (#{uid},#{messageContent},#{status},#{updateTime},#{createTime},#{type},#{messageType})
+	</insert>
+	<resultMap type="LdMessageTemplate" id="messageMap">
+		<id property="id" column="id"/>
+		<result property="uid" column="uid"/>
+		<result property="messageContent" column="message_content"/>
+		<result property="status" column="status"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="createTime" column="create_time"/>
+		<result property="type" column="type"/>
+		<result property="messageType" column="message_type"/>
+	</resultMap>
+	<select id="queryMessageTemplateList" parameterType="Integer" resultMap="messageMap">
+		select * from ld_message_template where message_type=#{messageType}
+	</select>
+	<select id="findMessageTemplate" parameterType="LdMessageTemplate" resultMap="messageMap">
+		select * from ld_message_template where 1=1
+		<if test="type != null"> and type=#{type}</if>
+		<if test="messageType != null"> and message_type=#{messageType}</if>
+	</select>
+	<delete id="del" parameterType="Integer">
+		delete from ld_message_template where message_type=#{messageType}
+	</delete>
+</mapper>

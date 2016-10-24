@@ -1,0 +1,59 @@
+.record_cz{ width: 895px; height: 80px; float: left; margin: 20px;}
+.record_cz p{ float: left; height: 80px; width: auto; overflow: hidden; line-height: 80px; min-width: 400px; background: #f8f8f8; color: #727272; padding: 0 20px;}
+.record_cz p b{font-weight: bold; color: #0d0d0d; margin:0 10px 0 10px; font-size: 16px;}
+.record_cz a{ width: 120px; height: 38px; display: inline-block; float: left; margin: 21px 0;}
+.record_cz .cz_href{ background: url(../img/btn/cz.png) top left no-repeat; margin-left: 60px;}
+.record_cz .cz_href:hover{ background: url(../img/btn/cz_h.png) top left no-repeat;}
+.record_cz .tx_href{ background: url(../img/btn/tx.png) top left no-repeat; margin-left: 40px;}
+.record_cz .tx_href:hover{ background: url(../img/btn/tx_h.png) top left no-repeat;}
+
+.cz_title{ width: 895px; height: 45px; background: #e6e6e6; float: left; margin:0 20px;}
+.cz_title a{ width: 120px; height: 45px; line-height: 45px; display: inline-block; text-align: center; color: #727272; font-weight: bold; float: left;}
+.cz_title a:hover{background: #f8f8f8;}
+.cz_title .cz_ti_h{background: #f8f8f8;}
+
+.czje_bod{width: 895px; height: auto; overflow: hidden; background: #f8f8f8; float: left; margin:0 20px;}
+.czje_bod .screen_cont{height: auto;width: auto;margin: 20px 0 20px 32px;line-height: 24px;color: #727272;}
+.czje_bod .screen_cont .screen_time{width: 155px;height: 24px;line-height: 24px;display: inline-block;vertical-align: middle;}
+.czje_bod .screen_cont .screen_time input{width: 125px;height: 100%;padding: 0px 5px 0px 25px;float: left;text-align: left;border: none!important;background: #ffe8d4 url(../img/icon/time_screen.png) 4px 4px no-repeat;cursor: pointer;border-radius: 3px;font-weight: 500;}
+.czje_bod .screen_cont .screen_btn{height: 24px;width: 50px;line-height: 22px;margin-left: 10px;border-radius: 3px;border: none;color: #FFFFFF;display: inline-block;vertical-align: middle;text-align: center;background: #fca703;}
+.czje_bod .screen_cont .screen_btn:hover{background: #D18C09;}
+
+.cz_tab{ width: 100%;}
+.cz_tab th{ height: 40px; line-height: 40px; color: #b3b3b3; font-weight: 100; text-align: center;}
+.cz_tab td{height: auto; line-height: 20px;padding: 7px 0; color: #727272; text-align:center;}
+.cz_tab td span{ color: #f49742;}
+.cz_tab tr:hover{ background: #fffcf6;}
+.txje_bod{width: 895px; height: auto; overflow: hidden; background: #f8f8f8; float: left; margin:0 20px; display: none;}
+.txje_bod tr td label{line-height: 20px;}
+.txje_bod tr td p{font-size: 12px;line-height: 16px;}
+.txje_bod tr td .success{color: #727272;}
+.txje_bod tr td .waiting{color: #30bcf6;}
+.txje_bod tr td .not_pass{color: #fe3f3b;}
+.txje_bod tr td .pass{color: #64bc3b;}
+.txje_bod tr td a{color: #fbb341;}
+
+.czje_pg{ width: 895px; height: 30px; float: left; margin: 20px; text-align:center;}
+
+/*撤销提现弹窗*/
+.revoke_mask{display:none;height:100%;width:100%;left:0;top:0;position:fixed;background:transparent url(../img/icon/tb_1_1.png) repeat scroll left top}
+.revoke_mask .revoke_bod{width:440px;height:auto;min-height:245px;position:fixed;top:50%;left:50%;margin: -125px 0 0 -220px;background-color:#fff}
+.revoke_mask .revoke_bod h2{height:40px;width:100%;text-align:center;font-size:16px;color:#FFF;line-height:40px;background-color:#fd6860;position:relative;padding-right:30px;box-sizing:border-box;text-indent:20px}
+.revoke_bod h2 div{height:20px;width:20px;position:absolute;right:10px;top:10px;cursor:pointer;background:#fd6860 url(../img/icon/chacha.png) no-repeat scroll left top/20px 20px}
+.revoke_bod h2 div:hover{background:#fd6860 url(../img/icon/chacha_h.png) no-repeat scroll left top/20px 20px}
+.revoke_bod>div{height:200px;text-align:center;border-top:solid 1px transparent}
+.revoke_bod .page_1 h3{height:40px;line-height:40px;margin-top:35px;font-size:16px;letter-spacing:1px}
+.revoke_bod .page_1 h3 span{color:#fe4754}
+.revoke_bod .page_1 p{height:30px;line-height:30px;font-size:12px;color:#7e7e7e;letter-spacing:1px}
+.revoke_bod>div input{width:127px;height:37px;line-height:37px;color:#fff;background-color:#fd6860;letter-spacing:1px;cursor:pointer;border:none;border-radius:3px}
+.revoke_bod>div input:hover{background-color:#E06059}
+.revoke_bod .page_1 input{margin:28px 18px 0 114px;float:left}
+.revoke_bod .page_1 a{height:37px;line-height:37px;color:#fd6860;float:left;margin-top:28px;letter-spacing:1px;cursor:pointer}
+.revoke_bod .page_1 a:hover{color:#E06059}
+.revoke_bod .page_2{display:none}
+.revoke_bod .page_2 h1{height:40px;line-height:40px;font-size:24px;font-weight:700;color:#69665f;margin:48px 0 0 0;letter-spacing:2px}
+.revoke_bod .page_2 input{margin:35px auto 0}
+
+.revoke_bod .page_1 #confirm{margin: 28px auto 0;float: none;}
+
+

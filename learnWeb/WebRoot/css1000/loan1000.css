@@ -1,0 +1,48 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+*{transition-property: width,margin,padding,background-position,height;}
+body .loan_main {
+    width: 970px;
+}
+body .loan_main .loan_mk_tit{
+	margin: 50px 185px;
+}
+body .loan_smszb .smszb_d1,
+body .loan_smszb .smszb_d3 {
+    width: 970px;
+    padding: 20px 0px 0px 50px;
+    background-position: 550px 20px;
+    box-sizing: border-box;
+}
+body .loan_smszb .smszb_d2 {
+    width: 420px;
+    padding: 20px 0px 0px 550px;
+    background-position: 80px 50px;
+}
+body .loan_cp .loan_zyd {
+    width: 870px;
+    margin: 0px 50px 60px;
+}
+body .loan_cp .loan_zyd ul {
+    width: 330px;
+}
+body .loan_lc .loan_lc_bg {
+    height: 190px;
+    background-size: 940px;
+}
+body .loan_sqdk a{
+	margin-left: 330px;
+}
+
+/*弹窗*/
+body .zyd_bod .zyd_main{
+	width: 680px;
+	margin-left: -370px;
+}
+body .zyd_main h1 {
+    width: 580px;
+}
+body .zyd_main .zyd_font {
+    width: 660px;
+}
+
+}

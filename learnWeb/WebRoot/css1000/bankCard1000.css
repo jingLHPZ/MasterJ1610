@@ -1,0 +1,56 @@
+@media screen and (min-width:1020px) and (max-width:1290px){
+
+.right_main .bankC_bod .ban_e {
+    height: 100px;
+    line-height: 100px;
+    width: 100%;
+    text-indent: 5px;
+}
+.right_main .bankC_yz li h2 {
+    text-indent: 310px;
+}
+.right_main .bankC_yz li h3 {
+    text-indent: 310px;
+}
+.right_main .bankC_yz li label {
+    width: 260px;
+}
+.right_main .bankC_yz li .yz_btn1 {
+    margin: 20px 10px 0px 265px;
+}
+.right_main .add_bc .addb_bod {
+    width: 660px;
+    height: auto;
+    min-height: 530px;
+    margin: -265px 0px 0px -330px;
+}
+.right_main .add_bc ul {
+    width: 580px;
+    margin-left: 80px;
+}
+	
+/*重置密码弹窗*/
+body .Szzf_password .szp_bod {
+    width: 500px;
+    margin-left: -250px;
+}
+body .Szzf_password .szp_bod .szp_mmk {
+    margin: 0px 115px;
+}
+body .Szzf_password .szp_bod .szp_btn {
+    margin-left: 115px;
+}
+body .Szzf_password .szp_bod .szp_alert{
+	margin-left: 115px;
+}
+
+/*找回交易密码弹窗*/
+body .zhjy_body{
+	width: 400px;
+}
+body .zhjy_body ul li label{
+	width: 115px;
+}
+
+
+}

@@ -1,0 +1,240 @@
+
+html,body{ margin: 0; padding: 0; font-family: "微软雅黑"; font-size: 14px;}
+body .right_main{
+	width: 846px;
+	padding: 10px 50px 0 38px;
+}
+.right_main .cont{
+	width: 100%;
+}
+.cont h2{
+	height: 65px;
+	line-height: 65px;
+	font-size: 18px;
+}
+.cont .statistic{
+	width: 100%;
+}
+.statistic ul{
+	float: left;
+	width: 610px;
+	padding: 0 20px;
+	border-top: solid 3px #fac6b4;
+	border-bottom: solid 1px #fac6b4;
+}
+.statistic ul li{
+	height: 107px;
+	float: left;
+}
+.statistic ul .first{
+	width: 220px;
+}
+.statistic ul .last{
+	width: auto;
+	text-align: right;
+	float: right;
+}
+.statistic ul li h4{
+	line-height: 20px;
+	padding: 18px 0;
+	color: #a3a7b6;
+}
+.statistic ul li p{
+	line-height: 26px;
+}
+.statistic ul li p em{
+	font-size: 24px;
+	font-weight: 600;
+	color: #ef4810;
+}
+.statistic ul li p b{
+	font-size: 24px;
+}
+.statistic ul li p small{
+	font-size: 14px;
+	font-weight: 100;
+}
+.statistic .right_cont{
+	float: right;
+	height: 111px;
+}
+.statistic .right_cont a{
+	display: block;
+	cursor: pointer;
+	text-align: center;
+	font-size: 16px;
+	border-radius: 4px;
+}
+.statistic .right_cont .apply{
+	height: 42px;
+	width: 136px;
+	line-height: 42px;
+	color: #ffffff;
+	background: #ef4810;
+}
+.statistic .right_cont .apply:hover{
+	background: #B1340A;
+}
+.statistic .right_cont .redeem{
+	height: 40px;
+	width: 134px;
+	line-height: 40px;
+	margin-top: 27px;
+	color: #0d0d0d;
+	border: solid 1px #000000;
+}
+.statistic .right_cont .redeem:hover{
+	background: #B9B9B9;
+}
+
+.lists{
+	width: 100%;
+	margin-top: 40px;
+	padding-top: 3px;
+}
+.lists .title{
+	padding-top: 25px;
+	border-bottom: solid 2px #caccd7;
+}
+.lists .title ul{
+	float: left;
+}
+.lists .title ul li{
+	height: 40px;
+	line-height: 40px;
+	float: left;
+	padding: 0 38px;
+	font-size: 16px;
+	border-bottom: solid 2px transparent;
+	position: relative;
+	bottom: -2px;
+	cursor: pointer;
+}
+.lists .title ul li:hover{
+	border-bottom-color: #ef4810;
+}
+.lists .title ul .active{
+	border-bottom-color: #ef4810;
+}
+.lists .title ul li:after{
+	content: "";
+	display: block;
+	height: 16px;
+	width: 1px;
+	position: absolute;
+	right: 0;
+	top: 12px;
+	background: #a3a7b6;
+}
+.lists .title ul .last:after{
+	content: none;
+}
+.lists .title p{
+	height: 40px;
+	line-height: 40px;
+	float: right;
+}
+.lists .title p em{
+	font-size: 18px;
+}
+.lists .screen{
+	padding: 32px;
+	line-height: 28px;
+}
+.lists .screen label{
+	float: left;
+	color: #aeb1c0;
+}
+.lists .screen input{
+	height: 26px;
+	width: 120px;
+	padding: 0 5px;
+	margin: 0 3px;
+	border-radius: 4px;
+	border: solid 1px #a3a7b6;
+	float: left;
+}
+.lists .screen select{
+	width: 65px;
+	height: 26px;
+	margin: 0 5px;
+	border: solid 1px #a3a7b6;
+	border-radius: 4px;
+	float: left;
+}
+.lists .screen a{
+	display: block;
+	width: 65px;
+	height: 26px;
+	float: left;
+	line-height: 26px;
+	margin: 0 10px;
+	border: solid 1px #ef4810;
+	color: #ef4810;
+	border-radius: 4px;
+	text-align: center;
+	cursor: pointer;
+}
+.lists .screen a:hover{
+	color: #ffffff;
+	background: #ef4810;
+}
+.table_cont{
+	width: 100%;
+	display: none;
+}
+.table_cont.active{
+	display: block;
+}
+.table_cont .media_table_cont{
+	width: 100%;
+}
+.table_cont table{
+	width: 100%;
+}
+.table_cont table tr th{
+	background: #dcdde1;
+	line-height: 20px;
+	padding: 5px 0;
+	font-weight: 100;
+	font-size: 14px;
+	text-align: left;
+}
+.table_cont table tr th:first-child{
+	padding-left: 32px;
+}
+.table_cont table tr td{
+	line-height: 20px;
+	padding: 8px 0;
+	font-size: 14px;
+	text-align: left;
+}
+.table_cont table tr td:first-child{
+	padding-left: 32px;
+}
+.table_cont table tbody tr:nth-child(2n) td{
+	background: #ececec;
+}
+.table_cont table tbody tr:nth-child(2n+1) td{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.table_cont table tr .status span{
+	display: none;
+}
+.table_cont table tr .status .active{
+	display: block;
+}
+.table_cont table tr .status .success_s{
+	color: #2c9cd6;
+}
+.table_cont table tr .status .fail_s{
+	color: #ef4810;
+}
+.inves_pg {
+    width: 100%;
+    height: 30px;
+    float: right;
+    margin: 40px 0px 20px;
+    text-align: center;
+}

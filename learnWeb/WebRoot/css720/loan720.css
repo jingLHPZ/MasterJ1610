@@ -1,0 +1,180 @@
+@media only screen and (max-width:769px),only screen and (max-device-width:769px){
+
+*{transition-property: width,margin,padding,background-position,height;}
+body .loan_main {
+    width: 100%;
+	box-sizing: border-box;
+}
+body .loan_banner .lo_list .lo_list_title{
+	display: none;
+}
+body .loan_banner{
+	height: 232px;
+	background-image: none;
+	background-color: #ffffff;
+}
+body .loan_zbdg{
+	display: none;
+}
+body .loan_banner .lo_list {
+    width: 90%;
+    height: auto;
+    margin: 0px auto;
+    float: none;
+    margin-top: 20px;
+}
+body .loan_banner .lo_list li input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgb(41, 31, 31);
+}
+body .loan_banner .lo_list .lo_list_yzm .reg_sx{
+	float: left;
+	margin-left: 5px;
+}
+body .loan_main .loan_mk_tit {
+    width: 90%;
+    margin: 25px 5%;
+}
+body .loan_main .loan_mk_tit h3 {
+    display: block;
+    margin: 0 auto;
+}
+body .loan_smszb .smszb_d1{
+	height: auto;
+	width: 100%;
+	padding: 0px;
+	margin: 20px 0;
+	background-size: 80% auto;
+	background-position: center top;
+}
+body .loan_smszb .smszb_d2{
+	height: auto;
+	width: 100%;
+	padding: 0px;
+	margin: 20px 0;
+	background-size: 80% auto;
+	background-position: center top;
+}
+body .loan_smszb .smszb_d3{
+	height: auto;
+	width: 100%;
+	padding: 0px;
+	margin: 20px 0;
+	background-size: 65% auto;
+	background-position: center top;
+}
+body .loan_smszb h4 {
+    width: 90%;
+    margin-top: 200px;
+    margin-left: 5%;
+}
+body .loan_smszb ul {
+    width: 100%;
+}
+body .loan_smszb ul li {
+    width: 92%;
+    height: auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0 4%;
+}
+/*为什么选择学呗*/
+body .loan_why ul li img{
+	display: none;
+}
+body .loan_why ul li{
+	width: 80%;
+	float: none;
+	margin: 0 auto;
+	border-bottom: solid 1px #F6F4F4;
+	padding: 10px 0;
+}
+body .loan_why ul li p{
+	margin-bottom: 0;
+}
+/*我们的产品*/
+body .loan_cp .loan_zyd{
+	width: 100%;
+	margin: 0;
+}
+body .loan_cp .loan_zyd{
+	height: auto;
+	width: 100%;
+	padding: 0px;
+	margin: 0;
+	background-size: 65% auto;
+	background-position: center top;
+}
+body .loan_cp .loan_zyd h4{
+	width: 100%;
+	float: none;
+	text-align: center;
+	margin: 0;
+	margin-top: 170px;
+}
+body .loan_cp .loan_zyd ul{
+	width: 92%;
+	margin: 0 4%;
+}
+body .loan_cp .loan_zyd ul li{
+	height: auto;
+	width: 100%;
+	box-sizing: border-box;
+}
+body .loan_cp .loan_zyd a{
+	height: 40px;
+	line-height: 40px;
+	width: 88%;
+	margin: 10px 6%;
+}
+body #zb_4{
+	display: none;
+}
+body .loan_sqdk a{
+	height: 46px;
+	line-height: 46px;
+	width: 88%;
+	margin: 15px 6%;
+}
+
+/*弹窗*/
+body .zyd_bod .zyd_main {
+    width: 100%;
+    height: 60%;
+    padding: 60px 15px 15px;
+    box-sizing: border-box;
+    top: initial;
+    left: 0;
+    margin: 0;
+    bottom: 0;
+}
+body .zyd_main h1 {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 40px;
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 24px;
+}
+body .zyd_main .zyd_clos{
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	margin: 0;
+}
+body .zyd_main .zyd_font {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+    overflow: auto;
+    margin: 0;
+    box-sizing: border-box;
+}
+body .zyd_main .zyd_font p{
+	margin-top: 20px;
+}
+
+}

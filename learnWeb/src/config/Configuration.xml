@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="MemberInfo" type="com.sxt.models.MemberInfo" />
+		<typeAlias alias="Memberlogin" type="com.sxt.models.Memberlogin" />
+
+		<typeAlias alias="MemberMoneyDetail" type="com.sxt.models.MemberMoneyDetail" />
+		<typeAlias alias="MemberMoney" type="com.sxt.models.MemberMoney" />
+
+		<typeAlias alias="MemberPay" type="com.sxt.models.MemberPay" />
+		<typeAlias alias="MemberWithdraw" type="com.sxt.models.MemberWithdraw" />
+
+		<typeAlias alias="Members" type="com.sxt.models.Members" />
+		<typeAlias alias="Message" type="com.sxt.models.Message" />
+
+		<typeAlias alias="PersistentLogins" type="com.sxt.models.PersistentLogins" />
+		<typeAlias alias="RepaymentRecord" type="com.sxt.models.RepaymentRecord" />
+
+		<typeAlias alias="CiProduct" type="com.sxt.models.CiProduct" />
+		<typeAlias alias="CiProductDetail" type="com.sxt.models.CiProductDetail" />
+
+		<typeAlias alias="EiProductDetail" type="com.sxt.models.EiProductDetail" />
+		<typeAlias alias="EiProduct" type="com.sxt.models.EiProduct" />
+
+		<typeAlias alias="SiProductDetail" type="com.sxt.models.SiProductDetail" />
+		<typeAlias alias="SiProduct" type="com.sxt.models.SiProduct" />
+		
+		<typeAlias alias="PeProductDetail" type="com.sxt.models.PeProductDetail" />
+		<typeAlias alias="PeProduct" type="com.sxt.models.PeProduct" />
+
+		<typeAlias alias="StableProductDetail" type="com.sxt.models.StableProductDetail" />
+		<typeAlias alias="StableProduct" type="com.sxt.models.StableProduct" />
+
+		<typeAlias alias="SurplusProductDetail" type="com.sxt.models.SurplusProductDetail" />
+		<typeAlias alias="SurplusProduct" type="com.sxt.models.SurplusProduct" />
+
+		<typeAlias alias="Uid" type="com.sxt.models.Uid" />
+	
+		<typeAlias alias="LdMessageTemplate" type="com.sxt.models.LdMessageTemplate" />
+		<typeAlias alias="LdMessageLog" type="com.sxt.models.LdMessageLog" />
+		<typeAlias alias="TmobileVerifyCode" type="com.sxt.models.LdMobileVerifyCode" />
+	
+		
+		<typeAlias alias="SumMoney" type="com.sxt.models.SumMoney"/>
+		<typeAlias alias="InvestorMoney" type="com.sxt.models.InvestorMoney"/>
+		<typeAlias alias="BorrowPlan" type="com.sxt.models.BorrowPlan"/>
+		<typeAlias alias="MemberBorrow" type="com.sxt.models.MemberBorrow"/>
+		<typeAlias alias="RepaymentDetail" type="com.sxt.models.RepaymentDetail"/>
+		
+		<typeAlias alias="RewardRecord" type="com.sxt.models.RewardRecord"/>
+		<typeAlias alias="BankInfo" type="com.sxt.models.BankInfo"/>
+		<typeAlias alias="LdMemberContactInfo" type="com.sxt.models.LdMemberContactInfo"/>
+		
+		
+		<typeAlias alias="NewHandProductDetail" type="com.sxt.models.NewHandProductDetail" />
+		<typeAlias alias="NewHandProduct" type="com.sxt.models.NewHandProduct" />
+		
+		<typeAlias alias="NewsNotice"   type="com.sxt.models.NewsNotice"/>
+		<typeAlias alias="NewsInformation"   type="com.sxt.models.NewsInformation"/>
+		
+		
+		<typeAlias alias="ExperienceProductDetail" type="com.sxt.models.ExperienceProductDetail" />
+		<typeAlias alias="ExperienceProduct" type="com.sxt.models.ExperienceProduct" />
+		
+		<typeAlias alias="MemberScoreDetail" type="com.sxt.models.LdMemberScoreDetail" />
+		<typeAlias alias="MemberRecommenderDetail" type="com.sxt.models.MemberRecommenderDetail" />
+		
+		<typeAlias alias="MemberExperienceGoldDetail" type="com.sxt.models.MemberExperienceGoldDetail"/>
+		<typeAlias alias="LdParameter" type="com.sxt.models.LdParameter"/>
+		<typeAlias alias="LdRewardRecord" type="com.sxt.models.LdRewardRecord"/>
+		<typeAlias alias="LdCheckUserNameLog" type="com.sxt.models.LdCheckUserNameLog"/>
+		<typeAlias alias="LdUserSignInLog" type="com.sxt.models.LdUserSignInLog"/>
+		<typeAlias alias="LdLuckyDraw" type="com.sxt.models.LdLuckyDraw"/>
+		<typeAlias alias="MemberReward" type="com.sxt.models.MemberReward"/>
+		<typeAlias alias="LdProductContract" type="com.sxt.models.LdProductContract"/>
+		<typeAlias alias="LdMcTransactionDetail" type="com.sxt.models.LdMcTransactionDetail"/>
+		<typeAlias alias="LdMemberCertificateCheck" type="com.sxt.models.LdMemberCertificateCheck"/>
+		
+		<typeAlias alias="LdRewardCode" type="com.sxt.models.LdRewardCode"/>
+		<typeAlias alias="LdRewardType" type="com.sxt.models.LdRewardType"/>
+		<typeAlias alias="LdMemberPidInfo" type="com.sxt.models.LdMemberPidInfo"/>
+		<!-- dto -->
+		<typeAlias alias="InvestRecordDto" type="com.sxt.inter.dto.InvestRecordDto"/>
+		<typeAlias alias="IndexProductDto" type="com.sxt.inter.dto.IndexProductDto"/>
+		<typeAlias alias="AssignmentDebtDto" type="com.sxt.inter.dto.AssignmentDebtDto"/>
+		<typeAlias alias="BorrowPlanDto" type="com.sxt.inter.dto.BorrowPlanDto"/>
+		<typeAlias alias="Questionnaire" type="com.sxt.models.Questionnaire"/>
+		<typeAlias alias="LdMemberBankCardInfo" type="com.sxt.models.LdMemberBankCardInfo"/>
+		<typeAlias alias="LdAllInPayTransactionDetail" type="com.sxt.models.LdAllInPayTransactionDetail"/>
+		<typeAlias alias="CashTransit" type="com.sxt.models.CashTransit"/>
+		<typeAlias alias="CashAccountDetailDto" type="com.sxt.models.CashAccountDetailDto"/>
+		<typeAlias alias="CashAccount" type="com.sxt.models.CashAccount"/>
+		<typeAlias alias="CashProduct" type="com.sxt.models.CashProduct"/>
+		<typeAlias alias="IncomeRate" type="com.sxt.models.IncomeRate"/>
+		<typeAlias alias="LdYingxiangProduct" type="com.sxt.models.LdYingxiangProduct"/>
+		<typeAlias alias="LdYingxiangProductDetail" type="com.sxt.models.LdYingxiangProductDetail"/>
+		<typeAlias alias="LdProductExtendInfo" type="com.sxt.models.LdProductExtendInfo" />
+		<typeAlias alias="LdRiskImage" type="com.sxt.models.LdRiskImage" />
+		<typeAlias alias="LdMemberFirstAward" type="com.sxt.models.LdMemberFirstAward" />
+		<typeAlias alias="OffProductTransaction" type="com.sxt.models.OffProductTransaction" />
+		
+		
+		<typeAlias alias="LdSaleProxyProduct" type="com.sxt.models.LdSaleProxyProduct" />
+		<typeAlias alias="LdSaleProxyBorrowInvest" type="com.sxt.models.LdSaleProxyBorrowInvest" />
+		<typeAlias alias="LdSaleProxyMembers" type="com.sxt.models.LdSaleProxyMembers" />
+		<typeAlias alias="LdSaleProxyMerchant" type="com.sxt.models.LdSaleProxyMerchant" />
+		<typeAlias alias="PeProductOffInfo" type="com.sxt.models.PeProductOffInfo" />
+		<typeAlias alias="SbProductOffInfo" type="com.sxt.models.SbProductOffInfo" />
+		
+		<typeAlias alias="LdProductAppointmentInfo" type="com.sxt.models.LdProductAppointmentInfo" />
+		<typeAlias alias="LdProductOffInfo" type="com.sxt.models.LdProductOffInfo" />
+	</typeAliases>
+</configuration>

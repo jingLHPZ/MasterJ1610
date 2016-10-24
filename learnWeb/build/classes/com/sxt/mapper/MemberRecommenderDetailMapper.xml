@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.IMemberRecommenderDetail">
+	<resultMap type="MemberRecommenderDetail" id="memberrecommenderdetaillist">
+		<id property="id" column="id"/>
+		<result property="uid" column="uid"/>
+		<result property="mobilephone" column="mobile_phone"/>
+		<result property="mobilephone2" column="mobile_phone2"/>
+		<result property="info" column="info"/>
+		<result property="createtime" column="create_time"/>
+		<result property="investorNum" column="investorNum"/>
+		<association property="members" javaType="Members" resultMap="membersresult" />
+	</resultMap>
+	<resultMap type="Members" id="membersresult">
+		<result property="userName" column="user_name" />
+		<result property="regTime" column="reg_time" />
+		<result property="isRealName" column="is_real_name" />
+	</resultMap>
+	<select id="fQueryRecordByUid" parameterType="map" resultMap="memberrecommenderdetaillist">
+		SELECT r.*,m.user_name,m.reg_time,m.is_real_name,
+		(select count(*) from ld_borrow_investor where investor_uid=m.uid and product_type!=2) as investorNum	
+		 FROM ld_member_recommender_detail r
+		 left join ld_members m on m.user_phone=r.mobile_phone2
+		 WHERE 1=1
+		<if test="uid != null"> and r.uid=#{uid}</if>
+		<if test="mobile_phone2 != null"> and r.mobile_phone2=#{mobile_phone2}</if>
+		limit #{startRow},#{pageSize}
+	</select>
+	<select id="fQueryRecordByMap" parameterType="map" resultMap="memberrecommenderdetaillist">
+		SELECT * FROM ld_member_recommender_detail  WHERE 1=1
+		<if test="uid != null"> and uid=#{uid}</if>
+		<if test="mobile_phone2 != null"> and mobile_phone2=#{mobile_phone2}</if>
+	</select>
+	<select id="fCountRecord" parameterType="int" resultType="int">
+		SELECT count(1) FROM ld_member_recommender_detail  WHERE uid=#{uid}
+	</select>
+	 <insert id="add" parameterType="MemberRecommenderDetail" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO ld_member_recommender_detail
+		(uid,mobile_phone,mobile_phone2,info,create_time)
+		VALUE (#{uid},#{mobilephone},#{mobilephone2},#{info},#{createtime})
+	</insert>
+	
+	<select id="queryRecommenderUid" parameterType="map" resultType="map">
+		select uid from ld_member_recommender_detail where 1=1
+		<if test="startTime != null">
+			and create_time &gt;=#{startTime}
+		</if>
+		<if test="endTime != null">
+			and create_time &lt;#{endTime}
+		</if>
+		group by uid
+	</select>
+</mapper>

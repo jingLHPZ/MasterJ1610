@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sxt.inter.ICash" >
+  <resultMap id="cashAccount" type="CashAccount" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="account_money" property="accountMoney" jdbcType="DECIMAL" />
+    <result column="cash_freeze" property="cashFreeze" jdbcType="DECIMAL" />
+    <result column="cash_income" property="cashIncome" jdbcType="DECIMAL" />
+    <result column="cash_yester_income" property="cashYesterIncome" jdbcType="DECIMAL" />
+    <result column="cash_status" property="cashStatus" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <select id="getCashAccountByUid" resultMap="cashAccount" parameterType="java.lang.Integer" >
+    select 
+    id, uid, account_money, cash_freeze, cash_income, cash_yester_income, cash_status, create_time, update_time
+    from ld_cash_account
+    where uid = #{uid,jdbcType=INTEGER}
+  </select>
+  <select id="getTotalUsers" resultType="java.lang.Integer">
+  	select count(1) from ld_cash_account
+  </select>
+  <select id="getTotalIncome" resultType="java.math.BigDecimal">
+  	select sum(cash_income) from ld_cash_account
+  </select>
+</mapper>

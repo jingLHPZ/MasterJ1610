@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.inter.ILdMemberContactInfo">
+	<resultMap type="LdMemberContactInfo" id="contactInfoMap">
+		<result property="uid" column="uid"/>
+		<result property="address" column="address"/>
+		<result property="uid" column="uid"/>
+		<result property="contact1" column="contact1"/>
+		<result property="contact1Re" column="contact1_re"/>
+		<result property="contact1Tel" column="contact1_tel"/>
+		<result property="memo" column="memo"/>
+		<result property="createTime" column="create_time"/>
+		<result property="updateTime" column="update_time"/>
+	</resultMap>
+	<select id="getContactInfo" parameterType="Integer" resultMap="contactInfoMap">
+		select * from ld_member_contact_info where uid=#{uid}
+	</select>
+	<insert id="add" parameterType="LdMemberContactInfo">
+		INSERT INTO
+		ld_member_contact_info(uid,address,tel,contact1,contact1_re,contact1_tel,memo,create_time,update_time)
+		VALUES(#{uid},#{address},#{tel},#{contact1},#{contact1Re},#{contact1Tel},#{memo},#{createTime},#{updateTime});
+	</insert>
+	<update id="update" parameterType="LdMemberContactInfo">
+		UPDATE ld_member_contact_info
+		<set>
+			<if test="contact1 != null ">contact1 = #{contact1},</if>
+			<if test="contact1Re != null ">contact1_re = #{contact1Re},</if>
+			<if test="contact1Tel != null ">contact1_tel = #{contact1Tel}</if>
+		</set>
+		WHERE uid = #{uid}
+	</update> 
+</mapper>

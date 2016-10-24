@@ -1,0 +1,79 @@
+@media screen and (min-width:770px) and (max-width:1019px){
+	body{width: 100%;}
+	*{transition: width .2s ease-out;}
+	.login_top .login_bod {width: 720px;}
+	.login_bod>div{ background-image: url(../img/icon/logo.png);width: 315px;background-position: 0px;}
+	.login_top .login_bod p {padding-left: 20px;margin-left: 20px;}
+	
+	.reg_pw_altop .reg_inp_1::-webkit-input-placeholder { color:transparent; }
+	.reg_pw_altop .reg_inp_1::-moz-placeholder { color:transparent; } 
+	.reg_pw_altop .reg_inp_1:-ms-input-placeholder { color:transparent; } 
+	.reg_pw_altop .reg_inp_1:-moz-placeholder { color:transparent; }
+	.reg_pw_altop .reg_inp_1::-webkit-input-placeholder { color:transparent; }
+	
+	body .register{
+		width: 720px;
+	}
+	
+	
+	.register .reg_main{
+		width: 720px;
+	}
+	.register .reg_ti_list {
+		float: none;
+		margin: 0 auto 30px;
+	}
+	.register .reg_bz li label{
+		width: 230px;
+	}
+	.register .reg_bz .reg_pw_alert{
+		text-indent: 238px;
+	}
+	.register .reg_bz .reg_pw_bod ul{
+		margin-left: 238px;
+	}
+	.register .reg_btn_check .chec_xy{
+		margin-left: 238px;
+	}
+	.register .reg_bz .reg_btn_next a{
+		margin-left: 238px;
+	}
+	.register .reg_bz .reg_btn_next .rb_no{
+		margin-left: 238px;
+	}
+	
+	.register .reg_3 .reg_img{
+		width: 230px;
+		padding-right: 30px;
+		margin-left: 100px;
+	}
+	.register .reg_3 p {
+	    width: 230px;
+	    height: 230px;
+	    float: left;
+	    text-align: center;
+	    margin-left: 30px;
+	}
+	
+	
+	
+	/*footer*/
+	body .log_ys{
+		height: 80px;
+	}
+	body .log_ys ul{
+		width: 720px;
+	}
+	body .log_ys ul li {
+	    width: 142px;
+	    padding-left: 95px;
+		background-size: 80px 80px!important;
+	    margin-left: 2px;
+	}
+	body .log_ys li h3 {
+	    margin: 3px 0px 10px;
+	}
+	body .log_ys li p {
+	    width: 90%;
+	}
+}

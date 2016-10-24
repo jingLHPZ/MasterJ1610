@@ -1,0 +1,114 @@
+.detal{padding-bottom:50px;background:#edf1f1;color:#505050}
+.detal .container{position: relative;}
+.detal .dt_left{width:865px;height:auto;min-height: 500px;overflow: hidden;padding:0;text-align: center;border-right:solid 1px #e3e2d1;background:#fff;float:left}
+.detal .dt_left img{height:auto;margin-top:-4px;max-width:100%}
+.detal .dt_right{height:auto;width:241px;padding:0 30px;border:solid 1px #f6f5e2;background:#fffeeb;color:#0D0D0D;float:left;position: absolute;right: 0;top: 0;}
+.dt_right .box{width:100%;display:none}
+.dt_right .box.active{display: block;}
+.dt_right .title{height:56px;line-height:56px;font-size:18px;border-bottom:solid 1px #facd89;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dt_right .title h2{font-size:18px}
+.dt_right .buy p{line-height:40px}
+.dt_right .buy .p1{margin:14px 0 26px}
+.dt_right .buy p .recharge{display:inline-block;height:26px;width:50px;line-height:26px;text-align:center;border-radius:4px;background-color:#fc5043;color:#fff;float:right}
+.dt_right .buy p .recharge:hover{transition:background-color .2s;background:#CE3D32}
+.dt_right .buy p b{font-weight:600}
+.dt_right .buy p em{color:#f77d07;font-weight:600}
+.dt_right .buy .amount{position:relative;margin-bottom:3px}
+.dt_right .buy .amount span{display:inline-block;height:30px;width:40px;position:absolute;right:0;top:6px;text-align:center;line-height:30px;color:#d58610;z-index: 3;}
+.dt_right .buy .amount input{height:30px;width:195px;padding:0 40px 0 4px;border-radius:2px;border:solid 1px #facd89;position:relative;z-index:2}
+.dt_right .buy .amount label{display:block;position:absolute;width:233px;height:auto;text-align:center;left:0;top:0;line-height:20px;transition:all .3s;z-index:1;padding:4px;background:#facd89;border-radius:2px;opacity:0;z-index: 999;}
+.dt_right .buy .amount label.active{top:38px;opacity:1}
+.dt_right .buy .amount label:before{position:absolute;display:block;top:-6px;left:50%;margin-left:-6px;content:"";height:6px;width:12px;background:transparent url(../img/icon/arrow_up01.png) no-repeat left top}
+.dt_right .buy .check_box{float:left;display:inline-block;width:12px;height:12px;margin:6px 5px 0 0;border:1px solid #000;cursor:pointer;background:#FFF none repeat scroll 0 0}
+.dt_right .buy .check_box.active{background:#FFF url(../img/icon/risk_confirm.png) no-repeat scroll center bottom}
+.dt_right .buy .agreement{max-width: 215px;text-overflow:ellipsis;overflow: hidden;white-space: nowrap;display: inline-block;}
+.dt_right .buy .agreement a{color:#518BC6;cursor:pointer}
+.dt_right .buy p .btn{display:block;width:239px;height:34px;line-height:34px;color:#fc5043;text-align:center;border:solid 1px #fc5043;border-radius:4px;margin-top:20px}
+.dt_right .buy p .btn.ban:hover{background:#9E9E9E none repeat scroll 0 0;color: #ffffff!important;}
+.dt_right .buy p .btn.ban{background:#9E9E9E none repeat scroll 0 0;color:#fff;border:solid 1px #9E9E9E}
+.dt_right .buy p .btn.ban:after{content:none}
+.dt_right .buy .text p{padding:10px 0 20px;margin-top:15px;line-height:20px;font-size:13px;color:#8A8A8A;border-top:dashed 1px #A0A0A0}
+.pop_btn{display: none;}
+.ph_mask{display: none;}
+
+/*支付页风险提示弹窗*/
+.risk_pop{position:fixed;top:0;left:0;display:none;width:100%;height:100%;background:transparent url(../V2/img/bg/top_bg.png) repeat scroll left top;z-index: 9999;transition: all .2s linear;opacity: 0;}
+.risk_pop.open_risk{opacity: 1;}
+.risk_pop .cont{position:fixed;top:50%;left:50%;margin:-115px 0 0 -245px;width:490px;height:230px;background:#fff;transition: all .2s linear;border-radius: 6px;}
+.risk_pop .cont h1{margin:10px 0 10px;width:100%;height:50px;color:#0d0d0d;text-align:center;font-size:18px;line-height:50px}
+.risk_pop .cont .item{line-height:35px;height:35px}
+.risk_pop .cont .item label{width:30%;text-align:right;display:block;float:left}
+.risk_pop .cont .item p{width:70%;float:left;color:#fd994f;text-indent:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.risk_pop a{float:left;display:block;margin:25px 2% 0 23%;width:25%;height:35px;border-radius: 3px;background:#fd994f;color:#fff;text-align:center;font-size:16px;line-height:35px;cursor:pointer}
+.risk_pop .btn_no{float:left;display:block;margin:25px 0 0 2%;width:25%;height: 33px;line-height: 33px;color:#333333;background: #ffffff;border: solid 1px #333333;text-align:center;font-size:16px;border-radius: 3px;cursor:pointer}
+.risk_pop a:hover{color: #ffffff;background: #BAB9B9;border-color: #BAB9B9;}
+
+/*支付页确认成功弹窗*/
+.success_pop{position:fixed;top:0;left:0;display:none;width:100%;height:100%;background:transparent url(../V2/img/bg/top_bg.png) repeat scroll left top;z-index: 9999;transition: all .2s linear;opacity: 0;}
+.success_pop.open_success{opacity: 1;}
+.success_pop .cont{position:fixed;top:50%;left:50%;margin:-110px 0 0 -255px;width:510px;height:220px;background:#fff;color:#0d0d0d;transition: all .2s linear;}
+.success_pop .cont h1{margin-top:10px;width:100%;height:70px;text-align:center;font-size:24px;line-height:70px}
+.success_pop .cont p{width:100%;line-height:20px;color:#505050;font-size:14px;text-align:center;float:left}
+.success_pop .btn{float:left;display:block;margin:25px 15px 0 185px;width:140px;height:40px;border-radius:3px;background:#fd994f;color:#fff;text-align:center;font-size:18px;line-height:40px;cursor:pointer}
+.success_pop .btn:hover{background:#BAB9B9}
+
+
+@media screen and (min-width:1020px) and (max-width:1230px){
+.detal .dt_left{width:685px;padding:0}
+.detal .dt_right{padding:0 20px}
+.detal .dt_left img{margin-top: -4px;}
+}
+
+@media screen and (min-width:750px) and (max-width:1019px){
+.detal .dt_left{width:100%;padding:286px 0px 20px;border-right:none;box-sizing:border-box}
+.detal .dt_right{padding:0 20px;width:100%;box-sizing:border-box;top: 0!important;}
+.dt_right .buy .amount label{width:100%;box-sizing:border-box}
+.dt_right .buy .amount input{width:100%;height:32px;box-sizing:border-box}
+.dt_right .buy p .btn{width:100%;height:36px;box-sizing:border-box}
+.dt_right .buy .agreement{max-width: 600px;}
+.detal .dt_left img{margin-top: -4px;}
+
+/*弹窗*/
+.risk_pop .cont{margin:-115px 0 0 -350px;width:700px}
+}
+
+@media screen and (max-width:749px){
+.detal .dt_left{height:auto;width:100%;padding:0 0px 10px;border-right:none;box-sizing:border-box}
+.dt_right .buy .amount label{width:100%;box-sizing:border-box}
+.detal .dt_right{padding:0 20px 10px;width:100%;height:auto;box-sizing:border-box;position:fixed;bottom:-360px;top: initial;z-index:1001;transition:all .3s ease-in}
+.dt_right .buy .amount input{width:100%;height:32px;box-sizing:border-box}
+.dt_right .buy p .btn{width:100%;height:36px;box-sizing:border-box;margin-top: 5px;}
+.detal .dt_right.dt_pop{bottom:0;opacity:1}
+.pop_btn{display:block;position:fixed;left:0;bottom:0;z-index:999;opacity:1;height:46px;width:100%}
+.dt_pop .pop_btn{opacity:0}
+.detal .dt_left img{margin-top: -4px;}
+.pop_btn.pop_btn_hide{opacity:0;display:none}
+.pop_btn a{display:block;height:46px;width:100%;line-height:46px;color:#FFF;background:#EF4810 none repeat scroll 0 0;text-align:center;cursor:pointer}
+.dt_right .title{height:36px;line-height:36px}
+.dt_right .title h2{font-size:16px}
+.dt_right .buy .p1{margin:5px 0}
+.dt_right .buy div>p:nth-of-type(5){line-height: 20px;}
+.dt_right .buy .agreement{max-width: none;white-space: normal;text-overflow: initial;word-break: break-all;display: inline;}
+.pop_btn{display:block;position:fixed;left:0;bottom:0;z-index:999;opacity:1;height:46px;width:100%}
+.dt_pop .pop_btn{opacity:0}
+.pop_btn.pop_btn_hide{opacity:0;display:none}
+.pop_btn a{display:block;height:46px;width:100%;line-height:46px;color:#FFF;background:#EF4810 none repeat scroll 0 0;text-align:center;cursor:pointer}
+.pop_cont .pop_box img{display:block;margin:0 auto;height:auto;width:100%;top:50%;position:absolute;transform:translate(0,-50%)}
+.ph_mask{position:fixed;height:100%;width:100%;left:0;top:0;background:rgba(0,0,0,.6);z-index:1000;display:none}
+
+/*弹窗*/
+.risk_pop .cont{bottom:-40px;border-radius: 0;top:initial;left:0;width:100%;margin:0;height:210px;max-height:70%;overflow:auto;padding:0 2%;opacity: 0;}
+.risk_pop.open_risk .cont{bottom: 0;opacity: 1;}
+.risk_pop .cont h1{margin-top:5px;height:60px;font-size:20px;line-height:60px}
+.risk_pop a{width:40%;margin:10px 3% 0 7%;float:left}
+.risk_pop .btn_no{margin:10px 0 0 3%;float:left;width: 40%;text-align: center;height: 35px;line-height: 35px;}
+.success_pop .cont{position:fixed;bottom:-40px;top:initial;left:0;width:100%;margin:0;height:auto;padding:0 2%;opacity: 0;}
+.success_pop.open_success .cont{bottom: 0;opacity: 1;}
+.success_pop .cont h1{margin-top:5px;height:50px;font-size:20px;line-height:50px}
+.success_pop .cont p{float:none;text-align:center}
+.success_pop .cont p br{display:none}
+.success_pop .btn{margin:10px 0;width:100%}
+}
+
+
+
